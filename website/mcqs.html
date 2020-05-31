@@ -1,0 +1,73 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>IB Chem</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>
+
+      <!--MathJax and MHChem-->
+      <script type="text/x-mathjax-config">
+        MathJax.Ajax.config.path["mhchem.js"] = "http://ibchemistry.co.uk/mhchem.js";
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+          displayAlign: "left",
+          TeX: {
+              extensions: ["mhchem.js"]
+            }
+        });
+      </script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <!--Navigation bar at the top of the page-->
+      <nav>
+        <div class="nav-wrapper yellow lighten-5">
+          <div class="container">
+            <a href="/" class="brand-logo black-text hide-on-med-and-down" style="padding-left: 10px; padding-right: 10px;">IB Chemistry</a>
+            <ul id="nav-mobile" class="right">
+              <li><a href="atomicstructure.html" class="pink-text">Atomic Structure</a></li>
+              <li><a href="stoichiometry.html" class="deep-purple-text">Stoichiometry</a></li>
+              <li><a href="bonding.html" class="pink-text text-darken-4">Bonding</a></li>
+              <li><a href="energetics.html" class="teal-text text-darken-2">Energetics</a></li>
+              <li><a href="kinetics.html" class="teal-text text-darken-4">Kinetics</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!--Card with some information in it-->
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <div class="card light-blue lighten-5">
+              <div class="card-content blue-grey-text text-darken-2">
+                <span class="card-title center">Coming soon</span>
+                <div class="card-action">
+                  <a href="#" class="blue-grey-text text-darken-1">There may be links to some notes here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="page-footer yellow lighten-5">
+      </footer>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript" src="materialize.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('footer').load('footer.html');
+        });
+      </script>
+    </body>
+  </html>

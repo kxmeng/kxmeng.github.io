@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Seating Plans</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script type="text/javascript" async
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+		</script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<style>
+			nav {
+				background-color: #0e3b43;
+			}
+			h1 + ul {
+				color: #3c1518;
+			}
+			.btn-dark {
+				background-color: #051619;
+			}
+			.btn-dark:hover{
+				background-color: #0e3b43;
+			}
+			.highlight {
+				background-color: #DAF7A6 ;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header id="header">
+			<nav class="navbar navbar-expand-lg navbar-dark mb-4">
+				<a class="navbar-brand" href="#">Seating plans</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse flex-md-column" id="navbarNavAltMarkup">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="/seats.html">All classes <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<div id="main">
+			<div class="container">
+				<div class="btn-group btn-group-toggle d-flex justify-content-center" data-toggle="buttons" style="padding-bottom: 30px;">
+					<label class="btn btn-outline-info" id="fmrandomise">
+						<input type="radio" name="options" id="option1" autocomplete="off"> FM
+					</label>
+					<label class="btn btn-outline-info" id="marandomise">
+						<input type="radio" name="options" id="option2" autocomplete="off"> MA
+					</label>
+					<label class="btn btn-outline-info" id="l5randomise">
+						<input type="radio" name="options" id="option3" autocomplete="off"> L5
+					</label>
+					<label class="btn btn-outline-info" id="4randomise">
+						<input type="radio" name="options" id="option3" autocomplete="off"> 4
+					</label>
+					<label class="btn btn-outline-info" id="8randomise">
+						<input type="radio" name="options" id="option3" autocomplete="off"> 8
+					</label>
+				</div>
+
+
+				<div class="row" style="padding-bottom: 20px;">
+					<div class="text-center w-100"><h2>Front</h2></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r1c1"></div>
+					<div class="col seat" id="r1c2"></div>
+					<div class="col seat" id="r1c3"></div>
+					<div class="col seat" id="r1c4"></div>
+					<div class="col seat" id="r1c5"></div>
+					<div class="col seat" id="r1c6"></div>
+					<div class="col seat" id="r1c7"></div>
+					<div class="col seat" id="r1c8"></div>
+					<div class="col seat" id="r1c9"></div>
+					<div class="col seat" id="r1c10"></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r2c1"></div>
+					<div class="col seat" id="r2c2"></div>
+					<div class="col seat" id="r2c3"></div>
+					<div class="col seat" id="r2c4"></div>
+					<div class="col seat" id="r2c5"></div>
+					<div class="col seat" id="r2c6"></div>
+					<div class="col seat" id="r2c7"></div>
+					<div class="col seat" id="r2c8"></div>
+					<div class="col seat" id="r2c9"></div>
+					<div class="col seat" id="r2c10"></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r3c1"></div>
+					<div class="col seat" id="r3c2"></div>
+					<div class="col seat" id="r3c3"></div>
+					<div class="col seat" id="r3c4"></div>
+					<div class="col seat" id="r3c5"></div>
+					<div class="col seat" id="r3c6"></div>
+					<div class="col seat" id="r3c7"></div>
+					<div class="col seat" id="r3c8"></div>
+					<div class="col seat" id="r3c9"></div>
+					<div class="col seat" id="r3c10"></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r4c1"></div>
+					<div class="col seat" id="r4c2"></div>
+					<div class="col seat" id="r4c3"></div>
+					<div class="col seat" id="r4c4"></div>
+					<div class="col seat" id="r4c5"></div>
+					<div class="col seat" id="r4c6"></div>
+					<div class="col seat" id="r4c7"></div>
+					<div class="col seat" id="r4c8"></div>
+					<div class="col seat" id="r4c9"></div>
+					<div class="col seat" id="r4c10"></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r5c1"></div>
+					<div class="col seat" id="r5c2"></div>
+					<div class="col seat" id="r5c3"></div>
+					<div class="col seat" id="r5c4"></div>
+					<div class="col seat" id="r5c5"></div>
+					<div class="col seat" id="r5c6"></div>
+					<div class="col seat" id="r5c7"></div>
+					<div class="col seat" id="r5c8"></div>
+					<div class="col seat" id="r5c9"></div>
+					<div class="col seat" id="r5c10"></div>
+				</div>
+				<div class="row" style="padding-bottom: 10px;">
+					<div class="col seat" id="r6c1"></div>
+					<div class="col seat" id="r6c2"></div>
+					<div class="col seat" id="r6c3"></div>
+					<div class="col seat" id="r6c4"></div>
+					<div class="col seat" id="r6c5"></div>
+					<div class="col seat" id="r6c6"></div>
+					<div class="col seat" id="r6c7"></div>
+					<div class="col seat" id="r6c8"></div>
+					<div class="col seat" id="r6c9"></div>
+					<div class="col seat" id="r6c10"></div>
+				</div>
+
+				<div class="row" style="padding-top: 20px;">
+					<div class="text-center w-100"><h2>Back</h2></div>
+				</div>
+			</div>
+		<!--jQuery-->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+			integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+			integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+			crossorigin="anonymous"></script>
+		<script src="/scripts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<script>
+			// Lists for classes and the names of students in them
+			var studentsl5 = ["Jonathan","Piers","Felix","Chris","Oliver","Ryan","Xavier","Ed","Sonny","Alexis","Marcus","Arun","Alex","Balthazar","Raphael","Harry","William","Mark","Saaim","Joshua","Anton","Otto","Mathieu","Alexander"];
+			var students4 = ["Abhay","Ameet","Jay","Joshua","Ben C","Luke","Jack F","Gus","Angus","Ben H","Charlie","Charlie Hill","Aidan","Nyle","Jack M","John","Marcus","Adithya","Dylan","Vanya","Guy","Will","Jack T","Max","Serkan"];
+			var students8 = ["Fred","Alex B","Dylan","Ben","Alex G","Fredi","Dhruv","Andreas","Arya","Julian","Joohun","Matthew","Edward","Barney","Rowan","Luke","Elijah","Robert","Krush","Nicholas","Gal","Ivan","Jack","Tommaso"];
+			var studentsFM = ["Umair","Aiman","Hugo","Oliver","Sami","Freya","Luke","Pranav","William","Raffaele","Krish","Rohan","Alex","Edward"];
+			var studentsMA = ["Daniel","Minuk","Benjamin C","Elliot","Alexander","Maddie","Rory","Alex","Andrew","Alexandre","Benjamin S","Kishan"];
+			// Big array of all students.
+			var studentsAll = [students8,students4,studentsl5,studentsMA,studentsFM];
+
+			// Lists for rooms and where there are seats. There are 3 rows and 10 columns in total.
+			var q10 = ["#r1c2","#r1c3","#r2c2","#r2c3","#r3c2","#r3c3","#r4c2","#r4c3","#r5c2","#r5c3","#r6c2","#r6c3","#r5c5","#r6c5","#r5c6","#r6c6"];
+			var q11 = ["#r1c2","#r1c3","#r1c5","#r1c6","#r1c8","#r1c9","#r2c2","#r2c3","#r2c5","#r2c6","#r2c8","#r2c9","#r3c2","#r3c3","#r3c5","#r3c6","#r3c8","r#3c9"];
+			var q12 = ["#r1c1","#r1c2","#r1c7","#r1c8","#r2c1","#r2c2","#r2c7","#r2c8","#r3c1","#r3c2","#r3c7","#r3c8","#r4c3","#r4c4","#r4c9","#r4c10","#r5c3","#r5c4","#r5c9","#r5c10","#r6c3","#r6c4","#r6c9","#r6c10"];
+			var q13 = ["#r1c1","#r1c2","#r1c4","#r1c5","#r1c6","#r1c7","#r1c9","#r1c10","#r2c1","#r2c2","#r2c4","#r2c5","#r2c6","#r2c7","#r2c9","#r2c10","#r3c1","#r3c2","#r3c4","#r3c5","#r3c6","#r3c7","#r3c9","#r3c10","#r1c3"];
+			var q14 = ["#r1c1","#r1c2","#r1c3","#r1c4","#r1c7","#r1c8","#r1c9","#r1c10","#r2c1","#r2c2","#r2c3","#r2c4","#r2c7","#r2c8","#r2c9","#r2c10","#r3c1","#r3c2","#r3c3","#r3c4","#r3c7","#r3c8","#r3c9","#r3c10","#r1c5"];
+			var q15 = ["#r1c1","#r1c2","#r1c3","#r1c4","#r1c7","#r1c8","#r1c9","#r1c10","#r2c1","#r2c2","#r2c3","#r2c4","#r2c7","#r2c8","#r2c9","#r2c10","#r3c1","#r3c2","#r3c3","#r3c4","#r3c7","#r3c8","#r3c9","#r3c10","#r1c5"];
+			var q19 = ["#r1c1","#r1c2","#r1c5","#r1c6","#r1c9","#r1c10","#r2c1","#r2c2","#r2c5","#r2c6","#r2c9","#r2c10","#r3c1","#r3c2","#r3c5","#r3c6","#r3c9","#r3c10","#r4c1","#r4c2","#r4c5","#r4c6","#r4c9","#r4c10","#r1c3"];
+
+			// Timetable for classes and rooms. Sun, Mon, Tue, Wed, Thu, Fri, Sat. Enter any classroom with enough seats for Sat and Sun.
+			var days8 = [q15,q15,q19,q13,q14,q15,q15];
+			var days4 = [q15,q14,q19,q14,q14,q15,q15];
+			var daysl5 = [q15,q15,q15,q19,q15,q12,q15];
+			var daysMA = [q11,q11,q11,q11,q11,q11,q11];
+			var daysFM = [q11,q11,q10,q11,q14,q11,q11];
+			// Big array of classrooms and days for all classes
+			var daysAll = [days8,days4,daysl5,daysMA,daysFM];
+
+			// Function to shuffle a list into a random order. Use by using shuffle(list)
+			function shuffle(array) {
+				var currentIndex = array.length, temporaryValue, randomIndex;
+
+				// While there remain elements to shuffle...
+				while (0 !== currentIndex) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
+
+				// And swap it with the current element.
+				temporaryValue = array[currentIndex];
+				array[currentIndex] = array[randomIndex];
+				array[randomIndex] = temporaryValue;
+				};
+				return array;
+			};
+
+			// Randomise each class' list
+			function randomiseSeats (year) {
+				// Start by shuffling the list of names from the class
+				var shuffledStudents = shuffle(studentsAll[year]);
+				// Remove any highlighting done if page has been used before
+				$(".seat").text("");
+				// Find today's date
+				var d = new Date();
+				// Find a list of seats that need to be filled based on the day
+				var seatsAvailable = daysAll[year][d.getDay()];
+				var i;
+				// Fill in the seats with the random names generated from before
+				for (i = 0; i < shuffledStudents.length; i++) {
+					$(seatsAvailable[i]).html(shuffledStudents[i]);
+				};
+			};
+
+			//When each individual ID is clicked, run the randomiseSeats function to generate a random seating plan
+			$("#8randomise").click(function() {
+				randomiseSeats(0);
+			});
+
+			$("#4randomise").click(function() {
+				randomiseSeats(1);
+			});
+
+			$("#l5randomise").click(function() {
+				randomiseSeats(2);
+			});
+
+			$("#marandomise").click(function() {
+				randomiseSeats(3);
+			});
+
+			$("#fmrandomise").click(function() {
+				randomiseSeats(4);
+			});
+
+			// Function to find a random student and highlight them
+			function randomStudent(){
+				$(".seat").removeClass("highlight");
+				shuffle($(".seat:not(:empty)")).slice(0, 1).addClass("highlight");
+				$("#randomName").html($(".highlight").text());
+			};
+
+			// Highlight a random student and repeat every 2 seconds when page is loaded
+			document.addEventListener("DOMContentLoaded", function() {
+				setInterval(randomStudent,2000);
+			});
+		</script>
+	</body>
+</html>

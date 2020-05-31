@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Hints</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Further Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-9" id="maincontent">
+				<div class="topics active-topic" id="testsolutions">
+					<h2>Hints</h2>
+					<ul>
+						<li>Paper A (20 marks)
+							<ol>
+								<li value="3">Let \(y = \mathrm{arcsin}\ x\), then find \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\)</li>
+								<li value="7">Integrate by parts</li>
+							</ol>
+						</li>
+						<li>Paper B (20 marks)
+							<ol>
+								<li value="1">To differentiate \(\mathrm{arccos} x\), let \(y = \mathrm{arccos} x\) and find \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\)</li>
+								<li value="6">Integrate by parts (write as \(1\times ...\))</li>
+							</ol>
+						</li>
+						<li>Paper C
+							<ol>
+							</ol>
+						</li>
+						<li>Paper D (25 marks)
+							<ol>
+								<li value="4">a) formula booklet; b) split into two fractions; c) shouldn't need a hint for this one</li>
+								<li value="6">Integrate by parts, remembering that \(\sec^2 x\) is really easy to integrate</li>
+							</ol>
+						</li>
+						<li>Paper E (9 marks)
+							<ol>
+								<li value="3">Fairly standard, though difficult, substitution, shouldn't need a hint for this</li>
+							</ol>
+						</li>
+						<li>Paper F (20 marks)
+							<ol>
+								<li value="4">Integrate by parts, using the same method as for \(\displaystyle\int\ln x\ \mathrm{d}x\)</li>
+								<li value="6">Standard, though difficult, partial fractions question</li>
+							</ol>
+						</li>
+						<li>Paper G (29 marks)
+							<ol>
+								<li value="1">Chain rule. To differentiate \(\mathrm{arctan} x\), let \(y = \mathrm{arctan} x\) and find \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\)</li>
+								<li value="3">Let \(t = \tan x\) - realistically wont be required to figure out this substitution</li>
+								<li value="6">Integrate by parts, remembering that integrating \(\sin^nx\) is very difficult for \(n > 1\)</li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../scripts.js"></script>
+		<!--Script to change sidebar lists-->
+		<script>
+			$(".pageheader span").click(function() {
+				$('.navbar-active').removeClass('navbar-active');
+				$('.sidebar-visible').removeClass('sidebar-visible');
+				$('ul.' + $(this).attr('class')).addClass('sidebar-visible');
+				$(this).addClass('navbar-active');
+			});
+		</script>
+	</body>
+
+</html>
