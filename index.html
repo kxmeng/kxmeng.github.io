@@ -8,7 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
 		<style>
 			.transition-fade {
-				transition: 0.4s;
+				transition: 1s;
 				opacity: 1;
 			}
 
@@ -19,17 +19,17 @@
 	</head>
 
 	<body>
-		<div id="container">
-			Test <a href="./y9/index.html" style="background-color: green;">test link</a>
+		<div id="container" class="transition-fade">
+			Test <a href="/y9/index.html" style="background-color: green;">test link</a>
+			<main id="swup">
+				<h1>This is homepage</h1>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+					labore et dolore magna aliqua.
+				</p>
+				<a href="/seats.html">Go to other page</a>
+			</main>
 		</div>
-		<main id="swup" class="transition-fade">
-			<h1>This is homepage</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua.
-			</p>
-			<a href="./seats.html">Go to other page</a>
-		</main>
 
 		<script defer>
 			const swup = new Swup();
