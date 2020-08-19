@@ -12,6 +12,16 @@
 	<title>Year 9 Maths</title>
 	<!-- Inline CSS for highlighting certain parts -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
+	<style>
+		.transition-fade {
+			transition: 1s;
+			opacity: 1;
+		}
+
+		html.is-animating .transition-fade {
+			opacity: 0;
+		}
+	</style>
 </head>
 <body class="transition-fade" id="swup">
 	<div id="container">
