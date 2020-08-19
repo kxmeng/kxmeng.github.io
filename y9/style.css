@@ -4,7 +4,7 @@
 .a {
 	color: green;
 }
-	.transition-fade {
+.transition-fade {
 	transition: 1s;
 	opacity: 1;
 }
