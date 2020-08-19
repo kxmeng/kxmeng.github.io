@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>A Level</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			A Level Maths
+			<span class="stats navbar-active">Stats</span>
+			<span class="pure">Pure</span>
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-2 sidebar" id="sidebar-left">
+				<h6>Autumn term</h6>
+				<ul class="stats sidebar-visible">
+					<li id="surds">Surds and indices</li>
+					<li id="quadratics">Quadratics</li>
+					<li id="differentiation">Differentiation</li>
+					<li id="graphsketching">Graph Sketching</li>
+					<li id="transformations">Transformations</li>
+					<li id="diffapplications">Differentiation (applications)</li>
+					<li id="exponentials">Exponentials, logarithms</li>
+					<li id="integration">Integration of polynomials</li>
+				</ul>
+				<ul class="pure">
+					<li id="coordinates">Coordinate geometry</li>
+					<li id="circles">Circles</li>
+					<li id="inequalities">Quadratic inequalities</li>
+					<li id="simultaneous">Simultaneous equations</li>
+					<li id="binomial">Binomial expansion</li>
+					<li id="trigonometry">Trigonometric equations</li>
+					<li id="trigtransformations">Transformations of trig graphs</li>
+					<li id="factor">Factor theorem, algebraic division</li>
+				</ul>
+				<hr>
+				<h6>Spring term</h6>
+				<ul class="stats sidebar-visible">
+					<li id="intareas">Integration and areas</li>
+					<li id="statslocation">Measures of location, spread</li>
+					<li id="statssampling">Sampling, representation</li>
+					<li id="statsregression">Regression, probability</li>
+					<li id="statsdiscrete">Discrete distributions</li>
+					<li id="statshypothesis">Hypothesis testing</li>
+					<li id="diffexp">Differentiation of e and ln</li>
+				</ul>
+				<ul class="pure">
+					<li id="loggraphs">Log graphs</li>
+					<li id="functions">Functions</li>
+					<li id="radians">Radians</li>
+					<li id="trigreciprocal">Reciprocal, inverse trig</li>
+					<li id="trigcompound">Compound, double angle</li>
+					<li id="trigralpha">\(r\cos(\theta+\alpha)\)</li>
+					<li id="sequences">Sequences and series</li>
+				</ul>
+				<hr>
+				<h6>Summer term</h6>
+				<ul class="stats sidebar-visible">
+					<li id="diffchain">Chain, product, quotient rules</li>
+					<li id="diffmodel">Modelling questions</li>
+				</ul>
+				<ul class="pure">
+					<li id="sequences">Sequences and series</li>
+				</ul>
+				<hr>
+				<h6>After exams</h6>
+				<ul class="stats sidebar-visible">
+					<li id="proof">Proof</li>
+				</ul>
+				<ul class="pure">
+					<li id="trigdiff">Trig differentiation</li>
+				</ul>
+			</div>
+
+			<div class="col-9" id="maincontent">
+				<div class="topics" id="surds">
+					<h2>Surds and indices</h2>
+					<ol>
+						<li>Understand and use the laws of indices for all rational exponents.</li>
+						<li>Use and manipulate surds, including rationalising the denominator.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 1
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="quadratics">
+					<h2>Quadratics</h2>
+					<ol>
+						<li>Work with quadratic functions and their graphs.</li>
+						<li>The discriminant of a quadratic function, including the conditions for real and repeated roots.</li>
+						<li>Completing the square.</li>
+						<li>Solution of quadratic equations,</li>
+						<li>including solving quadratic equations in a function of the unknown.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 2
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="differentiation">
+					<h2>Differentiation</h2>
+					<ol>
+						<li>Understand and use the derivative of \(f(x)\) as the gradient of the tangent to the graph of \(y = f(x)\) at a general point \((x, y)\); the gradient of the tangent as a limit; interpretation as a rate of change;</li>
+						<li>sketching the gradient function for a given curve;</li>
+						<li>differentiation from first principles for small positive integer powers of \(x\) and for \(\sin x\) and \(\cos x\)</li>
+						<li>Understand and use the second derivative as the rate of change of gradient; connection to convex and concave sections of curves and points of inflection.</li>
+						<li>Differentiate \(x^n\), for rational values of \(n\), and related constant multiples, sums and differences.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 12.1 - 12.7
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="graphsketching">
+					<h2>Graph Sketching</h2>
+					<ol>
+						<li>Understand and use graphs of functions; sketch curves defined by simple equations including polynomials,</li>
+						<li>the modulus of a linear function,</li>
+						<li>\(y = \dfrac{a}{x}\) and \(y = \dfrac{a}{x^2}\), including their vertical and horizontal asymptotes</li>
+						<li>Interpret algebraic solution of equations graphically; use intersection points of graphs to solve equations.</li>
+						<li>Understand and use proportional relationships and their graphs.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="transformations">
+					<h2>Transformations</h2>
+					<ol>
+						<li>Understand the effect of simple transformations on the graph of \(y = f(x)\), including sketching associated graphs (and combinations of these transformations):
+							<ul style="list-style-type: disc;">
+								<li>\(y = af(x)\)</li>
+								<li>\(y = f(x) + a\)</li>
+								<li>\(y = f(x + a)\)</li>
+								<li>\(y = f(ax)\)</li>
+							</ul>
+						</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 4
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="diffapplications">
+					<h2>Applications of differentiation</h2>
+					<ol>
+						<li>Apply differentiation to find gradients, tangents and normals, maxima and minima and stationary points, and points of inflection.</li>
+						<li>Identify where functions are increasing or decreasing.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 12.8 - 12.11
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="exponentials">
+					<h2>Exponentials, logarithms</h2>
+					<ol>
+						<li>Know and use the function \(a^x\) and its graph, where \(a\) is positive.</li>
+						<li>Know and use the function \(e^x\) and its graph.</li>
+						<li>Know that the gradient of \(e^{kx}\) is equal to \(ke^{kx}\) and hence understand why the exponential model is suitable in many applications.</li>
+						<li>Know and use the definition of \(\log_a x\) as the inverse of \(a^x\), where \(a\) is positive and \(x \geq 0\).</li>
+						<li>Know and use the function \(\ln x\) and its graph.</li>
+						<li>Know and use \(\ln x\) as the inverse function of \(e^x\).</li>
+						<li>Understand and use the laws of logarithms:</li>
+						<li>\(\log_a x + \log_a y = \log_a (xy)\)</li>
+						<li>\(\log_a x - \log_a y = \log_a (\frac{x}{y})\)</li>
+						<li>\(\log_a x^k = k\log_a x\)</li>
+						<li>Solve equations of the form \(a^x = b\)</li>
+						<li>Understand and use exponential growth and decay; use in modelling (examples may include the use of \(e\) in continuous compound interest, radioactive decay, drug concentration decay, exponential growth as a model for population growth); consideration of limitations and refinements of exponential models.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 14.1 - 14.7
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="integration">
+					<h2>Integration</h2>
+					<ol>
+						<li>Know and use the Fundamental Theorem of Calculus</li>
+						<li>Integrate \(x^n\) (excluding \(n = −1\)) and related sums, differences and constant multiples.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 13
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="intareas">
+					<h2>Integration: finding areas</h2>
+					<ol>
+						<li>Evaluate definite integrals; use a definite integral to find the area under a curve and the area between two curves</li>
+						<li>Understand and use integration as the limit of a sum.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 13
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="diffexp">
+					<h2>Differentiation of exponentials and logarithms</h2>
+					<ol>
+						<li>Differentiate \(e^{kx}\) and \(a^{kx}\) and related sums, differences and constant multiples. Understand and use the derivative of \(\ln x\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="diffchain">
+					<h2>Differentiation</h2>
+					<ol>
+						<li>Differentiate using the product rule, the quotient rule and the chain rule, including problems involving connected rates of change and inverse functions.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a (trig differentiation not covered yet)
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="diffmodel">
+					<h2>Differentiation: models</h2>
+					<ol>
+						<li>Construct simple differential equations in pure mathematics and in context, (contexts may include kinematics, population growth and modelling the relationship between price and demand).</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="statslocation">
+					<h2>Statistics</h2>
+					<ol>
+						<li>Interpret measures of central tendency (mean, median, mode) and variation (variance, standard deviation, range and interpecentile ranges). Use of linear interpolation to calculate percentiles from grouped data is expected</li>
+						<li>Be able to calculate standard deviation, including from summary statistics</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 2
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="statssampling">
+					<h2>Statistics</h2>
+					<ol>
+						<li>Understand and use the terms "population" and "sample", including the advantages and disadvantages of a census versus a sample.</li>
+						<li>Use samples to make informal inferences about the population.</li>
+						<li>Understand and use sampling techniques, including simple random sampling, stratified sampling, systematic sampling, quota sampling, and opportunity sampling.</li>
+						<li>Select or critique sampling techniques in the context of solving a statistical problem, including understanding that different samples can lead to different conclusions about the population.</li>
+						<li>Interpret diagrams (histograms, frequency polygons, box and whisker plots including outliers, and cumulative frequency diagrams) for single variable data, including understanding that area in a histogram represents frequency.</li>
+						<li>Connect to probability distributions.</li>
+						<li>Recognise and interpret possible outliers in data sets and statistical diagrams. Rules for outliers will be specified in the question.</li>
+						<li>Select or critique data presentation techniques in the context of a statistical problem, including drawing simple inferences and giving interpretations to measures of central tendency and variation.</li>
+						<li>Be able to clean data, including dealing with missing data, errors and outliers e.g. identifying outliers on a box plot or scatter diagram.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 1 (recap chapter 3)
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="statsregression">
+					<h2>Statistics</h2>
+					<ol>
+						<li>Interpret scatter diagrams and regression lines for bivariate data, including recognition of scatter diagrams which include distinct sections of the population (calculations involving regression lines are excluded). Familiarity with the terms explanatory (independent) and response (dependent) variables.</li>
+						<li>Use of interpolation and the dangers of extrapolation. Variables other than \(x\) and \(y\) may be used.</li>
+						<li>Understand informal interpretation of correlation. Use of terms such as positive, negative, zero, strong and weak are expected.</li>
+						<li>Understand that correlation does not imply causation.</li>
+						<li>Understand and use mutually exclusive and independent events when calculating probabilities. Venn diagrams or tree diagrams may be used. Set notation to describe events may be used.</li>
+						<li>Link to discrete and continuous distributions. Understand that area under the curve represents probability in the case of a continuous distribution.</li>
+						<li>Understand and use conditional probability, including the use of tree diagrams, Venn diagrams, two-way tables.</li>
+						<li>Modelling with probability, including critiquing assumptions made and the likely effect of more realistic assumptions. For example, questioning the assumption that a die or coin is fair.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 4, 5
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="statsdiscrete">
+					<h2>Statistics</h2>
+					<ol>
+						<li>Understand and use simple, discrete probability distributions, including the binomial distribution, as a model; calculate probabilities using the binomial distribution. The notation \(X \sim B(n,p)\) may be used</li>
+						<li>Know and be able to identify the discrete uniform distribution.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 6
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="statshypothesis">
+					<h2>Statistics</h2>
+					<ol>
+						<li>Understand and apply the language of statistical hypothesis testing, developed through a binomial model: null hypothesis, alternative hypothesis, significance level, test statistic, 1-tail test, 2-tail test, critical value, critical region, acceptance region, p-value.</li>
+						<li>Conduct a statistical hypothesis test for the proportion in the binomial distribution and interpret the results in context.</li>
+						<li>Understand that a sample is being used to make an inference about the population.</li>
+						<li>Appreciate that the significance level is the probability of incorrectly rejecting the null hypothesis.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 7
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="coordinates">
+					<h2>Coordinate geometry</h2>
+					<ol>
+						<li>Understand and use the equation of a straight line, including the forms \(y - y_1 = m(x-x_1)\) and \(ax+by+c=0\)</li>
+						<li>Gradient conditions for two straight lines to be parallel or perpendicular.</li>
+						<li>Be able to use straight line models in a variety of contexts.</li>
+						<li>Including the equation of a line through two given points, and the equation of a line parallel (or perpendicular) to a given line through a given point. </li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 5
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="circles">
+					<h2>Circles</h2>
+					<ol>
+						<li>Understand and use the coordinate geometry of the circle including using the equation of a circle in the form \((x – a)^2 + (y – b)^2 = r^2\) and \(x^2 + y^2 + fx + gy + c = 0\)</li>
+						<li>Completing the square to find the centre and radius of a circle.</li>
+						<li>Use of the following properties: the angle in a semicircle is a right angle; the perpendicular from the centre to a chord bisects the chord; the radius of a circle at a given point on its circumference is perpendicular to the tangent to the circle at that point.</li>
+						<li>Students should be able to find the equation of a tangent at a specified point, using the perpendicular property of tangent and radius.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 6
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="inequalities">
+					<h2>Inequalities</h2>
+					<ol>
+						<li>Solve linear and quadratic inequalities in a single variable and interpret such inequalities graphically, including inequalities with brackets and fractions.</li>
+						<li>Express solutions through correct use of "and" and "or", or through set notation.</li>
+						<li>Represent linear and quadratic inequalities such as \(y > x + 1\) and \(y > ax^2 + bx + c\) graphically</li>
+						<li>Students should be able to find the equation of a tangent at a specified point, using the perpendicular property of tangent and radius.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 3.5-3.7
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="simultaneous">
+					<h2>Simultaneous equtions</h2>
+					<ol>
+						<li>Solve simultaneous equations in two variables by elimination and by substitution, including one linear and one quadratic equation.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 3.2 - 3.3
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="binomial">
+					<h2>Binomial expansion</h2>
+					<ol>
+						<li>Understand and use the binomial expansion of \((a + bx)^n\) for positive integer \(n\); the notations \(n!\) and \(^nC_r\), link to binomial probabilities.</li>
+						<li>Use of Pascal's triangle. </li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 8
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="trigonometry">
+					<h2>Trigonometric equations</h2>
+					<ol>
+						<li>Understand and use the definitions of sine, cosine and tangent for all arguments</li>
+						<li>The sine and cosine rules, including the ambiguous case of the sine rule</li>
+						<li>the area of a triangle in the form \(\dfrac{1}{2}ab\sin C\)</li>
+						<li>Solve simple trigonometric equations in a given interval, including quadratic equations in sin, cos and tan and equations involving multiples of the unknown angle</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 9.1 - 9.3, 10
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="trigtransformations">
+					<h2>Trigonometric transformations</h2>
+					<ol>
+						<li>Understand and use the sine, cosine and tangent functions; their graphs, symmetries and periodicity.</li>
+						<li>Knowledge of graphs of curves with equations such as \(y=\sin x\), \(y = \cos(x+30^{\circ})\), \(y=\tan2x\) is expected</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 9.5 - 9.6
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="factor">
+					<h2>Factor theorem</h2>
+					<ol>
+						<li>Manipulate polynomials algebraically, including expanding brackets and collecting like terms, factorisation and simple algebraic division; use of the factor theorem.</li>
+						<li>Simplify rational expressions, including by factorising and cancelling, and algebraic division (by linear expressions only).</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 7.1 - 7.3
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="loggraphs">
+					<h2>Logarithmic graphs</h2>
+					<ol>
+						<li>Use logarithmic graphs to estimate parameters in relationships of the form \(y = ax^n\) and \(y = kb^x\), given data for \(x\) and \(y\).</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 14.8
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="functions">
+					<h2>Functions</h2>
+					<ol>
+						<li>The modulus of a linear function</li>
+						<li>Understand and use composite functions; inverse functions and their graphs.</li>
+						<li>The notation \(f:x\mapsto\) and \(f(x)\) may be used</li>
+						<li>Domain and range of functions</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 2
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="radians">
+					<h2>Radians</h2>
+					<ol>
+						<li>Work with radian measure, including use for arc length \(s = r\theta\) and area of sector \(A = \dfrac{1}{2}r^2\theta\)</li>
+						<li>Understand and use the standard small angle approximations of \(\sin\theta \approx \theta\), \(\cos\theta \approx 1 - \dfrac{\theta^2}{2}\) and \(\tan\theta \approx \theta\) where \(\theta\) is in radians</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 5
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="trigreciprocal">
+					<h2>Trigonometry: reciprocal, inverse</h2>
+					<ol>
+						<li>Understand and use the definitions of secant, cosecant and cotangent and of arcsin, arccos and arctan; their relationships to sine, cosine and tangent; understanding of their graphs; their ranges and domains.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 6
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=rS1T_b4WZzA" class="video" target="_blank">How to structure proofs (7:36)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigcompound">
+					<h2>Trigonometry: compound angles</h2>
+					<ol>
+						<li>Understand and use \(\dfrac{\sin\theta}{\cos\theta} = \tan\theta\)</li>
+						<li>\(\sin^2\theta + \cos^2\theta = 1\), \(\sec^2\theta = 1 + \tan^2\theta\), \(\csc^2\theta = 1 + \cot^2\theta\)</li>
+						<li>Understand and use double angle formulae, including application to half angles</li>
+						<li>Use of formulae for \(\sin(A\pm B)\), \(\cos(A\pm B)\), \(\tan(A\pm B)\) and understand geometrical proofs for these formulae</li>
+						<li>Construct proofs involving trigonometric functions and identities.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 7.1 - 7.4
+					</div>
+					<div class="learn">
+						Videos: Compound angle proofs: <a href="https://www.youtube.com/watch?v=EIPRSt2ldK4" class="video" target="_blank">sine (17:32)</a>; <a href="https://www.youtube.com/watch?v=Y9Sw8spGbAU" class="video" target="_blank">cosine (7:02)</a>; <a href="https://www.youtube.com/watch?v=rvRPauOC6F8" class="video" target="_blank">tangent (16:46)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigralpha">
+					<h2></h2>
+					<ol>
+						<li>Understand and use expressions for \(a\cos\theta + b\sin\theta\) in the equivalent forms of \(r\cos(\theta+\alpha)\) or \(r\sin(\theta+\alpha)\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 7.5 - 7.6
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="sequences">
+					<h2>Sequences and series</h2>
+					<ol>
+						<li>Work with sequences including those given by a formula for the \(n\)th term and those generated by a simple relation of the form \(x_{n+1} = f(x_n)\); increasing sequences e.g. \(u_n = 2^n\); decreasing sequences e.g. \(u_n = \dfrac{1}{3n+1}\); periodic sequences e.g. \(u_{n+1} = \dfrac{1}{u_n}\).</li>
+						<li>Understand and use sigma notation for sums of series.</li>
+						<li>Understand and work with arithmetic sequences and series, including the formulae for \(n\)th term and the sum to \(n\) terms (proof required)</li>
+						<li>Understand and work with geometric sequences and series, including the formulae for the \(n\)th term and the sum of a finite geometric series (proof required); the sum to infinity of a convergent geometric series, including the use of \(|r| < 1\); modulus notation</li>
+						<li>Use sequences and series in modelling.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 3
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=TjMLzklnn2c" class="video" target="_blank">Sigma notation (4:18)</a>, <a href="https://www.youtube.com/watch?v=JV5gLfXAEPk" class="video" target="_blank">Intro 1/3 (4:15)</a>, <a href="https://www.youtube.com/watch?v=jGb5qtdbuc4" class="video" target="_blank">Intro 2/3 (12:00)</a>, <a href="https://www.youtube.com/watch?v=-yEfaQwdSsU" class="video" target="_blank">Intro 3/3 (8:06)</a>, <a href="https://www.youtube.com/watch?v=ELVIeTjlW-A" class="video" target="_blank">Arithmetic sequences 1/2 (8:03)</a>, <a href="https://www.youtube.com/watch?v=uOJ08FcJ2VM" class="video" target="_blank">Arithmetic sequences 2/2 (6:08)</a>, <a href="https://www.youtube.com/watch?v=ZZaUO_35hdk" class="video" target="_blank">Arithmetic Sum 1/5 (6:55)</a>, <a href="https://www.youtube.com/watch?v=WH9BDmHmqXA" class="video" target="_blank">Arithmetic Sum 2/5 (6:54)</a>, <a href="https://www.youtube.com/watch?v=wB8c7TIDmY4" class="video" target="_blank">Arithmetic Sum 3/5 (4:01)</a>, <a href="https://www.youtube.com/watch?v=_hJ_m-m8bxY" class="video" target="_blank">Arithmetic Sum 4/5 (6:45)</a>, <a href="https://www.youtube.com/watch?v=RdhQbFqKua0" class="video" target="_blank">Arithmetic Sum 5/5 (7:08)</a>, <a href="https://www.youtube.com/watch?v=yo2DtZDYzKY" class="video" target="_blank">Geometric Sum 1/3 (8:02)</a>, <a href="https://www.youtube.com/watch?v=2z248Y6Cvbc" class="video" target="_blank">Geometric Sum 2/3 (7:44)</a>, <a href="https://www.youtube.com/watch?v=m6s3Bync_qQ" class="video" target="_blank">Geometric Sum 3/3 (7:11)</a>, <a href="https://www.youtube.com/watch?v=MTOKAA8rRA0" class="video" target="_blank">Sum to infinity (8:19)</a>, <a href="https://www.youtube.com/watch?v=eRRjDCHlDwg" class="video" target="_blank">Sum to infinity bonus (3:35)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigdiff">
+					<h2>Differentiation: trigonometry</h2>
+					<ol>
+						<li>differentiation from first principles for small positive integer powers of \(x\) and for \(\sin x\) and \(\cos x\)</li>
+						<li>Differentiate \(\sin kx\), \(\cos kx\), \(\tan kx\) and related sums, differences and constant multiples.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 9.1, 9.6, recap: 9.2 - 9.5
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+				<div class="topics" id="proof">
+					<h2>Proof</h2>
+					<ol>
+						<li>Understand and use the structure of mathematical proof, proceeding from given assumptions through a series of logical steps to a conclusion; use methods of proof, including:</li>
+						<li>Proof by deduction</li>
+						<li>Proof by exhaustion</li>
+						<li>Disproof by counter example</li>
+						<li>Proof by contradiction (including proof of the irrationality of \(\sqrt{2}\) and the infinity of primes, and application to unfamiliar proofs).</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 1
+					</div>
+					<div class="learn">
+						Videos:
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1 sidebar" id="sidebar-right">
+				<h6>Useful links</h6>
+				<ul>
+					<li><a href="#">
+							Coming soon
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="footer">
+			
+		</div>
+		<script src="../scripts.js"></script>
+		<!--Script to change sidebar lists-->
+		<script>
+			$(".pageheader span").click(function() {
+				$('.navbar-active').removeClass('navbar-active');
+				$('.sidebar-visible').removeClass('sidebar-visible');
+				$('ul.' + $(this).attr('class')).addClass('sidebar-visible');
+				$(this).addClass('navbar-active');
+			});
+		</script>
+	</body>
+
+</html>

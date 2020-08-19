@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	<!-- MathJax script (x2) -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<!-- Title of the page -->
+	<title>Year 10 Maths</title>
+	<!-- Inline CSS for highlighting certain parts -->
+	<style>
+		.ab {
+			color: teal;
+		}
+		.a {
+			color: green;
+		}
+	</style>
+	<!-- Inline CSS for the page; the colour theme of this page is rgb 166,61,64 -->
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Cormorant Garamond';
+		}
+		body {
+			position: relative;
+			height: 100%;
+		}
+		.sidebar-active {
+			color: white !important;
+			background-color: rgba(166,61,64,1) !important;
+		}
+		.hide {
+			height: 0;
+			overflow: hidden;
+		}
+		.zero-opacity{
+			opacity: 0 !important;
+		}
+		#container {
+			display: grid;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+			grid-template: 
+				"nav nav nav" 6vh
+				"left mid right" 70vh
+				"left sub right" 20vh
+				"foot foot foot" 4vh
+				/ 1.3fr 5.7fr 1fr;
+		}
+		#nav {
+			grid-area: nav;
+			color: white;
+			font-size: 3vh;
+			padding-left: 1vw;
+			padding-top: 1vh;
+			background-color: rgba(166,61,64,1);
+		}
+		#left {
+			grid-area: left;
+			border-right: solid 1px rgba(166,61,64,1);
+			overflow: scroll;
+			padding: 1em;
+		}
+		#left h6 {
+			font-size: 1.5em;
+			margin: 0;
+		}
+		#left ul {
+			list-style-type: none;
+			font-size: 1em;
+			padding: 0;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+		}
+		#left ul li {
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+			padding-left: 1em;
+			cursor: pointer;
+		}
+		#left ul li:hover {
+			background: rgba(166,61,64,0.3);
+			transition: background ease 0.2s;
+		}
+		#left hr {
+			border: none;
+			border-top: solid 1px rgba(166,61,64,0.2);
+			margin-right: 10px;
+		}
+		#right {
+			grid-area: right;
+			border-left: solid 1px rgba(166,61,64,1);
+			padding: 1em;
+		}
+		#mid {
+			grid-area: mid;
+			overflow: scroll;
+			border-bottom: solid 1px rgba(166,61,64,1);
+			transition: all 0.2s;
+			width: 100%;
+		}
+		#mid ul {
+			list-style-type: none;
+			padding-left: 1em;
+		}
+		#mid li {
+			padding-bottom: 0.5em;
+		}
+		#mid div {
+			padding-left: 1em;
+		}
+		#sub {
+			grid-area: sub;
+			padding: 1em;
+		}
+		#foot {
+			grid-area: foot;
+			background-color: rgba(166,61,64,1);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="nav">Year 10</div>
+		<div id="left">
+			<h6>Autumn</h6>
+			<ul>
+				<li id="algebra1">Algebra 1</li>
+				<li id="percentages">Percentages</li>
+				<li id="triangles1">Triangles 1</li>
+				<li id="histograms">Histograms</li>
+				<li id="indices">Indices</li>
+				<li id="quadratics1">Quadratics 1</li>
+				<li id="circles">Circles</li>
+				<li id="surds">Surds</li>
+				<li id="standard-form">Standard Form</li>
+			</ul>
+			<hr />
+			<h6>Spring</h6>
+			<ul>
+				<li id="algebra2">Algebra 2</li>
+				<li id="mensuration">Mensuration</li>
+				<li id="quadratics2">Quadratics 2</li>
+				<li id="probability">Probability</li>
+				<li id="similarity">Similarity</li>
+				<li id="simultaneous">Simultaneous Equations</li>
+				<li id="triangles2">Triangles 2</li>
+				<li id="trigonometry">Trigonometry</li>
+				<li id="sets">Sets</li>
+			</ul>
+			<hr>
+			<h6>Summer</h6>
+			<ul>
+				<li id="graphs1">Graphs 1</li>
+				<li id="graphs2">Graphs 2</li>
+				<li id="proportionality">Proportionality</li>
+				<li id="units">Units</li>
+				<li id="transformations">Transformations</li>
+				<li id="sequences">Sequences</li>
+			</ul>
+		</div>
+		<div id="right" class="test">Useful links - coming soon</div>
+		<div id="mid">
+			<div style="padding-top: 1em;">
+				Select a topic on the left
+			</div>
+		</div>
+		<div id="sub">Resources - coming soon</div>
+		<div id="foot"></div>
+	</div>
+	<!-- All of the content of the page hidden until needed. Each topic is in a div with class of "topics". All preloaded to make it easier to use MathJax on all the content-->
+	<div class="hide">
+		<div class="topics" id="algebra1-content">
+			<h2>Algebra</h2>
+			<ul class="top-half">
+				<li>Brief review of basic concepts: Variables, unknowns, expressions, identities, equations, substituting values</li>
+				<li>Expanding single, double and triple brackets e.g. \((x^2+3x+1)(5x+7)\), \((a-b)(2b+c)(c-3a)\)</li>
+				<li class="ab">e.g. \((x^2 + 3x - 4y)(5x + 2y + 7)\)</li>
+				<li class="ab">Basic application of Binomial theorem using Pascal's triangle only, up to expanding e.g. \((2x-3y^2)^5\)</li>
+				<li class="a">Addition and multiplication of polynomials</li>
+				<li class="a">Use of calculator to find Binomial coefficients</li>
+				<li class="a">Use Binomial theorem for truncated expansions, finding specific terms, using \(x=10^n\) to approximate values</li>
+				<li class="a">Apply Binomial Theorem to e.g. trinomial expansions</li>
+			</ul>
+		</div>
+		<div class="topics" id="percentages-content">
+			<h2>Percentages</h2>
+			<ul class="top-half">
+				<li>Finding a percentage of an amount</li>
+				<li>Expressing one amount as a percentage of another</li>
+				<li>Percentage increase/decrease</li>
+				<li>Reverse percentages</li>
+				<li>Simple and compound interest problems</li>
+			</ul>
+		</div>
+		<div class="topics" id="triangles1-content">
+			<h2>Right Angled Triangles</h2>
+			<ul class="top-half">
+				<li>Pythagoras and SOHCAHTOA</li>
+				<li>3D problems</li>
+				<li>Volumes of pyramids (including cones)</li>
+				<li>Include bearings (and other angle rules where possible)</li>
+				<li class="a">\(\tan\theta \equiv \dfrac{\sin\theta}{\cos\theta}\) and \(\sin^2\theta+\cos^2\theta \equiv 1\)</li>
+			</ul>
+		</div>
+		<div class="topics" id="histograms-content">
+			<h2>Histograms (2 weeks)</h2>
+			<ul class="top-half">
+				<li>Finding mean, median, mode, range, quartiles and interquartile range from raw and grouped data</li>
+				<li>Cumulative frequency graphs</li>
+				<li>Histograms</li>
+			</ul>
+		</div>
+		<div class="topics" id="indices-content">
+			<h2>Indices</h2>
+			<ul class="top-half">
+				<li>Index laws</li>
+				<li>Solving basic equations e.g. \(x^4 = 16\), \(2^{x+4} = 2^{6-x}\)</li>
+				<li class="ab">Include non-calculator evaluation e.g. \(\frac{272}{3}\), \(\frac{4}{9}-\frac{3}{2}\)</li>
+				<li class="ab">Include practice of moving between indices and surds</li>
+				<li class="a">Solving equations which make use of index laws and substitutions e.g. \(3^x = 27^{2x + 3}\), \(8^{2x} = 4^{2-x}\)</li>
+			</ul>
+		</div>
+		<div class="topics" id="quadratics1-content">
+			<h2>Quadratics (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Factorising and completing the square including e.g. \(2a^2-2a-12\), including difference of two squares e.g. \(b^2-121\)</li>
+				<li>Completed square form to identify max and min values of expressions</li>
+				<li class="ab">More difficult examples e.g. \(2pq - 4p + 3q - 6\), \(18p^3q^2 - 27p^2q^2 + 30p^3q - 45p^2q\)</li>
+				<li class="ab">Include quadratic on denominator of a fraction</li>
+				<li class="a">Include more examples, e.g. quadratic squared</li> 
+			</ul>
+		</div>
+		<div class="topics" id="circles-content">
+			<h2>Circle Theorems (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Angle in a semicircle, angles at circumference, angle at centre is double angle at circumference, cyclic quadrilaterals</li>
+				<li>Tangents and radii, alternate segment theorem, intersecting chords, including one or two tangents (see old IGCSE book 2), note isosceles triangles formed by radii</li>
+				<li>Completed square form to identify max and min values of expressions</li>
+				<li class="ab">Other interesting circle geometry problems, such as: finding the perpendicular bisector of a chord, which passes through the centre of the circle; finding the equations of radii and tangents etc</li>
+			</ul>
+		</div>
+		<div class="topics" id="surds-content">
+			<h2>Surds (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Define and be able to identify rational and irrational numbers. Is the sum of two irrational numbers always irrational?</li>
+				<li>Arithmetic (including multiplication of multiple, multi-term surd expressions) & reduction</li>
+				<li>Rationalising denominators, including compound denominators such as \(2\sqrt{3} - 3\sqrt{5}\)</li>
+				<li class="ab">Binomial expansions which include surds e.g. \((3 - \sqrt{2})^4\), \((\sqrt{2} + 3\sqrt{7})^5\)</li>
+				<li class="a">Harder surd denominators e.g. \(2 + \sqrt{3} + \sqrt{5}\)</li>
+				<li class="a">Prove irrationality of \(\sqrt{2}\)</li>
+			</ul>
+		</div>
+		<div class="topics" id="standard-form-content">
+			<h2>Standard Form</h2>
+			<ul class="top-half">
+				<li>Converting between decimal and standard forms</li>
+				<li>Multiplying and dividing numbers in standard form, including algebraic expressions in which the correct standard form depends on the value of the variable(s) e.g. \(\dfrac{x^2\times10^2}{3x\times10^{-3}} = \dfrac{x}{3}\times 10^5\ \mathrm{or}\ \dfrac{10x}{3}\times10^4\)</li>
+				<li>Converting between fractions and recurring decimals</li>
+			</ul>
+		</div>
+		<div class="topics" id="algebra2-content">
+			<h2>Algebra</h2>
+			<ul class="top-half">
+				<li>Change the subject of a formula</li>
+				<li>Algebraic proof</li>
+				<li class="ab">Complete square in order to change the subject of a quadratic</li>
+				<li class="ab">Include consideration of taking the positive and/or negative square root, depending on context</li>
+				<li class="a">Divisibility proofs</li>
+			</ul>
+		</div>
+		<div class="topics" id="mensuration-content">
+			<h2>Mensuration</h2>
+			<ul class="top-half">
+				<li>Arc length and sector area</li>
+				<li>Recaps volume of prisms, pyramids and cones</li>
+				<li>Surface area of cones, and volume and surface area of spheres, hemispheres, and compound solids</li>
+			</ul>
+		</div>
+		<div class="topics" id="quadratics2-content">
+			<h2>Quadratics (2 weeks)</h2>
+			<ul class="top-half">
+				<li>Solve quadratic equations by factorising and completing the square</li>
+				<li>Solve higher order equations e.g. \((2x + 1)(x - 3)(x + 5) = 0\)</li>
+				<li>Derive and use quadratic formula</li>
+				<li>All students need to be able to sketch a quadratic graph with all intercepts and vertex labelled</li>
+				<li>Use completed square form to justify whether or not the graph crosses the x-axis.</li>
+				<li class="ab">Hidden quadratics e.g. \(x^6 - x^3 - 20 = 0\), \(t^{\frac{2}{3}}-6t^{\frac{1}{3}}+9=0\)</li>
+				<li class="ab">Brief look at the the discriminant and relationship with number of solutions of a quadratic</li>
+				<li class="a">Some polynomial division by inspection (incl language of quotients and remainders)</li>
+				<li class="a">Factor and remainder theorems (very simple applications only)</li>
+				<li class="a">Finding integer solutions to e.g. \(xy - 2x + 3y - 12 = 0\)</li>
+			</ul>
+		</div>
+		<div class="topics" id="probability-content">
+			<h2>Probability (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Review of Y8 probability, including mutual exclusivity and sample spaces</li>
+				<li>Independence, conditional probability and tree diagrams. Students should be able to recognise and interpret "given that" statements</li>
+				<li class="a">More challenging conditional probability; "reversing" tree diagrams; Venn diagrams</li>
+			</ul>
+		</div>
+		<div class="topics" id="similarity-content">
+			<h2>Probability</h2>
+			<ul class="top-half">
+				<li>Using scale factors to calculate corresponding lengths in similar shapes. Use of the square/cube of a linear scale factor to find areas/volumes of similar shapes and solids</li>
+				<li>Use as an opportunity to recap last half term’s mensuration topic</li>
+				<li class="ab">Apply to volume and surface area of frustums of cones</li>
+			</ul>
+		</div>
+		<div class="topics" id="simultaneous-content">
+			<h2>Simultaneous Equations (0.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Substituting a linear expression into a quadratic expression</li>
+			</ul>
+		</div>
+		<div class="topics" id="triangles2-content">
+			<h2>Simultaneous Equations (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Area of a triangle, sine rule (including ambiguous case), cosine rule</li>
+				<li>Include polygon rules e.g. find area of a triangle inside a pentagon</li>
+				<li class="ab">Thorough treatment of ambiguous case of sine rule - use constructions and symmetry AND the sine graph</li>
+			</ul>
+		</div>
+		<div class="topics" id="trigonometry-content">
+			<h2>Trigonometric Graphs (0.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Recognising and sketching sin, cos and tan graphs</li>
+				<li class="ab">Solving very basic trig equations e.g. \(\cos x = 0.2\) for a range of \(x\)</li>
+				<li class="a">A few harder equations e.g. \(\sin 2x = 0.7\) and \(\sin (x + 30) = -0.5\), including a couple which use identities</li>
+			</ul>
+		</div>
+		<div class="topics" id="sets-content">
+			<h2>Sets and Venn Diagrams (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Review Y8 set theory and  introduce set builder notation</li>
+			</ul>
+		</div>
+		<div class="topics" id="graphs1-content">
+			<h2>Graph Sketching (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Sketch quadratic graphs, labelling all intercepts and the vertex</li>
+				<li>Recognising and sketching graphs of general cubics, \(x^2+y^2=r^2\), reciprocal graphs</li>
+				<li class="ab">Use Pythagoras' Theorem to justify general equation of circle</li>
+				<li class="a">Visualise and sketch graphs of higher degree polynomials</li>
+				<li class="a">Find centre and radius of circle from expanded equation by completing square in each variable</li>
+			</ul>
+		</div>
+		<div class="topics" id="graphs2-content">
+			<h2>Graphical Solutions (0.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Use graphs to solve equations</li>
+				<li class="a">Using trig graphs to solve equations, relate to ambiguous case of sine rule</li>
+				<li class="a">Start to solve equations with multiple steps, quadratics in trig functions and equations which require the use of trigonometric identities.</li>
+			</ul>
+		</div>
+		<div class="topics" id="proportionality-content">
+			<h2>Direct and Inverse Proportion (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Include some examples of problems involving ratio and proportion</li>
+				<li>Graphs of quantities in direct or inverse proportion</li>
+				<li>Questions where one quantity is proportional/inversely proportional to the square, cube, square root, etc of another</li>
+			</ul>
+		</div>
+		<div class="topics" id="units-content">
+			<h2>Units (0.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Convert area and volume units; compound units density/pressure</li>
+			</ul>
+		</div>
+		<div class="topics" id="transformations-content">
+			<h2>Transformations of Graphs (1.5 weeks)</h2>
+			<ul class="top-half">
+				<li>Translations and stretches of graphs, including trig graphs</li>
+				<li>Relationship between quadratics in completed square form and translations of \(y = x^2\)</li>
+				<li class="ab">Relate eqn of circle to translation of eqn of circle centred at origin</li>
+				<li class="ab">Reflecting graphs</li>
+				<li class="a">More interesting transformations of trig graphs, including reflections and compound transformations</li>
+			</ul>
+		</div>
+		<div class="topics" id="sequences-content">
+			<h2>Arithmetic Sequences</h2>
+			<ul class="top-half">
+				<li>Use linear expressions to describe the \(n\)th term of an arithmetic sequence</li>
+				<li>Understand and use common difference, \(d\), and first term, \(a\), in an arithmetic sequence</li>
+				<li>know and use \(n\)th term \(= a + (n - 1)d\)</li>
+				<li>Find the sum of the first \(n\) terms, \(S_n\) of an arithmetic series</li>
+				<li class="ab">Generalising the terms of other sequences (building on Y7 work), including plenty of figural sequences (incl non-linear) and some geometric sequences</li>
+				<li class="a">Continued fractions, nested surds, series that contain themselves</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// Function to navigate with sidebar items
+		let clickFunction = function() {
+			// If there is already a highlighted sidebar item, unhighlight it
+			if(document.getElementsByClassName("sidebar-active").length !== 0) {
+				document.getElementsByClassName("sidebar-active")[0].classList.remove("sidebar-active");
+			};
+			// Highlight this sidebar item
+			this.classList.add("sidebar-active");
+			// Find the main div on the page
+			let mainDiv = document.getElementById("mid");
+			// Set height main div to transparent for a nice transition
+			mainDiv.classList.add("zero-opacity");
+			// Find the div of the selected topic and make a copy of it (appendChild will move the div otherwise and it will get deleted later)
+			let newDiv = document.getElementById(this.id + "-content").cloneNode(true);
+			// Delay the rest of this so there is time to see the transition
+			setTimeout(function(){
+				// Delete everything in the main body of the page
+				mainDiv.innerHTML = "";
+				// Add the topic div to the main body of the page
+				mainDiv.appendChild(newDiv);
+				// Stop the main div from being transparent
+				mainDiv.classList.remove("zero-opacity");
+			},250);
+		};
+
+		// Function to add click listener to sidebar items so they do stuff when clicked
+		let leftSideBarList = document.getElementById("left").querySelectorAll("li");
+		for (let i=0; i < leftSideBarList.length; i++) {
+			leftSideBarList[i].onclick = clickFunction;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Year 8</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Y8 Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-9" id="maincontent">
+				<div class="row">
+					<div class="col">
+						<h5>Simultaneous Equations working</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Example 1 - question 6:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						David buys 2 DVDs and 2 CDs in a shop and they cost £18
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Ellie buys 3 DVDs and 2 CDs in the same shop and they cost £22
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col">
+						<span style="color: purple;">Let \(c\) be the price of a CD and \(d\) be the price of a DVD.</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">\(
+						\begin{align*} 
+							\color{blue}\boxed{1}&: 2c + 2d = 18\\ 
+							\color{blue}\boxed{2}&: 2c + 3d = 22\\
+							\color{blue}\boxed{2}-\boxed{1}&: d = 4\\
+							\color{blue}\mathrm{sub\ into\ }\boxed{1}&: 2c + 8 = 18 \Rightarrow c = 5
+						\end{align*}\)
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						Important points:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<b style="color:purple;">Labelling your constants</b> (if necessary). It's "obvious" that \(c\) might mean CD rather than DVD, but it's a good habit to get into for when things become less obvious.
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<b style="color:blue;">Labelling your equations</b>. This makes it easy to refer to them (I normally use a circle instead of a square because it's easier to draw, but the important thing is not to just write the number because that is confusing), and it's really easy to see how I got line 3 with these labels.
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col">
+						Example 2 - question 8:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">\(
+						\begin{align*} 
+							\color{blue}\boxed{1}&: 3x+2y=16\\ 
+							\color{blue}\boxed{2}&: 2x-3y=2\\
+							\color{blue}\boxed{3} = 2\times\boxed{1}&: 6x+4y=32\\
+							\color{blue}\boxed{4} = 3\times\boxed{2}&: 6x-9y=6\\
+							\color{blue}\boxed{3}-\boxed{4}&: 13y=26 \Rightarrow y=2\\
+							\color{blue}\mathrm{sub\ into\ }\boxed{1}&: 3x + 4 = 16 \Rightarrow x = 4
+						\end{align*}\)
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col">
+						Example 3 (substitution) - question 13:
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">\(
+						\begin{align*} 
+							\color{blue}\boxed{1}\color{black}:\ &y-3x=3\\ 
+							\color{blue}\boxed{2}\color{black}:\ &x-2\color{red}y\color{black}=4\\
+							\color{blue}\boxed{1}\color{black}:\ &\color{red}y\color{black} = \color{red}3+3x\\
+							\color{blue}\mathrm{sub\ into\ }\boxed{2}\color{black}:\ &x - 2(\color{red}3+3x\color{black}) = 4\\
+							&x - 6 - 6x = 4\\
+							&-5x = 10 \Rightarrow x = -2\\
+							\color{blue}\mathrm{sub\ into\ }\boxed{1}\color{black}:\ &y = 3 + 3(-2) = -3\\
+						\end{align*}\)
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

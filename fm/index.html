@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Further Maths</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+		<style>
+			.matrixdefinitions {
+				color: #adb0ca;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Further Maths
+			<span class="pure navbar-active">Pure</span>
+			<span class="mechanics">Mechanics</span>
+			<span class="statistics">Statistics</span>
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-2 sidebar" id="sidebar-left">
+				<h6>Autumn term</h6>
+				<ul class="pure sidebar-visible">
+					<li id="transformations">Transforming graphs, sketching</li>
+					<li id="trigfunctions">Trigonometric functions</li>
+					<li id="radians">Radians</li>
+					<li id="functions">Functions</li>
+					<li id="trigreciprocal">Trig: reciprocal, inverse</li>
+					<li id="trigaddition">Trig: addition, double angle</li>
+					<li id="trigralpha">Trig: \(R\cos(\theta+\alpha)\), modelling</li>
+					<li id="trapezium">Trapezium rule</li>
+					<li id="iteration">Iteration</li>
+					<li id="newtonraphson">Newton Raphson</li>
+				</ul>
+				<ul class="mechanics">
+					<li id="cubics">Solving cubics</li>
+					<li id="surds">Surds, indices</li>
+					<li id="differentiationintro">Differentiation, applications</li>
+					<li id="integrationintro">Integration and areas</li>
+					<li id="differentiationchain">Differentiation: chain, product, quotient</li>
+					<li id="integrationadv">Integration: reverse chain rule, trig</li>
+					<li id="differentiationparam">Differentiation: implicit, parametric</li>
+					<li id="differentiationsecond">Second order derivatives, rates of change</li>
+				</ul>
+				<ul class="statistics">
+					<li id="coordgeom">Coordinate geometry, circles</li>
+					<li id="inequalities">Inequalities</li>
+					<li id="exponentials">Exponentials, logarithms</li>
+					<li id="expderivatives">e and ln derivatives, graphs</li>
+					<li id="plottinglogs">Plotting log graphs</li>
+					<li id="sequences">Sequences and series</li>
+					<li id="binomial">Binomial expansion</li>
+					<li id="parametric">Parametric equations</li>
+					<li id="partialfractions">Partial fractions</li>
+				</ul>
+				<hr>
+				<h6>Spring term</h6>
+				<ul class="pure sidebar-visible">
+					<li id="complex">Complex numbers</li>
+					<li id="integrationy2">Integration: year 2</li>
+					<li id="volrevolution">Volume of revolution</li>
+					<li id="differentialequations">Differential equations</li>
+					<li id="vectors">Vectors</li>
+				</ul>
+				<ul class="mechanics">
+					<li id="vectorsintro">Vectors</li>
+					<li id="suvat">Suvat, graphs</li>
+					<li id="projectiles">Freefall, projectiles</li>
+					<li id="forces">Forces, pulleys</li>
+					<li id="forcesresolving">Resolving forces, friction</li>
+					<li id="forcesresolving">Slopes</li>
+					<li id="forcesresolving">Applications, connected particles</li>
+					<li id="variableaccleration">Variable acceleration</li>
+					<li id="moments">Moments</li>
+				</ul>
+				<ul class="statistics">
+					<li id="spread">Measures of spread, coding</li>
+					<li id="sampling">Sampling, representation</li>
+					<li id="regressino1">Regression, probability</li>
+					<li id="discrete">Discrete distributions</li>
+					<li id="hyptesting1">Hypothesis testing</li>
+					<li id="regression">Regression</li>
+					<li id="conditional">Conditional probability, normal distribution</li>
+					<li id="normal">Normal approx. to binomial</li>
+					<li id="hyptesting2">Hypothesis testing</li>
+				</ul>
+				<hr>
+				<h6>Summer term</h6>
+				<ul class="pure sidebar-visible">
+					<li id="matrices">Matrices 1</li>
+				</ul>
+				<ul class="mechanics">
+					<li id="induction">Induction</li>
+				</ul>
+				<ul class="statistics">
+					<li id="sums">Sums and series, method of differences</li>
+				</ul>
+				<hr>
+				<h6>After exams</h6>
+				<ul class="pure sidebar-visible">
+					<li id="matrices2">Matrices 2</li>
+				</ul>
+				<ul class="mechanics">
+					<li id="vieta">Vieta's formulae</li>
+				</ul>
+			</div>
+
+			<div class="col-9" id="maincontent">
+				<div class="topics" id="transformations">
+					<h2>Transformations</h2>
+					<ol>
+						<li>Understand and use graphs of functions; sketch curves defined by simple equations including polynomials </li>
+						<li>including horizontal and vertical asymptotes e.g. \(y = \dfrac{2}{x+a}+b\) has asymptotes \(y=b\) and \(x=-a\)</li>
+						<li>Understand and use inverse functions and their graphs</li>
+						<li>Understand the effect of simple transformations on the graph of \(y = f(x)\), including sketching associated graphs: \(y = af(x)\), \(y = f(x) + a\), \(y = f(x + a)\), \(y = f(ax)\) and combinations of these transformations e.g. \(y=-\cos\left(x+\dfrac{\pi}{4}\right)\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=soztinl8ns0" class="video" target="_blank">Transformations (31:31)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigfunctions">
+					<h2>Trigonometric functions</h2>
+					<ol>
+						<li>Understand and use the definitions of sine, cosine and tangent for all arguments; their graphs, symmetries and periodicity</li>
+						<li>Know and use exact values of \(\sin\), \(\cos\) and \(\tan\) for \(0, \dfrac{\pi}{6}, \dfrac{\pi}{4}, \dfrac{\pi}{3}, \dfrac{\pi}{2}, \pi\) and multiples thereof</li>
+						<li>Understand and use \(\tan\theta = \dfrac{\sin\theta}{\cos\theta}\) and \(\sin^2\theta + \cos^2\theta = 1\)</li>
+						<li>Solve simple trigonometric equations in a given interval, including quadratic equations in \(\sin, \cos\) and \(\tan\) and equations involving multiples of the unknown angle</li>
+						<li>Construct proofs involving trigonometric functions and identities</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 10
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=ILRrqghJzdE" class="video" target="_blank">Intro 1/3 (11:03)</a>, <a href="https://www.youtube.com/watch?v=FRQNRr4BfnI" class="video" target="_blank">Intro 2/3 (10:04)</a>, <a href="https://www.youtube.com/watch?v=0JcVsNiyPJ8" class="video" target="_blank">Intro 3/3 (5:52)</a>, <a href="https://www.youtube.com/watch?v=wzHorwUAe7w" class="video" target="_blank">Exact values (10:42)</a>, <a href="https://www.youtube.com/watch?v=0jR_D84fecY" class="video" target="_blank">Solving 1/5 (6:37)</a>, <a href="https://www.youtube.com/watch?v=BRmplQNL954" class="video" target="_blank">Solving 2/5 (6:55)</a>, <a href="https://www.youtube.com/watch?v=Q1fPB835T_E" class="video" target="_blank">Solving 3/5 (7:06)</a>, <a href="https://www.youtube.com/watch?v=pv5-LBki0jM" class="video" target="_blank">Solving 4/5 (8:39)</a>, <a href="https://www.youtube.com/watch?v=_qVwqy1UclE" class="video" target="_blank">Solving 5/5 (8:53)</a>, <a href="https://www.youtube.com/watch?v=wn96zuDRUkM" class="video" target="_blank">Examples 1/4 (4:56)</a>, <a href="https://www.youtube.com/watch?v=AvKvhOrKgwQ" class="video" target="_blank">Examples 2/4 (5:25)</a>, <a href="https://www.youtube.com/watch?v=V3KmymFUThY" class="video" target="_blank">Examples 3/4 (6:17)</a>, <a href="https://www.youtube.com/watch?v=4-2O79zTHQs" class="video" target="_blank">Examples 4/4 (6:46)</a>
+					</div>
+				</div>
+				<div class="topics" id="radians">
+					<h2>Radians</h2>
+					<ol>
+						<li>Work with radian measure, including use for arc length and area of sector</li>
+						<li>Understand and use the standard small angle approximations of sine, cosine and tangent</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 5
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=BVaj--ugjo4" class="video" target="_blank">Intro 1/3 (10:23)</a>, <a href="https://www.youtube.com/watch?v=EZhCDaiTahM" class="video" target="_blank">Intro 2/3 (9:18)</a>, <a href="https://www.youtube.com/watch?v=ZJY5RXJuTOg" class="video" target="_blank">Intro 3/3 (11:42)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Small angle 1/4 (10:40)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Small angle 2/4 (7:45)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Small angle 3/4 (6:03)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Small angle 4/4 (7:33)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Circles (11:55)</a>
+					</div>
+				</div>
+				<div class="topics" id="functions">
+					<h2>Functions</h2>
+					<ol>
+						<li>The modulus of a linear function</li>
+						<li>Understand and use composite functions</li>
+						<li>The notation \(f(x)\) and \(f : x \mapsto\) may be used</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 2
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=RzpnElPDJcA" class="video" target="_blank">Modulus 1/3 (4:48)</a>, <a href="https://www.youtube.com/watch?v=Y-fvb9p1j4s" class="video" target="_blank">Modulus 2/3 (5:11)</a>, <a href="https://www.youtube.com/watch?v=N05LA0_Cx1w" class="video" target="_blank">Modulus 3/3 (4:37)</a>, <a href="https://www.youtube.com/watch?v=eCUSmNMUPQU" class="video" target="_blank">Modulus graphs 1/2 (4:27)</a>, <a href="https://www.youtube.com/watch?v=sTQq-a7pzgY" class="video" target="_blank">Modulus graphs 2/2 (7:25)</a>, <a href="https://www.youtube.com/watch?v=ISrPPDKs7yU" class="video" target="_blank">Modulus: equations 1/4 (10:07)</a>, <a href="https://www.youtube.com/watch?v=juIjg2hdWIM" class="video" target="_blank">Modulus: equations 2/4 (5:51)</a>, <a href="https://www.youtube.com/watch?v=tM5e-ScW4hU" class="video" target="_blank">Modulus: equations 3/4 (10:46)</a>, <a href="https://www.youtube.com/watch?v=nn7MWBpGHik" class="video" target="_blank">Modulus: equations 4/4 (8:40)</a>, <a href="https://www.youtube.com/watch?v=_KUgda3t4kY" class="video" target="_blank">Modulus: inequalities (8:50)</a>, <a href="https://www.youtube.com/watch?v=3njyIOxJxDk" class="video" target="_blank">Modulus: algebra (9:42)</a>, <a href="https://www.youtube.com/watch?v=k5tnlUqF_hM" class="video" target="_blank">Functions: intro 1/2 (10:10)</a>, <a href="https://www.youtube.com/watch?v=dmOVijQv5OE" class="video" target="_blank">Functions: intro 2/2 (6:56)</a>, <a href="https://www.youtube.com/watch?v=i7yA-Tqt6Zs" class="video" target="_blank">Inverse functions 1/4 (9:57)</a>, <a href="https://www.youtube.com/watch?v=Z0FaJ02PSwU" class="video" target="_blank">Inverse functions 2/4 (8:46)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Inverse functions 3/4 (7:00)</a>, <a href="https://www.youtube.com/watch?v=BnaI0YsSV3Q" class="video" target="_blank">Inverse functions 4/4 (6:32)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigreciprocal">
+					<h2>Trigonometry: reciprocal, inverse</h2>
+					<ol>
+						<li>Understand and use the definitions of secant, cosecant and cotangent and of arcsin, arccos and arctan; their relationships to sine, cosine and tangent; understanding of their graphs; their ranges and domains</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 6
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=pJPMCcWDluY" class="video" target="_blank">Reciprocal names (6:08)</a>, <a href="https://www.youtube.com/watch?v=R0RM6FeiD8k" class="video" target="_blank">Reciprocal: graphing (7:46)</a>, <a href="https://www.youtube.com/watch?v=y3LajBcnb7s" class="video" target="_blank">Inverse: intro (10:47)</a>, <a href="https://www.youtube.com/watch?v=3njyIOxJxDk" class="video" target="_blank">Inverse: graphs (18:51)</a>, <a href="https://www.youtube.com/watch?v=xRd5kwufMq0" class="video" target="_blank">Inverse: transformations part 1 (7:52)</a>, <a href="https://www.youtube.com/watch?v=ZWDL4dWZ5QA" class="video" target="_blank">Inverse: transformations part 1 (4:32)</a>
+					</div>
+				</div>
+				<div class="topics" id="trigaddition">
+					<h2>Trigonometry: addition formulae</h2>
+					<ol>
+						<li>Understand and use double angle formulae; use of formulae for \(\sin (A\pm B)\), \(\cos (A\pm B)\),and \(\tan (A\pm B)\), understand geometrical proofs of these formulae</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 7.1 - 7.4
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=zpyPTBgUqkQ" class="video" target="_blank">Part 1 (13:19)</a>, <a href="https://www.youtube.com/watch?v=vnc6vleQQlw" class="video" target="_blank">Part 2 (7:45)</a>, <a href="https://www.youtube.com/watch?v=Af7Jyrzxfy4" class="video" target="_blank">Part 3 (9:20)</a>, <a href="https://www.youtube.com/watch?v=rS1T_b4WZzA" class="video" target="_blank">Good practise for proofs (7:36)</a>, 
+					</div>
+				</div>
+				<div class="topics" id="trigralpha">
+					<h2>Trigonometry: \(r\cos(\theta+\alpha)\)</h2>
+					<ol>
+						<li>Understand and use expressions for \(a\cos\theta + b\sin\theta\) in the equivalent forms of \(r\cos (\theta\pm\alpha)\) or \(r \sin (\theta\pm\alpha)\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 7.5 - 7.6
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=0327HfOaJjE" class="video" target="_blank">Part 1 (9:01)</a>, <a href="https://www.youtube.com/watch?v=TTZqJFrsaU0" class="video" target="_blank">Part 2 (13:01)</a>, <a href="https://www.youtube.com/watch?v=7oa00vyeFFM" class="video" target="_blank">Example (8:58)</a>
+					</div>
+				</div>
+				<div class="topics" id="trapezium">
+					<h2>Trapezium rule</h2>
+					<ol>
+						<li>Understand and use numerical integration of functions, including the use of the trapezium rule and estimating the approximate area under a curve and limits that it must lie between</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 11.9
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=v9WR7mKKLtM" class="video" target="_blank">Visual (8:55)</a>, <a href="https://www.youtube.com/watch?v=Rn9Gr52zhrY" class="video" target="_blank">Examples (12:09)</a>
+					</div>
+				</div>
+				<div class="topics" id="iteration">
+					<h2>Iteration</h2>
+					<ol>
+						<li>Locate roots of \(f(x) = 0\) by considering changes of sign of \(f(x)\) in an interval of \(x\) on which \(f(x)\) is sufficiently well behaved (continuous)</li>
+						<li>Understand how change of sign methods can fail e.g. when the interval is too large sign may not change as there may be an even number of roots, or if the function is not continuous</li>
+						<li>Solve equations approximately using simple iterative methods; be able to draw associated cobweb and staircase diagrams</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 10.1 - 10.2
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=TPYMMgv4ePE" class="video" target="_blank">Locate roots (8:46)</a>, <a href="https://www.youtube.com/watch?v=vgeMsnN0dJ4" class="video" target="_blank">Staircase (12:59)</a>, <a href="https://www.youtube.com/watch?v=VpCctsHjiGM" class="video" target="_blank">Cobweb (10:39)</a>, <a href="https://www.youtube.com/watch?v=uIyZqj4w6WE" class="video" target="_blank">Cobweb and staircase (6:28)</a>
+					</div>
+				</div>
+				<div class="topics" id="newtonraphson">
+					<h2>Newton-Raphson</h2>
+					<ol>
+						<li>Solve equations using the Newton-Raphson method and other recurrence relations of the form \(x_{n+1}=g(x_n)\); understand how such methods can fail</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 10.3 - 10.4
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=j6ikEASjbWE" class="video" target="_blank">Part 1 (13:25)</a>, <a href="https://www.youtube.com/watch?v=K45mV2Mv-Ug" class="video" target="_blank">Part 2 (9:45)</a>
+					</div>
+				</div>
+				<div class="topics" id="complex">
+					<h2>Complex numbers</h2>
+					<ol>
+						<li>Know the meaning of "real part", "imaginary part", "conjugate", "modulus" and "argument" of a complex number</li>
+						<li>Be able to express a complex number \(z\) in either cartesian form or modulus-argument form, and convert between the two forms</li>
+						<li>Understand and be able to use the notation: \(z, z^*, \mathrm{Re}(z), \mathrm{Im}(z), \mathrm{arg}(z), |z|\)</li>
+						<li>Uderstand and be able to use the exponential form of a complex number</li>
+						<li>Be able to carry out basic arithmetic operations on complex numbers in both cartesian and modulus-argument forms</li>
+						<li>Be able to find algebraically the two square roots of a complex number</li>
+						<li>Be able to use and interpret Argand diagrams</li>
+						<li>Understand the geometrical effects of taking the conjugate of a complex number, and adding and subtracting two complex numbers</li>
+						<li>Understand the geometrical effects of multiplying and dividing two complex numbers</li>
+						<li>Know and be able to use Euler’s formula \(e^{i\theta} = \cos\theta + i\sin\theta\)</li>
+						<li>Be able to illustrate equations and inequalities involving complex numbers by means of loci in an Argand diagram</li>
+						<li>Understand and be able to use set notation in the context of loci</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: FM Year 1 book
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=gHUHZXjpwOE" class="video" target="_blank">Intro part 1 (9:10)</a>, <a href="https://www.youtube.com/watch?v=0OHiSZUvn0I" class="video" target="_blank">Intro part 2 (11:12)</a>, <a href="https://www.youtube.com/watch?v=ieOs4RmwXeg" class="video" target="_blank">Arithmetic part 1 (9:52)</a>, <a href="https://www.youtube.com/watch?v=C8-fsf6TBC4" class="video" target="_blank">Arithmetic part 2 (8:54)</a>, <a href="https://www.youtube.com/watch?v=-quFMa04rBc" class="video" target="_blank">Square roots part 1 (4:56)</a>, <a href="https://www.youtube.com/watch?v=V8Q7zMBgp4E" class="video" target="_blank">Square roots part 2 (12:21)</a>, <a href="https://www.youtube.com/watch?v=oVULSYCb7qU" class="video" target="_blank">Mod-Arg form 1/5 (9:03)</a>, <a href="https://www.youtube.com/watch?v=JfJzu1owkKc" class="video" target="_blank">Mod-Arg form 2/5 (8:32)</a>, <a href="https://www.youtube.com/watch?v=FcStabKKvjE" class="video" target="_blank">Mod-Arg form 3/5 (6:43)</a>, <a href="https://www.youtube.com/watch?v=cgAMTAmOgNk" class="video" target="_blank">Mod-Arg form 4/5 (6:12)</a>, <a href="https://www.youtube.com/watch?v=Jp_LVBqU05U" class="video" target="_blank">Mod-Arg form 5/5 (7:56)</a>, <a href="https://www.youtube.com/watch?v=t8rCFYHMfFw" class="video" target="_blank">Multiplying mod-arg 1/2 (8:21)</a>, <a href="https://www.youtube.com/watch?v=roowIhdrYrw" class="video" target="_blank">Multiplying mod-arg 2/2 (6:53)</a>, <a href="https://www.youtube.com/watch?v=F9PYMn0DX6w" class="video" target="_blank">Multiplying mod-arg bonus (9:56)</a>, <a href="https://www.youtube.com/playlist?list=PLnKlbC4ho-u9boU0P4j3aGXNIOsBA1Q-O" class="video" target="_blank">Loci (multiple videos)</a>
+					</div>
+				</div>
+				<div class="topics" id="integrationy2">
+					<h2>Integration</h2>
+					<ol>
+						<li>Carry out simple cases of integration by substitution and by parts; understand these methods as the inverse processes of the chain and product rules respectively</li>
+						<li>Be able to integrate using partial fractions (the denominator may include quadratic factors of the form \(ax^2 + c\) for \(c > 0\), and in which the degree of the numerator may be equal to, or exceed, the degree of the denominator).</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 11
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=1zUsgXiy4HY" class="video" target="_blank">Substitution part 1 (5:49)</a>, <a href="https://www.youtube.com/watch?v=uTmrrSrDRmo" class="video" target="_blank">Substitution part 2 (4:50)</a>, <a href="https://www.youtube.com/watch?v=pUzcfFglfJQ" class="video" target="_blank">Parts part 1 (5:04)</a>, <a href="https://www.youtube.com/watch?v=7t4xB6XZvJo" class="video" target="_blank">Parts part 2 (8:13)</a>, <a href="https://www.youtube.com/watch?v=PqsM4fpyf5Q" class="video" target="_blank">Parts part 3 (9:39)</a>, <a href="https://www.youtube.com/watch?v=r5MIraVUVUA" class="video" target="_blank">Partial fractions (28:10)</a>
+					</div>
+				</div>
+				<div class="topics" id="volrevolution">
+					<h2>Volume of revolution</h2>
+					<ol>
+						<li>Be able to derive formulae for and calculate volumes of solids of revolution.</li>
+						<li>To include solids generated using either coordinate axis as the axis of rotation, and the volume of a solid formed by rotation of a region between two curves.</li>
+						<li>This includes curves defined parametrically.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: FM Year 2 book
+					</div>
+					<div class="learn">
+						Eddie Woo: <a href="https://www.youtube.com/watch?v=qJ7F8G_k1kY" class="video" target="_blank">Part 1 (8:32)</a>,<a href="https://www.youtube.com/watch?v=d0YchQ54CUE" class="video" target="_blank">Part 2 (7:33)</a>,<a href="https://www.youtube.com/watch?v=fjsNIw1tLl4" class="video" target="_blank">Part 3 (9:51)</a>
+					</div>
+				</div>
+				<div class="topics" id="differentialequations">
+					<h2>Differential equations</h2>
+					<ol>
+						<li>Evaluate the analytical solution of simple first order differential equations with separable variables, including finding particular solutions (Students may be asked to sketch members of the family of solution curves)</li>
+						<li>Interpret the solution of a differential equation in the context of solving a problem, including identifying limitations of the solution; includes links to kinematics</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2, Chapter 11.10 - 11.11
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=C7nuJcJriWM" class="video" target="_blank">Separation of variables (10:41)</a>
+					</div>
+				</div>
+				<div class="topics" id="vectors">
+					<h2>Vectors</h2>
+					<ol>
+						<li>Understand and be able to use the equation of a straight line and a plane, in 2D and 3D, in cartesian and vector form</li>
+						<li>Be able to calculate the scalar product and use it both to calculate the angles between vectors and/or lines, and also as a test for perpendicularity</li>
+						<li>Be able to find, where it exists, the point of intersection between two lines</li>
+						<li>Be able to use the vector product to find a vector perpendicular to two given vectors (formula given)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: FM Year 1 book
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=PyPp4QvQY3Q" class="video" target="_blank">Vector equation of line (13:37)</a>, <a href="https://www.youtube.com/watch?v=Tfuu7iSxGIA" class="video" target="_blank">Dot product part 1</a>, <a href="https://www.youtube.com/watch?v=eLMLJkcllBs" class="video" target="_blank">Dot product part 2</a>, <a href="https://www.youtube.com/watch?v=tGYvaabMbYA" class="video" target="_blank">Dot product part 3</a>
+					</div>
+				</div>
+				<div class="topics" id="matrices">
+					<h2>Matrices</h2>
+					<ol>
+						<li>Understand the meaning of <b class="matrixdefinitions" id="conformable">conformable</b>, <b class="matrixdefinitions" id="equal">equal</b>, <b class="matrixdefinitions" id="square">square</b>, <b class="matrixdefinitions" id="rectangular">rectangular</b>, <b class="matrixdefinitions" id="mbyn">m by n</b>, <b class="matrixdefinitions" id="determinant">determinant</b>, <b class="matrixdefinitions" id="zero">zero</b> and <b class="matrixdefinitions" id="null">null</b>, <b class="matrixdefinitions" id="transpose">transpose</b> and <b class="matrixdefinitions" id="identity">identity</b> when applied to matrices
+							<ul>
+								<li>Definitions: <i><span id="matrixdefinitions">Click a word above to see definnitions</span></i></li>
+							</ul>
+						</li>
+						<li>Be able to add, subtract and multiply conformable matrices; multiply a matrix by a scalar</li>
+						<li>Understand that matrix multiplication is associative but not commutative</li>
+						<li>Be able to find and use matrices to represent linear transformations in 2D: reflections in either axis or the line \(y=\pm x\), rotation about the origin, enlargement centred at the origin, stretch or shear parallel to either axis. Understand the terms "object" and "image"</li>
+						<li>Be able to find and use matrices to represent successive transformations, including understanding that the matrix product AB is the transformation B followed by A</li>
+						<li>Be able to use matrices to represent single linear transformations in 3D, confined to: reflection in one of the planes \(x=0,\ y=0,\ z=0\) or rotation about one of the axes. The direction of positive rotation is taken to be anticlockwise when looking towards the origin from the positive side of the axis of rotation</li>
+						<li>Be able to find invariant points and lines for a linear transformation</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: FM Year 1 book
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=kqWCwwyeE6k" class="video" target="_blank">Operations (4:40)</a>, <a href="https://www.youtube.com/watch?v=kYB8IZa5AuE" class="video" target="_blank">Transformations (10:58)</a>, <a href="https://www.youtube.com/watch?v=XkY2DOUCWMU" class="video" target="_blank">Multiple transformations (10:03)</a>, <a href="https://www.youtube.com/watch?v=rHLEWRxRGiM" class="video" target="_blank">3D Transformations (4:45)</a>
+					</div>
+					<div class="learn">
+						Bonus videos: <a href="https://www.youtube.com/watch?v=GxF2hDA9fxg" class="video" target="_blank">Calculator use (2:31)</a>, <a href="https://www.youtube.com/watch?v=OMA2Mwo0aZg" class="video" target="_blank">Matrix multiplication standard method (5:28)</a>, <a href="https://www.youtube.com/watch?v=sYlOjyPyX3g" class="video" target="_blank">Matrix multiplication standard method examples (9:37)</a>
+					</div>
+				</div>
+				<div class="topics" id="matrices2">
+					<h2>Matrices</h2>
+					<ol>
+						<li>Be able to find the determinant of a \(2\times 2\) or \(3\times3\) matrix with and without a calculator (including notation)</li>
+						<li>Know that the determinant of a \(2\times 2\) matrix is the area scale factor of the transformation defined by that matrix, and that the determinant of a \(3\times3\) matrix is the volume scale factor of the transformation defined by that matrix, including the effect on the orientation of the image. (for 3D determinants, learners do not need to understand the geometric interpretation of a change in orientation)</li>
+						<li>Understand and be able to use singular (determinant is 0) and non singular matrices, including the significance of a zero determinant</li>
+						<li>Know and be able to use the result that \(\mathrm{det}(\mathrm{\textbf{AB}}) = \mathrm{det}(\mathrm{\textbf{A}}) \times\mathrm{det}(\mathrm{\textbf{B}})\)</li>
+						<li>Be able to find and use the inverse of a non-singular \(2\times2\) or \(3\times3\) matrix with and without a calculator</li>
+						<li>Understand and use simple properties of inverse matrices e.g. \((\mathrm{\textbf{AB}})^{-1} = \mathrm{\textbf{B}}^{-1}\mathrm{\textbf{A}}^{-1}\)</li>
+						<li>Understand and be able to use the connection between inverse matrices and inverse transformations</li>
+						<li>Be able to solve two or three linear simultaneous equations in two or three variables by the use of an inverse matrix, where a unique solution exists</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: FM Year 1 book
+					</div>
+					<div class="learn">
+						Videos: <a href="https://www.youtube.com/watch?v=Ip3X9LOh2dk" class="video" target="_blank">Determinant (10:02)</a>, <a href="https://www.youtube.com/watch?v=Ip3X9LOh2dk" class="video" target="_blank">Calculate determinant 2 methods (7:17) - first 3 mins for method 1, rest for (easier to remember) method 2</a>, <a href="https://www.youtube.com/watch?v=uQhTuRlWMxw" class="video" target="_blank">Equations as matrices visual (12:08)</a>, <a href="https://www.youtube.com/watch?v=C9_H33HWNkA" class="video" target="_blank">Equations as matrices 1/3 (5:03)</a>, <a href="https://www.youtube.com/watch?v=qa5vxEXIPTs" class="video" target="_blank">Equations as matrices 2/3 (8:22)</a>, <a href="https://www.youtube.com/watch?v=00liWU7_MBM" class="video" target="_blank">Equations as matrices 3/3 (7:26)</a>, <a href="https://www.youtube.com/watch?v=wD-1acVgbmY" class="video" target="_blank">Inverse matrices using row operations 2 by 2 (5:00)</a>, <a href="https://www.youtube.com/watch?v=l1EIBCPv1Vs" class="video" target="_blank">Inverse matrices using row operations 3 by 3 (5:15)</a>
+					</div>
+					<div class="learn">
+						Wiki: <a href="https://en.wikipedia.org/wiki/Elementary_matrix#Elementary_row_operations" class="web" target="_blank">Row operations</a>
+					</div>
+					<div class="learn">
+						Bonus inverse matrix methods (if you prefer to just memorize a method): <a href="https://www.youtube.com/watch?v=01c12NaUQDw" class="video" target="_blank">2 by 2 inverse (2:47)</a>, <a href="https://www.youtube.com/watch?v=YvjkPF6C_LI" class="video" target="_blank">3 by 3 inverse (6:45)</a>
+					</div>
+				</div>
+
+				<div class="topics" id="cubics">
+					<h2>Solving Cubics</h2>
+					<ol>
+						<li> Be able to use the factor theorem to solve or factorise cubic or quartic equations</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: 
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="surds">
+					<h2>Surds, indices</h2>
+					<ol>
+						<li>Understand and use the laws of indices for all rational exponents</li>
+						<li>Use and manipulate surds, including rationalising the denominator</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: 
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="differentiationintro">
+					<h2>Differentiation</h2>
+					<ol>
+						<li>Understand and use the derivative of \(f(x)\) as the gradient of the tangent to the graph of \(y=f(x)\) at a general point; the gradient of the tangent as a limit; interpretation as a rate of change</li>
+						<li>Sketching the gradient function for a given curve</li>
+						<li>Differentiation from first principles for small positive integer powers of \(x\)</li>
+						<li>Differentiate \(x^n\) for rational values of \(n\), and related constant multiples, sums and differences</li>
+						<li>Apply differentiation to find gradients, tangents and normals</li>
+						<li>Identify where functions are increasing or decreasing</li>
+						<li>Maxima, minima, stationary points, points of inflection</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 12
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="integrationintro">
+					<h2>Integration</h2>
+					<ol>
+						<li>Know and use the fundamental theorem of calculus</li>
+						<li>Integrate \(x^n\) and related sums, differences and constant multiples</li>
+						<li>Evaluate definite integrals; use a definite integral to find the area under a curve and the area between two curves</li>
+						<li>Understand and use integration as the limit of a sum</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 13
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="differentiationchain">
+					<h2>Differentiation: chain, product rules</h2>
+					<ol>
+						<li>Differentiate using the product rule, the quotient rule and the chain rule, including problems involving connected rates of change and inverse functions</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapters 9.1-9.6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="integrationadv">
+					<h2>Integration: advanced</h2>
+					<ol>
+						<li>(Integration using reverse chain rule, trig identities)</li>
+						<li>Integrate \(e^{kx}\), \(\dfrac{1}{x}\), \(\sin kx\), \(\cos kx\) and related sums, differences and constant multiples</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapters 11.1 - 11.4
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="differentiationparam">
+					<h2>Differentiation: parametric, implicit</h2>
+					<ol>
+						<li>Differentiate simple functions and relations defined implicitly and parametrically</li>
+						<li>Differentiate \(\sin kx\), \(\cos kx\), \(\tan kx\) and related sums, differences and constant multiples</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 9.8
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="differentiationsecond">
+					<h2>Second order derivatives</h2>
+					<ol>
+						<li>Understand and use the second derivative as the rate of change of gradient; connection to convex and concave sections of curves and points of inflection</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 9.9 - 9.10
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="vectorsintro">
+					<h2>Vectors</h2>
+					<ol>
+						<li>Use vectors in 2 and 3 dimensions</li>
+						<li>Calculate the magnitude and direction of a vector and convert between component form and magnitude/direction form</li>
+						<li>Add vectors diagrammatically and perform the algebraic operations of vector addition and multiplication by scalars, and understand their geometrical interpretations</li>
+						<li>Understand and use position vectors; calculate the distance between two points represented by position vectors</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 11, Year 2 Chapter 12
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="suvat">
+					<h2></h2>
+					<ol>
+						<li>Understand and use fundamental quantities and units in the SI system: length, time, mass</li>
+						<li>Understand and use derived quantities and units: velocity, acceleration, force, weight, moment</li>
+						<li>Understand and use the language of kinematics: position, displacement, distance travelled, velocity, speed, acceleration</li>
+						<li>Understand, use and interpret graphs in kinematics for motion in a straight line: displacement-time and interpretation of gradient, velocity-time and interpretation of gradient and area under the graph</li>
+						<li>Understand, use an derive the formulae for constant acceleration for motion in a straight line, and in 2 dimensions using vectors</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 2, Chapter 6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="projectiles">
+					<h2>Projectiles</h2>
+					<ol>
+						<li>Model motion under gravity in a vertical plane using vectors; projectiles</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="forces">
+					<h2>Forces</h2>
+					<ol>
+						<li>Understand the concept of a force; understand and use Newton's first law</li>
+						<li>Understand and use weight and motion in a straight line under gravity; gravitational acceleration, g, and its value in SI units to varying degrees of accuracy (9.8 or 10)</li>
+						<li>Understand and use Newton's second law for motion in a straight line, including situations where forces need to be resolved (restricted to 2 dimensions)</li>
+						<li>Understand and use Newton's third law; equilibrium of forces on a particle and motion in a straight line; application to problems involving smooth pulleys and connected particles; resolving forces in two dimensions; equilibrium of a particle under coplanar forces</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 10.5-10.6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="forcesresolving">
+					<h2>Resolving Forces</h2>
+					<ol>
+						<li>Understand and use addition of forces; resultant forces; dynamics for motion in a plane</li>
+						<li>Understand and use the \(F\leq\mu R\) model for friction; coefficient of friction; motion of a body on a rough surface; limiting friction and statics</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 7
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="variableaccleration">
+					<h2>Variable acceleration</h2>
+					<ol>
+						<li>Use calculus in kinematics for motion in a straight line, and in 2 dimensions using vectors</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 9, Year 2 Chapter 8
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="moments">
+					<h2>Moments</h2>
+					<ol>
+						<li>Understand and use moments in simple static contexts</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 4
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="induction">
+					<h2>Induction</h2>
+					<ol>
+						<li>Be able to construct proofs using mathematical induction, including conjecture followed by proof</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 4
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="vieta">
+					<h2>Vieta's formulae</h2>
+					<ol>
+						<li>Understand and be able to use the relationships between the symmetric functions of the roots of polynomial equations and the coefficients (up to and including quartics)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: ?
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="coordgeom">
+					<h2>Circles</h2>
+					<ol>
+						<li>Understand and use the equation of a straight line, including the forms \(y-y_1 = m(x-x_1)\) and \(ax+by+c=0\)</li>
+						<li>Gradient conditions for two straight lines to be parallel or perpendicular</li>
+						<li>Be able to use straight line models in a variety of contexts</li>
+						<li>Understand and use the coordinate geometry of the circle including using the equation of a circle in the form \((x-a)^2+)y-b)^2 = r^2\)</li>
+						<li>Completing the square to find the centre and radius of a circle; use of the following properties: the angle in a semicircle is a right angle; the perpendicular from the centre to a chord bisects the chord; the radius of a circle at a given point on its circumference is perpendicular to the tangent to the circle at that point</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 5 - 6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="inequalities">
+					<h2>Inequalities</h2>
+					<ol>
+						<li>Solve linear and quadratic ineualities in a single variable and interpret such inequalities graphically, including inequalities with brackets and fractions</li>
+						<li>Express solutions through correct use of "and" and "or", or through set notation</li>
+						<li>Represent linear and quadratic inequalities graphically</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 3
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="exponentials">
+					<h2>Exponentials and logarithms</h2>
+					<ol>
+						<li>Know and use the function \(a^x\) and its graph, where \(a\) is positive, and \(e^x\) and its graph</li>
+						<li>Know that the gradient of \(e^{kx}\) is equal to \(ke^{kx}\) and hence understand why the exponential model is suitable in many applications</li>
+						<li>Know and use the definition of \(\log_ax\) as the inverse of \(a^x\), where \(a\) is positive and \(x\geq 0\)</li>
+						<li>Know and use the function \(\ln x\) as the inverse function of \(e^x\), and its graph</li>
+						<li>Understand and use the laws of logarithms (addition, subtraction, scalar multiplication of logs)</li>
+						<li>Solve equations of the form \(a^x = b\). Students may use the change of base formula</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 14.4 - 14.6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="expderivatives">
+					<h2>Derivatives of \(e\) and \(\ln\)</h2>
+					<ol>
+						<li>Differentiate \(e^{kx}\) and \(a^{kx}\)</li>
+						<li>Understand and use the derivative of \(\ln x\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 14.1 - 14.3, 14.7
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="plottinglogs">
+					<h2>Plotting log graphs</h2>
+					<ol>
+						<li>Use logarithmic graphs to estimate parameters in relationships of the form \(y = ax^n\) and \(y = kb^x\)</li>
+						<li>Understand and use exponential growth and decay; use in modelling; consideration of limitations and refinements of exponential models. Students may be asked to find the constants used in the model. They need to be familiar with terms such as initial, meaning when \(t=0\). They may need to explore the behaviour for large values of \(t\) or to consider whether the range of values predicted is appropriate. Consideration of a second improved model may be required.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 14.8
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="sequences">
+					<h2>Sequences and series</h2>
+					<ol>
+						<li>Work with sequences including those given by a formula for the nth term and those generated by a simple relation of the form \(x_{n+1} = f(x_n)\)</li>
+						<li>Increasing sequences, decreasing sequences, periodic sequences</li>
+						<li>Understand and use sigma notation for sums of series</li>
+						<li>Understand and work with arithmetic sequences and series, including the formulae for nth term and the sum to n terms. The proof for the sum formula should be known including the formula for the sum of the first n natural numbers.</li>
+						<li>Understand and work with geometric sequences and series, including the formulae for the nth term and the sum of a finite geometric series; the sum to infinity of a convergent geometric series, including the use of \(|r|<1\); modulus notation. The proof fof the sum formula should be known.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 3
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="binomial">
+					<h2>Binomial Expansion</h2>
+					<ol>
+						<li>Understand and use the binomial expansion of \((a+bx)^n\) for positive integer \(n\); the notations \(n!\) and \(^nC_r\), link to binomial proabilities. Use of Pascal's triangle.</li>
+						<li>Extend to any rational \(n\), including its use for approximation; be aware that the expansion is valid for \(\left|\dfrac{bx}{a}\right| < 1\) (proof not required)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 1 Chapter 8, Year 2 Chapter 4
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="parametric">
+					<h2>Parametric equations</h2>
+					<ol>
+						<li>Understand and use the parametric equations of curves and conversion between Cartesian and parametric forms. Students should pay particular attention to the domain of the parameter \(t\) as a specific section of the curve may be described.</li>
+						<li>Use parametric equations in modelling in a variety of contexts.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 8
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="partialfractions">
+					<h2></h2>
+					<ol>
+						<li>Decompose rational functions into partial fractions (denominators not more complicated than squared linear terms and with no more than 3 terms, numerators constant or linear)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Year 2 Chapter 1
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="spread">
+					<h2>Location and spread</h2>
+					<ol>
+						<li>Interpret measures of central tendency (mean, median, mode) and variation (variance, standard deviation, range, interpercentile ranges). Use of linear interpolation to calculate percentiles from grouped data is expected.</li>
+						<li>Be able to calculate standard deviation, including from summary statistics</li>
+						<li>Recognise and interpret possible outliers in data sets and statistical diagrams. Any rule needed to identify outliers will be specified.</li>
+						<li>Be able to clean data, including dealing with missing data, errors and outliers</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 2
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="sampling">
+					<h2>Sampling</h2>
+					<ol>
+						<li>Understand and use the terms "population" and "sample"</li>
+						<li>Use samples to make informal inferences about the population</li>
+						<li>Understand and use sampling techniques (simple random, stratified, systematic, quota, opportunity)</li>
+						<li>Select or critique sampling techniques in the context of solving a statistical problem, including understanding that different samples can lead to different conclusions about the population</li>
+						<li>Interpret diagrams for single variable data (histograms, frequency polygons, box and whisker and outliers, cumulative frequency), including understanding that area in a histogram represents frequency</li>
+						<li>Select or critique data presentation techniques in the context of a statistical problem</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 1, 3
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="regression1">
+					<h2>Regression</h2>
+					<ol>
+						<li>Interpret scatter diagrams and regression lines for bivariate data, including recognition of scatter diagrams which include distinct sections of the population. Students should be familiar with the terms explanatory and response variables.</li>
+						<li>Use of interpolation and the dangers of extrapolation. Variables other than \(x\) and \(y\) may be used. Change of variable may be required e.g. using logarithms</li>
+						<li>Understand informal interpretation of correlation ("positive", "negative", "zero", "strong", "weak") and that correlation does not equal causation</li>
+						<li>Understand and use mutually exclusive and independent events when calculating probabilities. Venn/tree diagrams may be used. Set notation to describe events may be used.</li>
+						<li>Link to discrete and continuous distributions. Students should understand that area under the curve represents probability in the case of a continuous distribution.</li>
+						<li>Understand and use conditional probability, including the use of tree/venn diagrams and two-way tables</li>
+						<li>Modelling with probability, including critiquing assumptions (e.g. a coin is fair) and the likely effect of more realistic assumptions</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 4 - 5
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="discrete">
+					<h2>Discrete distributions</h2>
+					<ol>
+						<li>Understand and use simple, discrete probability distributions (calculation of mean and variance of discrete random variables is excluded), including the discrete uniform and binomial distribution; calculate probabilities using the binomial distribution; the notation \(X \sim B(n,p)\) may be used</li>
+						<li>Connect diagrams (histograms etc) to probability distributions</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 6
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="hyptesting1">
+					<h2>Hypothesis Testing</h2>
+					<ol>
+						<li>Understand and apply the language of statistical hypothesis testing, developed through a binomial model: null hypothesis, alternative hypothesis, significance level, test statistic, 1 tail test, 2 tail test, critical value, critical region, acceptance region, p value;</li>
+						<li>Conduct a statistical hypothesis test for the proportion in the binomial distribution and interpret the results in context</li>
+						<li>Understand that a sample is being used to make an inference about a population and appreciate that the significance level is the probability of incorrectly rejecting the null hypothesis</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 1 Chapter 7
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="regression2">
+					<h2>Regression</h2>
+					<ol>
+						<li>extend to correlation coefficients as measures of how close data points lie to a straight line (students should know that the product moment correlation coefficient \(r\) satisfies \(|r|\leq 1\) and that a value of \(r=\pm1\) means the data points all lie on a straight line)</li>
+						<li>Be able to interpret a given correlation coefficient using a given p value or critical value. Students will be expected to calculate a value of \(r\) using their calculator but use of the formula is not required</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 2 Chapter 1
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="conditional">
+					<h2>Conditional Probability</h2>
+					<ol>
+						<li>Understand and use the conditional probability formula \(\mathrm{P}(A|B) = \dfrac{\mathrm{P}(A\cap B)}{\mathrm{P}(B)}\)</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 2 Chapter 2
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="normal">
+					<h2>Normal Distribution</h2>
+					<ol>
+						<li>Understand and use the normal distribution; find probabilities using the normal distribution; the notation \(X \sim N(\mu,\sigma^2)\) may be used. Knowledge of the shape and symmetry is required. Knowledge of the probability density function is not required. Derivation of the mean, variance, and cumulative distribution function is not required</li>
+						<li>Link to histograms, mean, standard deviation, points of inflection at \(x=\mu\pm\sigma\), and the binomial distribution (when \(n\) is large and \(p\) is close to 0.5)</li>
+						<li>Select an appropriate probability distribution for a context with appropriate reasoning, including recognising when the binomial or normal model may not be appropriate</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Applied Year 2 Chapter 3
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="hyptesting2">
+					<h2>Hypothesis testing</h2>
+					<ol>
+						<li>Conduct a statistical hypothesis test for the mean of a normal distribution with know, given or assumed variance and interpret the results in context</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: n/a
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+
+				<div class="topics" id="sums">
+					<h2>Sums of series</h2>
+					<ol>
+						<li>Understand and be able to use formulae for the sums of integers, squares and cubes and use these to sum related series.</li>
+						<li>Understand and be able to use the method of differences to find the sum of a (finite or infinite) series, including use of partial fractions.</li>
+					</ol>
+					<hr>
+					<div class="learn textbook">
+						Textbook: Further Maths Year 2 Chapter 2
+					</div>
+					<div class="learn">
+						Videos: <a href="" class="video" target="_blank"></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1 sidebar" id="sidebar-right">
+				<h6>Useful links</h6>
+				<ul>
+					<li>
+						<a href="#" id="dfm">
+							Coming soon
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="footer">
+			
+		</div>
+		<script src="../scripts.js"></script>
+		<!--Script to change sidebar lists-->
+		<script>
+			$(".pageheader span").click(function() {
+				$('.navbar-active').removeClass('navbar-active');
+				$('.sidebar-visible').removeClass('sidebar-visible');
+				$('ul.' + $(this).attr('class')).addClass('sidebar-visible');
+				$(this).addClass('navbar-active');
+			});
+		</script>
+		<!--Script to change matrix definitions-->
+		<script>
+			$("#conformable").click(function() {
+				$("#matrixdefinitions").html('Two matrices are conformable if they are the right sizes for an operation e.g. two matrices are conformable for addition if they have the same number of rows and columns.');
+			});
+			$("#equal").click(function() {
+				$("#matrixdefinitions").html('Two matrices are equal if they are the same size and every entry is the same');
+			});
+			$("#square").click(function() {
+				$("#matrixdefinitions").html('A matrix is square if it has the same number of rows as columns');
+			});
+			$("#rectangular").click(function() {
+				$("#matrixdefinitions").html('A matrix is rectangular if it has different numbers of rows as columns');
+			});
+			$("#mbyn").click(function() {
+				$("#matrixdefinitions").html('An m by n matrix has m rows and n columns');
+			});
+			$("#determinant").click(function() {
+				$("#matrixdefinitions").html('We will cover this at a later date');
+			});
+			$("#zero").click(function() {
+				$("#matrixdefinitions").html('A zero matrix only has 0s as its entries');
+			});
+			$("#null").click(function() {
+				$("#matrixdefinitions").html('See: zero matrix');
+			});
+			$("#transpose").click(function() {
+				$("#matrixdefinitions").html('We will cover this at a later date');
+			});
+			$("#identity").click(function() {
+				$("#matrixdefinitions").html('An identity matrix has 0s everywhere except down the top left-bottom right diagonal, which is filled with 1s');
+			});
+		</script>
+	</body>
+
+</html>

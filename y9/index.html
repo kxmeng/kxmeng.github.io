@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	<!-- MathJax script (x2) -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<!-- Title of the page -->
+	<title>Year 9 Maths</title>
+	<!-- Inline CSS for highlighting certain parts -->
+	<style>
+		.ab {
+			color: teal;
+		}
+		.a {
+			color: green;
+		}
+	</style>
+	<!-- Inline CSS for the page; the colour theme of this page is rgb 144,169,89 -->
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Cormorant Garamond';
+		}
+		body {
+			position: relative;
+			height: 100%;
+		}
+		.sidebar-active {
+			color: white !important;
+			background-color: rgba(144,169,89,1) !important;
+		}
+		.hide {
+			height: 0;
+			overflow: hidden;
+		}
+		.zero-opacity{
+			opacity: 0; !important;
+		}
+		#container {
+			display: grid;
+			width: 100vw;
+			height: 100vh;
+			margin: 0;
+			grid-template: 
+				"nav nav nav" 6vh
+				"left mid right" 70vh
+				"left sub right" 20vh
+				"foot foot foot" 4vh
+				/ 1.3fr 5.7fr 1fr;
+		}
+		#nav {
+			grid-area: nav;
+			color: white;
+			font-size: 3vh;
+			padding-left: 1vw;
+			padding-top: 1vh;
+			background-color: rgba(144,169,89,1);
+		}
+		#left {
+			grid-area: left;
+			border-right: solid 1px rgba(144,169,89,1);
+			overflow: scroll;
+			padding: 1em;
+		}
+		#left h6 {
+			font-size: 1.5em;
+			margin: 0;
+		}
+		#left ul {
+			list-style-type: none;
+			font-size: 1em;
+			padding: 0;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+		}
+		#left ul li {
+			padding-top: 0.2em;
+			padding-bottom: 0.2em;
+			padding-left: 1em;
+			cursor: pointer;
+		}
+		#left ul li:hover {
+			background: rgba(144,169,89,0.3);
+			transition: background ease 0.2s;
+		}
+		#left hr {
+			border: none;
+			border-top: solid 1px rgba(144,169,89,0.2);
+			margin-right: 10px;
+		}
+		#right {
+			grid-area: right;
+			border-left: solid 1px rgba(144,169,89,1);
+			padding: 1em;
+		}
+		#mid {
+			grid-area: mid;
+			overflow: scroll;
+			transition: all 0.2s;
+			width: 100%;
+		}
+		#mid ul {
+			list-style-type: none;
+			padding-left: 1em;
+		}
+		#mid li {
+			padding-bottom: 0.5em;
+		}
+		#mid div {
+			padding-left: 1em;
+		}
+		#sub {
+			grid-area: sub;
+			padding: 1em;
+			border-top: solid 1px rgba(144,169,89,1);
+		}
+		#resources {
+			transition: all 0.2s;
+		}
+		#resources ul {
+			list-style-type: none;
+		}
+		#resources a {
+			text-decoration: none;
+			color: rgba(144,169,89,1);
+		}
+		#resources a:hover {
+			color: rgba(144,169,89,0.5);
+		}
+		#foot {
+			grid-area: foot;
+			background-color: rgba(144,169,89,1);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="nav">Year 9</div>
+		<div id="left">
+			<h6>Autumn</h6>
+			<ul>
+				<li id="ratio">Ratio</li>
+				<li id="indices">Indices</li>
+				<li id="algebra1">Algebra 1</li>
+				<li id="transformations">Transformations</li>
+				<li id="trigonometry">Trigonometry</li>
+				<li id="functions">Functions</li>
+				<li id="lines">Straight Lines</li>
+			</ul>
+			<hr />
+			<h6>Spring</h6>
+			<ul>
+				<li id="graphs">Graphs</li>
+				<li id="number">Number</li>
+				<li id="algebra2">Algebra 2</li>
+				<li id="polygons">Polygons</li>
+				<li id="travel">Travel</li>
+				<li id="constructions">Constructions</li>
+				<li id="equations">Equations</li>
+				<li id="bounds">Bounds</li>
+			</ul>
+			<hr>
+			<h6>Summer</h6>
+			<ul>
+				<li id="simultaneous">Simultaneous Equationns</li>
+				<li id="inequalities">Inequalities</li>
+				<li id="sequences">Sequences</li>
+				<li id="statistics">Statistics</li>
+			</ul>
+		</div>
+		<div id="right" class="test">Useful links - coming soon</div>
+		<div id="mid">
+			<div style="padding-top: 1em;">
+				Select a topic on the left
+			</div>
+		</div>
+		<div id="sub">
+			Resources
+			<div id="resources"></div>
+		</div>
+		<div id="foot"></div>
+	</div>
+	<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+	<div class="hide">
+		<div class="topics" id="ratio-content">
+			<h2>Ratio and Proportion (1.5 weeks)</h2>
+			<ul>
+				<li>Concept of a Ratio</li>
+				<li>Simplifying Ratios - including avoiding decimals and fractions or units in ratios</li>
+				<li>Sharing in a given ratio</li>
+				<li>If \(a:b\) and \(b:c\), find \(a:c\)</li>
+				<li>Direct & Inverse proportion - no constants of proportionality</li>
+				<li>Simple inverse problems that can be solved using rates and manhours e.g. workers painting walls, taps filling baths</li>
+				<li>Tree diagrams for “Half of books are about chess, two thirds of those are russian. What fraction of books are russian chess books?” etc.</li>
+			</ul>
+		</div>
+		<div class="topics" id="ratio-resources">
+			<ul>
+				<li><a href="https://drive.google.com/open?id=17eD_5DazNK4ppnPQcl37SWdKWlAFEEG3">Pink paint ratio demo</a></li>
+				<li><a href="https://drive.google.com/open?id=16HnrXcKIZfpBZ8VgjDXRyZiF_-bXlQwTa3JtjIMzV_U">Ratio challenge questions</a></li>
+				<li><a href="https://drive.google.com/open?id=1kc4drXp78fdnXIvP8BX8LIVbYVwcj1V3r732Sj6J22Q">Mixed ratio proportion questions</a></li>
+			</ul>
+		</div>
+		<div class="topics" id="indices-content">
+			<h2>Indices (1.5 weeks)</h2>
+			<ul>
+				<li>Basic Indices laws - multiplication, division, \((a^b)^c\)</li>
+				<li>Meaning of fractional and negative indices with justification</li>
+				<li>Evaluation of numbers in index form including fractions to negative indices</li>
+				<li>Writing numbers in index form</li>
+				<li>Solving index equations - including changing the base if time</li>
+			</ul>
+		</div>
+		<div class="topics" id="indices-resources">
+			<ul>
+				<li><a href="https://drive.google.com/open?id=1F9QrNHLs_wa4ccpmbM5nSxwoqN1YWFMz">Index laws review</a></li>
+				<li><a href="https://drive.google.com/open?id=0B2tjNtbx-N_DWGVsZGZnV1lQeHc">Mixed questions</a></li>
+				<li><a href="https://drive.google.com/open?id=1A9N9Q-yJ06Pnprggmg3Ve4b9D_0HUXP-">Indices questions</a></li>
+				<li><a href="https://drive.google.com/open?id=1uZpHk0M-IiapOgz3jswA0Wcd6aWmLcds">C1 Solomon indices</a></li>
+			</ul>
+		</div>
+		<div class="topics" id="algebra1-content">
+			<h2>Equivalent Expressions (1.5 weeks)</h2>
+			<ul>
+				<li>Recap algebra basics - collecting like terms, multiplying one and two brackets</li>
+				<li>Identities vs. Equations</li>
+				<li>Factorisation into two (or more) brackets - include examples of the form \(pq + 2q + 4p + 8\) and difference of two squares, more able groups can think about non integer factorisations</li>
+			</ul>
+		</div>
+		<div class="topics" id="algebra1-resources">
+			<ul>
+				<li><a href="https://drive.google.com/drive/u/0/folders/1cdTvCLa9lqJRP6USxY3gEu_fS_17eobR">Algebra review</a></li>
+				<li><a href="https://drive.google.com/open?id=1_7Xx2ZXCYsC0DD4NrULECOZ9vrWv3XQ4">Equating coefficients</a></li>
+				<li><a href="https://drive.google.com/open?id=1sp3ioxzxldZAEmjpTTErVB6CVJRH2hrr">Factorising single brackets</a></li>
+				<li><a href="https://drive.google.com/open?id=1yUP9yyVdnd74tYW5cGC2jUIj9EcNx-GK">Harder linear factorisation</a></li>
+				<li><a href="https://drive.google.com/open?id=1nZ2VsKjBgQzyaTo5sS5CJbpoetBAdA6b">Factorising quadratics</a></li>
+				<li><a href="https://drive.google.com/drive/u/0/folders/1-9exiocKDvlyzXZSdIa7ThYdGTRhsNaT">Quadratic factorising - anagrams</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		// Function to navigate with sidebar items
+		let clickFunction = function() {
+			// If there is already a highlighted sidebar item, unhighlight it
+			if(document.getElementsByClassName("sidebar-active").length !== 0) {
+				document.getElementsByClassName("sidebar-active")[0].classList.remove("sidebar-active");
+			};
+			// Highlight this sidebar item
+			this.classList.add("sidebar-active");
+			// Find the main area on the page
+			let mainDiv = document.getElementById("mid");
+			let subDiv = document.getElementById("resources");
+			// Set height main div to transparent for a nice transition
+			mainDiv.classList.add("zero-opacity");
+			subDiv.classList.add("zero-opacity");
+			// Find the div of the selected topic and make a copy of it (appendChild will move the div otherwise and it will get deleted later)
+			let newDiv = document.getElementById(this.id + "-content").cloneNode(true);
+			let newSubDiv = document.getElementById(this.id + "-resources").cloneNode(true);
+			// Delay the rest of this so there is time to see the transition
+			setTimeout(function(){
+				// Delete everything in the main body of the page
+				mainDiv.innerHTML = "";
+				subDiv.innerHTML = "";
+				// Add the topic div to the main body of the page
+				mainDiv.appendChild(newDiv);
+				subDiv.appendChild(newSubDiv);
+				// Stop the main area from being transparent
+				mainDiv.classList.remove("zero-opacity");
+				subDiv.classList.remove("zero-opacity");
+			},250);
+		};
+
+		// Function to add click listener to sidebar items so they do stuff when clicked
+		let leftSideBarList = document.getElementById("left").querySelectorAll("li");
+		for (let i=0; i < leftSideBarList.length; i++) {
+			leftSideBarList[i].onclick = clickFunction;
+		}
+	</script>
+</body>
+</html>

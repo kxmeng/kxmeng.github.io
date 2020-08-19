@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Matrices solutions</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Further Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-9" id="maincontent">
+				<div class="topics active-topic" id="testsolutions">
+					<h2>Matrices Solutions</h2>
+					<ul>
+						<li>2.4 Q12<br>
+							\(\textbf{D}^2 = \begin{pmatrix}a^2-b^2 & -2ab\\2ab & a^2-b^2\end{pmatrix}\)<br>
+							Comparing the matrices: \(a^2-b^2 = \dfrac{1}{\sqrt{2}} \Rightarrow a^2 = \dfrac{\sqrt{2}}{2} + b^2\) and \(2ab = \dfrac{1}{\sqrt{2}} \Rightarrow a^2b^2 = \dfrac{1}{8} \Rightarrow a^2 = \dfrac{1}{8b^2}\)<br>
+							\(\dfrac{\sqrt{2}}{2} + b^2 = \dfrac{1}{8b^2} \Rightarrow 8b^4 + 4\sqrt{2}b^2 - 1 = 0\)<br>
+							Quadratic formula: \(b^2 = \dfrac{-4\sqrt{2}\pm\sqrt{32 + 32}}{16} = \dfrac{-4\sqrt{2}+8}{16} = \dfrac{2-\sqrt{2}}{4}\) (\(b\) is a real number so \(b^2 > 0\)) and \(a^2 = \dfrac{4}{8(2-\sqrt{2})} = \dfrac{4(2+\sqrt{2})}{8(4-2)} = \dfrac{2+\sqrt{2}}{4}\)<br>
+							\(a = \dfrac{\sqrt{2+\sqrt{2}}}{2},\ b = \dfrac{\sqrt{2-\sqrt{2}}}{2}\)<br>
+							Note that you can rationalise the denominator in the solution for \(b\) given in the textbook.
+						</li>
+						<hr>
+						<li>2.5 Q7<br>
+							If line \(y=mx\) is invariant, every point that satisfies this equation must be unchanged by the transformation. These points have coordinates \((x, y) = (x, mx)\), and we can apply the transformation to these points:<br>
+							\(\begin{pmatrix}\dfrac{1-m^2}{1+m^2}&&\dfrac{2m}{1+m^2}\\\dfrac{2m}{1+m^2}&&\dfrac{m^2-1}{1+m^2}\end{pmatrix}\renewcommand\arraystretch{2}\begin{pmatrix}\color{white}\dfrac{1^2}{1^2}\color{black}x\color{white}\dfrac{1^2}{1^2}\color{black}\\\color{white}\dfrac{1^2}{1^2}\color{black}mx\color{white}\dfrac{1^2}{1^2}\color{black}\end{pmatrix} = \begin{pmatrix}\dfrac{x(1-m^2)+2m^2x}{1+m^2}\\\dfrac{2mx + mx(m^2-1)}{1+m^2}\end{pmatrix} = \begin{pmatrix}\dfrac{x(1-m^2+2m^2)}{1+m^2}\\\dfrac{mx(2 + m^2-1)}{1+m^2}\end{pmatrix} = \begin{pmatrix}\dfrac{x(1+m^2)}{1+m^2}\\\dfrac{mx(1 + m^2)}{1+m^2}\end{pmatrix}\)<br>
+						</li>
+						<hr>
+						<li>6.2 Q8<br>
+							Singular, so \(|M| = 0 = ad - bc \Rightarrow \color{red}ad = bc\)<br>
+							\(\begin{pmatrix}a&b\\c&d\end{pmatrix}^2 = \begin{pmatrix}aa+\color{red}bc&ab+bd\\ac+cd&\color{red}bc\color{black}+dd\end{pmatrix} = \begin{pmatrix}aa+\color{red}ad&ab+bd\\ac+cd&\color{red}ad\color{black}+dd\end{pmatrix} = \begin{pmatrix}a(a+d)&b(a+d)\\c(a+d)&d(a+d)\end{pmatrix} = (a+d)M\)<br>
+							\(M^3 = \color{green}M^2\color{black}M = \color{green}(a+d)M\color{black}M = (a+d)M^2 = (a+d)(a+d)M = (a+d)^2M\)<br>
+							An extra multiplication by \(M\) increases the power of the scalar factor by 1, so \(M^n = (a+d)^{n-1}M\)
+						</li>
+						<hr>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

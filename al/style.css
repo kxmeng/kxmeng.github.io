@@ -1,0 +1,121 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	padding-bottom: 30px; /* Margin bottom by footer height */
+	padding-top: 50px; /* Margin top by header  height*/
+	height: 100vh; /* 100% view port height */
+	font-family: 'Cormorant Garamond';
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 30px; /* Set the fixed height of the footer here */
+	line-height: 30px; /* Vertically center the text there */
+	background-color: #6494aa;
+}
+
+.pageheader {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px; /* Set the fixed height of the footer here */
+	line-height: 50px; /* Vertically center the text there */
+	background-color: #6494aa;
+	font-family: 'Merienda';
+	padding-left: 20px;
+	color: white;
+}
+
+.pageheader span {
+	padding: 5px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Cormorant Garamond';
+	cursor: pointer;
+}
+
+.pageheader span.navbar-active {
+	background-color: #2f4a57;
+}
+
+.sidebar ul {
+	list-style-type: none;
+	padding-left: 10px;
+	font-size: 0.8em;
+	cursor: pointer;
+}
+
+.sidebar li {
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+.sidebar li.sidebar-active {
+	background-color: #6494aa !important;
+	color: white;
+}
+
+.sidebar {
+	height: calc(100vh - 80px);
+	padding-top: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overflow: -moz-scrollbars-none;
+	-ms-overflow-style: none; /* hide sidebar scrollbar on ie, edge */
+}
+
+.sidebar::-webkit-scrollbar{
+	display: none; /* hide sidebar scrollbar on webkit */
+}
+
+#sidebar-left {
+	border-right: 1px solid #6494aa;
+}
+
+#sidebar-left ul {
+	height: 0;
+	overflow: hidden;
+	margin-bottom: 0;
+}
+
+#sidebar-left ul.sidebar-visible {
+	height: auto;
+}
+
+#sidebar-left li:hover {
+	background: #b1c9d4;
+	transition: background ease 0.2s;
+}
+
+#sidebar-right {
+	border-left: 1px solid #6494aa;
+}
+
+#sidebar-right a {
+	color: #6494aa;
+}
+
+#maincontent {
+	padding-top: 20px;
+}
+
+.topics {
+	height: 0px;
+	overflow: hidden;
+}
+
+.topics.active-topic {
+	height: 100%;
+	transition: height ease 1s;
+}
+
+.learn a {
+	text-decoration: none;
+	color: #6494aa;
+}
