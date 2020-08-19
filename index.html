@@ -35,6 +35,12 @@
 
 		<script defer>
 			const swup = new Swup();
+			let clickable = function() {
+				for (let i=0; i < document.getElementById("left").querySelectorAll("li").length; i++) {
+					document.getElementById("left").querySelectorAll("li")[i].onclick = clickFunction;
+				}
+			};
+			swup.on("contentReplaced", clickable);
 		</script>
 	</body>
 </html>
