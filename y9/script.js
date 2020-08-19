@@ -30,6 +30,7 @@ let clickFunction = function() {
 };
 
 // Function to add click listener to sidebar items so they do stuff when clicked
-for (let i=0; i < document.getElementById("left").querySelectorAll("li").length; i++) {
-	document.getElementById("left").querySelectorAll("li")[i].onclick = clickFunction;
+let leftSideBarList = document.getElementById("left").querySelectorAll("li");
+for (let i=0; i < leftSideBarList.length; i++) {
+	leftSideBarList[i].onclick = clickFunction;
 }
