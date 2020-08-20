@@ -44,6 +44,14 @@
 					}
 				}]
 			});
+			barba.hooks.after((data) => {
+				let js = document.querySelectorAll('#main script');
+				if(js != null){
+					js.forEach((item) => {
+						eval(item.innerHTML);
+					});
+				}
+			});
 		</script>
 	</body>
 </html>
