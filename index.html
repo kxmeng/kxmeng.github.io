@@ -55,6 +55,14 @@
 		<main data-barba="container" data-barba-namespace="home" id="home">
 			<div id="y8-page" class="leave-transition page-leave-left"></div>
 			<div id="y8-page" class="leave-transition page-leave-right"></div>
+			<div id="y9-page" class="leave-transition page-leave-left"></div>
+			<div id="y9-page" class="leave-transition page-leave-right"></div>
+			<div id="y10-page" class="leave-transition page-leave-left"></div>
+			<div id="y10-page" class="leave-transition page-leave-right"></div>
+			<div id="al-page" class="leave-transition page-leave-left"></div>
+			<div id="al-page" class="leave-transition page-leave-right"></div>
+			<div id="fm-page" class="leave-transition page-leave-left"></div>
+			<div id="fm-page" class="leave-transition page-leave-right"></div>
 			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
 			<h1>This is home page tests</h1>
 			<a href="./y8/index.html" id="y8-page">Year 8</a>
@@ -77,7 +85,7 @@
 						},
 						leave(data) {
 							return gsap.to(".leave-transition", {
-								width: "60%", color: "var(--main-color)", duration: 0.4, zIndex: 2,
+								width: "60%", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
@@ -89,8 +97,8 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#y9-page", {
-								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132, 1)", duration: 0.4, borderRadius: "1000%",
+							return gsap.to(".leave-transition", {
+								width: "60%", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
@@ -102,8 +110,8 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#y10-page", {
-								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(246, 162, 78, 1)", duration: 0.4, borderRadius: "1000%",
+							return gsap.to(".leave-transition", {
+								width: "60%", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
@@ -115,8 +123,8 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#al-page", {
-								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(104, 134, 197, 1)", duration: 0.4, borderRadius: "1000%",
+							return gsap.to(".leave-transition", {
+								width: "60%", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
@@ -128,8 +136,8 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#fm-page", {
-								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(114, 106, 149, 1)", duration: 0.4, borderRadius: "1000%",
+							return gsap.to(".leave-transition", {
+								width: "60%", duration: 0.4, zIndex: 2,
 							});
 						}
 					}
