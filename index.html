@@ -13,6 +13,10 @@
 		<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 		<script type="text/javascript">
 			let clickFunction = function(item) {
+				// If first time this is used, run MathJax
+				if(document.getElementsByClassName("sidebar-active").length == 0) {
+					MathJax.typeset();
+				};
 				// If there is already a highlighted sidebar item, unhighlight it
 				if(document.getElementsByClassName("sidebar-active").length !== 0) {
 					document.getElementsByClassName("sidebar-active")[0].classList.remove("sidebar-active");
@@ -40,8 +44,6 @@
 					mainDiv.classList.remove("zero-opacity");
 					subDiv.classList.remove("zero-opacity");
 				},250);
-				// Run MathJax
-				MathJax.typeset();
 			};
 		</script>
 		<link rel="stylesheet" type="text/css" href="/y9/style.css" />
