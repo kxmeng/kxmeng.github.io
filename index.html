@@ -53,8 +53,7 @@
 
 		<main data-barba="container" data-barba-namespace="home" id="home">
 			<!-- Divs for animations when leaving the page -->
-			<div id="y8-page" class="leave-transition page-leave-left"></div>
-			<div id="y8-page" class="leave-transition page-leave-right"></div>
+			<div id="y8-page" class="leave-transition page-leave-right" style="left: 20vw;"></div>
 			<div id="y9-page" class="leave-transition page-leave-left"></div>
 			<div id="y9-page" class="leave-transition page-leave-right"></div>
 			<div id="y10-page" class="leave-transition page-leave-left"></div>
@@ -85,7 +84,7 @@
 						},
 						leave(data) {
 							return gsap.to("#y8-page.leave-transition", {
-								width: "60%", duration: 0.4, zIndex: 2,
+								width: "80%", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
