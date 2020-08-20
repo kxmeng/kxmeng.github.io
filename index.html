@@ -46,20 +46,20 @@
 				},250);
 			};
 		</script>
-		<link rel="stylesheet" type="text/css" href="/y9/style.css" />
+		<link rel="stylesheet" type="text/css" href="./style.css" />
 		
 	</head>
 	<body data-barba="wrapper">
 		<!-- put here content that will not change between your pages, like <header> or <nav> -->
 
-		<main data-barba="container" data-barba-namespace="home">
+		<main data-barba="container" data-barba-namespace="home" id="home">
 			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
-			<h1>This is home page</h1>
-			<a href="./y8/index.html" id="y8-link" style="background-color: rgba(144,169,89,1); height: 5em; width: 5em;">Year 8</a>
-			<a href="./y9/index.html" id="y9-link" style="background-color: rgba(144,169,89,1); height: 5em; width: 5em;">Year 9</a>
-			<a href="./y10/index.html" id="y10-link" style="background-color: rgba(144,169,89,1); height: 5em; width: 5em;">Year 10</a>
-			<a href="./al/index.html" id="al-link" style="background-color: rgba(144,169,89,1); height: 5em; width: 5em;">L6 Single</a>
-			<a href="./fm/index.html" id="fm-link" style="background-color: rgba(144,169,89,1); height: 5em; width: 5em;">L6 Further</a>
+			<h1>This is home page tests</h1>
+			<a href="./y8/index.html" id="y8-page">Year 8</a>
+			<a href="./y9/index.html" id="y9-page">Year 9</a>
+			<a href="./y10/index.html" id="y10-page">Year 10</a>
+			<a href="./al/index.html" id="al-page">L6 Single</a>
+			<a href="./fm/index.html" id="fm-page">L6 Further</a>
 		</main>
 
 		<!-- put here content that will not change between your pages, like <footer> -->
@@ -69,7 +69,7 @@
 					name: 'opacity-transition',
 					leave(data) {
 						return gsap.to("#y9-link", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(144,169,89,1)", duration: 0.4, borderRadius: "1000%",
+							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
 						});
 					},
 					enter(data) {

@@ -1,3 +1,41 @@
+#y8-page {
+	--main-color: rgba(182, 205, 200,1);
+	--transparent-color: rgba(182, 205, 200,0.3);
+	--highlight-color: rgba(182, 205, 200,0.7);
+}
+
+#y9-page {
+	--main-color: rgba(220, 118, 132,1);
+	--transparent-color: rgba(220, 118, 132,0.3);
+	--highlight-color: rgba(220, 118, 132,0.7);
+}
+
+#y10-page {
+	--main-color: rgba(246, 162, 78,1);
+	--transparent-color: rgba(246, 162, 78,0.3);
+	--highlight-color: rgba(246, 162, 78,0.7);
+}
+
+#al-page {
+	--main-color: rgba(45, 127, 157,1);
+	--transparent-color: rgba(45, 127, 157,0.3);
+	--highlight-color: rgba(45, 127, 157,0.7);
+}
+
+#fm-page {
+	--main-color: rgba(59, 59, 70,1);
+	--transparent-color: rgba(59, 59, 70,0.3);
+	--highlight-color: rgba(59, 59, 70,0.7);
+}
+
+#home a {
+	background-color: black;
+}
+
+#home {
+	background-color: black;
+}
+
 @keyframes pageLoad {
 	0% {
 		height: 60%;
@@ -27,7 +65,7 @@
 
 @keyframes snapInBottom {
 	0% {
-		transform: translateY(100%);
+		transform: translateY(40vh);
 	}
 	100% {
 		transform: translateY(0);
@@ -36,7 +74,7 @@
 
 @keyframes snapInTop {
 	0% {
-		transform: translateY(-20vh);
+		transform: translateY(-40vh);
 	}
 	100% {
 		transform: translateY(0);
@@ -47,7 +85,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: rgba(144,169,89,1);
+	background-color: var(--main-color);
 	height: 60%;
 	width: 100%;
 	/* duration, timing-function, delay, iteration-count, name */
@@ -59,7 +97,7 @@
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(144,169,89,1);
+	background-color: var(--main-color);
 	height: 60%;
 	width: 100%;
 	animation: 0.3s ease-out 0s 1 pageLoad;
@@ -92,7 +130,7 @@ body {
 }
 .sidebar-active {
 	color: white !important;
-	background-color: rgba(144,169,89,1) !important;
+	background-color: var(--main-color) !important;
 }
 .hide {
 	height: 0;
@@ -119,12 +157,12 @@ body {
 	font-size: 3vh;
 	padding-left: 1vw;
 	padding-top: 1vh;
-	background-color: rgba(144,169,89,1);
+	background-color: var(--main-color);
 	z-index: 6;
 }
 #left {
 	grid-area: left;
-	border-right: solid 1px rgba(144,169,89,1);
+	border-right: solid 1px var(--main-color);
 	overflow: scroll;
 	padding: 1em;
 	animation: 0.3s linear 0.5s 1 snapInLeft;
@@ -148,17 +186,17 @@ body {
 	cursor: pointer;
 }
 #left ul li:hover {
-	background: rgba(144,169,89,0.3);
+	background: var(--transparent-color);
 	transition: background ease 0.2s;
 }
 #left hr {
 	border: none;
-	border-top: solid 1px rgba(144,169,89,0.2);
+	border-top: solid 1px var(--transparent-color);
 	margin-right: 10px;
 }
 #right {
 	grid-area: right;
-	border-left: solid 1px rgba(144,169,89,1);
+	border-left: solid 1px var(--main-color);
 	padding: 1em;
 	animation: 0.3s linear 0.5s 1 snapInRight;
 	z-index: -1;
@@ -186,7 +224,7 @@ body {
 #sub {
 	grid-area: sub;
 	padding: 1em;
-	border-top: solid 1px rgba(144,169,89,1);
+	border-top: solid 1px var(--main-color);
 	animation: 0.3s linear 0.5s 1 snapInBottom;
 	animation-fill-mode: both;
 	max-height: 20vh;
@@ -200,12 +238,13 @@ body {
 }
 #resources a {
 	text-decoration: none;
-	color: rgba(144,169,89,1);
+	color: var(--main-color);
 }
 #resources a:hover {
-	color: rgba(144,169,89,0.5);
+	color: var(--highlight-color);
 }
 #foot {
 	grid-area: foot;
-	background-color: rgba(144,169,89,1);
+	background-color: var(--main-color);
+	z-index: 6;
 }
