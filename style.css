@@ -36,7 +36,7 @@
 
 #all-links a {
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	width: 20vw;
 	height: 100vh;
 	color: white;
