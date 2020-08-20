@@ -12,13 +12,13 @@
 		<!-- GSAP js library for animations --> 
 		<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
 		<script type="text/javascript">
-			let clickFunction = function() {
+			let clickFunction = function(item) {
 				// If there is already a highlighted sidebar item, unhighlight it
 				if(document.getElementsByClassName("sidebar-active").length !== 0) {
 					document.getElementsByClassName("sidebar-active")[0].classList.remove("sidebar-active");
 				};
 				// Highlight this sidebar item
-				this.classList.add("sidebar-active");
+				item.classList.add("sidebar-active");
 				// Find the main area on the page
 				let mainDiv = document.getElementById("mid");
 				let subDiv = document.getElementById("resources");
@@ -26,8 +26,8 @@
 				mainDiv.classList.add("zero-opacity");
 				subDiv.classList.add("zero-opacity");
 				// Find the div of the selected topic and make a copy of it (appendChild will move the div otherwise and it will get deleted later)
-				let newDiv = document.getElementById(this.id + "-content").cloneNode(true);
-				let newSubDiv = document.getElementById(this.id + "-resources").cloneNode(true);
+				let newDiv = document.getElementById(item.id + "-content").cloneNode(true);
+				let newSubDiv = document.getElementById(item.id + "-resources").cloneNode(true);
 				// Delay the rest of this so there is time to see the transition
 				setTimeout(function(){
 					// Delete everything in the main body of the page
