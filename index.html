@@ -29,20 +29,9 @@
 
 		<!-- put here content that will not change between your pages, like <footer> -->
 		<script type="text/javascript">
-			barba.init({
-				transitions: [{
-					name: 'opacity-transition',
-					leave(data) {
-						return gsap.to(data.current.container, {
-							opacity: 0, duration 1, y: -50
-						});
-					},
-					enter(data) {
-						return gsap.from(data.next.container, {
-							opacity: 0
-						});
-					}
-				}]
+			
+			gsap.from("main", {
+				opacity: 0, duration 1
 			});
 		</script>
 	</body>
