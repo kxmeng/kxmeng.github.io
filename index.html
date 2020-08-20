@@ -20,7 +20,7 @@
 			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
 			<h1>This is home page</h1>
 			<p>
-				test 1 page
+				home page
 			</p>
 			<a href="./test1.html">Go to test1</a>
 			<a href="./test2.html">Go to test2</a>
@@ -29,7 +29,21 @@
 
 		<!-- put here content that will not change between your pages, like <footer> -->
 		<script type="text/javascript">
-			
+			barba.init({
+				transitions: [{
+					name: 'opacity-transition',
+					leave(data) {
+						return gsap.to("main", {
+							opacity: 0, duration 1, y: -50
+						});
+					},
+					enter(data) {
+						return gsap.from("main", {
+							opacity: 0
+						});
+					}
+				}]
+			});
 			gsap.from("main", {
 				opacity: 0, duration 1
 			});
