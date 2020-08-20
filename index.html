@@ -22,9 +22,9 @@
 			<p>
 				test 1 page
 			</p>
-			<a href="/test1.html">Go to test1</a>
-			<a href="/test2.html">Go to test2</a>
-			<a href="/y9/index.html">Go to y9</a>
+			<a href="./test1.html">Go to test1</a>
+			<a href="./test2.html">Go to test2</a>
+			<a href="./y9/index.html">Go to y9</a>
 		</main>
 
 		<!-- put here content that will not change between your pages, like <footer> -->
@@ -34,7 +34,7 @@
 					name: 'opacity-transition',
 					leave(data) {
 						return gsap.to(data.current.container, {
-							opacity: 0
+							opacity: 0, duration 1, y: -50
 						});
 					},
 					enter(data) {
