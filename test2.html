@@ -2,31 +2,32 @@
 <html>
 	<head>
 		<title>KXM Maths</title>
-		<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
-		<style>
-			.transition-fade {
-				transition: 1s;
-				opacity: 1;
-			}
-
-			html.is-animating .transition-fade {
-				opacity: 0;
-			}
-		</style>
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+		<!-- MathJax script (x2) -->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://unpkg.com/@barba/core"></script>
+		<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
+		<script defer src="/y9/script.js"></script>
+		<link rel="stylesheet" type="text/css" href="/y9/style.css" />
+		
 	</head>
+	<body data-barba="wrapper">
+		<!-- put here content that will not change between your pages, like <header> or <nav> -->
 
-	<body>
-		<main id="swup" class="transition-fade">
-				<h1>This is test 2 page</h1>
-				<p>
-					test 2 page
-				</p>
-				<a href="/index.html">Go to home</a>
-				<a href="/test1.html">Go to test1</a>
+		<main data-barba="container" data-barba-namespace="home">
+			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
+			<h1>This is home page</h1>
+			<p>
+				test 1 page
+			</p>
+			<a href="/index.html">Go to home</a>
+			<a href="/test1.html">Go to test1</a>
+			<a href="/y9/index.html">Go to y9</a>
 		</main>
 
-		<script defer>
-			const swup = new Swup();
-		</script>
+		<!-- put here content that will not change between your pages, like <footer> -->
+		
 	</body>
 </html>
