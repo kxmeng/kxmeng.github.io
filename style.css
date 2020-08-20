@@ -1,39 +1,40 @@
 #y8-page {
-	--main-color: rgba(182, 205, 200,1);
-	--transparent-color: rgba(182, 205, 200,0.3);
-	--highlight-color: rgba(182, 205, 200,0.7);
+	--main-color: rgba(127, 231, 204, 1);
+	--transparent-color: rgba(127, 231, 204, 0.3);
+	--highlight-color: rgba(127, 231, 204, 0.7);
 }
 
 #y9-page {
-	--main-color: rgba(220, 118, 132,1);
-	--transparent-color: rgba(220, 118, 132,0.3);
-	--highlight-color: rgba(220, 118, 132,0.7);
+	--main-color: rgba(220, 118, 132, 1);
+	--transparent-color: rgba(220, 118, 132, 0.3);
+	--highlight-color: rgba(220, 118, 132, 0.7);
 }
 
 #y10-page {
-	--main-color: rgba(246, 162, 78,1);
-	--transparent-color: rgba(246, 162, 78,0.3);
-	--highlight-color: rgba(246, 162, 78,0.7);
+	--main-color: rgba(246, 162, 78, 1);
+	--transparent-color: rgba(246, 162, 78, 0.3);
+	--highlight-color: rgba(246, 162, 78, 0.7);
 }
 
 #al-page {
-	--main-color: rgba(104, 134, 197,1);
-	--transparent-color: rgba(104, 134, 197,0.3);
-	--highlight-color: rgba(104, 134, 197,0.7);
+	--main-color: rgba(104, 134, 197, 1);
+	--transparent-color: rgba(104, 134, 197, 0.3);
+	--highlight-color: rgba(104, 134, 197, 0.7);
 }
 
 #fm-page {
-	--main-color: rgba(114, 106, 149,1);
-	--transparent-color: rgba(114, 106, 149,0.3);
-	--highlight-color: rgba(114, 106, 149,0.7);
+	--main-color: rgba(114, 106, 149, 1);
+	--transparent-color: rgba(114, 106, 149, 0.3);
+	--highlight-color: rgba(114, 106, 149, 0.7);
 }
 
 #home a {
 	color: white;
 	background-color: var(--main-color);
+	font-size: 5em;
 	text-decoration: none;
 	margin: 1vh;
-	padding: 1vh;
+	padding: 5vh;
 }
 
 @keyframes pageLoad {
