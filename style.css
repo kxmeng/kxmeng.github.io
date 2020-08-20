@@ -36,9 +36,7 @@
 
 #all-links a {
 	text-align: center;
-	position: absolute;
-	width: 20vw;
-	height: 100vh;
+	width: 30vw;
 	color: white;
 	background-color: var(--main-color);
 	font-size: 3vw;
@@ -87,6 +85,7 @@
 .page-leave-left {
 	position: fixed;
 	top: 0;
+	left: 0;
 	background-color: var(--main-color);
 	height: 100vh;
 	width: 0;
@@ -94,6 +93,7 @@
 .page-leave-right {
 	position: fixed;
 	top: 0;
+	right: 0;
 	background-color: var(--main-color);
 	height: 100vh;
 	width: 0;
