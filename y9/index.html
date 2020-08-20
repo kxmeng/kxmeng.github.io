@@ -11,114 +11,116 @@
 	<!-- Inline CSS for highlighting certain parts -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<body>
-	<!-- Animation for page loading -->
-	<div id="page-load-top"></div>
-	<div id="page-load-bottom"></div>
-	<!-- Actual content -->
-	<div id="container">
-		<div id="nav">Year 9</div>
-		<div id="left">
-			<h6>Autumn</h6>
-			<ul>
-				<li id="ratio">Ratio</li>
-				<li id="indices">Indices</li>
-				<li id="algebra1">Algebra 1</li>
-				<li id="transformations">Transformations</li>
-				<li id="trigonometry">Trigonometry</li>
-				<li id="functions">Functions</li>
-				<li id="lines">Straight Lines</li>
-			</ul>
-			<hr />
-			<h6>Spring</h6>
-			<ul>
-				<li id="graphs">Graphs</li>
-				<li id="number">Number</li>
-				<li id="algebra2">Algebra 2</li>
-				<li id="polygons">Polygons</li>
-				<li id="travel">Travel</li>
-				<li id="constructions">Constructions</li>
-				<li id="equations">Equations</li>
-				<li id="bounds">Bounds</li>
-			</ul>
-			<hr>
-			<h6>Summer</h6>
-			<ul>
-				<li id="simultaneous">Simultaneous Equations</li>
-				<li id="inequalities">Inequalities</li>
-				<li id="sequences">Sequences</li>
-				<li id="statistics">Statistics</li>
-			</ul>
-		</div>
-		<div id="right" class="test">Useful links - coming soon</div>
-		<div id="mid">
-			<div>
-				<h2>Year 9 Maths Scheme of Work</h2>
-				<p>Select a topic on the left</p>
+<body data-barba="wrapper">
+	<div data-barba="container" data-barba-namespace="y9-page">
+		<!-- Animation for page loading -->
+		<div id="page-load-top"></div>
+		<div id="page-load-bottom"></div>
+		<!-- Actual content -->
+		<div id="container">
+			<div id="nav">Year 9</div>
+			<div id="left">
+				<h6>Autumn</h6>
+				<ul>
+					<li id="ratio">Ratio</li>
+					<li id="indices">Indices</li>
+					<li id="algebra1">Algebra 1</li>
+					<li id="transformations">Transformations</li>
+					<li id="trigonometry">Trigonometry</li>
+					<li id="functions">Functions</li>
+					<li id="lines">Straight Lines</li>
+				</ul>
+				<hr />
+				<h6>Spring</h6>
+				<ul>
+					<li id="graphs">Graphs</li>
+					<li id="number">Number</li>
+					<li id="algebra2">Algebra 2</li>
+					<li id="polygons">Polygons</li>
+					<li id="travel">Travel</li>
+					<li id="constructions">Constructions</li>
+					<li id="equations">Equations</li>
+					<li id="bounds">Bounds</li>
+				</ul>
+				<hr>
+				<h6>Summer</h6>
+				<ul>
+					<li id="simultaneous">Simultaneous Equations</li>
+					<li id="inequalities">Inequalities</li>
+					<li id="sequences">Sequences</li>
+					<li id="statistics">Statistics</li>
+				</ul>
 			</div>
+			<div id="right" class="test">Useful links - coming soon</div>
+			<div id="mid">
+				<div>
+					<h2>Year 9 Maths Scheme of Work</h2>
+					<p>Select a topic on the left</p>
+				</div>
+			</div>
+			<div id="sub">
+				Resources
+				<div id="resources"></div>
+			</div>
+			<div id="foot"></div>
 		</div>
-		<div id="sub">
-			Resources
-			<div id="resources"></div>
-		</div>
-		<div id="foot"></div>
-	</div>
-	<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
-	<div class="hide">
-		<div class="topics" id="ratio-content">
-			<h2>Ratio and Proportion (1.5 weeks)</h2>
-			<ul>
-				<li>Concept of a Ratio</li>
-				<li>Simplifying Ratios - including avoiding decimals and fractions or units in ratios</li>
-				<li>Sharing in a given ratio</li>
-				<li>If \(a:b\) and \(b:c\), find \(a:c\)</li>
-				<li>Direct & Inverse proportion - no constants of proportionality</li>
-				<li>Simple inverse problems that can be solved using rates and manhours e.g. workers painting walls, taps filling baths</li>
-				<li>Tree diagrams for “Half of books are about chess, two thirds of those are russian. What fraction of books are russian chess books?” etc.</li>
-			</ul>
-		</div>
-		<div class="topics" id="ratio-resources">
-			<ul>
-				<li><a href="https://drive.google.com/open?id=17eD_5DazNK4ppnPQcl37SWdKWlAFEEG3">Pink paint ratio demo</a></li>
-				<li><a href="https://drive.google.com/open?id=16HnrXcKIZfpBZ8VgjDXRyZiF_-bXlQwTa3JtjIMzV_U">Ratio challenge questions</a></li>
-				<li><a href="https://drive.google.com/open?id=1kc4drXp78fdnXIvP8BX8LIVbYVwcj1V3r732Sj6J22Q">Mixed ratio proportion questions</a></li>
-			</ul>
-		</div>
-		<div class="topics" id="indices-content">
-			<h2>Indices (1.5 weeks)</h2>
-			<ul>
-				<li>Basic Indices laws - multiplication, division, \((a^b)^c\)</li>
-				<li>Meaning of fractional and negative indices with justification</li>
-				<li>Evaluation of numbers in index form including fractions to negative indices</li>
-				<li>Writing numbers in index form</li>
-				<li>Solving index equations - including changing the base if time</li>
-			</ul>
-		</div>
-		<div class="topics" id="indices-resources">
-			<ul>
-				<li><a href="https://drive.google.com/open?id=1F9QrNHLs_wa4ccpmbM5nSxwoqN1YWFMz">Index laws review</a></li>
-				<li><a href="https://drive.google.com/open?id=0B2tjNtbx-N_DWGVsZGZnV1lQeHc">Mixed questions</a></li>
-				<li><a href="https://drive.google.com/open?id=1A9N9Q-yJ06Pnprggmg3Ve4b9D_0HUXP-">Indices questions</a></li>
-				<li><a href="https://drive.google.com/open?id=1uZpHk0M-IiapOgz3jswA0Wcd6aWmLcds">C1 Solomon indices</a></li>
-			</ul>
-		</div>
-		<div class="topics" id="algebra1-content">
-			<h2>Equivalent Expressions (1.5 weeks)</h2>
-			<ul>
-				<li>Recap algebra basics - collecting like terms, multiplying one and two brackets</li>
-				<li>Identities vs. Equations</li>
-				<li>Factorisation into two (or more) brackets - include examples of the form \(pq + 2q + 4p + 8\) and difference of two squares, more able groups can think about non integer factorisations</li>
-			</ul>
-		</div>
-		<div class="topics" id="algebra1-resources">
-			<ul>
-				<li><a href="https://drive.google.com/drive/u/0/folders/1cdTvCLa9lqJRP6USxY3gEu_fS_17eobR">Algebra review</a></li>
-				<li><a href="https://drive.google.com/open?id=1_7Xx2ZXCYsC0DD4NrULECOZ9vrWv3XQ4">Equating coefficients</a></li>
-				<li><a href="https://drive.google.com/open?id=1sp3ioxzxldZAEmjpTTErVB6CVJRH2hrr">Factorising single brackets</a></li>
-				<li><a href="https://drive.google.com/open?id=1yUP9yyVdnd74tYW5cGC2jUIj9EcNx-GK">Harder linear factorisation</a></li>
-				<li><a href="https://drive.google.com/open?id=1nZ2VsKjBgQzyaTo5sS5CJbpoetBAdA6b">Factorising quadratics</a></li>
-				<li><a href="https://drive.google.com/drive/u/0/folders/1-9exiocKDvlyzXZSdIa7ThYdGTRhsNaT">Quadratic factorising - anagrams</a></li>
-			</ul>
+		<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+		<div class="hide">
+			<div class="topics" id="ratio-content">
+				<h2>Ratio and Proportion (1.5 weeks)</h2>
+				<ul>
+					<li>Concept of a Ratio</li>
+					<li>Simplifying Ratios - including avoiding decimals and fractions or units in ratios</li>
+					<li>Sharing in a given ratio</li>
+					<li>If \(a:b\) and \(b:c\), find \(a:c\)</li>
+					<li>Direct & Inverse proportion - no constants of proportionality</li>
+					<li>Simple inverse problems that can be solved using rates and manhours e.g. workers painting walls, taps filling baths</li>
+					<li>Tree diagrams for “Half of books are about chess, two thirds of those are russian. What fraction of books are russian chess books?” etc.</li>
+				</ul>
+			</div>
+			<div class="topics" id="ratio-resources">
+				<ul>
+					<li><a href="https://drive.google.com/open?id=17eD_5DazNK4ppnPQcl37SWdKWlAFEEG3">Pink paint ratio demo</a></li>
+					<li><a href="https://drive.google.com/open?id=16HnrXcKIZfpBZ8VgjDXRyZiF_-bXlQwTa3JtjIMzV_U">Ratio challenge questions</a></li>
+					<li><a href="https://drive.google.com/open?id=1kc4drXp78fdnXIvP8BX8LIVbYVwcj1V3r732Sj6J22Q">Mixed ratio proportion questions</a></li>
+				</ul>
+			</div>
+			<div class="topics" id="indices-content">
+				<h2>Indices (1.5 weeks)</h2>
+				<ul>
+					<li>Basic Indices laws - multiplication, division, \((a^b)^c\)</li>
+					<li>Meaning of fractional and negative indices with justification</li>
+					<li>Evaluation of numbers in index form including fractions to negative indices</li>
+					<li>Writing numbers in index form</li>
+					<li>Solving index equations - including changing the base if time</li>
+				</ul>
+			</div>
+			<div class="topics" id="indices-resources">
+				<ul>
+					<li><a href="https://drive.google.com/open?id=1F9QrNHLs_wa4ccpmbM5nSxwoqN1YWFMz">Index laws review</a></li>
+					<li><a href="https://drive.google.com/open?id=0B2tjNtbx-N_DWGVsZGZnV1lQeHc">Mixed questions</a></li>
+					<li><a href="https://drive.google.com/open?id=1A9N9Q-yJ06Pnprggmg3Ve4b9D_0HUXP-">Indices questions</a></li>
+					<li><a href="https://drive.google.com/open?id=1uZpHk0M-IiapOgz3jswA0Wcd6aWmLcds">C1 Solomon indices</a></li>
+				</ul>
+			</div>
+			<div class="topics" id="algebra1-content">
+				<h2>Equivalent Expressions (1.5 weeks)</h2>
+				<ul>
+					<li>Recap algebra basics - collecting like terms, multiplying one and two brackets</li>
+					<li>Identities vs. Equations</li>
+					<li>Factorisation into two (or more) brackets - include examples of the form \(pq + 2q + 4p + 8\) and difference of two squares, more able groups can think about non integer factorisations</li>
+				</ul>
+			</div>
+			<div class="topics" id="algebra1-resources">
+				<ul>
+					<li><a href="https://drive.google.com/drive/u/0/folders/1cdTvCLa9lqJRP6USxY3gEu_fS_17eobR">Algebra review</a></li>
+					<li><a href="https://drive.google.com/open?id=1_7Xx2ZXCYsC0DD4NrULECOZ9vrWv3XQ4">Equating coefficients</a></li>
+					<li><a href="https://drive.google.com/open?id=1sp3ioxzxldZAEmjpTTErVB6CVJRH2hrr">Factorising single brackets</a></li>
+					<li><a href="https://drive.google.com/open?id=1yUP9yyVdnd74tYW5cGC2jUIj9EcNx-GK">Harder linear factorisation</a></li>
+					<li><a href="https://drive.google.com/open?id=1nZ2VsKjBgQzyaTo5sS5CJbpoetBAdA6b">Factorising quadratics</a></li>
+					<li><a href="https://drive.google.com/drive/u/0/folders/1-9exiocKDvlyzXZSdIa7ThYdGTRhsNaT">Quadratic factorising - anagrams</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<script src="script.js"></script>
