@@ -82,7 +82,7 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#y8-page.leave-transition", {
+							gsap.to("#y8-page.leave-transition", {
 								width: "80%", duration: 0.4, zIndex: 2,
 							});
 						}
