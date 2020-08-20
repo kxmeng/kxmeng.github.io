@@ -50,9 +50,9 @@
 		
 	</head>
 	<body data-barba="wrapper">
-		<!-- put here content that will not change between your pages, like <header> or <nav> -->
 
 		<main data-barba="container" data-barba-namespace="home" id="home">
+			<!-- Divs for animations when leaving the page -->
 			<div id="y8-page" class="leave-transition page-leave-left"></div>
 			<div id="y8-page" class="leave-transition page-leave-right"></div>
 			<div id="y9-page" class="leave-transition page-leave-left"></div>
@@ -63,16 +63,16 @@
 			<div id="al-page" class="leave-transition page-leave-right"></div>
 			<div id="fm-page" class="leave-transition page-leave-left"></div>
 			<div id="fm-page" class="leave-transition page-leave-right"></div>
-			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
-			<h1>This is home page tests</h1>
-			<a href="./y8/index.html" id="y8-page">Year 8</a>
-			<a href="./y9/index.html" id="y9-page">Year 9</a>
-			<a href="./y10/index.html" id="y10-page">Year 10</a>
-			<a href="./al/index.html" id="al-page">Single</a>
-			<a href="./fm/index.html" id="fm-page">Further</a>
+			<!-- Links to rest of the site -->
+			<div id="all-links">
+				<a href="./y8/index.html" id="y8-page">Year 8</a>
+				<a href="./y9/index.html" id="y9-page">Year 9</a>
+				<a href="./y10/index.html" id="y10-page">Year 10</a>
+				<a href="./al/index.html" id="al-page">Single</a>
+				<a href="./fm/index.html" id="fm-page">Further</a>
+			</div>
 		</main>
 
-		<!-- put here content that will not change between your pages, like <footer> -->
 		<script type="text/javascript">
 			barba.init({
 				transitions: [
