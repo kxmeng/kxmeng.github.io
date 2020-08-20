@@ -84,7 +84,6 @@
 
 .page-leave-left {
 	position: fixed;
-	float: left;
 	top: 0;
 	left: 0;
 	background-color: var(--main-color);
