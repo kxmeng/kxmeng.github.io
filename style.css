@@ -83,7 +83,7 @@
 }
 
 .page-leave-left {
-	position: relative;
+	position: fixed;
 	float: left;
 	top: 0;
 	left: 0;
@@ -93,8 +93,7 @@
 }
 
 .page-leave-right {
-	position: relative;
-	float: right;
+	position: fixed;
 	top: 0;
 	right: 0;
 	background-color: var(--main-color);
