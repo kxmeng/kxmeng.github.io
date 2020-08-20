@@ -53,8 +53,8 @@
 		<!-- put here content that will not change between your pages, like <header> or <nav> -->
 
 		<main data-barba="container" data-barba-namespace="home" id="home">
-			<div id="page-leave-top" class="leave-transition"></div>
-			<div id="page-leave-bottom" class="leave-transition"></div>
+			<div id="y8-page" class="leave-transition page-leave-left"></div>
+			<div id="y8-page" class="leave-transition page-leave-right"></div>
 			<!-- put here the content you wish to change between your pages, like your main content <h1> or <p> -->
 			<h1>This is home page tests</h1>
 			<a href="./y8/index.html" id="y8-page">Year 8</a>
@@ -77,7 +77,7 @@
 						},
 						leave(data) {
 							return gsap.to(".leave-transition", {
-								height: "60%", color: "rgba(127, 231, 204, 1)", duration: 0.4, zIndex: 2,
+								width: "60%", color: "var(--main-color)", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
