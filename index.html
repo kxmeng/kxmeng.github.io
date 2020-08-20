@@ -53,13 +53,11 @@
 
 		<main data-barba="container" data-barba-namespace="home" id="home">
 			<!-- Divs for animations when leaving the page -->
-			<div id="y8-page" class="leave-transition page-leave-right" style="left: 20vw;"></div>
+			<div id="y8-page" class="leave-transition" style="left: 10vw;"></div>
 			<div id="y9-page" class="leave-transition" style="left: 30vw;"></div>
-			<div id="y10-page" class="leave-transition page-leave-left" style="right: 60vw"></div>
-			<div id="y10-page" class="leave-transition page-leave-right" style="left: 60vw;"></div>
-			<div id="al-page" class="leave-transition page-leave-left" style="right: 40vw"></div>
-			<div id="al-page" class="leave-transition page-leave-right" style="left: 80vw;"></div>
-			<div id="fm-page" class="leave-transition page-leave-left" style="right: 20vw"></div>
+			<div id="y10-page" class="leave-transition" style="left: 50vw;"></div>
+			<div id="al-page" class="leave-transition" style="left: 70vw;"></div>
+			<div id="fm-page" class="leave-transition" style="left: 90vw;"></div>
 			<!-- Links to rest of the site -->
 			<div id="all-links">
 				<a href="./y8/index.html" id="y8-page">Year 8</a>
@@ -82,7 +80,7 @@
 						},
 						leave(data) {
 							return gsap.to("#y8-page.leave-transition", {
-								width: "80%", duration: 0.4, zIndex: 2,
+								width: "100%", duration: 0.4, zIndex: 2, left: 0,
 							});
 						}
 					},
@@ -108,7 +106,7 @@
 						},
 						leave(data) {
 							return gsap.to("#y10-page.leave-transition", {
-								width: "40%", duration: 0.4, zIndex: 2,
+								width: "100%", duration: 0.4, zIndex: 2, left: 0,
 							});
 						}
 					},
@@ -121,7 +119,7 @@
 						},
 						leave(data) {
 							return gsap.to("#al-page.leave-transition", {
-								width: "60%", duration: 0.4, zIndex: 2,
+								width: "100%", duration: 0.4, zIndex: 2, left: 0,
 							});
 						}
 					},
@@ -134,7 +132,7 @@
 						},
 						leave(data) {
 							return gsap.to("#fm-page.leave-transition", {
-								width: "80%", duration: 0.4, zIndex: 2,
+								width: "100%", duration: 0.4, zIndex: 2, left: 0,
 							});
 						}
 					}
