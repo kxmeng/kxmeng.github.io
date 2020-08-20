@@ -6,25 +6,14 @@
 	<!-- MathJax script (x2) -->
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-	<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
-	<script defer src="script.js"></script>
+	<script src="https://unpkg.com/@barba/core"></script>
 	<!-- Title of the page -->
 	<title>Year 9 Maths</title>
 	<!-- Inline CSS for highlighting certain parts -->
 	<link rel="stylesheet" type="text/css" href="style.css" />
-	<style>
-		.transition-fade {
-			transition: 1s;
-			opacity: 1;
-		}
-
-		html.is-animating .transition-fade {
-			opacity: 0;
-		}
-	</style>
 </head>
 <body>
-	<div id="container swup" class="transition-fade">
+	<div id="container">
 		<div id="nav">Year 9</div>
 		<div id="left">
 			<h6>Autumn</h6>
@@ -128,14 +117,6 @@
 			</ul>
 		</div>
 	</div>
-	<script defer>
-		const swup = new Swup();
-		let clickable = function() {
-			for (let i=0; i < document.getElementById("left").querySelectorAll("li").length; i++) {
-				document.getElementById("left").querySelectorAll("li")[i].onclick = clickFunction;
-			}
-		};
-		swup.on("contentReplaced", clickable);
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
