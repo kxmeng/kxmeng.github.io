@@ -9,7 +9,7 @@
 		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<script src="https://unpkg.com/@barba/core"></script>
 		<script src="https://unpkg.com/gsap@latest/dist/gsap.min.js"></script>
-		<script defer src="/y9/script.js"></script>
+		<script src="/y9/script.js"></script>
 		<link rel="stylesheet" type="text/css" href="/y9/style.css" />
 		
 	</head>
@@ -24,7 +24,7 @@
 			</p>
 			<a href="./test1.html">Go to test1</a>
 			<a href="./test2.html">Go to test2</a>
-			<a href="./y9/index.html">Go to y9</a>
+			<a href="./y9/index.html" id="y9-link" style="background-color: rgba(144,169,89,1); position: fixed; height: 5em; width: 5em;">Go to y9</a>
 		</main>
 
 		<!-- put here content that will not change between your pages, like <footer> -->
@@ -33,19 +33,14 @@
 				transitions: [{
 					name: 'opacity-transition',
 					leave(data) {
-						return gsap.to("main", {
-							opacity: 0
+						return gsap.to("#y9-link", {
+							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(144,169,89,1)", duration: 2, borderRadius: "1000%",
 						});
 					},
 					enter(data) {
-						return gsap.from("main", {
-							opacity: 0
-						});
+						
 					}
 				}]
-			});
-			gsap.from("main", {
-				opacity: 0, duration 1
 			});
 		</script>
 	</body>
