@@ -65,38 +65,48 @@
 		<!-- put here content that will not change between your pages, like <footer> -->
 		<script type="text/javascript">
 			barba.init({
-				transitions: [{
-					name: 'y8-transition',
-					leave(data) {
-						return gsap.to("#y9-page", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
-						});
-					},{
-					name: 'y9-transition',
-					leave(data) {
-						return gsap.to("#y9-page", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
-						});
-					},{
-					name: 'y10-transition',
-					leave(data) {
-						return gsap.to("#y9-page", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
-						});
-					},{
-					name: 'al-transition',
-					leave(data) {
-						return gsap.to("#y9-page", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
-						});
-					},{
-					name: 'fm-transition',
-					leave(data) {
-						return gsap.to("#y9-page", {
-							fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
-						});
+				transitions: [
+					{
+						name: 'y8-transition',
+						leave(data) {
+							return gsap.to("#y9-page", {
+								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
+							});
+						}
+					},
+					{
+						name: 'y9-transition',
+						leave(data) {
+							return gsap.to("#y9-page", {
+								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
+							});
+						}
+					},
+					{
+						name: 'y10-transition',
+						leave(data) {
+							return gsap.to("#y9-page", {
+								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
+							});
+						}
+					},
+					{
+						name: 'al-transition',
+						leave(data) {
+							return gsap.to("#y9-page", {
+								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
+							});
+						}
+					},
+					{
+						name: 'fm-transition',
+						leave(data) {
+							return gsap.to("#y9-page", {
+								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(220, 118, 132,1)", duration: 0.4, borderRadius: "1000%",
+							});
+						}
 					}
-				}]
+				]
 			});
 		</script>
 	</body>
