@@ -29,12 +29,6 @@
 				let newDiv = document.getElementById(item.id + "-content").cloneNode(true);
 				let newSubDiv = document.getElementById(item.id + "-resources").cloneNode(true);
 				// Run MathJax
-				(function () {
-					var script = document.createElement("script");
-					script.type = "text/javascript";
-					script.src  = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
-					document.getElementsByTagName("head")[0].appendChild(script);
-				})();
 				MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 				// Delay the rest of this so there is time to see the transition
 				setTimeout(function(){
