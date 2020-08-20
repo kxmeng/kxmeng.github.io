@@ -68,6 +68,11 @@
 				transitions: [
 					{
 						name: 'y8-transition',
+						to: {
+							namespace: [
+								"y8-page"
+							]
+						},
 						leave(data) {
 							return gsap.to("#y8-page", {
 								fontSize: "5em", position: "fixed", left: "-500%", top: "-500", height: "1000%", width: "1000%", color: "rgba(127, 231, 204, 1)", duration: 0.4, borderRadius: "1000%",
