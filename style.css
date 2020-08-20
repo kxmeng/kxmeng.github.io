@@ -105,6 +105,23 @@
 	animation-fill-mode: forwards;
 }
 
+#page-leave-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: var(--main-color);
+	height: 0%;
+	width: 100%;
+}
+#page-leave-bottom {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: var(--main-color);
+	height: 0%;
+	width: 100%;
+}
+
 .ab {
 	color: teal;
 }
