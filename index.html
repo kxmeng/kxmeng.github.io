@@ -64,10 +64,10 @@
 			<!-- Links to rest of the site -->
 			<div id="all-links">
 				<a href="./y8/index.html" id="y8-page">Year 8</a>
-				<a href="./y9/index.html" id="y9-page">Year 9</a>
-				<a href="./y10/index.html" id="y10-page">Year 10</a>
-				<a href="./al/index.html" id="al-page">Single</a>
-				<a href="./fm/index.html" id="fm-page">Further</a>
+				<a href="./y9/index.html" id="y9-page" style="left: 20vw;">Year 9</a>
+				<a href="./y10/index.html" id="y10-page" style="left: 40vw;">Year 10</a>
+				<a href="./al/index.html" id="al-page" style="left: 60vw;">Single</a>
+				<a href="./fm/index.html" id="fm-page" style="left: 80vw;">Further</a>
 			</div>
 		</main>
 
@@ -82,8 +82,8 @@
 							]
 						},
 						leave(data) {
-							return gsap.to("#y8-page.leave-transition", {
-								width: "80%", duration: 0.4, zIndex: 2,
+							return gsap.to("a#y8-page", {
+								paddingRight: "80vw", duration: 0.4, zIndex: 2,
 							});
 						}
 					},
