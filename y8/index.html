@@ -25,7 +25,7 @@
 				<h6>Autumn</h6>
 				<ul>
 					<li id="numbers" onclick="clickFunction(this)">Numbers</li>
-					<li id="percentages1" onclick="clickFunction(this)">Percentages 1</li>
+					<li id="percentages" onclick="clickFunction(this)">Percentages</li>
 					<li id="rounding" onclick="clickFunction(this)">Rounding</li>
 					<li id="algebra1" onclick="clickFunction(this)">Algebra 1</li>
 					<li id="averages" onclick="clickFunction(this)">Averages</li>
@@ -39,7 +39,7 @@
 				<ul>
 					<li id="graphs" onclick="clickFunction(this)">Graphs</li>
 					<li id="sets" onclick="clickFunction(this)">Sets</li>
-					<li id="percentages2" onclick="clickFunction(this)">Percentages 2</li>
+					<li id="tree" onclick="clickFunction(this)">Tree Diagrams</li>
 					<li id="probability" onclick="clickFunction(this)">Probability</li>
 					<li id="shapes" onclick="clickFunction(this)">Shapes</li>
 					<li id="simultaneous" onclick="clickFunction(this)">Simultaneous Equations</li>
@@ -72,9 +72,10 @@
 		<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
 		<div class="hide">
 			<div class="topics" id="numbers-content">
-				<h2></h2>
+				<h2>Fractions, Decimals, Percentages</h2>
 				<ul>
-					<li></li>
+					<li>Converting between fractions, decimals, and percentages including recurring decimals</li>
+					<li>Understanding of 0.9 recurring</li>
 				</ul>
 			</div>
 			<div class="topics" id="numbers-resources">
@@ -82,21 +83,26 @@
 					
 				</ul>
 			</div>
-			<div class="topics" id="percentages1-content">
-				<h2></h2>
+			<div class="topics" id="percentages-content">
+				<h2>Percentage Change</h2>
 				<ul>
-					<li></li>
+					<li>State a value as a percentage of another value.</li>
+					<li>Increase or decrease an amount by a given percentage. Use of scale factors.</li>
+					<li>Calculate a percentage change</li>
+					<li>Find the original value of something from its value after a percentage change</li>
+					<li>Carry out compound interest problems</li>
 				</ul>
 			</div>
-			<div class="topics" id="percentages1-resources">
+			<div class="topics" id="percentages-resources">
 				<ul>
 					
 				</ul>
 			</div>
 			<div class="topics" id="rounding-content">
-				<h2></h2>
+				<h2>Rounding</h2>
 				<ul>
-					<li></li>
+					<li>Round values to a given number of decimal places or significant figures</li>
+					<li>Estimate values by rounding to 1sf</li>
 				</ul>
 			</div>
 			<div class="topics" id="rounding-resources">
@@ -105,9 +111,13 @@
 				</ul>
 			</div>
 			<div class="topics" id="algebra1-content">
-				<h2></h2>
+				<h2>Algebra</h2>
 				<ul>
-					<li></li>
+					<li>Substitute values into algebraic expressions</li>
+					<li>Expand linear brackets</li>
+					<li>Solve equations with one variable and linear brackets on both sides</li>
+					<li>Solving equations involving fractions</li>
+					<li>Changing the subject of an equation</li>
 				</ul>
 			</div>
 			<div class="topics" id="algebra1-resources">
@@ -116,9 +126,10 @@
 				</ul>
 			</div>
 			<div class="topics" id="averages-content">
-				<h2></h2>
+				<h2>Averages</h2>
 				<ul>
-					<li></li>
+					<li>Review Mean, Median, Mode, Range</li>
+					<li>Discrete Frequency Tables</li>
 				</ul>
 			</div>
 			<div class="topics" id="averages-resources">
@@ -127,9 +138,10 @@
 				</ul>
 			</div>
 			<div class="topics" id="indices-content">
-				<h2></h2>
+				<h2>Indices</h2>
 				<ul>
-					<li></li>
+					<li>Multiplication and division rules</li>
+					<li>Positive and negative integers only</li>
 				</ul>
 			</div>
 			<div class="topics" id="indices-resources">
@@ -138,9 +150,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="standard-form-content">
-				<h2></h2>
+				<h2>Standard Form</h2>
 				<ul>
-					<li></li>
+					<li>Difference between decimal and standard form</li>
+					<li>Change numbers from decimal form to standard form</li>
+					<li>Add subtract multiply divide standard form, leaving answers in standard form (with and without calculators)</li>
 				</ul>
 			</div>
 			<div class="topics" id="standard-form-resources">
@@ -149,9 +163,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="pythagoras-content">
-				<h2></h2>
+				<h2>Pythagoras' Theorem</h2>
 				<ul>
-					<li></li>
+					<li>Understand and use the word "hypotenuse"</li>
+					<li>Use Pythagoras' Theorem to find any missing lengths</li>
+					<li class="ab">Multi step problems</li>
 				</ul>
 			</div>
 			<div class="topics" id="pythagoras-resources">
@@ -160,9 +176,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="similarity-content">
-				<h2></h2>
+				<h2>Similarity</h2>
 				<ul>
-					<li></li>
+					<li>Using a Scale Factor to find lengths of similar shapes</li>
+					<li>Harder examples, including finding similar triangles in parallel lines, bowtie shapes, and nested triangles</li>
+					<li>Using algebra to find lengths</li>
 				</ul>
 			</div>
 			<div class="topics" id="similarity-resources">
@@ -171,9 +189,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="graphs-content">
-				<h2></h2>
+				<h2>Plotting Graphs</h2>
 				<ul>
-					<li></li>
+					<li>Understand that a graph is a set of points that satisfy a particular equation</li>
+					<li>Be able to make a table of values for a given equation and then plotting this line on a set of axes</li>
+					<li>Recognise the general shape (and names) of Linear, Quadratic, Cubic and Circular graphs</li>
 				</ul>
 			</div>
 			<div class="topics" id="graphs-resources">
@@ -182,9 +202,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="sets-content">
-				<h2></h2>
+				<h2>Sets</h2>
 				<ul>
-					<li></li>
+					<li>Understand and use set notation</li>
+					<li>Be able to list the elements of a set, know that sets use curly brackets, E, union, intersection, complement, n(A), empty set, exists/does not exist, is part of the set/is not part of the set</li>
+					<li>Be able to draw and shade a Venn diagram</li>
 				</ul>
 			</div>
 			<div class="topics" id="sets-resources">
@@ -192,21 +214,22 @@
 					
 				</ul>
 			</div>
-			<div class="topics" id="percentages2-content">
-				<h2></h2>
+			<div class="topics" id="tree-content">
+				<h2>Tree Diagrams</h2>
 				<ul>
-					<li></li>
+					<li>Use of tree diagrams in compound proportion questions</li>
 				</ul>
 			</div>
-			<div class="topics" id="percentages2-resources">
+			<div class="topics" id="tree-resources">
 				<ul>
 					
 				</ul>
 			</div>
 			<div class="topics" id="probability-content">
-				<h2></h2>
+				<h2>Probability</h2>
 				<ul>
-					<li></li>
+					<li>Independent Events</li>
+					<li>Tree diagrams</li>
 				</ul>
 			</div>
 			<div class="topics" id="probability-resources">
@@ -215,9 +238,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="shapes-content">
-				<h2></h2>
+				<h2>Perimeter, Area and Volume</h2>
 				<ul>
-					<li></li>
+					<li>Revision of triangles, parallelograms & trapeziums</li>
+					<li>Area and circumference of circles, including leaving answers as decimals or multiples of pi</li>
+					<li>Volumes of prisms, including cylinders</li>
 				</ul>
 			</div>
 			<div class="topics" id="shapes-resources">
@@ -226,9 +251,11 @@
 				</ul>
 			</div>
 			<div class="topics" id="simultaneous-content">
-				<h2></h2>
+				<h2>Simultaneous Equations</h2>
 				<ul>
-					<li></li>
+					<li>Both elimination and substitution methods</li>
+					<li>Be able to form and solve equations from worded problem</li>
+					<li>Understand that the crossing points of two lines are the solutions to the equations</li>
 				</ul>
 			</div>
 			<div class="topics" id="simultaneous-resources">
@@ -237,9 +264,10 @@
 				</ul>
 			</div>
 			<div class="topics" id="circles1-content">
-				<h2></h2>
+				<h2>Circle Theorems</h2>
 				<ul>
-					<li></li>
+					<li>Identify and label the following: circumference, radius, diameter, arc, sector, segment, chord</li>
+					<li>4 basic circle theorems</li>
 				</ul>
 			</div>
 			<div class="topics" id="circles1-resources">
@@ -248,9 +276,10 @@
 				</ul>
 			</div>
 			<div class="topics" id="circles2-content">
-				<h2></h2>
+				<h2>Circle Theorems</h2>
 				<ul>
-					<li></li>
+					<li>Identify and label the following: circumference, radius, diameter, arc, sector, segment, chord</li>
+					<li>4 basic circle theorems</li>
 				</ul>
 			</div>
 			<div class="topics" id="circles2-resources">
@@ -259,9 +288,10 @@
 				</ul>
 			</div>
 			<div class="topics" id="rearranging-content">
-				<h2></h2>
+				<h2>Rearranging Formulae</h2>
 				<ul>
-					<li></li>
+					<li>Be able to change the subject of formulae, including equations with fractions, brackets, roots and powers.</li>
+					<li>Be able to substitute values into formulae</li>
 				</ul>
 			</div>
 			<div class="topics" id="rearranging-resources">
@@ -270,9 +300,9 @@
 				</ul>
 			</div>
 			<div class="topics" id="parallel-content">
-				<h2></h2>
+				<h2>Parallel Lines</h2>
 				<ul>
-					<li></li>
+					<li>Angles relating to parallel lines</li>
 				</ul>
 			</div>
 			<div class="topics" id="parallel-resources">
@@ -281,9 +311,9 @@
 				</ul>
 			</div>
 			<div class="topics" id="bearings-content">
-				<h2></h2>
+				<h2>Bearings</h2>
 				<ul>
-					<li></li>
+					<li>3 rules of bearings</li>
 				</ul>
 			</div>
 			<div class="topics" id="bearings-resources">
@@ -292,9 +322,9 @@
 				</ul>
 			</div>
 			<div class="topics" id="algebra2-content">
-				<h2></h2>
+				<h2>Algebra</h2>
 				<ul>
-					<li></li>
+					<li>Be able to expand double brackets</li>
 				</ul>
 			</div>
 			<div class="topics" id="algebra2-resources">
@@ -303,9 +333,9 @@
 				</ul>
 			</div>
 			<div class="topics" id="trigonometry-content">
-				<h2></h2>
+				<h2>Trigonometry</h2>
 				<ul>
-					<li></li>
+					<li>Understand the tan ratio</li>
 				</ul>
 			</div>
 			<div class="topics" id="trigonometry-resources">
