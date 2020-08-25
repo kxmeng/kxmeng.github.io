@@ -66,27 +66,27 @@
 }
 
 #all-links #link-y8 {
-	animation: 0.4s ease-out 0s 1 pageLoadHome;
+	animation: 0.3s ease-out 0s 1 pageLoadHome;
 	animation-fill-mode: forwards;
 }
 
 #all-links #link-y9 {
-	animation: 0.4s ease-out 0.2s 1 pageLoadHome;
+	animation: 0.3s ease-out 0.1s 1 pageLoadHome;
 	animation-fill-mode: forwards;
 }
 
 #all-links #link-y10 {
-	animation: 0.4s ease-out 0.4s 1 pageLoadHome;
+	animation: 0.3s ease-out 0.2s 1 pageLoadHome;
 	animation-fill-mode: forwards;
 }
 
 #all-links #link-al {
-	animation: 0.4s ease-out 0.6s 1 pageLoadHome;
+	animation: 0.3s ease-out 0.3s 1 pageLoadHome;
 	animation-fill-mode: forwards;
 }
 
 #all-links #link-fm {
-	animation: 0.4s ease-out 0.8s 1 pageLoadHome;
+	animation: 0.3s ease-out 0.4s 1 pageLoadHome;
 	animation-fill-mode: forwards;
 }
 
