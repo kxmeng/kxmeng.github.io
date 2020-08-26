@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Include the PubNub Library -->
-	<script src="https://cdn.pubnub.com/pubnub.min.js"></script>
- 
-	<!-- Instantiate PubNub -->
-	<script type="text/javascript">
-	</script>
+	<script src="./fabric.js"></script>
 </head>
 <body>
-	<canvas id="drawCanvas" width="800" height="600"></canvas>
-	<script type="text/javascript">
-		var PUBNUB_demo = PUBNUB.init({
-			publish_key: 'pub-c-3e0d9543-024b-45f8-953d-1d3257ac191a',
-			subscribe_key: 'sub-c-9fa97d7c-e7d9-11ea-89a6-b2966c0cfe96'
+	<canvas id="c" width="800" height="600"></canvas>
+
+	<script>
+		var canvas = new fabric.Canvas("c");
+
+		var rect = new fabric.Rect({
+			left: 100,
+			top: 150,
+			fill: "red",
+			width: 200,
+			height: 20,
 		});
-		
-		var canvas = document.getElementById('drawCanvas');
-		var ctx = canvas.getContext('2d');
 
-		ctx.lineWidth = '3';
-		canvas.addEventListener('mousedown', startDraw, false);
-		canvas.addEventListener('mousemove', draw, false);
-		canvas.addEventListener('mouseup', endDraw, false);
-
-		// create a flag
-		var isActive = false;
-
-		// array to collect coordinates
-		var plots = [];
-
-		function draw(e) {
-			f(!isActive) return;
-
-			// cross-browser canvas coordinates
-			var x = e.offsetX || e.layerX - canvas.offsetLeft;
-			var y = e.offsetY || e.layerY - canvas.offsetTop;
-
-			plots.push({x: x, y: y});
-
-			drawOnCanvas(plots);
-		}
-
-		function drawOnCanvas(color, plots) {
-			ctx.beginPath();
-			ctx.moveTo(plots[0].x, plots[0].y);
-
-			for(var i=1; i<plots.length; i++) {
-				ctx.lineTo(plots[i].x, plots[i].y);
-			}
-			ctx.stroke();
-		}
-
-		function startDraw(e) {
-			isActive = true;
-		}
-
-		function endDraw(e) {
-			isActive = false;
-
-			// empty the array
-			plots = [];
-		} 
+		canvas.add(rect);
 	</script>
 </body>
 </html>
