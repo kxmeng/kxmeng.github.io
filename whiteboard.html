@@ -2,22 +2,19 @@
 <html>
 <head>
 	<script src="./fabric.js"></script>
+	<style>
+		canvas {
+			border: solid 1px black;
+			height: 90vh;
+			width: 90vw;
+		}
+	</style>
 </head>
 <body>
 	<canvas id="c" width="800" height="600"></canvas>
 
 	<script>
 		var canvas = new fabric.Canvas("c", {isDrawingMode: true});
-
-		var rect = new fabric.Rect({
-			left: 100,
-			top: 150,
-			fill: "red",
-			width: 200,
-			height: 20,
-		});
-
-		canvas.add(rect);
 	</script>
 </body>
 </html>
