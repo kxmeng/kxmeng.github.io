@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Whiteboard</title>
 	<script src="./fabric.js"></script>
 	<style>
 		canvas {
 			border: solid 1px black;
 		}
+
+		#buttons {
+			display: flex;
+			position: fixed;
+			top: 10px;
+		}
+
+		#buttons button {
+			width: 100px;
+			background-color: white;
+		}
+		.colours {
+			height: 30px;
+			width: 50px;
+		}
 	</style>
 </head>
 <body>
 	<canvas id="c" width="800" height="600"></canvas>
+	<div id="buttons">
+		<button>Clear</button>
+		<button onclick="brushSize(1)">Thin</button>
+		<button onclick="brushSize(2)">Medium</button>
+		<button onclick="brushSize(3)">Thick</button>
+		<div id="black" class="colours" style="background-color: black"></div>
+		<div id="blueviolet" class="colours" style="background-color: blueviolet"></div>
+		<div id="dodgerblue" class="colours" style="background-color: dodgerblue"></div>
+		<div id="limegreen" class="colours" style="background-color: limegreen"></div>
+		<div id="gold" class="colours" style="background-color: gold"></div>
+		<div id="crimson" class="colours" style="background-color: crimson"></div>
+	</div>
 
 	<script>
 		// Find canvas element
@@ -23,6 +51,10 @@
 		canvas.freeDrawingBrush.color = "red";
 		// Change brush width (pixels)
 		canvas.freeDrawingBrush.width = 5;
+
+		let brushSize = function(thickness) {
+			canvas.freeDrawingBrush.width = thickness;
+		}
 	</script>
 </body>
 </html>
