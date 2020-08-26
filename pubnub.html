@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whiteboard</title>
+	<style>
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+		body {
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+			font-size: 1.2rem;
+			margin: 1em;
+			color: #fff;
+			background: #2481CB;
+		}
+		header {
+			margin-bottom: 1em;
+		}
+		h1, h2 {
+			margin: 0;
+			font-weight: normal;
+		}
+		canvas {
+			border: 1px dotted silver;
+		}
+	</style>
+	<script type="text/javascript">
+		/* PubNub */
+
+var channel = 'draw';
+
+var pubnub = PUBNUB.init({
+		publish_key: 'pub-c-3e0d9543-024b-45f8-953d-1d3257ac191a',
+		subscribe_key: 'sub-c-9fa97d7c-e7d9-11ea-89a6-b2966c0cfe96',
+});
+
+pubnub.subscribe({
+  channel: channel,
+  callback: drawFromStream,
+  presence: function(m){
+    if(m.occupancy > 0){
+      document.getElementById('occupancy').textContent = m.occupancy;
+    }
+  }
+});
+
+/* Draw on canvas */
+
+var canvas = document.getElementById('drawCanvas');
+var ctx = canvas.getContext('2d');
+	 
+ctx.lineWidth = '3';
+ctx.lineCap = 'round';
+ctx.lineJoin = 'round';
+
+var color = 'yellowgreen';
+
+canvas.addEventListener('mousedown', startDraw, false);
+canvas.addEventListener('mousemove', draw, false);
+canvas.addEventListener('mouseup', endDraw, false);
+
+function drawOnCanvas(color, plots) {
+  ctx.strokeStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(plots[0].x, plots[0].y);
+
+  for(var i=1; i<plots.length; i++) {
+    ctx.lineTo(plots[i].x, plots[i].y);
+  }
+  ctx.stroke();
+}
+
+function drawFromStream(message) {
+  if(!message || message.plots.length < 1) return;			
+  drawOnCanvas(message.color, message.plots);
+}
+
+var isActive = false;
+var plots = [];
+
+function draw(e) {
+  if(!isActive) return;
+
+  var x = e.offsetX || e.layerX - canvas.offsetLeft;
+  var y = e.offsetY || e.layerY - canvas.offsetTop;
+
+  plots.push({x: x, y: y});
+  drawOnCanvas(color, plots);
+}
+	
+function startDraw(e) {
+  isActive = true;
+}
+	
+function endDraw(e) {
+  isActive = false;
+  
+  pubnub.publish({
+    channel: channel,
+    message: {
+      color: color, 
+      plots: plots
+    }
+  });
+
+  plots = [];
+}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>CoDoodler: Simplified version</h1>
+		<h2>Number of doodlers: <span id="occupancy">0</span></h2>
+	</header>
+
+	<canvas id="drawCanvas" width="600" height="480">Canvas not working? :-/</canvas>
+
+</body>
+</html>
