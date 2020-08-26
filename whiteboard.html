@@ -12,8 +12,16 @@
 	<canvas id="c" width="800" height="600"></canvas>
 
 	<script>
+		// Find canvas element
+		let dimensions = document.getElementsByTagName('canvas')[0];
+		// Set width and height to 90% of window width/height
+		dimensions.width = window.innerWidth*0.9;
+		dimensions.height = window.innerHeight*0.9;
+		// Use fabric.js to allow free drawing
 		var canvas = new fabric.Canvas("c", {isDrawingMode: true});
+		// Change brush colour
 		canvas.freeDrawingBrush.color = "red";
+		// Change brush width (pixels)
 		canvas.freeDrawingBrush.width = 5;
 	</script>
 </body>
