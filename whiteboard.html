@@ -40,6 +40,7 @@
 
 		#clear {
 			position: fixed;
+			display: flex;
 			top: 1vh;
 			right: 1vw;
 		}
@@ -48,9 +49,11 @@
 <body>
 	<canvas id="c" width="800" height="600"></canvas>
 	<div id="buttons">
+		<!-- Buttons to change brush size
 		<button onclick="brushSize(1)">Thin</button>
 		<button onclick="brushSize(2)">Medium</button>
 		<button onclick="brushSize(3)">Thick</button>
+		-->
 		<div id="black" class="colours" style="background-color: black" onclick="brushColor('black')"></div>
 		<div id="blueviolet" class="colours" style="background-color: blueviolet" onclick="brushColor('blueviolet')"></div>
 		<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue')"></div>
@@ -60,6 +63,7 @@
 	</div>
 
 	<div id="clear">
+		<button onclick="saveCanvas()">Save</button>
 		<button onclick="clearCanvas()">Clear</button>
 	</div>
 
@@ -91,6 +95,11 @@
 		// Function to change colour of brush
 		let brushColor = function(color) {
 			canvas.freeDrawingBrush.color = color;
+		};
+
+		// Function to save
+		let saveCanvas = function () {
+
 		};
 	</script>
 </body>
