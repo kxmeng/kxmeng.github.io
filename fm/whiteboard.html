@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whiteboard</title>
+	<script src="./fabric.js"></script>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#buttons {
+			display: flex;
+			position: fixed;
+			top: 1vh;
+			left: 1vw;
+		}
+
+		button {
+			width: 80px;
+			height: 30px;
+			border: solid 1px black;
+			background-color: white;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin-right: 5px;
+		}
+
+		button.buttonActive {
+			border: solid 1px green !important;
+		}
+
+		.colours {
+			height: 30px;
+			width: 50px;
+			margin-right: 5px;
+		}
+
+		#clear {
+			position: fixed;
+			display: flex;
+			top: 1vh;
+			right: 1vw;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="c" width="800" height="600"></canvas>
+	<div id="buttons">
+		<!-- Buttons to change brush size
+		<button onclick="brushSize(1)">Thin</button>
+		<button onclick="brushSize(2)">Medium</button>
+		<button onclick="brushSize(3)">Thick</button>
+		-->
+		<button onclick="clearCanvas()">Clear</button>
+		<button onclick="saveCanvas()">Save</button>
+		<div id="black" class="colours" style="background-color: black" onclick="brushColor('black')"></div>
+		<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue')"></div>
+		<div id="limegreen" class="colours" style="background-color: limegreen" onclick="brushColor('limegreen')"></div>
+		<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold')"></div>
+		<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson')"></div>
+	</div>
+
+	<script>
+		// Find canvas element
+		let dimensions = document.getElementsByTagName('canvas')[0];
+		// Set width and height to window width/height
+		dimensions.width = window.innerWidth;
+		dimensions.height = window.innerHeight;
+		// Use fabric.js to allow free drawing
+		let canvas = new fabric.Canvas("c", {isDrawingMode: true});
+
+		// Current brush size and colour
+		let currentSize = 1;
+		let currentColor = "black";
+
+		// Function to clear the canvas
+		let clearCanvas = function() {
+			if(confirm("Are you sure? This cannot be undone.")){
+				canvas.clear();
+			}
+		};
+
+		// Function to change thickness of brush
+		let brushSize = function(thickness) {
+			canvas.freeDrawingBrush.width = thickness;
+		};
+
+		// Function to change colour of brush
+		let brushColor = function(color) {
+			canvas.freeDrawingBrush.color = color;
+		};
+
+		// Function to save
+		let saveCanvas = function () {
+			alert(canvas.toSVG());
+		};
+	</script>
+</body>
+</html>
