@@ -109,27 +109,15 @@
 			uuid: "theClientUUID"
 		});
 
-		// Global variable recording what the last objects added to the canvas were
-		let objectsToAdd = [];
-
 		pubnub.addListener({
 			message: function(message) {
 				// Check if the message comes from the whiteboard channel
 				if(message.channel == "whiteboard-al") {
 					// Find the message part of the message received - should be JSON object
 					let jsonObj = message.message;
-					// Remove last added objects
-					fabric.util.enlivenObjects(objectsToAdd.objects, function (enlivenedObjects) {
-						enlivenedObjects.forEach(function (obj, index) {
-							canvas.remove(obj);
-						});
-						canvas.renderAll();
-					});
 					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
-					fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
-						enlivenedObjects.forEach(function (obj, index) {
-							canvas.add(obj);
-						});
+					fabric.util.enlivenObjects([jsonObj], function (enlivenedObjects) {
+						canvas.add(obj);
 						canvas.renderAll();
 					});
 					objectsToAdd = message.message;
@@ -152,10 +140,6 @@
 
 		pubnub.subscribe({
 			channels: ["whiteboard-al"],
-		});
-
-		canvas.on("object:added", function(){
-			console.log("added new object");
 		});
 	</script>
 </body>
