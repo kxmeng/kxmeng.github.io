@@ -15,8 +15,8 @@
 		#buttons {
 			display: flex;
 			position: fixed;
-			top: 1vh;
-			left: 1vw;
+			bottom: 5px;
+			left: 5px;
 		}
 
 		button {
@@ -32,21 +32,10 @@
 			margin-right: 5px;
 		}
 
-		button.buttonActive {
-			border: solid 1px green !important;
-		}
-
 		.colours {
 			height: 30px;
 			width: 50px;
 			margin-right: 5px;
-		}
-
-		#clear {
-			position: fixed;
-			display: flex;
-			top: 1vh;
-			right: 1vw;
 		}
 	</style>
 </head>
@@ -99,6 +88,10 @@
 		let brushColor = function(color) {
 			canvas.freeDrawingBrush.color = color;
 		};
+
+		let saveCanvas = function() {
+			alert(canvas.toSVG());
+		}
 
 		// PubNub initialization
 		let channel = 'whiteboard-main';
