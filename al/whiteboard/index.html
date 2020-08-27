@@ -115,6 +115,7 @@
 				if(message.channel == "whiteboard-al") {
 					// Find the message part of the message received - should be JSON object
 					let jsonObj = message.message;
+					console.log(jsonObj);
 					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
 					fabric.util.enlivenObjects([jsonObj], function (enlivenedObjects) {
 						enlivenedObjects.forEach(function (obj, index) {
