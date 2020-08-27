@@ -142,9 +142,11 @@
 
 		// Function to send a message manually
 		let sendMessage = function() {
-			// Prompt user to type in a question
+			// Prompt to type in a question
 			let question = prompt("Type your question here");
+			// Make sure a question was entered
 			if(question !== null || question !== "") {
+				// Publish it to the chat channel
 				pubnub.publish(
 					{
 						channel: "chat-al",
