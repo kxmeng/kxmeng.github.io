@@ -57,8 +57,7 @@
 			<button onclick="brushSize(3)">Thick</button>
 			-->
 			<button onclick="clearCanvas()">Clear</button>
-			<button onclick="startStream()">Start</button>
-			<button onclick="stopStream()">Stop</button>
+			<button onclick="sendMessage()">Chat</button>
 			<button onclick="saveCanvas()">Save</button>
 			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
 			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
@@ -117,9 +116,6 @@
 			uuid: "theClientUUID"
 		});
 
-		// Create global variable for publishing this canvas so it can be stopped later
-		var canvasStream = 0;
-
 		// Every time a new object is added to the canvas
 		canvas.on("object:added", function(){
 			// Find the newest object
@@ -136,25 +132,14 @@
 			console.log(newestObject);
 		});
 
-		// Start an interval function every 500ms to publish the current objects to the channel
-		let startStream = function() {
-			canvasStream = setInterval(function(){
-				// Stream this every 500ms to the channel
-				pubnub.publish(
-					{
-						channel: "whiteboard-al",
-						message: canvas.toJSON(),
-					}
-				);
-			}, 500);
-		}
-
-		// Stop the interval function running and log 0 to check
-		let stopStream = function() {
-			clearInterval(canvasStream);
-			// Check it has stopped
-			canvasStream = 0;
-			console.log(canvasStream);
+		// Function to send a message manually
+		let sendMessage = function() {
+			pubnub.publish(
+				{
+					channel: "chat-al",
+					message: "test message",
+				}
+			)
 		}
 
 		// Listen for messages
@@ -173,6 +158,10 @@
 					},15000)
 				}
 			}
+		});
+
+		pubnub.subscribe({
+			channels: ["chat-al"],
 		});
 	</script>
 </body>
