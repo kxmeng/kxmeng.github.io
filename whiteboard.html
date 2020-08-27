@@ -40,22 +40,24 @@
 	</style>
 </head>
 <body>
-	<canvas id="c" width="800" height="600"></canvas>
-	<div id="buttons">
-		<!-- Buttons to change brush size
-		<button onclick="brushSize(1)">Thin</button>
-		<button onclick="brushSize(2)">Medium</button>
-		<button onclick="brushSize(3)">Thick</button>
-		-->
-		<button onclick="clearCanvas()">Clear</button>
-		<button onclick="saveCanvas()">Save</button>
-		<!--<button onclick="shareCanvas()">Share</button>-->
-		<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
-		<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
-		<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
-		<div id="limegreen" class="colours" style="background-color: limegreen" onclick="brushColor('limegreen');brushSize(1)"></div>
-		<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
-		<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
+	<div id="whiteboard-page">
+		<canvas id="c" width="800" height="600"></canvas>
+		<div id="buttons">
+			<!-- Buttons to change brush size
+			<button onclick="brushSize(1)">Thin</button>
+			<button onclick="brushSize(2)">Medium</button>
+			<button onclick="brushSize(3)">Thick</button>
+			-->
+			<button onclick="clearCanvas()">Clear</button>
+			<button onclick="saveCanvas()">Save</button>
+			<!--<button onclick="shareCanvas()">Share</button>-->
+			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
+			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
+			<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
+			<div id="limegreen" class="colours" style="background-color: limegreen" onclick="brushColor('limegreen');brushSize(1)"></div>
+			<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
+			<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
+		</div>
 	</div>
 	
 	<script type="text/javascript" src="./whiteboard.js"></script>
