@@ -10,12 +10,13 @@
 	<style>
 		body {
 			margin: 0;
+			overflow: hidden;
 		}
 
 		#buttons {
 			display: flex;
 			position: fixed;
-			bottom: 5px;
+			top: 5px;
 			left: 5px;
 		}
 
@@ -37,20 +38,20 @@
 			width: 50px;
 			margin-right: 5px;
 		}
+
+		#chat {
+			position: fixed;
+			top: 70vh;
+			right: 10px;
+			width: 20vw;
+		}
 	</style>
 </head>
 <body>
 	<div id="whiteboard-page">
 		<canvas id="c" width="800" height="600"></canvas>
 		<div id="buttons">
-			<!-- Buttons to change brush size
-			<button onclick="brushSize(1)">Thin</button>
-			<button onclick="brushSize(2)">Medium</button>
-			<button onclick="brushSize(3)">Thick</button>
-			-->
-			<button onclick="clearCanvas()">Clear</button>
 			<button onclick="saveCanvas()">Save</button>
-			<!--<button onclick="shareCanvas()">Share</button>-->
 			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
 			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
 			<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
@@ -58,14 +59,21 @@
 			<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
 			<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
 		</div>
+
+		<div id="chat">
+
+		</div>
 	</div>
 	
 	<script type="text/javascript">
 		// Find canvas element
 		let dimensions = document.getElementsByTagName('canvas')[0];
+		// Find window dimensions
+		var windowWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+		var windowHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 		// Set width and height to window width/height
-		dimensions.width = window.innerWidth;
-		dimensions.height = window.innerHeight;
+		dimensions.width = windowWidth;
+		dimensions.height = windowHeight;
 		// Use fabric.js to allow free drawing
 		let canvas = new fabric.Canvas("c", {isDrawingMode: true});
 
@@ -103,7 +111,31 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				canvas.loadFromJSON(message.message); 
+				// Check if the message comes from the whiteboard channel
+				if(message.channel == "whiteboard-fm") {
+					// Find the message part of the message received - should be JSON object
+					let jsonObj = message.message;
+					console.log(jsonObj);
+					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
+					fabric.util.enlivenObjects([jsonObj], function (enlivenedObjects) {
+						enlivenedObjects.forEach(function (obj, index) {
+							canvas.add(obj);
+						});
+						canvas.renderAll();
+					});
+				}
+				// Check if the message comes from the chat channel
+				if(message.channel == "chat-al") {
+					// Create a div for the message and add the message to it
+					let chatDiv = document.createElement("div");
+					chatDiv.innerHTML = message.message;
+					// Add this div to the chat
+					document.getElementByID("chat").appendChild(chatDiv);
+					// After 15 seconds, delete this message
+					setTimeout(function(){
+						chatDiv.remove();
+					},15000)
+				}
 			}
 		});
 
