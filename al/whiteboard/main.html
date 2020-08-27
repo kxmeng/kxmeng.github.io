@@ -102,9 +102,9 @@
 			uuid: "theClientUUID"
 		});
 
-		
+		window.setInterval(function(){
 			let exportCanvas = canvas.toJSON();
-			pubnub.publsh(
+			pubnub.publish(
 				{
 					channel: "whiteboard-al",
 					message: exportCanvas,
@@ -114,6 +114,7 @@
 					console.log(response);
 				}
 			);
+		}, 500);
 	</script>
 </body>
 </html>
