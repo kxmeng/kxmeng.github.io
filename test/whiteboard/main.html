@@ -52,11 +52,16 @@
 	</style>
 </head>
 <body>
-	<div id="whiteboard-page">
+	<div id="whiteboard-page" style="height: 100vh;">
 		<canvas id="c" width="800" height="600"></canvas>
 		<div id="buttons">
+			<!-- Buttons to change brush size
+			<button onclick="brushSize(1)">Thin</button>
+			<button onclick="brushSize(2)">Medium</button>
+			<button onclick="brushSize(3)">Thick</button>
+			-->
+			<button onclick="clearCanvas()">Clear</button>
 			<button onclick="saveCanvas()">Save</button>
-			<button onclick="sendMessage()">Ask</button>
 			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
 			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
 			<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
@@ -71,7 +76,7 @@
 	</div>
 	
 	<script type="text/javascript">
-		// Find canvas element
+	// Find canvas element
 		let dimensions = document.getElementsByTagName('canvas')[0];
 		// Find window dimensions
 		var windowWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
@@ -114,23 +119,27 @@
 			uuid: "theClientUUID"
 		});
 
+		// Every time a new object is added to the canvas
+		canvas.on("object:added", function(){
+			// Find the newest object
+			let objectsOnCanvas = canvas.toJSON().objects;
+			let numObjects = objectsOnCanvas.length;
+			let newestObject = objectsOnCanvas[numObjects-1];
+			// Publish it to the channel and log it
+			pubnub.publish(
+				{
+					channel: "whiteboard-test",
+					message: newestObject,
+				}
+			);
+			console.log(newestObject);
+		});
+
+		// Listen for messages
 		pubnub.addListener({
 			message: function(message) {
-				// Check if the message comes from the whiteboard channel
-				if(message.channel == "whiteboard-fm") {
-					// Find the message part of the message received - should be JSON object
-					let jsonObj = message.message;
-					console.log(jsonObj);
-					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
-					fabric.util.enlivenObjects([jsonObj], function (enlivenedObjects) {
-						enlivenedObjects.forEach(function (obj, index) {
-							canvas.add(obj);
-						});
-						canvas.renderAll();
-					});
-				}
 				// Check if the message comes from the chat channel
-				if(message.channel == "chat-fm") {
+				if(message.channel == "chat-test") {
 					// Create a div for the message and add the message to it
 					let chatDiv = document.createElement("div");
 					chatDiv.innerHTML = message.message;
@@ -144,24 +153,8 @@
 			}
 		});
 
-		// Function to send a message manually
-		let sendMessage = function() {
-			// Prompt to type in a question
-			let question = prompt("Type your question here");
-			// Make sure a question was entered
-			if(question !== null || question !== "") {
-				// Publish it to the chat channel
-				pubnub.publish(
-					{
-						channel: "chat-fm",
-						message: question,
-					}
-				)
-			}
-		}
-
 		pubnub.subscribe({
-			channels: ["whiteboard-fm","chat-fm"],
+			channels: ["chat-test"],
 		});
 	</script>
 </body>

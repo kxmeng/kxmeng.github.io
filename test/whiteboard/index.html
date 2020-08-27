@@ -117,7 +117,7 @@
 		pubnub.addListener({
 			message: function(message) {
 				// Check if the message comes from the whiteboard channel
-				if(message.channel == "whiteboard-fm") {
+				if(message.channel == "whiteboard-test") {
 					// Find the message part of the message received - should be JSON object
 					let jsonObj = message.message;
 					console.log(jsonObj);
@@ -130,7 +130,7 @@
 					});
 				}
 				// Check if the message comes from the chat channel
-				if(message.channel == "chat-fm") {
+				if(message.channel == "chat-test") {
 					// Create a div for the message and add the message to it
 					let chatDiv = document.createElement("div");
 					chatDiv.innerHTML = message.message;
@@ -153,7 +153,7 @@
 				// Publish it to the chat channel
 				pubnub.publish(
 					{
-						channel: "chat-fm",
+						channel: "chat-test",
 						message: question,
 					}
 				)
@@ -161,7 +161,7 @@
 		}
 
 		pubnub.subscribe({
-			channels: ["whiteboard-fm","chat-fm"],
+			channels: ["whiteboard-test","chat-test"],
 		});
 	</script>
 </body>

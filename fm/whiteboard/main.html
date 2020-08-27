@@ -41,9 +41,13 @@
 
 		#chat {
 			position: fixed;
-			top: 70vh;
+			top: 50vh;
 			right: 10px;
 			width: 20vw;
+		}
+
+		#chat div {
+			background-color: white;
 		}
 	</style>
 </head>
@@ -115,9 +119,6 @@
 			uuid: "theClientUUID"
 		});
 
-		// Create global variable for publishing this canvas so it can be stopped later
-		var canvasStream = 0;
-
 		// Every time a new object is added to the canvas
 		canvas.on("object:added", function(){
 			// Find the newest object
@@ -143,13 +144,17 @@
 					let chatDiv = document.createElement("div");
 					chatDiv.innerHTML = message.message;
 					// Add this div to the chat
-					document.getElementByID("chat").appendChild(chatDiv);
+					document.getElementById("chat").appendChild(chatDiv);
 					// After 15 seconds, delete this message
 					setTimeout(function(){
 						chatDiv.remove();
 					},15000)
 				}
 			}
+		});
+
+		pubnub.subscribe({
+			channels: ["chat-fm"],
 		});
 	</script>
 </body>
