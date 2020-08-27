@@ -50,7 +50,6 @@
 			-->
 			<button onclick="clearCanvas()">Clear</button>
 			<button onclick="saveCanvas()">Save</button>
-			<!--<button onclick="shareCanvas()">Share</button>-->
 			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
 			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
 			<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
@@ -62,9 +61,18 @@
 	
 	<script type="text/javascript" src="/whiteboard.js"></script>
 	<script type="text/javascript">
-		pubnub.subscribe({
-			channels: ["whiteboard-al"],
-		});
+		window.setInterval(function(){
+			pubnub.publsh(
+				{
+					channel: "whiteboard-al",
+					message: exportCanvas,
+				}, 
+				(status, response) => {
+					console.log(status);
+					console.log(response);
+				}
+			);
+		}, 500);
 	</script>
 </body>
 </html>
