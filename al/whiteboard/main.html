@@ -102,7 +102,7 @@
 			uuid: "theClientUUID"
 		});
 
-		window.setInterval(function(){
+		
 			let exportCanvas = canvas.toJSON();
 			pubnub.publsh(
 				{
@@ -114,7 +114,6 @@
 					console.log(response);
 				}
 			);
-		}, 500);
 	</script>
 </body>
 </html>
