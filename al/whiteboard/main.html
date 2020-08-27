@@ -109,13 +109,9 @@
 				pubnub.publish(
 					{
 						channel: "whiteboard-al",
-						message: canvas.toObject(),
-					}, 
-					(status, response) => {
-						
+						message: canvas.toJSON(),
 					}
 				);
-				console.log(canvas.toObject());
 			}, 500);
 		}
 
