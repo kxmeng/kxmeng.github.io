@@ -99,7 +99,7 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				canvas.add(message.message); 
+				canvas.loadFromJSON(message.message.concat(canvas.toJSON())); 
 			}
 		});
 
