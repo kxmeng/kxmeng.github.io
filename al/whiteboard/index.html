@@ -100,7 +100,8 @@
 			message: function(message) {
 				console.log(message.message.objects);
 				console.log(message.message.objects.length);
-				fabric.util.enlivenObjects(JSON.parse(message.message).objects, function (enlivenedObjects) {
+				let jsonObj = JSON.parse(message.message);
+				fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
 					enlivenedObjects.forEach(function (obj, index) {
 						canvas.add(obj);
 					});
