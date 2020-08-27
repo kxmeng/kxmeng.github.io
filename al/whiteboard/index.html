@@ -98,7 +98,7 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				canvas.loadFromJSON(message.message.concat(canvas.toJSON())); 
+				canvas.loadFromJSON(canvas.toJSON().concat(message.message)); 
 			}
 		});
 
