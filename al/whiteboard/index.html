@@ -98,14 +98,8 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				console.log(message.message.objects);
-				console.log(message.message.objects.length);
-				fabric.util.enlivenObjects(JSON.parse(message.message).objects, function (enlivenedObjects) {
-					enlivenedObjects.forEach(function (obj, index) {
-						canvas.add(obj);
-					});
-					canvas.renderAll();
-				});
+				canvas.add(message.message);
+				canvas.renderAll();
 			}
 		});
 
