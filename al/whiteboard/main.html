@@ -102,8 +102,10 @@
 			uuid: "theClientUUID"
 		});
 
+		var canvasStream = 0;
+
 		let startStream = function() {
-			setInterval(function(){
+			canvasStream = setInterval(function(){
 				let exportCanvas = canvas.toJSON();
 				pubnub.publish(
 					{
@@ -119,7 +121,9 @@
 		}
 
 		let stopStream = function() {
-			clearInterval(startStream);
+			clearInterval(canvasStream);
+			canvasStream = 0;
+			console.log(canvasStream);
 		}
 	</script>
 </body>
