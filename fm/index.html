@@ -24,13 +24,20 @@
 			<div id="left">
 				<h6>Autumn</h6>
 				<ul>
-					<li id="topic1" onclick="clickFunction(this)">Topic 1</li>
-					<li id="topic2" onclick="clickFunction(this)">Topic 2</li>
+					<li id="binomial" onclick="clickFunction(this)">Binomial Theorem</li>
+					<li id="indices" onclick="clickFunction(this)">Indices, Surds</li>
+					<li id="matrices1" onclick="clickFunction(this)">Matrices 1</li>
+					<li id="division" onclick="clickFunction(this)">Polynomial Division</li>
+					<li id="sums" onclick="clickFunction(this)">Sums of Series</li>
+					<li id="simultaneous" onclick="clickFunction(this)">Simultaneous Equations</li>
+					<li id="matrices2" onclick="clickFunction(this)">Matrices 2</li>
+					<li id="exponentials" onclick="clickFunction(this)">Exponentials, Logarithms</li>
+					<li id="trigonometry" onclick="clickFunction(this)">Trigonometry</li>
 				</ul>
 				<hr />
 				<h6>Spring</h6>
 				<ul>
-
+					<li id="topic2" onclick="clickFunction(this)">Topic</li>
 				</ul>
 				<hr>
 				<h6>Summer</h6>
@@ -53,13 +60,152 @@
 		</div>
 		<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
 		<div class="hide">
-			<div class="topics" id="x-content">
+			<div class="topics" id="binomial-content">
+				<h2>Binomial Theorem</h2>
+				<ul>
+					<li>Positive integer powers only</li>
+				</ul>
+			</div>
+			<div class="topics" id="binomial-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="indices-content">
+				<h2>Indices, Surds</h2>
+				<ul>
+					<li>Laws of indices, including solving equations e.g. \(25^x = 125^{2-x}\)</li>
+					<li>Arithmetic of surds, including rationalising denominators and using the binomial theorem</li>
+					<li>Find the square root of expressions e.g. \(7 + 4\sqrt{3}\)</li>
+				</ul>
+			</div>
+			<div class="topics" id="indices-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="matrices1-content">
+				<h2>Matrices 1</h2>
+				<ul>
+					<li>Basic definitions and operations</li>
+					<li>Transformations using matrices</li>
+					<li>Determinant of a 2 by 2 matrix and its interpretation as an area scale factor. Effect of positive/negative determinant on orientation</li>
+					<li>\(\mathrm{det}(\mathrm{\textbf{AB}}) = \mathrm{det}(\mathrm{\textbf{A}})\mathrm{det}(\mathrm{\textbf{B}})\)</li>
+					<li>Invariant points and lines</li>
+					<li>Describing geometrically the transformation associated with a given matrix</li>
+					<li>Given a transformation, find its matrix</li>
+					<li>Understand the meaning of conformable, equal, square, rectangular, m by n, zero and null, transpose and identity when applied to matrices</li>
+					<li>Definitions of associative and commutative</li>
+				</ul>
+			</div>
+			<div class="topics" id="matrices1-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="division-content">
+				<h2>Polynomial Division</h2>
+				<ul>
+					<li>Different methods for polynomial division</li>
+					<li>Remainder Theorem</li>
+					<li>Factor Theorem for factors \((x - a)\) and \((bx - a)\), and harder ones e.g. \(a^3 + b^3\), \((a - b)^3 + (b - c)^3 + (c - a)^3\)</li>
+				</ul>
+			</div>
+			<div class="topics" id="division-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="sums-content">
+				<h2>Sums of Series</h2>
+				<ul>
+					<li>Arithmetic and Geometric progressions and their sums</li>
+					<li>Method of differences</li>
+					<li>Sigma notation</li>
+					<li>Using standard formulae for \(\displaystyle\sum r^n\) for \(n=1,2,3\)</li>
+				</ul>
+			</div>
+			<div class="topics" id="sums-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="simultaneous-content">
+				<h2>Simultaneous Equations</h2>
+				<ul>
+					<li>Systems of 3 or more equations</li>
+					<li>Gaussian elimination</li>
+					<li>Consistent, inconsistent and ambiguous sets of equations</li>
+					<li>Solution or failure of solution of three simultaneous linear equations in terms of the geometrical arrangement of three planes</li>
+				</ul>
+			</div>
+			<div class="topics" id="simultaneous-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="matrices2-content">
+				<h2>Matrices 2</h2>
+				<ul>
+					<li>Inverse of a matrix (2 by 2 and 3 by 3)</li>
+					<li>\((\mathrm{\textbf{AB}})^{-1} = \mathrm{\textbf{B}}^{-1}\mathrm{\textbf{A}}^{-1}\)</li>
+					<li>Inverse transformations</li>
+					<li>Significance of zero determinant, singular and non-singular matrices</li>
+					<li>Solving simultaneous equations using inverse matrices</li>
+					<li>Transformations in 3 dimensions, and determinant as volume scale factor</li>
+				</ul>
+			</div>
+			<div class="topics" id="matrices2-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="exponentials-content">
+				<h2>Exponentials and Logarithms</h2>
+				<ul>
+					<li>Logarithms – definitions, relation to index laws, change of base, solving equations (no natural logarithms at this point)</li>
+					<li>Exponential functions and their graphs</li>
+					<li>Problems involving exponential growth and decay</li> 
+					<li>Modelling problems with sequences and series. e.g. problems involving compound and simple interest on bank deposits, loans, mortgages, etc. and other contexts in which growth or decay can be modelled by an arithmetic or geometric sequence</li>
+					<li>Be able to use logarithmic graphs to estimate parameters in relationships of the form \(y = ax^n\) and \(y = kb^x\), given data, both by drawing graphs and using calculator functions</li>
+				</ul>
+			</div>
+			<div class="topics" id="exponentials-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="trigonometry-content">
+				<h2>Trigonometry</h2>
+				<ul>
+					<li>Radian measure – equations, arc length and sector area</li>
+					<li>Sine and cosine rules, including the ambiguous case, and area of triangle</li>
+					<li>Know and be able to use exact values for \(0\), \(\frac{\pi}{6}\), \(\frac{\pi}{4}\), \(\frac{\pi}{3}\), \(\pi\) etc</li>
+				</ul>
+			</div>
+			<div class="topics" id="trigonometry-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="-content">
 				<h2></h2>
 				<ul>
 					<li></li>
 				</ul>
 			</div>
-			<div class="topics" id="x-resources">
+			<div class="topics" id="-resources">
+				<ul>
+
+				</ul>
+			</div>
+			<div class="topics" id="-content">
+				<h2></h2>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+			<div class="topics" id="-resources">
 				<ul>
 
 				</ul>
