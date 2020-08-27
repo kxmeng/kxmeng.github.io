@@ -57,7 +57,6 @@
 			<button onclick="brushSize(3)">Thick</button>
 			-->
 			<button onclick="clearCanvas()">Clear</button>
-			<button onclick="sendMessage()">Chat</button>
 			<button onclick="saveCanvas()">Save</button>
 			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
 			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
@@ -135,16 +134,6 @@
 			);
 			console.log(newestObject);
 		});
-
-		// Function to send a message manually
-		let sendMessage = function() {
-			pubnub.publish(
-				{
-					channel: "chat-al",
-					message: "test message",
-				}
-			)
-		}
 
 		// Listen for messages
 		pubnub.addListener({
