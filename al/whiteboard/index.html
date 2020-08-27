@@ -117,7 +117,9 @@
 					let jsonObj = message.message;
 					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
 					fabric.util.enlivenObjects([jsonObj], function (enlivenedObjects) {
-						canvas.add(obj);
+						enlivenedObjects.forEach(function (obj, index) {
+							canvas.add(obj);
+						});
 						canvas.renderAll();
 					});
 					objectsToAdd = message.message;
