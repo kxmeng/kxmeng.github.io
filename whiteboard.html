@@ -111,16 +111,18 @@
 
 		let shareCanvas = function() {
 			let exportCanvas = canvas.toJSON();
-			pubnub.publish(
-				{
-					channel: "whiteboard-main",
-					message: exportCanvas,
-				}, 
-				(status, response) => {
-					console.log(status);
-					console.log(response);
-				}
-			);
+			if(confirm("Are you sure?")){
+				pubnub.publish(
+					{
+						channel: "whiteboard-main",
+						message: exportCanvas,
+					}, 
+					(status, response) => {
+						console.log(status);
+						console.log(response);
+					}
+				);
+			}
 		}
 
 		pubnub.addListener({
