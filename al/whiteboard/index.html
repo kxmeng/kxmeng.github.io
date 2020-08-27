@@ -153,6 +153,10 @@
 		pubnub.subscribe({
 			channels: ["whiteboard-al"],
 		});
+
+		canvas.on("object:added", function(){
+			console.log("added new object");
+		});
 	</script>
 </body>
 </html>
