@@ -120,12 +120,13 @@
 		// Create global variable for publishing this canvas so it can be stopped later
 		var canvasStream = 0;
 
-		// Every time a new object is added to the canvas...
+		// Every time a new object is added to the canvas
 		canvas.on("object:added", function(){
+			// Find the newest object
 			let objectsOnCanvas = canvas.toJSON().objects;
 			let numObjects = objectsOnCanvas.length;
 			let newestObject = objectsOnCanvas[numObjects-1];
-			// ... publish it to the channel and log it
+			// Publish it to the channel and log it
 			pubnub.publish(
 				{
 					channel: "whiteboard-al",
