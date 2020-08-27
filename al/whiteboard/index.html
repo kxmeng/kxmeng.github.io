@@ -109,16 +109,17 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				// Find the message part of the message received
-				let jsonObj = message.message;
-				// Add to the canvas
-				fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
-					enlivenedObjects.forEach(function (obj, index) {
-						canvas.add(obj);
+				if(message.channel == "whiteboard-al") {
+					// Find the message part of the message received
+					let jsonObj = message.message;
+					// Add to the canvas
+					fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
+						enlivenedObjects.forEach(function (obj, index) {
+							canvas.add(obj);
+						});
+						canvas.renderAll();
 					});
-					canvas.renderAll();
-				});
-				console.log(message.channel);
+				}
 			}
 		});
 
