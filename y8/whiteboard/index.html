@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whiteboard</title>
+	<!-- Fabric js for drawing on the canvas -->
+	<script type="text/javascript" src="/fabric.js"></script>
+
+	<!-- PubNub for sending and receiving information -->
+	<script type="text/javascript" src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.28.2.js"></script>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#buttons {
+			display: flex;
+			position: fixed;
+			bottom: 5px;
+			left: 5px;
+		}
+
+		button {
+			width: 80px;
+			height: 30px;
+			border: solid 1px black;
+			background-color: white;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin-right: 5px;
+		}
+
+		.colours {
+			height: 30px;
+			width: 50px;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="whiteboard-page">
+		<canvas id="c" width="800" height="600"></canvas>
+		<div id="buttons">
+			<!-- Buttons to change brush size
+			<button onclick="brushSize(1)">Thin</button>
+			<button onclick="brushSize(2)">Medium</button>
+			<button onclick="brushSize(3)">Thick</button>
+			-->
+			<button onclick="clearCanvas()">Clear</button>
+			<button onclick="saveCanvas()">Save</button>
+			<!--<button onclick="shareCanvas()">Share</button>-->
+			<div id="black" class="colours" style="background-color: white; border: solid 1px black; height: 28px" onclick="brushColor('white');brushSize(10)"></div>
+			<div id="black" class="colours" style="background-color: black" onclick="brushColor('black');brushSize(1)"></div>
+			<div id="dodgerblue" class="colours" style="background-color: dodgerblue" onclick="brushColor('dodgerblue');brushSize(1)"></div>
+			<div id="limegreen" class="colours" style="background-color: limegreen" onclick="brushColor('limegreen');brushSize(1)"></div>
+			<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
+			<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		// Find canvas element
+		let dimensions = document.getElementsByTagName('canvas')[0];
+		// Set width and height to window width/height
+		dimensions.width = window.innerWidth;
+		dimensions.height = window.innerHeight;
+		// Use fabric.js to allow free drawing
+		let canvas = new fabric.Canvas("c", {isDrawingMode: true});
+
+		// Current brush size and colour
+		let currentSize = 1;
+		let currentColor = "black";
+
+		// Function to clear the canvas
+		let clearCanvas = function() {
+			if(confirm("Are you sure? This cannot be undone.")){
+				canvas.clear();
+			}
+		};
+
+		// Function to change thickness of brush
+		let brushSize = function(thickness) {
+			canvas.freeDrawingBrush.width = thickness;
+		};
+
+		// Function to change colour of brush
+		let brushColor = function(color) {
+			canvas.freeDrawingBrush.color = color;
+		};
+
+		let saveCanvas = function() {
+			alert(canvas.toSVG());
+		}
+
+		// PubNub initialization
+		let pubnub = new PubNub({
+			publishKey: "pub-c-3e0d9543-024b-45f8-953d-1d3257ac191a",
+			subscribeKey: "sub-c-9fa97d7c-e7d9-11ea-89a6-b2966c0cfe96",
+			uuid: "theClientUUID"
+		});
+
+		pubnub.addListener({
+			message: function(message) {
+				canvas.loadFromJSON(message.message); 
+			}
+		});
+
+		pubnub.subscribe({
+			channels: ["whiteboard-y8"],
+		});
+	</script>
+</body>
+</html>
