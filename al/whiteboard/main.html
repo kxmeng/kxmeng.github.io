@@ -68,7 +68,11 @@
 		</div>
 
 		<div id="chat">
-
+			<div>test test</div>
+			<div>test test</div>
+			<div>test test</div>
+			<div>test test</div>
+			<div>test test</div>
 		</div>
 	</div>
 	
@@ -151,7 +155,7 @@
 					let chatDiv = document.createElement("div");
 					chatDiv.innerHTML = message.message;
 					// Add this div to the chat
-					document.getElementByID("chat").appendChild(chatDiv);
+					document.getElementById("chat").appendChild(chatDiv);
 					// After 15 seconds, delete this message
 					setTimeout(function(){
 						chatDiv.remove();
