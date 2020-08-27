@@ -98,7 +98,10 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				canvas.loadFromJSON(canvas.toJSON().concat(message.message)); 
+				fabric.util.enlivenObjects([JSON.parse(message.message)], function (enlivenedObjects) {
+					canvas.add(enlivenedObjects[0]);
+					canvas.renderAll();
+				});
 			}
 		});
 

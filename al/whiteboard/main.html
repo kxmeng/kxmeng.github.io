@@ -106,11 +106,10 @@
 
 		let startStream = function() {
 			canvasStream = setInterval(function(){
-				let exportCanvas = canvas.toJSON();
 				pubnub.publish(
 					{
 						channel: "whiteboard-al",
-						message: exportCanvas,
+						message: canvas.toJSON(),
 					}, 
 					(status, response) => {
 						console.log(status);
