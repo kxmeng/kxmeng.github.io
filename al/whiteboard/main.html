@@ -10,12 +10,13 @@
 	<style>
 		body {
 			margin: 0;
+			overflow: hidden;
 		}
 
 		#buttons {
 			display: flex;
 			position: fixed;
-			bottom: 5px;
+			top: 5px;
 			left: 5px;
 		}
 
@@ -37,10 +38,17 @@
 			width: 50px;
 			margin-right: 5px;
 		}
+
+		#chat {
+			position: fixed;
+			top: 70vh;
+			right: 10px;
+			width: 20vw;
+		}
 	</style>
 </head>
 <body>
-	<div id="whiteboard-page">
+	<div id="whiteboard-page" style="height: 100vh;">
 		<canvas id="c" width="800" height="600"></canvas>
 		<div id="buttons">
 			<!-- Buttons to change brush size
@@ -58,6 +66,10 @@
 			<div id="limegreen" class="colours" style="background-color: limegreen" onclick="brushColor('limegreen');brushSize(1)"></div>
 			<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
 			<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
+		</div>
+
+		<div id="chat">
+
 		</div>
 	</div>
 	
@@ -109,6 +121,7 @@
 
 		let startStream = function() {
 			canvasStream = setInterval(function(){
+				// Stream this every 500ms to the channel
 				pubnub.publish(
 					{
 						channel: "whiteboard-al",
@@ -120,9 +133,25 @@
 
 		let stopStream = function() {
 			clearInterval(canvasStream);
+			// Check it has stopped
 			canvasStream = 0;
 			console.log(canvasStream);
 		}
+
+		// Listen for chat messages
+		pubnub.addListener({
+			message: function(message) {
+				// Create div
+				let newDiv = document.createElement('div');
+				// Add message to div
+				newDiv.innerHTML = message.message;
+				// Append to chat div
+				document.getElementById("chat").appendChild(innerDiv);
+				setTimeout(function() {
+					newDiv.remove();
+				},15000)
+			}
+		});
 	</script>
 </body>
 </html>

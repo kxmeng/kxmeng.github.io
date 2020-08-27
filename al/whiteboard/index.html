@@ -10,6 +10,7 @@
 	<style>
 		body {
 			margin: 0;
+			overflow: hidden;
 		}
 
 		#buttons {
@@ -36,6 +37,13 @@
 			height: 30px;
 			width: 50px;
 			margin-right: 5px;
+		}
+
+		#chat {
+			position: fixed;
+			top: 70vh;
+			right: 10px;
+			width: 20vw;
 		}
 	</style>
 </head>
@@ -115,6 +123,21 @@
 
 		pubnub.subscribe({
 			channels: ["whiteboard-al"],
+		});
+
+		// Listen for chat messages
+		pubnub.addListener({
+			message: function(message) {
+				// Create div
+				let newDiv = document.createElement('div');
+				// Add message to div
+				newDiv.innerHTML = message.message;
+				// Append to chat div
+				document.getElementById("chat").appendChild(innerDiv);
+				setTimeout(function() {
+					newDiv.remove();
+				},15000)
+			}
 		});
 	</script>
 </body>
