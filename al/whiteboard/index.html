@@ -56,9 +56,12 @@
 	<script type="text/javascript">
 		// Find canvas element
 		let dimensions = document.getElementsByTagName('canvas')[0];
+		// Find window dimensions
+		var windowWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+		var windowHeight = (window.innerHeight > 0) ? window.innerHeight : screen.height;
 		// Set width and height to window width/height
-		dimensions.width = window.innerWidth;
-		dimensions.height = window.innerHeight;
+		dimensions.width = windowWidth;
+		dimensions.height = windowHeight;
 		// Use fabric.js to allow free drawing
 		let canvas = new fabric.Canvas("c", {isDrawingMode: true});
 
@@ -98,8 +101,9 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				console.log(message.message);
+				// Find the message part of the message received
 				let jsonObj = message.message;
+				// Add to the canvas
 				fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
 					enlivenedObjects.forEach(function (obj, index) {
 						canvas.add(obj);
