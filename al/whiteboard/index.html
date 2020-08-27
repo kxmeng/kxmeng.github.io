@@ -98,9 +98,8 @@
 
 		pubnub.addListener({
 			message: function(message) {
-				console.log(message.message.objects);
-				console.log(message.message.objects.length);
-				let jsonObj = JSON.parse(message.message);
+				console.log(message.message);
+				let jsonObj = message.message;
 				fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
 					enlivenedObjects.forEach(function (obj, index) {
 						canvas.add(obj);
