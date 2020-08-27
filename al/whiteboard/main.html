@@ -62,6 +62,7 @@
 	<script type="text/javascript" src="/whiteboard.js"></script>
 	<script type="text/javascript">
 		window.setInterval(function(){
+			let exportCanvas = canvas.toJSON();
 			pubnub.publsh(
 				{
 					channel: "whiteboard-al",
