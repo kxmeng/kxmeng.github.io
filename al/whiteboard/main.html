@@ -120,6 +120,21 @@
 		// Create global variable for publishing this canvas so it can be stopped later
 		var canvasStream = 0;
 
+		// Every time a new object is added to the canvas...
+		canvas.on("object:added", function(){
+			let objectsOnCanvas = canvas.toJSON().objects;
+			let numObjects = objectsOnCanvas.length;
+			let newestObject = objectsOnCanvas[numObjects-1];
+			// ... publish it to the channel and log it
+			pubnub.publish(
+				{
+					channel: "whiteboard-al",
+					message: newestObject,
+				}
+			);
+			console.log(newestObject);
+		});
+
 		// Start an interval function every 500ms to publish the current objects to the channel
 		let startStream = function() {
 			canvasStream = setInterval(function(){
