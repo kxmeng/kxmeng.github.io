@@ -117,8 +117,10 @@
 			uuid: "theClientUUID"
 		});
 
+		// Create global variable for publishing this canvas so it can be stopped later
 		var canvasStream = 0;
 
+		// Start an interval function every 500ms to publish the current objects to the channel
 		let startStream = function() {
 			canvasStream = setInterval(function(){
 				// Stream this every 500ms to the channel
@@ -131,12 +133,31 @@
 			}, 500);
 		}
 
+		// Stop the interval function running and log 0 to check
 		let stopStream = function() {
 			clearInterval(canvasStream);
 			// Check it has stopped
 			canvasStream = 0;
 			console.log(canvasStream);
 		}
+
+		// Listen for messages
+		pubnub.addListener({
+			message: function(message) {
+				// Check if the message comes from the chat channel
+				if(message.channel == "chat-al") {
+					// Create a div for the message and add the message to it
+					let chatDiv = document.createElement("div");
+					chatDiv.innerHTML = message.message;
+					// Add this div to the chat
+					document.getElementByID("chat").appendChild(chatDiv);
+					// After 15 seconds, delete this message
+					setTimeout(function(){
+						chatDiv.remove();
+					},15000)
+				}
+			}
+		});
 	</script>
 </body>
 </html>

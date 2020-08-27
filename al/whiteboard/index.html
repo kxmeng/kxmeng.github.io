@@ -59,6 +59,10 @@
 			<div id="gold" class="colours" style="background-color: gold" onclick="brushColor('gold');brushSize(1)"></div>
 			<div id="crimson" class="colours" style="background-color: crimson" onclick="brushColor('crimson');brushSize(1)"></div>
 		</div>
+
+		<div id="chat">
+
+		</div>
 	</div>
 	
 	<script type="text/javascript">
@@ -99,26 +103,48 @@
 		}
 
 		// PubNub initialization
-		let channel = 'whiteboard-main';
-
 		let pubnub = new PubNub({
 			publishKey: "pub-c-3e0d9543-024b-45f8-953d-1d3257ac191a",
 			subscribeKey: "sub-c-9fa97d7c-e7d9-11ea-89a6-b2966c0cfe96",
 			uuid: "theClientUUID"
 		});
 
+		// Global variable recording what the last objects added to the canvas were
+		let objectsToAdd = [];
+
 		pubnub.addListener({
 			message: function(message) {
+				// Check if the message comes from the whiteboard channel
 				if(message.channel == "whiteboard-al") {
-					// Find the message part of the message received
+					// Find the message part of the message received - should be JSON object
 					let jsonObj = message.message;
-					// Add to the canvas
+					// Remove last added objects
+					fabric.util.enlivenObjects(objectsToAdd.objects, function (enlivenedObjects) {
+						enlivenedObjects.forEach(function (obj, index) {
+							canvas.remove(obj);
+						});
+						canvas.renderAll();
+					});
+					// Add this object to the canvas - NB "erasing" does not exist and consists of overwriting with white
 					fabric.util.enlivenObjects(jsonObj.objects, function (enlivenedObjects) {
 						enlivenedObjects.forEach(function (obj, index) {
 							canvas.add(obj);
 						});
 						canvas.renderAll();
 					});
+					objectsToAdd = message.message;
+				}
+				// Check if the message comes from the chat channel
+				if(message.channel == "chat-al") {
+					// Create a div for the message and add the message to it
+					let chatDiv = document.createElement("div");
+					chatDiv.innerHTML = message.message;
+					// Add this div to the chat
+					document.getElementByID("chat").appendChild(chatDiv);
+					// After 15 seconds, delete this message
+					setTimeout(function(){
+						chatDiv.remove();
+					},15000)
 				}
 			}
 		});
