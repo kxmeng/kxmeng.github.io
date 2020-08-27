@@ -224,6 +224,14 @@ body {
 	border-left: solid 1px var(--main-color);
 	padding: 1em;
 }
+
+#right a {
+	text-decoration: none;
+	color: var(--main-color);
+}
+#right a:hover {
+	color: var(--highlight-color);
+}
 #mid {
 	grid-area: mid;
 	overflow: scroll;
