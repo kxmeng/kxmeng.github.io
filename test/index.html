@@ -1,74 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Screen Recording</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Simple Screen Record!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/comlinkjs@3.0.2/umd/comlink.js"></script>
+    <script src="./script.js" async></script>
+    <!-- import the webpage's stylesheet -->
     <style>
       body {
-        text-align: center;
+        font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+        margin: 2em;
       }
 
-      button {
-        display: inline-block;
-        margin: 1em 1em;
-        font-size: 2em;
-        cursor: pointer;
+      h1 {
+        font-style: italic;
+        color: #373fff;
       }
 
       video {
-        border: 1px solid lightgray;
-        width: 100%;
-        background-color: #eee;
+        width: 640px;
+        height: 480px;
+      }
+
+      button {
+        margin: 1em;
+        padding: 1em;
       }
     </style>
-  </head>
-
+  </head>  
   <body>
-    <button id="start">
-      Start Recording
-    </button>
-    <button id="stop" disabled>
-      Stop Recording
-    </button>
-    <video autoplay />
-
-    <script>
-      const start = document.getElementById("start");
-      const stop = document.getElementById("stop");
-      const video = document.querySelector("video");
-      let recorder, stream;
-
-      async function startRecording() {
-        stream = await navigator.mediaDevices.getDisplayMedia({
-          video: { mediaSource: "screen" }
-        });
-        recorder = new MediaRecorder(stream);
-
-        const chunks = [];
-        recorder.ondataavailable = e => chunks.push(e.data);
-        recorder.onstop = e => {
-          const completeBlob = new Blob(chunks, { type: chunks[0].type });
-          video.src = URL.createObjectURL(completeBlob);
-        };
-
-        recorder.start();
-      }
-
-      start.addEventListener("click", () => {
-        start.setAttribute("disabled", true);
-        stop.removeAttribute("disabled");
-
-        startRecording();
-      });
-
-      stop.addEventListener("click", () => {
-        stop.setAttribute("disabled", true);
-        start.removeAttribute("disabled");
-
-        recorder.stop();
-        stream.getVideoTracks()[0].stop();
-      });
-    </script>
+    <h1>World's Simplest Screenrecorder with Voice</h1>
+    <p id="warning">
+      Enable chrome://flags/#enable-experimental-web-platform-features
+    </p>
+    <video id="videoElement" autoplay muted></video>
+    <br />
+    <button id="captureBtn">Capture</button>
+    <button id="startBtn" disabled>Start Recording</button>
+    <button id="stopBtn" disabled>Stop Capture</button>
+    <br>
+    <input type="checkbox" id="micAudioToggle" />
+    <label for="micAudioToggle">Capture Audio from Microphone</label>
+    <a id="download" href="#" style="display: none;">Download</a>
   </body>
 </html>
