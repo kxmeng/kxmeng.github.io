@@ -346,5 +346,33 @@
 		</div>
 	</div>
 	<script src="../script.js"></script>
+	<script>
+		let names = ["Kayla", "Volkan", "Thomas", "James", "Aiden", "Alban", "Maximilian", "Aashna", "Mahad", "Natasha", "Ruhika", "Beatrice", "Arnesh", "Gabriel", "Alexander", "Beatrix", "Finn", "Wiliam", "Ella", "Sylvie", "Poppy", "Damian"];
+
+		// Function to shuffle a list into a random order and return first element. Use by using shuffle(list)
+		let shuffle = function (array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+			};
+			return array[0];
+		};
+
+		// Find button to generate random name (currently: footer)
+		let rngBtn = document.getElementById("foot");
+		rngBtn.onclick = function() {
+			rngBtn.innerHTML = shuffle(names);
+		}
+	</script>
 </body>
 </html>
