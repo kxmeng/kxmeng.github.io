@@ -69,7 +69,11 @@
 				Resources
 				<div id="resources"></div>
 			</div>
-			<div id="foot"></div>
+			<div id="foot">
+				<div id="rng">
+
+				</div>
+			</div>
 		</div>
 		<!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
 		<div class="hide">
@@ -366,5 +370,33 @@
 		</div>
 	</div>
 	<script src="../script.js"></script>
+	<script>
+		let names = ["Joaquin", "Ishaan", "Oscar", "Ela", "Chiara", "Zaal", "Tej", "Nicholas", "Jack", "Piyush", "Leopold", "Gunes", "Arielle", "Chase", "Claire", "Yuv", "Amaana", "Rhea", "Vassilis", "Adam", "Emily", "Rufus", "Daniel", "Desh", "Charlotte", "Alex"];
+
+		// Function to shuffle a list into a random order and return first element. Use by using shuffle(list)
+		let shuffle = function (array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+			// Pick a remaining element...
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex -= 1;
+
+			// And swap it with the current element.
+			temporaryValue = array[currentIndex];
+			array[currentIndex] = array[randomIndex];
+			array[randomIndex] = temporaryValue;
+			};
+			return array[0];
+		};
+
+		// Find button to generate random name (currently: footer)
+		let rngBtn = document.getElementById("foot");
+		rngBtn.onclick = function() {
+			rngBtn.innerHTML = shuffle(names);
+		}
+	</script>
 </body>
 </html>
