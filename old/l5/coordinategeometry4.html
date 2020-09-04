@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Exercise 4 Coordinate Geometry</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			L5 Maths
+		</div>
+
+			<div class="col-9" id="maincontent">
+				<div class="topics active-topic" id="coordinates">
+					<h2>Coordinate geometry</h2>
+					<ol>
+						<li>
+							<ol style="list-style-type: lower-latin;"> Solve algebraically by writing the equation of the lines in the form \(y = ...\), then equating the two equations since at the point of intersection, the \(y\) values of both lines must be the same. Once the \(x\) coordinate is found, put it into the equation of either line.
+								<li>\(x+5=2x \Rightarrow x=5, y = 10\)</li>
+								<li>\(2x-5=x+5 \Rightarrow x=10, y = 15\)</li>
+								<li>Rearrange left equation \(y = 5-x\); then \(x+5=2x \Rightarrow x=5, y = 0\)</li>
+								<li>Left equation: \(y = 7-2x\); right equation: \(y = \dfrac{x-6}{2}\); then \(7-2x = \dfrac{x-6}{2} \Rightarrow x=4, y = -1\)</li>
+								<li>Left equation: \(y = \dfrac{1-4x}{3}\); then \(\dfrac{1-4x}{3} = 1-x \Rightarrow x=-2, y = 3\)</li>
+							</ol>
+						</li>
+						<hr>
+						<li>
+							<ol style="list-style-type: lower-latin;"> Find the differences in both the \(x\) and \(y\) coordinates, then use Pythagoras' theorem.
+								<li>Differences: \(x: 4\); \(y: 1\); distance \(\sqrt{4^2+1^2} = \sqrt{17}\)</li>
+								<li>Differences: \(x: 3\); \(y: 4\); distance \(\sqrt{3^2 + 4^2} = 5\)</li>
+								<li>Differences: \(x: 5\); \(y: 12\); distance \(\sqrt{5^2+12^2} = 13\)</li>
+								<li>Differences: \(x: 3\); \(y: 15\); distance \(\sqrt{3^2+15^2} = \sqrt{234}\)</li>
+								<li>Differences: \(x: 8\); \(y: 3\); distance \(\sqrt{8^2+3^2} = \sqrt{73}\)</li>
+							</ol>
+						</li>
+						<hr>
+						<li>First find where lines cross the coordinate axes: when \(x=0\), \(y=12\); when \(y=0\), \(3x+12=0\Rightarrow x=-4\).<br>Then use Pythagoras' theorem (see Q2): \(\sqrt{12^2+4^2} = \sqrt{150}\)</li>
+						<hr>
+						<li>Find first the equations of the lines. Gradient of line \(l_1\) is \(\dfrac{15-1}{6-(-1)} = 2\); line \(l_1 : y=2x + c\). The line goes through the point \((6,15)\) so \(15 = 2\times 6 + c\) and \(c = 3\). This means \(l_1\) has equation \(y = 2x+3\).<br>Similarly, \(l_2\) has equation \(y = 5x - 12\).<br>Intersect when \(y\) values are the same (see Q1) so \(2x+3 = 5x-12 \Rightarrow x=5\)</li>
+						<hr>
+						<li>Point A: use method from question 1 to get \(x = -2x+12 \Rightarrow x = 12, y = 12\)<br>Point B: where \(l_2\) intersects the \(x\) axis so \(y = 0\), and \(0 = -2x+12 \Rightarrow x=6\)<br>Point C: where \(l_2\) intersects the \(y\) axis so \(x=0\), and \(y = 12\)<br>Draw a diagram with these three points to find the areas of the triangles: OAB has width 6, height 12, area 36; OAC has width 12, height 12, area 72</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

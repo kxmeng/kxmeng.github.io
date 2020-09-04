@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Test 4 solutions</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			A Level Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-9" id="maincontent">
+				<div class="topics active-topic" id="testsolutions">
+					<h2>Test 4 solutions</h2>
+					Markscheme <a href="https://kingsschool-my.sharepoint.com/:w:/g/personal/kxm_kcs_org_uk/Ebvnr2WqRkRJkwPOX3lnk04BkyYh49JVjqSCnfnHCV05-A?e=KsqDYs">here</a> (what you get marks for). M1 is 1 mark for method, A1 is 1 mark for correct answer. Worked solutions below.
+					<ol>
+						<li>
+							<ol style="list-style-type: lower-roman;">
+								<li><br>
+									Area of sector: \(\frac{1}{2}r^2\theta = \frac{1}{2}8^2(1.2) = 38.4\)<br>
+									Area of triangle: \(\frac{1}{2}ab\sin C = \frac{1}{2}(2.6)(5.2)\sin(1.2) = 6.3\)<br>
+									Area shaded: \(38.4 - 6.3 = 32.1\)
+								</li>
+								<li><br>
+									Arc length: \(r\theta = 8(1.2) = 9.6\)<br>
+									Length CD: cosine rule \(\sqrt{2.6^2+5.2^2 - (2.6)(5.2)\cos 1.2} = 4.90\)<br>
+									Length AC: \(8 - 5.2 = 2.8\)<br>
+									Length BD: \(8 - 2.6 = 5.4\)<br>
+									Perimeter: Sum of these \(= 22.7\)
+								</li>
+							</ol>
+						</li>
+						<hr>
+						<li>
+							<ol style="list-style-type: lower-roman;">
+								<li><br>
+									\(f(e^4-3) = 2 + \ln (e^4-3+3) = 2 + 4 = 6\)<br>
+									\(g(6) = a(6^2) = 36a\)<br>
+									\(36a = 9 \Rightarrow a = \frac{1}{4}\)
+								</li>
+								<li><br>
+									Let \(y = 2 + \ln(x+3)\)<br>
+									\(y - 2 = \ln(x+3)\)<br>
+									\(e^{y-2} = x+3\)<br>
+									\(x = e^{y-2}-3\)<br>
+									\(f^{-1}(x) = e^{x-2}-3\)<br>
+									The domain of \(f\) is \(x\geq 0\) so the range of \(f\) is \(f(x)\geq 2 + \ln 3\).<br>
+									The domain of \(f^{-1}\) is the range of \(f\) which is \(x \geq 2 + \ln 3\).
+								</li>
+							</ol>
+						</li>
+						<hr>
+						<li><br>
+							\(\sec^2\theta  = 1 + \tan^2\theta\)<br>
+							\(3(1+\tan^2\theta) + 10\tan\theta - 11 = 0\)<br>
+							\(3\tan^2\theta + 10\tan\theta - 8 = 0\), can also write \(3x^2 + 13x - 11 = 0\) where \(x = \tan\theta\)<br>
+							Solve quadratic e.g. factorise \((\tan\theta 4)(3\tan\theta - 2\) or formula<br>
+							In the range of \(\pi/2 < \theta < \pi\), \(\tan\theta < 0\) so \(\tan\theta = -4\)
+						</li>
+						<hr>
+						<li>
+							<ol style="list-style-type: lower-roman;">
+								<li><br>
+									\(f\): the modulus part must be \(\geq 0\) so overall must be \(\geq 3a\)<br>
+									\(g\): any real number
+								</li>
+								<li><br>
+									\(f\) has no inverse because it is not a one-to-one function<br>
+									Let \(y = 5x-4a\)<br>
+									\(\dfrac{y+4a}{5} = x\)<br>
+									\(g^{-1}(x) = \dfrac{x+4a}{5}\)
+								</li>
+								<li><br>
+									\(gf(x) = 5(|2x+a|+3a)-4a\)<br>
+									\(gf(x) = 5|2x+a| + 15a - 4a = 31a\)<br>
+									\(5|2x+a| = 20a\)<br>
+									\(|2x+a| = 4a\)<br>
+									Either \(2x+a = 4a \Rightarrow x = \frac{3}{2}a\)<br>
+									Or \(-(2x+a) = 4a \Rightarrow x = -\frac{5}{2}a\)
+								</li>
+							</ol>
+						</li>
+						<hr>
+						<li>
+							<ol style="list-style-type: lower-roman;">
+								<li><br>
+									Translation in negative \(x\) direction by 3<br>
+									Stretch in \(y\) direction, scale factor 2
+								</li>
+								<li><br>
+									Sketch the graphs: <a href="https://www.desmos.com/calculator/c2pra9gkd6" target="_blank">https://www.desmos.com/calculator/c2pra9gkd6</a><br>
+									Left intersection is \(-x = -2(x+3) \Rightarrow x = -6\)<br>
+									Right intersection is \(-x = 2(x+3) \Rightarrow x = -2\)<br>
+									So \(-6 < x < -2\)
+								</li>
+							</ol>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+		<script src="../scripts.js"></script>
+		<!--Script to change sidebar lists-->
+		<script>
+			$(".pageheader span").click(function() {
+				$('.navbar-active').removeClass('navbar-active');
+				$('.sidebar-visible').removeClass('sidebar-visible');
+				$('ul.' + $(this).attr('class')).addClass('sidebar-visible');
+				$(this).addClass('navbar-active');
+			});
+		</script>
+	</body>
+
+</html>

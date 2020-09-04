@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Lower 5th</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			L5 Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-2 sidebar" id="sidebar-left">
+				<h6>Autumn term</h6>
+				<ul>
+					<li id="surds">Surds and indices</li>
+					<li id="recurring">Recurring decimals</li>
+					<li id="expanding">Expanding and factorising</li>
+					<li id="solvingq">Solving quadratics</li>
+					<li id="trig">Trigonometry, Pythagoras</li>
+					<li id="sine">Sine, cosine rules</li>
+					<li id="area">Area of triangle</li>
+					<li id="triggraphs">Trigonometric graphs</li>
+					<li id="proportion">Proportion</li>
+					<li id="changing">Changing the subject</li>
+					<li id="algebraic">Algebraic fractions</li>
+				</ul>
+				<hr>
+				<h6>Spring term</h6>
+				<ul>
+					<li id="circles">Circle theorems</li>
+					<li id="chords">Intersecting chords</li>
+					<li id="constructions">Constructions</li>
+					<li id="sets">Sets</li>
+					<li id="functions">Functions</li>
+					<li id="coordinate">Coordinate geometry</li>
+					<li id="nonlinear">Non linear graphs</li>
+				</ul>
+				<hr>
+				<h6>Summer term</h6>
+				<ul>
+					<li id="graphical">Graphical solutions</li>
+					<li id="vectors">Vectors</li>
+				</ul>
+				<hr>
+				<h6>After exams</h6>
+				<ul>
+					<li id="transformingtrig">Transforming trig graphs</li>
+				</ul>
+			</div>
+
+			<div class="col-9" id="maincontent">
+				<div class="topics" id="surds">
+					<h2>Surds and indices</h2>
+					<ol>
+						<li>use index notation and index laws for multiplication and division of positive and negative integer powers including zero</li>
+						<li>understand the meaning of surds</li>
+						<li>manipulate surds, including rationalising a denominator</li>
+						<li>use index laws to simplify and evaluate numerical expressions involving integer, fractional and negative powers</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=1125" class="pdf" target="_blank">dfm indices worksheet</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=902" class="pdf" target="_blank">dfm full coverage: indices</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=901" class="pdf" target="_blank">dfm full coverage: surds</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1368" class="ppt" target="_blank">dfm: surds</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=1124" class="ppt" target="_blank">dfm: indices</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=8BaI_tA8Xm4" class="video" target="_blank">Indices (23:39)</a>, <a href="https://www.youtube.com/watch?v=yiW2rJeupx4" class="video" target="_blank">Simplifying surds (4:54)</a>, <a href="https://www.youtube.com/watch?v=T8mBbdlpG6Y" class="video" target="_blank">Rationalising surds pt1 (5:00)</a>, <a href="https://www.youtube.com/watch?v=4px1P8hzi5g" class="video" target="_blank">Rationalising surds pt2 (5:00)</a>
+					</div>
+				</div>
+				<div class="topics" id="recurring">
+					<h2>Recurring decimals</h2>
+					<ol>
+						<li>convert a decimal to a fraction or a percentage</li>
+						<li>recognise that a terminating decimal is a fraction</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=975" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Maths Genie: <a href="https://www.youtube.com/watch?v=Fe8ubdqy15M" class="video" target="_blank"> video (8:30)</a>
+					</div>
+				</div>
+				<div class="topics" id="expanding">
+					<h2>Expanding brackets</h2>
+					<ol>
+						<li>multiply a single term over a bracket</li>
+						<li>expand the product of two or more linear expressions</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=127" class="word" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=126" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=aoISBxHmO94" class="video" target="_blank"> Expanding double brackets (17:09)</a>
+					</div>
+				</div>
+				<div class="topics" id="solvingq">
+					<h2>Quadratics</h2>
+					<ol>
+						<li>understand the concept of a quadratic expression and be able to factorise such expressions</li>
+						<li>solve quadratic equations by factorisation</li>
+						<li>solve quadratic equations by using the formula</li>
+						<li>form and solve quadratic equations from data given in a context</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets (NB: we have not covered "completing the square"): <a href="https://www.drfrostmaths.com/getfile.php?fid=934" class="pdf" target="_blank">dfm full coverage: quadratics</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=928" class="pdf" target="_blank">dfm full coverage: factorising</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1369" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=rkJ_qcriSZU" class="video" target="_blank"> Solving, pt1 (13:42)</a>, <a href="https://www.youtube.com/watch?v=ARlimGFg4V4" class="video" target="_blank"> Solving, pt2 (9:22)</a>, <a href="https://www.youtube.com/watch?v=VZBB17HJ7XU" class="video" target="_blank"> Factorising complex quadratics (5:00)</a>
+					</div>
+				</div>
+				<div class="topics" id="trig">
+					<h2>Trigonometry</h2>
+					<ol>
+						<li>know, understand and use Pythagoras' theorem in two and three dimensions</li>
+						<li>know, understand and use sine, cosine and tangent of acute angles to determine lengths and angles of a right angled triangle</li>
+						<li>understand and use sine, cosine and tangent of obtuse angles</li>
+						<li>understand and use angles of elevation and depression</li>
+						<li>apply trigonometrical methods to solve problems in three dimensions, including finding the angle between a line and a plane</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=1114" class="pdf" target="_blank">dfm1</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=1120" class="pdf" target="_blank">dfm2</a>, <a href="https://www.drfrostmaths.com/resource.php?rid=384" class="pdf" target="_blank">dfm full coverage: Pythagoras</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=969" class="pdf" target="_blank">dfm full coverage: Trigonometry</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1113" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=WqBDpujbtIo" class="video" target="_blank">Trigonometry, Pythagoras (27:13)</a>
+					</div>
+				</div>
+				<div class="topics" id="sine">
+					<h2>Sine, cosine rules</h2>
+					<ol>
+						<li>understand and use the sine and cosine rules for any triangle</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=677" class="pdf" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=676" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=I8LI7wPSvNI" class="video" target="_blank">Sine, Cosine rule (19:55)</a>
+					</div>
+				</div>
+				<div class="topics" id="area">
+					<h2>Area of triangles</h2>
+					<ol>
+						<li>understand and use the formula for area of a triangle</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=914" class="pdf" target="_blank">dfm full coverage: non-right angled triangles</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=ORkNWz9ADNU" class="video" target="_blank">Area of triangle (6:13)</a>, <a href="https://www.youtube.com/watch?v=vMXiXtg0O4k" class="video" target="_blank">Area of triangles exam questions (10:28)</a>
+					</div>
+				</div>
+				<div class="topics" id="triggraphs">
+					<h2>Trigonometric graphs</h2>
+					<ol>
+						<li>(know the shapes of the graphs of the sine, cosine and tangent functions)</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Websites: <a href="https://www.bbc.co.uk/bitesize/guides/zwbwgdm/revision/1" class="web" target="_blank">bbc</a>
+					</div>
+				</div>
+				<div class="topics" id="proportion">
+					<h2>Proportion</h2>
+					<ol>
+						<li>use the process of proportionality to evaluate unknown quantities</li>
+						<li>calculate an unknown quantity from quantities that vary in direct proportion</li>
+						<li>solve word problems about ratio and proportion</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=365" class="word" target="_blank">dfm</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=898" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1142" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=s4dV4CRgbxc" class="video" target="_blank">Proportion (19:34)</a>
+					</div>
+				</div>
+				<div class="topics" id="changing">
+					<h2>Rearranging formulae</h2>
+					<ol>
+						<li>understand the process of manipulating formulae or equations to change the subject, to include cases where the subject may appear twice or a power of the subject occurs</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=929" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=633" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=RStSzBUNxBI" class="video" target="_blank">pt1 (4:50)</a>, <a href="https://www.youtube.com/watch?v=Jvw43nACq38" class="video" target="_blank">pt2 (3:30)</a>, <a href="https://www.youtube.com/watch?v=hMQ9x9ieEFE" class="video" target="_blank">pt3 most useful (4:59)</a>
+					</div>
+				</div>
+				<div class="topics" id="algebraic">
+					<h2>Algebraic fractions</h2>
+					<ol>
+						<li>manipulate algebraic fractions where the numerator and/or the denominator can be numeric, linear or quadratic</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=390" class="word" target="_blank">dfm worksheet</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=391" class="word" target="_blank">dfm worksheet answers</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=927" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=756" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=cWxQMtMOHCI" class="video" target="_blank"> Algebraic fractions 1 (14:59)</a>, <a href="https://www.youtube.com/watch?v=bru7945Z5eA" class="video" target="_blank"> Algebraic fractions 2 (4:56)</a>, <a href="https://www.youtube.com/watch?v=DiUzSTm330U" class="video" target="_blank"> Equations (14:39)</a>
+					</div>
+				</div>
+				<div class="topics" id="circles">
+				<h2>Circle theorems</h2>
+					<ol>
+						<li>understand chord and tangent properties of circles</li>recognise the term 'cyclic quadrilateral' (and its properties)<li>understand and use angle properties of the circle: angle subtended by an arc at the centre is twice the angle at the circumference; angle subtended at the circumference by a diameter is a right angle; angles in the same segment are equal; opposite angles in a cyclic quadrilateral sum to 180 degrees; the alternate segment theorem</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=655" class="pdf" target="_blank">dfm</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=973" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=654" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=BDqELk2xCPU" class="video" target="_blank">Circle Theorems (20:01)</a>
+					</div>
+				</div>
+				<div class="topics" id="chords">
+					<h2>Intersecting chords</h2>
+					<ol>
+						<li>understand and use the internal and external intersecting chord properties</li>
+						<li>provide reasons, using standard geometrical statements, to support numerical values for angles obtained in any geometrical context involving lines, polygons and circles</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Resources: see circle theorems
+					</div>
+				</div>
+				<div class="topics" id="constructions">
+				<h2>Constructions</h2>
+					<ol>
+						<li>measure and draw lines to the nearest millimetre</li>
+						<li>construct triangles and other two dimensional shapes using a combination of a ruler, protractor and compass</li>
+						<li>solve problems using scale drawings</li>
+						<li>use straight edge and compasses to construct the perpendicular bisector of a line segment and the bisector of an angle</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=290" class="word" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=289" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Lambeth Academy: <a href="https://www.youtube.com/watch?v=wDJrOWMeYOc" class="video" target="_blank">Constructions, loci (14:12)</a>
+					</div>
+				</div>
+				<div class="topics" id="sets">
+					<h2>Sets</h2>
+					<ol>
+						<li>understand the definition of a set</li>
+						<li>use the set notation \(\cup,\ \cap,\ \in,\ \notin\)</li>
+						<li>understand the concept of the universal set and the empty set and the symbols for these sets</li>
+						<li>understand and use the complement of a set</li>
+						<li>use Venn diagrams to represent sets</li>
+						<li>understand sets defined in algebraic terms, and understand and use subsets</li>
+						<li>use Venn diagrams to represent sets and the number of elements in sets</li>
+						<li>use the notation n(A) for the number of elements in the set A</li>
+						<li>use sets in practical situations</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=770" class="pdf" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=836" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						ukmathsteacher: <a href="https://www.youtube.com/watch?v=2TMu2cr9oDk" class="video" target="_blank">Set notation, Venn diagrams (18:32)</a>
+					</div>
+					<div class="learn">
+						Maths Genie: <a href="https://www.youtube.com/watch?v=FZhYJb48vn0" class="video" target="_blank">Venn diagrams (10:16)</a>
+					</div>
+				</div>
+				<div class="topics" id="functions">
+					<h2>Functions</h2>
+					<ol>
+						<li>understand the concept that a function is a mapping between elements of two sets</li>
+						<li>use function notations</li>
+						<li>understand the terms 'domain' and 'range' and which values may need to be excluded from a domain</li>
+						<li>understand and find the composite function and the inverse function</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=762" class="word" target="_blank">dfm</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=897" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1351" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=u1YQVzrgYDg" class="video" target="_blank">Composite functions (11:05)</a>, <a href="https://www.youtube.com/watch?v=zpF9nbjResY" class="video" target="_blank">Inverse functions (5:37)</a>
+					</div>
+				</div>
+				<div class="topics" id="coordinate">
+					<h2>Coordinate geometry</h2>
+					<ol>
+						<li>determine the coordinates of the midpoint of a line segment, given the coordinates of the two end points</li>
+						<li>calculate the gradient of a straight line given the coordinates of two points</li>
+						<li>(distance between two points)</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=628" class="pdf" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn worksheets">
+						Solutions: <a href="./coordinategeometry4.html" class="web" target="_blank">Exercise 4</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=626" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=z8_8b8oSR6M" class="video" target="_blank">Straight line graphs (13:31)</a>,
+					</div>
+					<div class="learn">
+						Eddie Woo: <a href="https://www.youtube.com/watch?v=ozlCbiTmTpE" class="video" target="_blank">Equations of lines pt1 (10:59)</a>,
+						<a href="https://www.youtube.com/watch?v=Y26rz6iPxPw" class="video" target="_blank">Equations of lines pt2 (7:27)</a>,
+						<a href="https://www.youtube.com/watch?v=GYBx3pfGqig" class="video" target="_blank">Midpoint (3:22)</a>,
+						<a href="https://www.youtube.com/watch?v=rjNtTbEU_CY" class="video" target="_blank">Intersection of two lines (10:18)</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=HdlnBX82jxI" class="video" target="_blank">Equation of a line (2:30)</a>,
+						<a href="https://www.youtube.com/watch?v=j7Sg4--RQ6E" class="video" target="_blank">Midpoint (2:57)</a>,
+						<a href="https://www.youtube.com/watch?v=HxTkMsfWkME" class="video" target="_blank">Gradient between 2 points (5:24)</a>,
+						<a href="https://www.youtube.com/watch?v=MJKPASvp0qY" class="video" target="_blank">Line given 2 points (4:13)</a>,
+						<a href="https://www.youtube.com/watch?v=MJKPASvp0qY" class="video" target="_blank">Distance between 2 points (6:46)</a>
+					</div>
+				</div>
+				<div class="topics" id="nonlinear">
+					<h2>Non linear graphs</h2>
+					<ol>
+						<li>interpret information presented in a range of linear and non-linear graphs</li>
+						<li>recognise that equations of the form \(y = mx + c\) are straight line graphs with gradient \(m\) and intercept on the y-axis \((0,c)\)</li>
+						<li>recognise, generate points and plot graphs of linear and quadratic functions</li>
+						<li>recognise, plot and draw cubic graphs where the letters \(x\) and \(y\) can be replaced with any two other letters</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=689" class="pdf" target="_blank">dfm worksheet</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=687" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=nvfhQBH25tQ" class="video" target="_blank">Drawing curves (22:51)</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=tzUEfrZvyMg" class="video" target="_blank">Drawing quadratics (9:13)</a>
+					</div>
+				</div>
+				<div class="topics" id="graphical">
+					<h2>Graphical solutions</h2>
+					<ol>
+						<li>find the intersection points of two graphs, one linear and one non-linear, and recognise that the solutions correspond to the solutions of \(y_2-y_1=0\)</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=922" class="pdf" target="_blank">dfm full coverage: simultaneous equations</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=262" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=20R39KaGwmc" class="video" target="_blank">Solve equations graphically (1:39)</a>
+					</div>
+					<div class="learn">
+						Maths Genie: <a href="https://www.youtube.com/watch?v=JAe5-CB-TCY" class="video" target="_blank">Solve equations graphically (7:43)</a>
+					</div>
+				</div>
+				<div class="topics" id="vectors">
+					<h2>Vectors</h2>
+					<ol>
+						<li>understand that a vector has both magnitude and direction</li>
+						<li>understand and use vector notation including column vectors</li>
+						<li>multiply vectors by scalar quantities</li>
+						<li>add and subtract vectors</li>
+						<li>calculate the modulus of a vector</li>
+						<li>find the resultant of two or more vectors</li>
+						<li>apply vector methods for simple geometrical proofs</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=707" class="word" target="_blank">dfm</a>, <a href="https://www.drfrostmaths.com/getfile.php?fid=918" class="pdf" target="_blank">dfm full coverage</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=745" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Hegarty revision: <a href="https://www.youtube.com/watch?v=Sp1oJSsrB94" class="video" target="_blank">Vectors (25:26)</a>
+					</div>
+				</div>
+				<div class="topics" id="transformingtrig">
+					<h2>Transformations of trig graphs</h2>
+					<ol>
+						<li>apply to the graph of \(y = f(x)\) the transformations \(y = f(x)+a,\ f(ax),\ f(x+a),\ af(x)\) for sine and cosine functions</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://www.drfrostmaths.com/getfile.php?fid=1401" class="pdf" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Powerpoints: <a href="https://www.drfrostmaths.com/getfile.php?fid=1400" class="ppt" target="_blank">dfm</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=eiRZATuHYg0" class="video" target="_blank">Transformations of graphs (10:31)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1 sidebar" id="sidebar-right">
+				<h6>Useful stuff</h6>
+				<ul>
+					<li>
+						<a href="#">
+							Coming soon
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="footer">
+			
+		</div>
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

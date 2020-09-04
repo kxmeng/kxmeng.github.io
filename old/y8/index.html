@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Year 8</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Y8 Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-2 sidebar" id="sidebar-left">
+				<h6>Autumn term</h6>
+				<ul>
+					<li id="shapes">Shapes and solids</li>
+					<li id="transformations">Transformations</li>
+					<li id="fractions">Fractions, decimals, percentages</li>
+					<li id="constructions">Constructions and loci</li>
+					<li id="probability">Probability</li>
+				</ul>
+				<hr>
+				<h6>Spring term</h6>
+				<ul>
+					<li id="graphs">Graphs</li>
+					<li id="speed">Speed, distance, time</li>
+					<li id="scale">Scale drawings and measures</li>
+					<li id="powers">Powers and roots</li>
+					<li id="inequalities">Inequalities, equations and formulae</li>
+				</ul>
+				<hr>
+				<h6>Summer term</h6>
+				<ul>
+					<li id="graphical">Graphical solutions</li>
+					<li id="quadratic">Quadratic graphs</li>
+				</ul>
+				<hr>
+				<h6>After exams</h6>
+				<ul>
+					<li id="proof">Proof</li>
+				</ul>
+			</div>
+
+			<div class="col-9" id="maincontent">
+				<div class="topics" id="shapes">
+					<h2>Shapes and solids</h2>
+					<ol>
+						<li>Know the definition of a prism and specific names</li>
+						<li>Use nets as 2D representations of 3D solids</li>
+						<li>Calculate the surface area and volume of prisms</li>
+						<li>Use appropriate language and terminology for the parts of a circle</li>
+						<li>Understand the significance of \(\pi\) and be able to use it on a calculator</li>
+						<li>Calculate and solve problems involving the circumference and area of a circle, as well as related composite shapes (semi circles, qudrants and annuli, not sectors or segments)</li>
+						<li>Apply knowledge of prisms and circles to cylinders</li>
+						<li>Use Pythagoras' Theorem to find a missing length using a calculator and rounding to a given degree of accuracy</li>
+						<li>Knowledge of Pythagorean triples</li>
+						<li>(Extension: Geometrical proof of Pythagoras' Theorem)</li>
+						<li>(Extension: Application of the theorem to real life problems)</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="http://corbettmaths.com/wp-content/uploads/2013/02/nets-pdf.pdf" class="pdf" target="_blank">3D shapes: nets</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/volume-of-a-prism-pdf.pdf" class="pdf" target="_blank">Volume: prisms</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/volume-of-a-cylinder-pdf.pdf" class="pdf" target="_blank">Volume: cylinder</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/area-of-a-circle-pdf.pdf" class="pdf" target="_blank">Area: circles</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/area-of-compound-shapes-pdf.pdf" class="pdf" target="_blank">Area: compound shapes</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/area-of-a-semicircle-pdf.pdf" class="pdf" target="_blank">Area: semicircles</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/surface-area-of-l-shaped-prism-pdf.pdf" class="pdf" target="_blank">Surface Area: prisms</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=hQG5kd3Q28g" class="video" target="_blank">3D shapes: nets (5:13)</a>, <a href="https://www.youtube.com/watch?v=rGc00WJaqV0" class="video" target="_blank">Volume: prism (4:41)</a>, <a href="https://www.youtube.com/watch?v=nNu09Q7vFcA" class="video" target="_blank">Volume: cylinder (4:41)</a>, <a href="https://www.youtube.com/watch?v=Of8p1SfOcR0" class="video" target="_blank">Area: circle (4:18)</a>, <a href="https://www.youtube.com/watch?v=qiTmz3UtUiY" class="video" target="_blank">Area: compound shapes (8:42)</a>, <a href="https://www.youtube.com/watch?v=4NF6bbvwfrE" class="video" target="_blank">Area: semicircles (1:47)</a>, <a href="https://www.youtube.com/watch?v=o5_SORiOi6s" class="video" target="_blank">Surface Area: prisms (4:44)</a>
+					</div>
+				</div>
+				<div class="topics" id="transformations">
+					<h2>Transformations</h2>
+					<ol>
+						<li>Describe and carry out translations (including with vectors), reflections (equations for mirror lines), and rotations. Tracing paper may be used</li>
+						<li>Describe and carry out enlargements using positive integer, negative and fractional scale factors</li>
+						<li>Transform 2D shapes using a combination of transformations</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/translations-pdf.pdf" class="pdf" target="_blank">Translations</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/translations-pdf.pdf" class="pdf" target="_blank">Describing translations</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/reflections-pdf.pdf" class="pdf" target="_blank">Reflections</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/reflections-pdf.pdf" class="pdf" target="_blank">Describing reflections</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/rotations-pdf.pdf" class="pdf" target="_blank">Rotations</a>, <a href="https://corbettmaths.com/wp-content/uploads/2016/02/enlargements-pdf.pdf" class="pdf" target="_blank">Enlargements</a>, <a href="https://corbettmaths.com/wp-content/uploads/2016/02/enlargements-pdf.pdf" class="pdf" target="_blank">Centre of enlargement</a>, <a href="https://corbettmaths.com/wp-content/uploads/2016/02/enlargements-pdf.pdf" class="pdf" target="_blank">Describing enlargements</a>, <a href="https://corbettmaths.com/wp-content/uploads/2016/02/enlargements-pdf.pdf" class="pdf" target="_blank">Finding centre of enlargement</a>, <a href="https://corbettmaths.com/wp-content/uploads/2016/02/enlargements-pdf.pdf" class="pdf" target="_blank">Fractional scale factor enlargements</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/enlargements-negative-scale-factors-pdf.pdf" class="pdf" target="_blank">Negative scale factor enlargements</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=qb4ElyditqY" class="video" target="_blank">Translations (4:47)</a>, <a href="https://www.youtube.com/watch?v=AE0w7QRjGqQ" class="video" target="_blank">Reflections (3:40)</a>, <a href="https://www.youtube.com/watch?v=ryPlAR3FAWU" class="video" target="_blank">Describing reflections (5:37)</a>, <a href="https://www.youtube.com/watch?v=rgdRlbbWQgA" class="video" target="_blank">Rotations (5:24)</a>, <a href="https://www.youtube.com/watch?v=7362afSFdtw" class="video" target="_blank">Enlargements (2:30)</a>, <a href="https://www.youtube.com/watch?v=u2EgwMYwibw" class="video" target="_blank">Describing enlargements (6:31)</a>, <a href="https://www.youtube.com/watch?v=fVrr9_pE29g" class="video" target="_blank">Finding centre of enlargement (4:55)</a>, <a href="https://www.youtube.com/watch?v=22zNVcV_iKQ" class="video" target="_blank">Fractional scale factor (3:31)</a>, <a href="https://www.youtube.com/watch?v=YvpJN-h3bu0" class="video" target="_blank">Negative scale factor (5:11)</a>
+					</div>
+				</div>
+				<div class="topics" id="fractions">
+					<h2>Fractions, decimals and percentages</h2>
+					<ol>
+						<li>Revise fractions, decimals and percentages</li>
+						<li>Use multipliers to calculate percentage changes</li>
+						<li>Work out an original quantity before a percentage change</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/fractions-decimals-percentages-pdf.pdf" class="pdf" target="_blank">FDP revision</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/percentage-of-an-amount-calculator-pdf.pdf" class="pdf" target="_blank">Multipliers</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/reverse-percentages-pdf.pdf" class="pdf" target="_blank">Reverse percentages</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=uHYywMkaZC8" class="video" target="_blank">Multipliers (7:51)</a>, <a href="https://www.youtube.com/watch?v=qg7pYqeFRig" class="video" target="_blank">Reverse percentages (5:17)</a>
+					</div>
+				</div>
+				<div class="topics" id="constructions">
+					<h2>Constructions and loci</h2>
+					<ol>
+						<li>Use a pair of compasses to accurately draw circles</li>
+						<li>Construct triangles accurately using rulers and compasses</li>
+						<li>Draw diagrams to scale</li>
+						<li>Construction of perpendicular and angle bisectors</li>
+						<li>Draw a locus and use loci to solve problems</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://mathsmadeeasy.co.uk/gcse-maths-revision/loci-and-construction-gcse-revision-and-worksheets/" class="web" target="_blank">MME: Constructions and loci summary and worksheets</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="" class="video" target="_blank"> ()</a>
+					</div>
+				</div>
+				<div class="topics" id="probability">
+					<h2>Probability</h2>
+					<ol><li>Use appropriate probability language (likely, certain, impossible, even chance, unlikely) and the 0 - 1 probability scale</li>
+						<li>Identify mutually exclusive events</li>
+						<li>Use probability notation and appreciate that \(p(A') = 1 - p(A)\)</li>
+						<li>Calculate relative frequency and use it to make estimates of the probability of an event and to calculate expected frequencies</li>
+						<li>Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes. Work out expected results when an experiment is repeated</li>
+						<li>Generate theoretical sample spaces (e.g. lists of outcomes or tables) for single and combined events and use these to calculate theoretical probabilities</li>
+						<li>Use tree diagrams to find the probability of two or more events</li>
+						<li>Extension: Probability with Venn Diagrams</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/sample-spaces-pdf.pdf" class="pdf" target="_blank">Sample space</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/relative-frequency-pdf.pdf" class="pdf" target="_blank">Relative frequency</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/probability-pdf.pdf" class="pdf" target="_blank">Not happening</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/independent-events-pdf.pdf" class="pdf" target="_blank">Independent events</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/probability-pdf.pdf" class="pdf" target="_blank">Mutually exclusive</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/tree-diagrams-pdf.pdf" class="pdf" target="_blank">Tree diagrams</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=Xqno7W0OUtE" class="video" target="_blank">Sample space (4:14)</a>, <a href="https://www.youtube.com/watch?v=MS6lnCTgTSw" class="video" target="_blank">Relative frequency (7:54)</a>, <a href="https://www.youtube.com/watch?v=y9T5ol65mSU" class="video" target="_blank">Not happening (4:08)</a>, <a href="https://www.youtube.com/watch?v=mUDqgCe-PAo" class="video" target="_blank">Independent events (6:46)</a>, <a href="https://www.youtube.com/watch?v=achhCbzYMdQ" class="video" target="_blank">Mutually exclusive (6:37)</a>, <a href="https://www.youtube.com/watch?v=kNOrDWm15bY" class="video" target="_blank">Tree diagrams (7:45)</a>
+					</div>
+				</div>
+				<div class="topics" id="graphs">
+					<h2>Graphs</h2>
+					<ol>
+						<li>Plot straight line graphs from tables</li>
+						<li>Find the y-intercept of a straight line</li>
+						<li>Find the gradient of a straight line</li>
+						<li>Plot graphs using the y-intercept and gradient</li>
+						<li>Use \(y=mx+c\) and find the equation of a line from its graph</li>
+						<li>Understand the relationship between parallel and perpendicular lines.</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/drawing-linear-graphs-pdf.pdf" class="pdf" target="_blank">Draw graphs: table</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/equation-of-a-line-pdf.pdf" class="pdf" target="_blank">Equation of line</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/drawing-linear-graphs-pdf.pdf" class="pdf" target="_blank">Draw graphs: equation</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/equation-of-a-line-pdf.pdf" class="pdf" target="_blank">Find equation of line</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/parallel-perpendicular-linear-graphs-pdf.pdf" class="pdf" target="_blank">Parallel perpendicular lines</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=lD57vopo_Mw" class="video" target="_blank">Draw graphs: table (8:02)</a>, <a href="https://www.youtube.com/watch?v=HdlnBX82jxI" class="video" target="_blank">Equation of a line (2:30)</a>, <a href="https://www.youtube.com/watch?v=AQ0tktNv9GY" class="video" target="_blank">Draw graphs: equation (3:36)</a>, <a href="https://www.youtube.com/watch?v=WdSXjD0bxI4" class="video" target="_blank">Find equation of line (4:32)</a>, <a href="https://www.youtube.com/watch?v=DWyaGrTA884" class="video" target="_blank">Parallel lines (5:15)</a>, <a href="https://www.youtube.com/watch?v=PrwhdgnLK5k" class="video" target="_blank">Perpendicular lines (8:02)</a>
+					</div>
+				</div>
+				<div class="topics" id="speed">
+					<h2>Speed, distance and time</h2>
+					<ol>
+						<li>Revise direct proportion</li>
+						<li>Draw and interpret distance time graphs</li>
+						<li>Use the graphs to solve problems</li>
+						<li>Calculate average speed from distance and time (relate to gradient)</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/speed-distance-time-pdf1.pdf" class="pdf" target="_blank">Speed, distance, time</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=o8DSb6D-0fw" class="video" target="_blank">Speed, distance, time (13:51)</a>
+					</div>
+				</div>
+				<div class="topics" id="scale">
+					<h2>Scale drawings and measures</h2>
+					<ol>
+						<li>Interpret scale drawings and use a scale in converting between real and drawn distances e.g. 1:100,000 is equivalent to 1cm to 1km.</li>
+						<li>Relate scales to ratio</li>
+						<li>Revise angle rules in parallel lines</li>
+						<li>Bearings measured in degrees, clockwise from the North. Calculate back bearings</li>
+						<li>The link between bearings and eight point compass directions</li>
+						<li>Combining up to three stages of a journey, given in terms of distances and bearings</li>
+						<li>Similarity and congruence</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="http://corbettmaths.com/wp-content/uploads/2013/02/bearings-pdf.pdf" class="pdf" target="_blank">Bearings 1</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/bearings-pdf1.pdf" class="pdf" target="_blank">Bearings 2</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/similar-shapes-pdf.pdf" class="pdf" target="_blank">Similar shapes</a>, <a href="" class="pdf" target="_blank"></a>, 
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=u27gQblSxP8" class="video" target="_blank">Bearings (12:57)</a>,  <a href="https://www.youtube.com/watch?v=vEiqRJ2LxFE" class="video" target="_blank">Back bearings (9:35)</a>, <a href="https://www.youtube.com/watch?v=VU8fvrmad40" class="video" target="_blank">Bearings - 2 points (1:30)</a>, <a href="https://www.youtube.com/watch?v=L6DLoBMknoY" class="video" target="_blank">Similar shapes (11:10)</a>
+					</div>
+				</div>
+				<div class="topics" id="powers">
+					<h2>Powers and roots</h2>
+					<ol>
+						<li>Revise fractions</li>
+						<li>Find the reciprocal of a number and work with reciprocals</li>
+						<li>Revise indices rules</li>
+						<li>Work with negative indices and work out powers of fractions</li>
+						<li>Write and order numbers in standard form (positive and negative powers)</li>
+						<li>Calculate with numbers in standard from</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/reciprocals-pdf.pdf" class="pdf" target="_blank">Reciprocals</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/indices-pdf.pdf" class="pdf" target="_blank">Indices (numerical)</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/fractional-negative-indices-pdf1.pdf" class="pdf" target="_blank">Indices (fractional)</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/fractional-negative-indices-pdf1.pdf" class="pdf" target="_blank">Indices - negative</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/laws-of-indices-algebra-pdf.pdf" class="pdf" target="_blank">Index laws</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/standard-form-pdf.pdf" class="pdf" target="_blank">Standard form</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=eU7qknXw6U4" class="video" target="_blank">Reciprocals (1:37)</a>, <a href="https://www.youtube.com/watch?v=To04tERCUPs" class="video" target="_blank">Indices - intro (6:07)</a>, <a href="https://www.youtube.com/watch?v=qYDClSo89eQ" class="video" target="_blank">Indices - fractional (4:59)</a>, <a href="https://www.youtube.com/watch?v=_K9XYyv1bU0" class="video" target="_blank">Indices - negative (2:27)</a>, <a href="https://www.youtube.com/watch?v=ozuXy8_NZcg" class="video" target="_blank">Indices - laws (6:21)</a>, <a href="https://www.youtube.com/watch?v=cxGyZ3Yx9ow" class="video" target="_blank">Standard form - intro(10:57)</a>, <a href="https://www.youtube.com/watch?v=Z0IQoVt-Brc" class="video" target="_blank">Standard form - addition subtraction (4:49)</a>, <a href="https://www.youtube.com/watch?v=q4iVOJHIC_E" class="video" target="_blank">Standard form - multiplication (5:54)</a>, <a href="https://www.youtube.com/watch?time_continue=1&v=lvF33FY_tXg" class="video" target="_blank">Standard form - division (2:40)</a>
+					</div>
+				</div>
+				<div class="topics" id="inequalities">
+					<h2>Inequalities, equations and formulae</h2>
+					<ol>
+						<li>Solve linear inequalities and represent the solution on a number line</li>
+						<li>Use indices laws with algebraic terms, including zero and negative powers</li>
+						<li>Revise solving linear equations</li>
+						<li>Solve linear equations involving algebraic fractions</li>
+						<li>Change the subject of a basic formula</li>
+						<li>Change algebraic fractions in equivalent fractions, finding an algebraic common denominator</li>
+						<li>Solve more complex problems with fractions in formulae</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/inequalities.pdf" class="pdf" target="_blank">Inequalities</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/graphical-inequalities-pdf1.pdf" class="pdf" target="_blank">Graphical inequalities 1</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/graphical-inequalities-pdf1.pdf" class="pdf" target="_blank">Graphical inequalities 2</a>, <a href="http://corbettmaths.com/wp-content/uploads/2013/02/changing-the-subject-advanced-pdf.pdf" class="pdf" target="_blank">Changing the subject</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/algebraic-fractions.pdf" class="pdf" target="_blank">Adding algebraic fractions</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=OjgdLu0JaZo" class="video" target="_blank">Inequalities - intro (3:%1)</a>, <a href="https://www.youtube.com/watch?v=3UUDyPOyKyc" class="video" target="_blank">Inequalities - number line (4:22)</a>, <a href="https://www.youtube.com/watch?v=-YcE_D78fGE" class="video" target="_blank">Inequalities - solving (4:57)</a>, <a href="https://www.youtube.com/watch?v=zTXiZ6SiiUs" class="video" target="_blank">Inequalities - 2 signs (5:26)</a>, <a href="https://www.youtube.com/watch?v=39tsiUFCd4c" class="video" target="_blank">Inequalities -  graphs 1 (4:09)</a>, <a href="https://www.youtube.com/watch?v=DCQY8Dyce4k" class="video" target="_blank">Inequalities - graphs 2 (5:59)</a>, <a href="https://www.youtube.com/watch?v=aexvnpH-jhI" class="video" target="_blank">Regions on graphs (5:02)</a>, <a href="https://www.youtube.com/watch?v=8U9u_itcs7k" class="video" target="_blank">Changing the subject (basic) (6:53)</a>, <a href="https://www.youtube.com/watch?v=MKMSa-X6Rgw" class="video" target="_blank">Changing the subject (6:42)</a>, <a href="https://www.youtube.com/watch?v=w3JewxYjiNs" class="video" target="_blank">Adding algebraic fractions (7:00)</a>
+					</div>
+				</div>
+				<div class="topics" id="graphical">
+					<h2>Graphical solutions</h2>
+					<ol>
+						<li>Solve simple simultaneous equations by substitution and elimination</li>
+						<li>Solve more complex simultaneous equations</li>
+						<li>Revise \(y=mx+c\) and rearrange equations to find the gradient and y-intercept</li>
+						<li>Find an equation of a line between two points</li>
+						<li>Solve simultaneous equations by drawing graphs</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/simultaneous-equations-pdf.pdf" class="pdf" target="_blank">Simultaneous Equations 1</a>, <a href="https://corbettmaths.com/wp-content/uploads/2019/07/Graphical-Simultaneous-pdf.pdf" class="pdf" target="_blank">Simultaneous  Equations 2</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/simultaneous-equations-non-linear-pdf.pdf" class="pdf" target="_blank">Extension 1</a>, <a href="https://corbettmaths.com/wp-content/uploads/2013/02/advanced-simultaneous-equations-pdf.pdf" class="pdf" target="_blank">Extension 2</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=phlus4x0UqM" class="video" target="_blank">Simultaneous Equations 1 (15:56)</a>, <a href="https://www.youtube.com/watch?v=FrECUQpaa80" class="video" target="_blank">Simultaneous Equations 2 (5:01)</a>, <a href="https://www.youtube.com/watch?v=20R39KaGwmc" class="video" target="_blank">Simultaneous Equations 3 (1:39)</a>, <a href="https://www.youtube.com/watch?v=ozP-vf99DK4" class="video" target="_blank">Extension (7:08)</a>
+					</div>
+				</div>
+				<div class="topics" id="quadratic">
+					<h2>Quadratic graphs</h2>
+					<ol>
+						<li>Understand the parabolic shape of quadratic functions and identify their graphs</li>
+						<li>Draw quadratic graphs from tables of values</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2013/02/drawing-quadratics-pdf.pdf" class="pdf" target="_blank">Worksheet 1</a>, <a href="https://corbettmaths.com/wp-content/uploads/2019/06/Drawing-Quadratics.pdf" class="pdf" target="_blank">Worksheet 2</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=tzUEfrZvyMg" class="video" target="_blank">Drawing Quadratics (9:12)</a>
+					</div>
+				</div>
+				<div class="topics" id="proof">
+					<h2>Proof</h2>
+					<ol>
+						<li>Explain, show and justify a mathematical solution</li>
+						<li>Identify the difference between giving an example and proving a theory</li>
+						<li>Understand how to use mathematical proof</li>
+						<li>Present a logical argument using algebra</li>
+					</ol>
+					<hr>
+					<div class="learn worksheets">
+						Worksheets: <a href="https://corbettmaths.com/wp-content/uploads/2019/04/Algebraic-Proof-Questions.pdf" class="pdf" target="_blank">Worksheet 1</a>, <a href="https://corbettmaths.com/wp-content/uploads/2019/12/Algebraic-Proof.pdf" class="pdf" target="_blank">Worksheet 2</a>
+					</div>
+					<div class="learn">
+						Corbett Maths: <a href="https://www.youtube.com/watch?v=pd9Q-e1JvtE" class="video" target="_blank">Proof (9:11)</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-1 sidebar" id="sidebar-right">
+				<h6>Useful links</h6>
+				<ul>
+					<li>
+						<a href="#">
+							Coming soon
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+
+		<div class="footer">
+			
+		</div>
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

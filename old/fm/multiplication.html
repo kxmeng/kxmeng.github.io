@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--jQuery-->
+		<script src="../jquery.js"></script>
+		<!--page scripts-->
+		<script src="./script.js"></script>
+		<title>Matrices solutions</title>
+		<!--MathJax Config-->
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+			displayAlign: "left"
+			});
+		</script>
+		<!--MathJax-->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<!--Bootstrap css-->
+		<link rel="stylesheet" type="text/css" href="../bootstrap.css">
+		<!--Style sheets-->
+		<link rel="stylesheet" type="text/css" href="./style.css">
+		<!--Font Awesome stylesheet for icons (pdf, ppt etc)-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--Fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Caudex&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="pageheader">
+			Further Maths
+		</div>
+
+		<div id="main" class="container-fluid row">
+			<div class="col-9" id="maincontent">
+				<div class="topics active-topic" id="testsolutions">
+					<h2>Matrix Equations</h2>
+					<ul>
+						<li>Normal equations<br>
+							If we want to rearrange \(XMN = I\) to find \(X\), we need to undo everything we did to \(X\) on the left. In this example, we first multiplied it by \(M\), then by \(N\), so we need to first undo the multiplication by \(N\), then the multiplication by \(M\). The order of multiplication does not matter so we can do these in either order, and undoing a multiplication can be thought of as multiplication by the reciprocal. What we'd have is:<br>
+							\(\begin{align*}
+							XMN\color{red}\times\dfrac{1}{N} \color{black}&= I\color{red}\times\dfrac{1}{N}\\
+							XM\times\left(N\times\dfrac{1}{N}\right) &= I\times\dfrac{1}{N}\\
+							XM\times 1 &= I\times\dfrac{1}{N}\\
+							XM &= I\times\dfrac{1}{N}
+							\end{align*}\)<br>
+							We would then repeat this process to "move" the \(M\) to the other side. We could also have done this in a single step, by recognising the "undo" for multiply by \(M\) and then \(N\) is to multiply by \(\dfrac{1}{MN}\) - note that this is the same as \(\dfrac{1}{NM}\)
+						</li>
+						<hr>
+						<li>Matrix equations<br>
+							We do the exact same thing if these are matrices, but there are two differences: the order matters (so we have to undo the last thing we did to X first), and undoing a multiplication is a multiplication by the inverse matrix and not a division:<br>
+							\(\begin{align*}
+							XMN\color{red}\times N^{-1} \color{black}&= I\color{red}\times N^{-1}\\
+							XM\times\left(N\times N^{-1}\right) &= I\times N^{-1}\\
+							XM\times I &= I\times N^{-1}\\
+							XM &= I\times N^{-1}\end{align*}\)<br>
+							and repeat for M. We can also do this in one step if we recognise that the "undo" for multiply by \(M\) and then \(N\) is to multiply by the matrix \(N^{-1}M^{-1}\), which is not the same as \(M^{-1}N^{-1}\)
+						</li>
+						<hr>
+						<li>Left and right multiplication<br>
+							Since the order of multiplication matters for matrices, there is a difference between \(XMN \times a\) ("right multiplication") and \(a\times XMN\) ("left multiplication") that didn't exist with normal equations. The rule for equations is still the same - whatever you do to the left side of the equation you must do to the right side of the equation. Suppose instead of multiplying on the right like we did before we multiplied on the left:<br>
+							\(\begin{align*}
+							\color{red}N^{-1}\times\color{black}XMN &= \color{red}N^{-1}\times \color{black}I
+							\end{align*}\)<br>
+							This is perfectly valid, but does not simplify. If we left multiplied by \(X^{-1}\) however:<br>
+							\(\begin{align*}
+							\color{red}X^{-1}\times\color{black}XMN &= \color{red}X^{-1}\times \color{black}I\\
+							\left(X^{-1}\times X\right)MN &= X^{-1}\times I\\
+							I\times MN &= X^{-1}\times I\\
+							MN &= X^{-1}\times I
+							\end{align*}\)<br>
+							it would be useful because the first two matrices simplify down.
+						</li>
+						<hr>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../scripts.js"></script>
+	</body>
+
+</html>

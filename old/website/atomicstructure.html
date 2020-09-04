@@ -1,0 +1,152 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Atomic Structure</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>
+
+      <!--MathJax and MHChem-->
+      <script type="text/x-mathjax-config">
+        MathJax.Ajax.config.path["mhchem.js"] = "http://ibchemistry.co.uk/mhchem.js";
+      </script>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
+          displayAlign: "left",
+          TeX: {
+              extensions: ["mhchem.js"]
+            }
+        });
+      </script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+      <nav>
+        <div class="nav-wrapper yellow lighten-5">
+          <div class="container">
+            <a href="/" class="brand-logo black-text hide-on-med-and-down">IB Chemistry</a>
+            <ul id="nav-mobile" class="right">
+              <li class="active"><a href="atomicstructure.html" class="pink-text">Atomic Structure</a></li>
+              <li><a href="stoichiometry.html" class="deep-purple-text">Stoichiometry</a></li>
+              <li><a href="bonding.html" class="pink-text text-darken-4">Bonding</a></li>
+              <li><a href="energetics.html" class="teal-text text-darken-2">Energetics</a></li>
+              <li><a href="kinetics.html" class="teal-text text-darken-4">Kinetics</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <div class="card light-blue lighten-5">
+                <div class="card-content pink-text">
+                  <span class="card-title center">The nuclear atom</span>
+                  <ul>
+                  <li class="black-text">Atoms contain a positively charged dense nucleus composed of protons and neutrons (nucleons).</li>
+                  <li class="black-text">Negatively charged electrons occupy the space outside the nucleus.</li>
+                  <li class="black-text">The mass spectrometer is used to determine the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="the weighted average mass">relative atomic mass</span> of an <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="elements have the same number of protons">element</span> from its <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="some elements have 'isotopes' with a different number of neutrons which weigh different amounts">isotopic composition</span>.</li>
+                </ul>
+                <ul>
+                  <li class="grey-text text-darken-1">Use the nuclear <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="A: Mass number or number of protons plus neutrons<br>Z: Atomic number, or number of protons<br>X: element symbol">symbol notation</span> \(^A_Z\mathrm{X}\) to deduce the number of <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="same as the atomic number">protons</span>, <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="mass number - atomic number">neutrons</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="atomic number - charge, since positively charged ions must have lost electrons and vice versa">electrons</span> in atoms and ions.</li>
+                  <li class="grey-text text-darken-1">Calculations involving non-integer <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="e.g. find the relative atomic mass of lithium, given the following abundances:<br>lithium-6: 6%<br>lithium-7: 94%">relative atomic masses</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="e.g. find the abundance of chlorine-35 and chlorine-37, given a relative atomic mass of 35.45">abundance of isotopes</span> from given data, including mass spectra.</li>
+                </ul>
+                <div class="divider light-blue lighten-3"></div>
+                <ul>
+                  <li><em><span class="tooltipped" data-position="top" data-delay="10" data-tooltip="proton: 1<br>neutron: 1<br>electron: negligible">Relative masses</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="proton: +1<br>neutron: 0<br>electron: -1">charges</span> of the subatomic particles should be known, actual values are given in section 4 of the data booklet. The mass of the electron can be considered negligible.</em></li>
+                  <li><em>Specific examples of isotopes need not be learned.</em></li>
+                  <li><em>The operation of the mass spectrometer is not required.</em></li>
+                </ul>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.youtube.com/watch?v=y_aQWYnbh64&list=PL816Qsrt2Os0K7TZ01RZnC9roJvmf40KJ" class="blue-grey-text text-darken-1">YouTube: Richard Thornley</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <div class="card light-blue lighten-5">
+                <div class="card-content pink-text">
+                  <span class="card-title center">Electron configuration</span>
+                  <ul>
+                    <li class="black-text">Emission spectra are produced when photons are emitted from atoms as excited electrons return to a lower energy level.</li>
+                    <li class="black-text">The line emission spectrum of hydrogen provides evidence for the existence of electrons in discrete energy levels, which converge at higher energies.</li>
+                    <li class="black-text">The main energy level or shell is given an integer number, <em>n</em>, and can hold a maximum number of electrons, 2<em>n</em><sup>2</sup>.</li>
+                    <li class="black-text">A more detailed model of the atom describes the division of the main energy level into s, p, d and f sub-levels of successively higher energies.</li>
+                    <li class="black-text">Sub-levels contain a fixed number of orbitals, regions of space where there is a high probability of finding an electron.</li>
+                    <li class="black-text">Each orbital has a defined energy state for a given electronic configuration and chemical environment and can hold two electrons of opposite spin.</li>
+                  </ul>
+                  <ul>
+                    <li class="grey-text text-darken-1">Description of the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="this is mostly in the data booklet, just need to know that energy is proportional to frequency">relationship</span> between colour, wavelength, frequency and energy across the electromagnetic spectrum.</li>
+                    <li class="grey-text text-darken-1">Distinction between a continuous spectrum and a line spectrum.</li>
+                    <li class="grey-text text-darken-1">Description of the emission spectrum of the hydrogen atom, including the relationships between the lines and energy transitions to the first, second and third energy levels.</li>
+                    <li class="grey-text text-darken-1">Recognition of the shape of an <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="spherical">s atomic orbital</span> and the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="hourglass shaped, pointing along the x, y, or z axis">p<sub>x</sub>, p<sub>y</sub> and p<sub>z</sub> atomic orbitals</span>.</li>
+                    <li class="grey-text text-darken-1">Application of the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="lowest energy orbitals first">Aufbau principle</span>, <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="maximise the number of electrons with the same spin (i.e. all pointing up)">Hund's rule</span> and the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="two electrons in the same orbital cannot have the same spin (i.e. cannot have two arrows pointing up in the same box)">Pauli exclusion principle</span> to write electron configurations for atoms and ions up to Z = 36.</li>
+                  </ul>
+                    <div class="divider light-blue lighten-3"></div>
+                  <ul>
+                    <li><em>Details of the electromagnetic spectrum are given in the data booklet in section 3.</em></li>
+                    <li><em>The names of the different series in the hydrogen line emission spectrum are not required.</em></li>
+                    <li><em><span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="e.g. 1s<sup>2</sup>2s<sup>2</sup>2p<sup>6</sup>3s<sup>1</sup> for sodium">Full electron configurations</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="go up to the previous noble gas, and write out the difference e.g. [Ne]3s<sup>1</sup> for sodium">condensed electron configurations</span> should be covered. Orbital diagrams should be used to represent the character and relative energy of orbitals. Orbital diagrams refer to arrow-in-box diagrams.</em></li>
+                    <li><em>The electron configurations of <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="[Ar]4s<sup>1</sup>3d<sup>5</sup> because a half filled d shell is really good">Cr</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="[Ar]4s<sup>1</sup>3d<sup>10</sup> because a filled d shell is really good">Cu</span> as exceptions should be covered.</em></li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.youtube.com/watch?v=JHEeP_5gxkk&list=PL816Qsrt2Os0K7TZ01RZnC9roJvmf40KJ&index=7" class="blue-grey-text text-darken-1">YouTube: Richard Thornley</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12">
+              <div class="card deep-orange lighten-5">
+                <div class="card-content pink-text">
+                  <span class="card-title center">Electrons in atoms</span>
+                  <ul>
+                    <li class="black-text">In an emission spectrum, the limit of convergence at higher frequency corresponds to the first ionization energy.</li>
+                    <li class="black-text">Trends in first ionization energy across periods account for the existence of main energy levels and sub-levels in atoms.</li>
+                    <li class="black-text">Successive ionization energy data for an element give information that shows relations to electron configurations.</li>
+                  </ul>
+                  <ul>
+                    <li class="grey-text text-darken-1"><span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="this is actually in the data booklet">Solving</span> problems using \(E = h\nu\).</li>
+                    <li class="grey-text text-darken-1">Calculation of the value of the first ionization energy from spectral data which gives the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="convert to frequency first - check data booklet for formula">wavelength</span> or <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="convert to energy - check data booklet for formula">frequency</span> of the convergence limit.</li>
+                    <li class="grey-text text-darken-1">Deduction of the group of an element from its <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="the number of ionization energies before a really big jump">successive</span> ionization energy data.</li>
+                    <li class="grey-text text-darken-1">Explanation of the <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="increases across the period because <b>nuclear charge</b> increases while <b>distance to nucleus</b> and <b>shielding</b> remain similar">trends</span> and <span class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="2 drops: when we remove a p electron instead of an s, and when we remove the 4th p electron instead of the 3rd">discontinuities</span> in first ionization energy across a period.</li>
+                  </ul>
+                  <div class="divider deep-orange lighten-3"></div>
+                  <ul>
+                    <li><em>The value of Planck's constant (h) and E = h&nu; are given in the data booklet in sections 1 and 2.</em></li>
+                    <li><em>Use of the Rydberg formula is not expected in calculations of ionization energy.</em></li>
+                  </ul>
+                </div>
+                <div class="card-action">
+                  <a href="https://www.youtube.com/watch?v=s5q_hFYmmrA&index=14&list=PL816Qsrt2Os0K7TZ01RZnC9roJvmf40KJ" class="blue-grey-text text-darken-1">YouTube: Richard Thornley</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <footer class="page-footer yellow lighten-5">
+      </footer>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript" src="materialize.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('footer').load('footer.html');
+        });
+      </script>
+    </body>
+  </html>
+        
