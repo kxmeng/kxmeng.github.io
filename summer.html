@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" rel="stylesheet">
+	<!-- MathJax script (x2) -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script>
+		MathJax = {
+		  tex: {
+		    inlineMath: [['$', '$'], ['\\(', '\\)']]
+		  },
+		  svg: {
+		    fontCache: 'global'
+		  }
+		};
+	</script>
+	<!-- Title of the page -->
+	<title>Summer Revision</title>
+	<!-- Inline CSS for highlighting certain parts -->
+	<style type="text/css">
+		body {
+		  display: grid;
+		  height: 100vh;
+		  margin: 0;
+		  grid-template: auto 1fr auto / auto 1fr auto;
+		  font-family: 'Cormorant Garamond';
+		}
+
+		header{
+		  background: rgba(104, 134, 197, 1);
+		  color:  white;
+		  padding-left: 1rem;
+		  grid-column: 1 / 4;
+		}
+
+		header h1 {
+			margin: 0.5rem;
+		}
+
+		#left-sidebar {
+		  grid-column: 1 / 2;
+		  border-width: 1px;
+		  border-color: rgba(104, 134, 197, 1);
+		  border-right-style: solid;
+		  overflow-y: scroll;
+		  padding-left: 0;
+		  padding-right: 0;
+		}
+
+		#left-sidebar ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#left-sidebar ul li{
+			padding: 1rem;
+			padding-right: 2rem;
+			margin: 0;
+		}
+
+		.sidebar-active {
+			color: white !important;
+			background-color: rgba(104, 134, 197, 1) !important;
+		}
+
+		#left-sidebar li:hover {
+			background-color: rgba(104, 134, 197, 0.5);
+			transition: background ease 0.2s;
+			cursor: pointer;
+		}
+
+		main {
+		  grid-column: 2 / 3;
+		  padding: 1rem;
+		  margin-left: auto;
+		  margin-right: auto;
+		  overflow-y: scroll;
+		  transition: all 0.2s;
+		}
+
+		#all-content {
+			height: 0;
+			overflow: hidden;
+		}
+
+		main > div {
+		  max-width: 700px;
+		}
+
+		main ol {
+			margin: 0;
+			padding: 1rem;
+		}
+
+		ol li {
+			padding-bottom: 2rem;
+		}
+
+		ol ol li {
+			padding-bottom: 1rem;
+		}
+
+		main ol ol {
+			list-style-type: lower-alpha;
+		}
+
+		table {
+			margin: 1rem;
+			border-collapse: collapse;
+		}
+
+		td {
+			padding-left: 1rem;
+			padding-right: 1rem;
+			text-align: center;
+			border: 1px solid black;
+		}
+
+		.marks {
+			float: right;
+			vertical-align: bottom;
+		}
+
+		.marks::before {
+			content: "[";
+		}
+
+		.marks::after {
+			content: "]";
+		}
+
+		.image {
+			text-align: center;
+		}
+
+		#right-sidebar {
+		  border-width: 1px;
+		  border-color: rgba(104, 134, 197, 1);
+		  border-left-style: solid;
+		  grid-column: 3 / 4;
+		}
+
+		footer {
+		  background: rgba(104, 134, 197, 1);
+		  color: white;
+		  padding: 1rem;
+		  text-align: center;
+		  grid-column: 1 / 4;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>A Level Summer Revision</h1>
+	</header>
+	<div id="left-sidebar">
+		<ul>
+			<li id="w1d1">12 July</li>
+			<li id="w1d2">13 July</li>
+			<li id="w1d3">14 July</li>
+			<li id="w1d4">15 July</li>
+			<li id="w1d5">16 July</li>
+			<li id="w2d1">19 July</li>
+			<li id="w2d2">20 July</li>
+			<li id="w2d3">21 July</li>
+			<li id="w2d4">22 July</li>
+			<li id="w2d5">23 July</li>
+			<li id="w3d1">26 July</li>
+			<li id="w3d2">27 July</li>
+			<li id="w3d3">28 July</li>
+			<li id="w3d4">29 July</li>
+			<li id="w3d5">30 July</li>
+			<li id="w4d1">2 Aug</li>
+			<li id="w4d2">3 Aug</li>
+			<li id="w4d3">4 Aug</li>
+			<li id="w4d4">5 Aug</li>
+			<li id="w4d5">6 Aug</li>
+			<li id="w5d1">9 Aug</li>
+			<li id="w5d2">10 Aug</li>
+			<li id="w5d3">11 Aug</li>
+			<li id="w5d4">12 Aug</li>
+			<li id="w5d5">13 Aug</li>
+			<li id="w6d1">16 Aug</li>
+			<li id="w6d2">17 Aug</li>
+			<li id="w6d3">18 Aug</li>
+			<li id="w6d4">19 Aug</li>
+			<li id="w6d5">20 Aug</li>
+			<li id="w7d1">23 Aug</li>
+			<li id="w7d2">24 Aug</li>
+			<li id="w7d3">25 Aug</li>
+			<li id="w7d4">26 Aug</li>
+			<li id="w7d5">27 Aug</li>
+		</ul>
+	</div>
+	<main>
+		<div id="mid"></div>
+		<div id="all-content">
+			<div id="w1d1-content">
+				<ol>
+					<li>
+						The line with equation $mx-y-2=0$ touches the circle with equation $x^2+6x+y^2-8y=4$ exactly once. Find the two possible values of $m$ in exact form <span class="marks">7</span>
+					</li>
+					<li>
+						A stone is thrown from the top of a cliff. The height, $h$ metres, of the stone above the ground after $t$ seconds is modelled by $$h(t) = 115 + 12.25t-4.9t^2$$
+						<ol>
+							<li>
+								Give a physical interpretation of the meaning of the constant term 115 in the model <span class="marks">1</span>
+							</li>
+							<li>
+								Write $h(t)$ in the form $A-B(t-C)^2$, where $A$, $B$ and $C$ are constants to be found <span class="marks">3</span>
+							</li>
+							<li>
+								Using your answer to part b, find, with justification, the time taken after the stone is thrown for it to reach the ground <span class="marks">2</span>
+							</li>
+							<li>
+								Using your answer to part b, find the maximum height of the stone above the ground and the time at which this maximum height is reached <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						The equations of two circles are $x^2 + 10x + y^2 - 12y = 3$ and  $x^2 - 6x + y^2 - 2qy = 9$
+						<ol>
+							<li>
+								Find the centre and radius of each circle, giving your answers in terms of $q$ where necessary <span class="marks">6</span>
+							</li>
+							<li>
+								Given that the distance between the centres of the circles is $\sqrt{80}$, find the two possible values of $q$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w1d2-content">
+				<ol>
+					<li>
+						Find, to 1 decimal place, the values of $\theta$ in the range $0 \leq \theta \leq 180^{\circ}$ for which $4\sqrt{3}\sin(3\theta+20^{\circ})=4\cos(3\theta+20^{\circ})$
+						<span class="marks">4</span>
+					</li>
+					<li>
+						A student attempts to solve the equation $2\cos2x+\sqrt{3}=0$ for $0 \leq x \leq 180^{\circ}$ as follows:
+    
+					    \begin{align*}
+					        &2\cos2x = -\sqrt{3}\\
+					        &\cos 2x = -\dfrac{\sqrt{3}}{2}\\
+					        &2x = \cos^{-1}\left(-\dfrac{\sqrt{3}}{2}\right)\\
+					        &2x = 150^{\circ}\\
+					        &x = 75^{\circ}\\
+					        &x = 360^{\circ}-75^{\circ} = 295^{\circ}\\
+					        &\mathrm{Reject}\ 295^{\circ}\ \mathrm{because\ it\ is\ out\ of\ range}
+					    \end{align*}
+
+					    
+					    Identify the mistake made by the student and hence write down the correct solution(s) to the equation<span class="marks">2</span>
+					</li>
+					<li>
+						Prove from first principles that the derivative of $5x^3$ is $15x^2$
+						<span class="marks">4</span>
+					</li>
+					<li>
+						The diagram shows the plan of a school running track. It consists of two straight sections, which are the opposite sides of a rectangle, and two semicircular sections, each of radius $r$ m.
+
+						<div class="image"><img src="https://i.imgur.com/ifwmYKp.png" alt="track" width="225px" height="118px"></div>
+    
+						The length of the track is 300 m and it can be assumed to be very narrow.
+						<ol>
+							<li>
+								Show that the internal area, $A$ m$^2$, is given by $A = 300r - \pi r^2$ <span class="marks">4</span>
+							</li>
+							<li>
+								Hence find in terms of $\pi$ the maximum value of the internal area. You do not have to justify that the value is a maximum <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						A boat $Q$ is 7 km from another boat $P$ on a bearing of $327^{\circ}$. Another boat $R$ is 15 km from boat $P$ on a bearing of $041^{\circ}$.
+
+						<ol>
+							<li>
+								Find the distance between boats $Q$ and $R$ to 1 decimal place <span class="marks">5</span>
+							</li>
+							<li>
+								Find the bearing of boat $R$ from boat $Q$ <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w1d3-content">
+				<ol>
+					<li>
+						The diagram shows triangle $ABC$ with $AC = 8x-3$, $BC = 4x-1$, $\angle ABC = 120^{\circ}$ and $\angle ACB = 15^{\circ}$
+
+						<div class="image"><img src="https://i.imgur.com/X1V0NAL.png" alt="triagle" width="340px" height="185px"></div>
+						<ol>
+							<li>
+								Show that the exact value of $x$ is $\dfrac{9+\sqrt{6}}{20}$ <span class="marks">7</span>
+							</li>
+							<li>
+								Find the area of triangle $ABC$, giving your answer to 2 decimal places <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						A curve $C$ has equation $y = x^3 - x^2 - x + 2$  The point $P$ has $x$ coordinate 2.
+						<ol>
+							<li>
+								Find $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ in terms of $x$ <span class="marks">2</span>
+							</li>
+							<li>
+								The normal to $C$ at $P$ intersects the $x$ axis at $A$. Find the coordinates of $A$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Find the first four terms, in ascending powers of $x$, of the binomial expansion of $(2+px)^9$ <span class="marks">4</span>
+							</li>
+							<li>
+								Given that the coefficient of the $x^3$ term is $-84$, find the value of $p$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Find the set of values of $x$ for which $x^3-4x^2-35x+20$ is increasing <span class="marks">5</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w1d4-content">
+				<ol>
+					<li>
+						<ol>
+							<li>
+								Expand $(1+3x)^8$ in ascending powers of $x$ up to and including the term in $x^3$ <span class="marks">4</span>
+							</li>
+							<li>
+								Use this expression to find an approximation for $1.03^8$ to 5 significant figures <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Use the factor theorem to fully factorise $2x^3-x^2-13x-6$ <span class="marks">6</span>
+					</li>
+					<li>
+						The population $P$ of bacteria in an experiment can be modelled by the formula $P=100e^{0.4t}$ where $t$ is the time in hours after the experiment began.
+						<ol>
+							<li>
+								Use the model to estimate the population of bacteria 7 hours after the experiment began <span class="marks">2</span>
+							</li>
+							<li>
+								Interpret the meaning of the constant 100 in the model <span class="marks">1</span>
+							</li>
+							<li>
+								How many whole hours after the experiment began does the population of bacteria first exceed 1 million according to the model? <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Solve algebraically, showing each step of your working, the equation $(8^{x-1})^2-18(8^{x-1})+32=0$ <span class="marks">5</span>
+				</ol>
+			</div>
+			<div id="w1d5-content">
+				<ol>
+					<li>
+						The value of a car, $V$ pounds, is modelled by the equation $V = ab^t$, where $a$ and $b$ are constants and $t$ is the number of years since the car was purchased. <br />
+						A line, $l$, of $\log_4V$ against $t$ is a straight line which meets the vertical axis at $(0, \log_440000)$ has a gradient of $-0.1$
+						<ol>
+							<li>
+								Write down an equation for $l$ <span class="marks">2</span>
+							</li>
+							<li>
+								Find, in exact form, the values of $a$ and $b$ <span class="marks">4</span>
+							</li>
+							<li>
+								With reference to the model, interpret the values of the constants $a$ and $b$ <span class="marks">2</span>
+							</li>
+							<li>
+								Find the value of the car after 7 years <span class="marks">1</span>
+							</li>
+							<li>
+								After how many years is the value of the car less than £10000? <span class="marks">2</span>
+							</li>
+							<li>
+								State a limitation of the model <span class="marks">1</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Solve, showing detailed working $\log_{11}(2x-1)=1-\log_{11}(x+4)$ <span class="marks">6</span>
+					</li>
+					<li>
+						The graph of $y = ab^x$ passes through the points $(2, 400)$ and $(5, 50)$
+						<ol>
+							<li>
+								Find the values of the constants $a$ and $b$ <span class="marks">5</span>
+							</li>
+							<li>
+								Given that $ab^x < k$, for some constant $k > 0$, show that $x > \dfrac{\log\left(\dfrac{1600}{k}\right)}{\log2}$, where log means log to any valid base <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w2d1-content">
+				<ol>
+					<li>
+						The points $A$ and $B$ have coordinates $(3k-4,-2)$ and $(1,k+1)$ respectively, where $k$ is a constant.
+						<ol>
+							<li>
+								Given that the gradient of $AB$ is $-\dfrac{3}{2}$, show that $k=3$ <span class="marks">2</span>
+							</li>
+							<li>
+								Find an equation of the line through $A$ and $B$ <span class="marks">3</span>
+							</li>
+							<li>
+								Find an equation of the perpendicular bisector of $A$ an $B$. Leave your answer in the form $ax+by+c=0$, where $a$, $b$, and $c$ are integers <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Sketch the graph of $y=\log_9(x+a)$, where $a > 0$ and $x > -a$. Label any asymptotes and points of intersection with the axes. Leave your answers in terms of $a$ where necessary <span class="marks">6</span>
+							</li>
+							<li>
+								Describe, with a reason, the relationship between the graph of $y=\log_9(x+a)$ and $y=\log_9(x+a)^2$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Here is the graph of $y=f(x)$:
+						<div class="image"><img src="https://i.imgur.com/b9yjGAm.png" alt="graph" height="369" width="244"></div>
+						Sketch the graphs of $y=f(2x)$ and $y=f(-x)$, labelling the coordinates of the images of the points $A$, $B$, $C$ and $D$ in each case <span class="marks">4</span>
+					</li>
+					<li>
+						A buoy is a device which floats on the surface of the sea and moves up and down as waves pass. For a certain buoy, its height, $y$ metres above its position in still water, is modelled by $y =  \sin 180t^{\circ}$, where $t$ is the time in seconds.
+						<ol>
+							<li>
+								Sketch a graph showing the height of the buoy above its still water level for $0 \leq t \leq 10$ showing the coordinates of points of intersection with the $t$-axis. <span class="marks">3</span>
+							</li>
+							<li>
+								Write down the number of times the buoy is $0.4$ m above its still water position during the first 10 seconds <span class="marks">1</span>
+							</li>
+							<li>
+								Give one reason why this model might not be realistic <span class="marks">1</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w2d2-content">
+				<ol>
+					<li>
+						$$f(x) = x^2-(k+8)x+(8k+1)$$
+						<ol>
+							<li>
+								Find the discriminant of $f(x)$ in terms of $k$. Give your answer as a simplified quadratic <span class="marks">3</span>
+							</li>
+							<li>
+								If the equation $f(x)=0$ has two equal roots, find the possible values of $k$ <span class="marks">2</span>
+							</li>
+							<li>
+								Show that when $k = 8$, $f(x) > 0$ for all values of $x$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Sketch the graph of $y = \dfrac{4}{x-6}+5$, labelling any asymptotes and any points of intersection with the axes <span class="marks">5</span>
+					</li>
+					<li>
+						Prove that, for all values of $x$, $x^2+6x+18 > 2 - \dfrac{1}{2}x$ <span class="marks">4</span>
+					</li>
+					<li>
+						A fish tank in the shape of a cuboid is to be made from 1600 cm$^2$ of glass. The fish tank will hav a square base of side length $x$ cm, and no lid. No glass is wasted, and the glass can be assumed to be very thin.
+						<ol>
+							<li>
+								Show that the volume $V$ cm$^3$ of the fish tank is given by $V=400-\dfrac{x^3}{4}$ <span class="marks">5</span>
+							</li>
+							<li>
+								Given that $x$ can vary, use differentiation to find the maximum or minimum value of $V$ <span class="marks">4</span>
+							</li>
+							<li>
+								Justify that the value of $V$ you found in part b is a maximum <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w2d3-content">
+				<ol>
+					<li>
+						A curve $C$ with equation $y=-x^3+2x^2+8x$ crosses the $x$ axis at the points $A$, $O$, and $B$, where $O$ is the origin.
+						<ol>
+							<li>
+								Using an appropriate algebraic method, find the coordinates of $A$ and $B$ <span class="marks">3</span>
+							</li>
+							<li>
+								Sketch the graph of $y=-x^3+2^2+8x$ <span class="marks">2</span>
+							</li>
+							<li>
+								Hence find the total area of the finite regions bounded by the curve and the $x$ axis <span class="marks">8</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Prove that if $1+3x^2 + x^3 < (1+x)^3$, then $x>0$ <span class="marks">4</span>
+							</li>
+							<li>
+								Show, by means of a counterexample, that $1 + 3x^2+x^3 < (1+x)^3$ is not true for all values of $x$ <span class="marks">1</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						The curve with equation $y=f(x)$ passes through the point $(4,19)$. Given that $f'(x) = 15x\sqrt{x}-\dfrac{40}{\sqrt{x}}$, find $f(x)$ <span class="marks">6</span>
+					</li>
+					<li>
+						Find all the solutions to the equation $8-7\cos x = 6\sin^2x$ in the interval $0 \leq x \leq 360^{\circ}$, giving your answers to 1 decimal place where appropriate <span class="marks">6</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w2d4-content">
+				<ol>
+					<li>
+						Find $\displaystyle\int(5-3\sqrt{x})^2\ \mathrm{d}x$ <span class="marks">5</span>
+					</li>
+					<li>
+						The speed, $v$ ms$^{-1}$, of a rollercoaster at time $t$ s is given by $v(t) = \dfrac{1}{20}(50\sqrt{t} + 20t^2 - t^3)$, where $0 \leq t \leq 20$<br />
+    
+						The distance, $s$ m, travelled by the rollercoaster in the first $20$ s is given by $\displaystyle s = \int_0^{20}v(t)\ \mathrm{d}t$<br />
+    
+						Find the value of $s$, giving your answer to 3 significant figures <span class="marks">5</span>
+					</li>
+					<li>The first few terms of an arithmetic sequence are $5, 9, 13, 17, 21, ...$
+						<ol>
+							<li>
+								Find the fortieth term of the sequence <span class="marks">3</span>
+							</li>
+							<li>
+								Determine the sum of the first forty terms of the sequence <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Evaluate the following expression, showing clearly all the steps in the calculation:
+    
+						$$\sum_{r=1}^{20}(2r-3)$$ <span class="marks">4</span>
+					</li>
+					<li>A geometric series has common ratio $\dfrac{1}{3}$ 
+						<ol>
+							<li>
+								Find the first term of the series, given that the sum of its first four terms is 36 <span class="marks">4</span>
+							</li>
+							<li>
+								Determine the sum to infinity of the series <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w2d5-content">
+				<ol>
+					<li>A geometric series has first term 20480 and its sum to infinity is 81920. 
+						<ol>
+							<li>
+								Show that the common ratio of the series is 34 <span class="marks">4</span>
+							</li>
+							<li>
+								Calculate the difference between the fifth and the sixth term of the series <span class="marks">3</span>
+							</li>
+							<li>
+								Determine the smallest number of terms that should be added so that their total exceeds 80000 <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>Arnold is planning to save for the next 48 months in order to raise a deposit to buy a flat. He plans to save £300 this month and each successive month thereafter, to save an extra £5 compared to the previous month. 
+						<ol>
+							<li>
+								Find the amount he will save on the twelfth month <span class="marks">2</span>
+							</li>
+							<li>
+								Find the total amount he will save at the end of the 48 months <span class="marks">3</span>
+							</li>
+						</ol>
+						Franco is also planning to save for the next 48 months in order to buy a car. He plans to save £$a$ this month and each successive month thereafter, to save an extra £15 compared to the previous month.
+						<ol start="3">
+							<li>
+								Find the value of $a$, if Franco saves the same amount of money as Arnold does in the next 48 months <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>A curve $C$ has equation $4x^2+4y^2-8x+24y-5=0$
+						<ol>
+							<li>
+								Find the coordinates of the centre of the circle <span class="marks">3</span>
+							</li>
+							<li>
+								Find the radius of the circle, giving your answer in the form $k\sqrt{5}$ <span class="marks">1</span>
+							</li>
+						</ol>
+						The point $P$ has coordinates $(8,11)$<br />
+						The straight line $L$ passes through $P$ and touches the circle at the point $Q$
+						<ol start="3">
+							<li>
+								Calculate the distance $PQ$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w3d1-content">
+				<ol>
+					<li>
+						Solve $\tan x + \mathrm{cot}\ x = 8\cos 2x$ in the range $0 \leq x < \pi$ <span class="marks">8</span>
+					</li>
+					<li>The polynomials $f(x)$ and $g(x)$ are defined in terms of the constants $a$ and $b$:
+
+						$$f(x) = a(x^3+1)-bx(x+1)$$
+
+						$$g(x) = bx^3-5x^2-2a(x-1)$$
+						<ol>
+							<li>
+								Given that $(x-2)$ is a factor of both $f(x)$ and $g(x)$, determine the value of $a$ and $b$ <span class="marks">4</span>
+							</li>
+							<li>
+								Factorise $f(x)$ and $g(x)$, and hence find another common factor of $f(x)$ and $g(x)$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Solve $5\times5^{\lg x} + 5^{2-\lg x} = 30$ <span class="marks">8</span>
+					</li>
+					<li>
+						$X$ is a discrete random variable. The probability distribution is:
+						<table>
+							<tr>
+								<td>$x$</td>
+								<td>$1$</td>
+								<td>$2$</td>
+								<td>$3$</td>
+								<td>$4$</td>
+								<td>$5$</td>
+								<td>$6$</td>
+							</tr>
+							<tr>
+								<td>$\mathrm{P}(X=x)$</td>
+								<td>$\frac{1}{12}$</td>
+								<td>$\frac{1}{6}$</td>
+								<td>$\frac{1}{12}$</td>
+								<td>$\frac{1}{4}$</td>
+								<td>$2k$</td>
+								<td>$3k$</td>
+							</tr>
+						</table>
+    
+						Find $P(X\leq 5)$ <span class="marks">4</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w3d2-content">
+				<ol>
+					<li>
+						A box contains six black pens and four red pens. Three pens are taken at random from the box. Find the probability distribution of $X$, the number of black pens taken. <span class="marks">4</span>
+					</li>
+					<li>
+						A discrete random variable $X$ has P$(X=3)=p$, P$(X=4)=q$, and P$(X=5)=1-p-q$, where $p$ and $q$ are constants.<br />
+
+						Given E$(X)=4$ and Var$(X)=0.6$, find $p$ and $q$. <span class="marks">6</span>
+					</li>
+					<li>
+						The probability distribution of a discrete random variable $X$ is given as follows:
+						<table>
+							<tr>
+								<td>$x$</td>
+								<td>$1$</td>
+								<td>$2$</td>
+								<td>$3$</td>
+								<td>$4$</td>
+								<td>$5$</td>
+							</tr>
+							<tr>
+								<td>$\mathrm{P}(X=x)$</td>
+								<td>$0.1$</td>
+								<td>$0.2$</td>
+								<td>$0.3$</td>
+								<td>$0.3$</td>
+								<td>$0.1$</td>
+							</tr>
+						</table>
+						<ol>
+							<li>
+								Find E$(X)$ and Var$(X)$ <span class="marks">3</span>
+							</li>
+							<li>
+								Show that Var$(5X+2)$ = 25Var$(X)$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>$X$ is the discrete random variable representing the number of heads achieved from flipping a coin 25 times.
+						<ol>
+							<li>
+								State two assumptions that are required for $X$ to fall under a Binomial Distribution <span class="marks">2</span>
+							</li>
+						</ol>
+						$X\sim B(25,0.1)$
+						<ol start="2">
+							<li>
+								Determine if the coin is fair <span class="marks">1</span>
+							</li>
+							<li>
+								Find the probability of at most 4 successes <span class="marks">2</span>
+							</li>
+							<li>
+								Find $\mathrm{P}(2 < X \leq 4)$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w3d3-content">
+				<ol>
+					<li>A line $l_1$ has the equation $y=x^2-8x+20$ and a second line $l_2$ has equation $y=x+6$.
+						<ol>
+							<li>
+								Find the coordinates of $A$ and $B$, the points of intersection of $l_1$ and $l_2$ <span class="marks">4</span>
+							</li>
+							<li>
+								Find, to one decimal place, the area of the finite region bounded by these two lines <span class="marks">7</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						40% of a company's customers come from Amazon.<br />
+
+						The company redesigns its website and then carries out a survey with 10 random customers. 1 of these 10 customers came from Amazon.<br />
+
+						Test, at the 5% level of significance, whether the percentage of customers who come from Amazon has decreased. <span class="marks">7</span>
+					</li>
+					<li>An object is projected upwards with speed 7 m s$^{-1}$ from the ground. Calculate:
+						<ol>
+							<li>
+								The speed of the object when it is 2.1 m high <span class="marks">3</span>
+							</li>
+							<li>
+								The greatest height of the object <span class="marks">3</span>
+							</li>
+							<li>
+								The time after projection when the object is travelling downwards with speed 5.7 m s$^{-1}$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w3d4-content">
+				<ol>
+					<li>
+						25% of people like pineapple on pizza.<br />
+
+						In a survey of 30 random people, only 4 like pineapple on pizza.<br />
+
+						Test, at the 5% level of significance, whether there is evidence to suggest that the proportion of people who like pineapple on pizza is lower than 25% <span class="marks">7</span>
+					</li>
+					<li>A trailer of mass 600 kg is attached to a car of mass 1100 kg by a light rigid horizontal tow bar. The car and trailer are travelling along a horizontal straight road with acceleration 0.8 m s$^{-2}$
+						<ol>
+							<li>
+								Given that the force exerted on the trailer by the tow bar is 700 N, find the resistance to motion of the trailer <span class="marks">4</span>
+							</li>
+							<li>
+								Given also that the driving force of the car is 2100 N, find the resistance to motion of the car. <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>A block of mass 2 kg is at rest on a rough horizontal plane, acted on by a force of magnitude 12 N at an angle 15$^{\circ}$ upwards from horizontal, as shown below:
+
+						<div class="image"><img src="https://i.imgur.com/60LPYQe.png" height="81" width="204"></div>
+						<ol>
+							<li>
+								Find the frictional component of the contact force exerted on the block by the plane <span class="marks">2</span>
+							</li>
+							<li>
+								Show that the normal component of the contact force exerted on the block by the plane has magnitude 16.5 N to 3 significant figures <span class="marks">2</span>
+							</li>
+							<li>
+								Given that the block is on the point of sliding, find the coefficient of friction between the block and the plane <span class="marks">2</span>
+							</li>
+							<li>
+								The force of magnitude 12 N is replaced by a force of magnitude 20 N and the block starts to move. Find the acceleration of the block <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w3d5-content">
+				<ol>
+					<li>
+						An arithmetic progression has first term 11. The sum of its first 20 terms is 1360, and the sum of its last 20 terms is 4720. Determine the number of terms in the progression. <span class="marks">8</span>
+					</li>
+					<li>
+						A sequence $u_1,\ u_2,\ u_3,\ ...$ satisfies $u_{n+1}=Au_n+B$ where $A$ and $B$ are non zero constants.<br />
+
+						The second and third term of this sequence are 464 and 428, respectively. Given further that the sequence converges to 320, find the value of the fourth term of this sequence. <span class="marks">8</span>
+					</li>
+					<li>A train of total mass 80000 kg consists of an engine, $E$, and two carriages, $A$ and $B$. The engine is connected to $A$ by a light rigid bar $X$, and carriage $A$ is connected to $B$ by another light rigid bar, $Y$.<br />
+
+						The train is moving along a straight horizontal track. The resistances to motion acting on $E$, $A$ and $B$ are 10500 N, 3000N and 1500N respectively.
+						<ol>
+							<li>
+								By modelling the whole train as a single particle, show that it is decelerating when the driving force of the engine is less than 15000 N <span class="marks">2</span>
+							</li>
+							<li>
+								Show that, when the magnitude of the driving force is 35000 N, the acceleration of the train is $0.25$ m $s^{-2}$ <span class="marks">2</span>
+							</li>
+							<li>
+								Hence find the mass of $E$, given that the tension in $X$ is 8500 N when the driving force is 35000 N <span class="marks">3</span>
+							</li>
+						</ol>
+						The driving force is replaced by a braking force of 15000 N acting on the engine. The force exerted by $Y$ is zero
+						<ol start="4">
+							<li>
+								Find the mass of $B$ <span class="marks">5</span>
+							</li>
+							<li>
+								Show that $X$ exerts a forward force of 1500 N on the engine <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w4d1-content">
+				<ol>
+					<li>
+						<ol>
+							<li>
+								Express $3\cos \theta + 4\sin\theta$ in the form $R\cos(\theta-\alpha)$, where $R> 0$ and $0 < \alpha < \frac{\pi}{2}$ <span class="marks">4</span>
+							</li>
+							<li>
+								Solve the equation $1 - 3\cos2\theta - 4\sin 2\theta = 0$ in the range $0 \leq \theta \leq \pi$ <span class="marks">5</span>
+							</li>
+							<li>
+								Find the coordinates of the turning points of the curve with equation $y= \dfrac{1}{3\cos x + 4\sin x}$ in the interval $0 \leq x \leq 2\pi$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Find the equation of the tangent to the curve $y=(3-x)^{\frac{3}{2}}$ at the point with $x=1$ <span class="marks">4</span>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Show that if $\log_23 = \dfrac{p}{q}$, then $2^p = 3^q$ <span class="marks">2</span>
+							</li>
+							<li>
+								Use proof by contradiction to prove that $\log_23$ is irrational <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>A curve with equation $y = \dfrac{x+2}{\sqrt{x-2}}$ has a minimum at point $P$.
+						<ol>
+							<li>
+								Find and simplify an expression for $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ <span class="marks">3</span>
+							</li>
+							<li>
+								Find the coordinates of $P$ <span class="marks">2</span>
+							</li>
+							<li>
+								Show that the normal to the curve at the point with $x$ coordinate 3 has equation $2x-3y+9=0$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w4d2-content">
+				<ol>
+					<li>$$f(x) = \dfrac{6x}{(x-1)(x+2)} - \dfrac{2}{x-1}$$
+						<ol>
+							<li>
+								Show that $f(x) = \dfrac{4}{x+2}$ <span class="marks">3</span>
+							</li>
+							<li>
+								Find an equation for the tangent to the curve at the point with $x$ coordinate 2, giving your answer in the form $ax+by=c$, where $a$, $b$ and $c$ are integers <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>For each statement, either prove that it is true or find a counter example to prove that it is false. 
+						<ol>
+							<li>
+								If $a$ and $b$ are irrational, and $a\neq b$, then $(a+b)$ is irrational <span class="marks">2</span>
+							</li>
+							<li>
+								If $m$ and $n$ are consecutive odd integers, then $(m + n)$ is divisible by 4 <span class="marks">3</span>
+							</li>
+							<li>
+								For all real values of $x$, $\cos x\leq 1 + \sin x$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Find the area of the region bound by the curve $y = \dfrac{12}{(2x+1)^3}$, the coordinate axes, and the line $x=1$ <span class="marks">6</span>
+					</li>
+					<li>The diagram shows a shaded region bound by the curve $y=\dfrac{3}{x}$, the $x$ axis, and the lines $x=1$ and $x=4$
+
+						<div class="image"><img src="https://i.imgur.com/KK7GRr8.png" width="189" height="162"></div>
+						<ol>
+							<li>
+								Complete the table, giving an exact value for the $y$ coordinates corresponding to the respective $x$ coordinates on the curve:
+								<table>
+									<tr>
+										<td>$x$</td>
+										<td>$1$</td>
+										<td>$2$</td>
+										<td>$3$</td>
+										<td>$4$</td>
+									</tr>
+									<tr>
+										<td>$y$</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</table>
+								<span class="marks">2</span>
+							</li>
+							<li>
+								Use the trapezium rule with all the values in the table to show that the area of the shaded region is approximately $4.375$ <span class="marks">5</span>
+							</li>
+							<li>
+								Using a sketch, explain whether the true area is more or less than 4.375 <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w4d3-content">
+				<ol>
+					<li>
+						In a game at a charity fair, three coins are flipped and two six sided dice are thrown. The amount, in pence, the player wins is equal to 10 times the total score on the dice plus 20 times the number of heads. Find the expectation and variance of the amount won by the player. <span class="marks">5</span>
+					</li>
+					<li>Given that $f(x)=x^{\frac{3}{2}}(x-3)^3$,
+						<ol>
+							<li>
+								Show that $f'(x) = k\sqrt{x}(x-1)(x-3)^2$, where $k$ is a constant to be found <span class="marks">5</span>
+							</li>
+							<li>
+								Hence find the coordinates of the stationary points of the curve $y=f(x)$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>Evaluate:
+						<ol>
+							<li>
+								$\displaystyle\int \dfrac{x^3}{(x^4-2)^2}\ \mathrm{d}x$ <span class="marks">4</span>
+							</li>
+							<li>
+								$\displaystyle\int_2^3 \dfrac{x}{\sqrt{x^2-3}}\ \mathrm{d}x$ <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+					<li>The diagram shows the curve $y = x^2 + \dfrac{16}{x}$
+						<div class="image"><img src="https://i.imgur.com/sPos3gr.png" height="118" width="236"></div>
+						<ol>
+							<li>
+								Show that the stationary point on the curve has coordinates $(2, 12)$ <span class="marks">4</span>
+							</li>
+						</ol>
+						The region $R$ is bounded by the curve, the $x$ axis and the lines $x = 2$ and $x = 4$
+						<ol start="2">
+							<li>
+								State whether your answer to b) is an under or an over estimate of the area of $R$ <span class="marks">6</span>
+							</li>
+							<li>
+								Use the trapezium rule with 4 strips of equal width to estimate the area of $R$ <span class="marks">1</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w4d4-content">
+				<ol>
+					<li>Given that $f(x) = x\sqrt{2x+12}$,
+						<ol>
+							<li>
+								Find $f'(x)$ and show that $f''(x) = \dfrac{3(x+8)}{(2x+12)^{\frac{3}{2}}}$ <span class="marks">8</span>
+							</li>
+							<li>
+								Find the coordinates of the turning point of the curve $y=f(x)$ and determine its nature <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>Given that $f(x) = \dfrac{x}{x-1}$
+						<ol>
+							<li>
+								Find $f'(x)$ <span class="marks">5</span>
+							</li>
+							<li>
+								Hence evaluate $\displaystyle\int_2^3 \dfrac{3x^4-4x^3}{(x-1)^2}\ \mathrm{d}x$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Write $\sin\theta - \sqrt{2}\cos\theta$ in the form $R\sin(\theta + \alpha)$, where $R > 0$ and $-90^{\circ} < \theta < 0$ <span class="marks">6</span>
+							</li>
+							<li>
+								Hence solve the equation $\sin\theta - \sqrt{2}\cos\theta = 0.8$ in  the range $0 < \theta \leq 360^{\circ}$ <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w4d5-content">
+				<ol>
+					<li>The recruitment director of a large accounting firm believes that maths graduates are more successful when applying for positions in his firm compared with graduates of other subjects.<br />
+
+						One in five job applicants to this accounting firm is successful.<br />
+
+						The recruitment director selects a random sample of 25 maths graduate applicants.
+						<ol>
+							<li>
+								Find the critical region to test at the 5% level of significance the director’s belief. <span class="marks">6</span>
+							</li>
+							<li>
+								State the probability of incorrectly rejecting the null hypothesis in a test, using the critical region obtained in part a <span class="marks">2</span>
+							</li>
+							<li>
+								Ten successful maths graduate applicants were found in the sample. Complete the hypothesis test. <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>Given that $f(x) = \dfrac{4x^2}{(3x-5)^3}$
+						<ol>
+							<li>
+								Find $f'(x)$ <span class="marks">7</span>
+							</li>
+							<li>
+								Hence evaluate $\displaystyle\int -\dfrac{3x^2+10x}{(3x-5)^4}\ \mathrm{d}x$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>Prove the following identities:
+						<ol>
+							<li>
+								$\dfrac{2\sin x}{2\cos x - \sec x} \equiv \tan 2x$ <span class="marks">4</span>
+							</li>
+							<li>
+								$\sin^2\frac{x}{2} \equiv \dfrac{1}{2}(1-\cos x))$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w5d1-content">
+				<ol>
+					<li>Particles $A$ and $B$ are attached to the ends of a light inextensible string. The string passes over a smooth fixed pulley. The particles are released from rest, with the string taut, and $A$ and $B$ at the same height above the floor.<br />
+
+						In the subsequent motion, $A$ descends with acceleration 1.4 m s$^{-2}$ and strikes the floor 0.8 s after being released. $B$ never reaches the pulley.
+						<ol>
+							<li>
+								Calculate the distance $A$ moves before it reaches the floor and the speed of $A$ immediately before it strikes the floor <span class="marks">4</span>
+							</li>
+							<li>
+								Show that $B$ rises a further 0.064 m after $A$ strikes the floor, and calculate the total length of time during which $B$ is rising. <span class="marks">4</span>
+							</li>
+							<li>
+								Sketch the graph of $v$ against $t$ for the motion of $B$ from the instant it is released from rest until it reaches a position of instantaneous rest <span class="marks">2</span>
+							</li>
+							<li>
+								Before $A$ strikes the floor, the tension in the string is 5.88 N. Calculate the mass of $A$ and the mass of $B$ <span class="marks">4</span>
+							</li>
+							<li>
+								The pulley has mass $0.5$ kg and is held in place by a light vertical chain. Calculate the tension in the chain immediately before and immediately after $A$ strikes the floor <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>Solve the following equations in the range $0 < x \leq 2\pi$
+						<ol>
+							<li>
+								$2\cos2x=7\sin x$ <span class="marks">5</span>
+							</li>
+							<li>
+								$3\cos(2x+60)^{\circ}-\sin(2x-30)^{\circ} = 0$ <span class="marks">7</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w5d2-content">
+				<ol>
+					<li>Given that $y=x\sqrt{4x+1}$,
+						<ol>
+							<li>
+								Show that $\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{6x+1}{\sqrt{4x+1}}$ <span class="marks">5</span>
+							</li>
+							<li>
+								Solve the equation $\dfrac{\mathrm{d}y}{\mathrm{d}x} - 5y = 0$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Use proof by contradiction to prove that there are no positive integers $x$ and $y$ such that $x^2-y^2=1$ <span class="marks">6</span>
+					</li>
+					<li>Prove the following statments are false using a counter example:
+						<ol>
+							<li>
+								For all positive real values of $x$, $\sqrt[3]{x} \leq x$ <span class="marks">2</span>
+							</li>
+							<li>
+								For all positive integer values of $n$, $(n^3-n+7)$ is prime <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Evaluate $\displaystyle\int x\sqrt{x^2+4}\ \mathrm{d}x$ <span class="marks">5</span>
+					</li>
+					<li>
+						Use the trapezium rule with four strips of equal width to estimate the area under the graph of $y=\sin(\lg x)$ between $x = 2$ and $x=2.4$ <span class="marks">6</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w5d3-content">
+				<ol>
+					<li>$A$ is the centre of a circle $C$ with equation $x^2-8x+y^2+10y+1=0$<br />
+
+						$P$, $Q$ and $R$ are points on the circle and the lines $l_1$, $l_2$ and $l_3$ are tangents to the circle at these points respectively. $l_2$ intersects $l_1$ at $B$ and $l_3$ at $D$.
+
+						<div class="image"><img src="https://i.imgur.com/hBG56V6.png" alt="circle" height="185" width="200"></div>
+						<ol>
+							<li>
+								Find the centre and radius of $C$ <span class="marks">3</span>
+							</li>
+							<li>
+								Given that the $x$ coordinate of $Q$ is 10, and that the gradient of $AQ$ is positive, find the $y$ coordinate of $Q$ <span class="marks">4</span>
+							</li>
+							<li>
+								Find the equation of $l_2$ in the form $y=mx+c$ <span class="marks">4</span>
+							</li>
+							<li>
+								Given that $APBQ$ is a square find the equation of $l_1$ <span class="marks">4</span>
+							</li>
+							<li>
+								$l_1$ intercepts the $y$ axis at $E$. Find the area of triangle $EPA$ <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Solve $7\sin3\theta-6\cos3\theta=3.8$ in the range $0 \leq \theta < 360^{\circ}$ <span class="marks">10</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w5d4-content">
+				<ol>
+					<li>
+						<ol>
+							<li>
+								Fully expand $(p+q)^5$ <span class="marks">2</span>
+							</li>
+						</ol>
+
+						A fair four sided die, numbered 1, 2, 3 and 4 is rolled five times. Let $p$ represent the probability that the number 4 is rolled on a given roll and let $q$ represent the probability that the number 4 is not rolled.
+
+						<ol start="2">
+							<li>
+								Use the first three terms of the binomial expansion of $(p+q)^5$ to find the probability that the number 4 is rolled at least 3 times <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+					<li>$f(x) = x^3 + x^2 + px + q$, where $p$ and $q$ are constants. Given that $f(5) = 0$ and $f(-3) = 8$,
+						<ol>
+							<li>
+								Find the values of $p$ and $q$ <span class="marks">7</span>
+							</li>
+							<li>
+								Factorise $f(x)$ completely <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+					<li>The straight lines $l_1$ and $l_2$ have equations $l_1: 2x+y=10$ and $l_2: 3x-4y=10$
+						<ol>
+							<li>
+								Sketch $l_1$ and $l_2$ on a single set of axes. The sketch must include the coordinates of all the points where each of these straight lines meet the coordinate axes. <span class="marks">5</span>
+							</li>
+							<li>
+								Use algebra to determine the exact coordinates of the point of intersection. <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w5d5-content">
+				<ol>
+					<li>
+						Show that the area of the shaded region in the following diagram, $R$, is $\dfrac{81}{4}$
+
+						<div class="image"><img src="https://i.imgur.com/fYhfgYl.png" alt="area" height="185" width="456"></div>
+						<span class="marks">8</span>
+					</li>
+					<li>At time $t$ seconds, the surface area of a cube is $A$ cm$^2$ and the volume is $V$ cm$^3$. The surface area of the cube is expanding at a constant rate of 2 cm$^2$ s$^{-1}$
+						<ol>
+							<li>
+								Write an expression for $V$ in terms of $A$ <span class="marks">2</span>
+							</li>
+							<li>
+								Find $\dfrac{\mathrm{d}V}{\mathrm{d}A}$ <span class="marks">3</span>
+							</li>
+							<li>
+								Hence show that $\dfrac{\mathrm{d}V}{\mathrm{d}t} = \dfrac{1}{2}V^{\frac{1}{3}}$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>The current $i$ amperes at a certain time $t$ seconds is given by $$i=2\sin\left(t-\dfrac{\pi}{3}\right) - \cos\left(t+\dfrac{\pi}{3}\right)$$
+						<ol>
+							<li>
+								Show that the maximum current is 2.646 amps to 3 decimal places <span class="marks">9</span>
+							</li>
+							<li>
+								Find the time when the maximum current is first reached <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w6d1-content">
+				<ol>
+					<li>
+						Solve the equation $\dfrac{\sin x}{1+\cos x} = 3\cot\frac{x}{2}$ in the interval $0 \leq x \leq 360^{\circ}$ <span class="marks">7</span>
+					</li>
+					<li>A curve has equation $y=\dfrac{2(x-1)}{x^2+3}$ and crosses the $x$ axis at the point $A$
+						<ol>
+							<li>
+								Show that the normal to the curve at the point $A$ has equation $y=2-2x$ <span class="marks">8</span>
+							</li>
+							<li>
+								Find the coordinates of any stationary points on the curve <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>Given that $f(x) = \dfrac{\sqrt{x-1}}{\sqrt{x+1}}$
+						<ol>
+							<li>
+								Find $f'(x)$ <span class="marks">7</span>
+							</li>
+							<li>
+								Hence evaluate $\displaystyle\int \dfrac{1}{(x+1)\sqrt{x^2-1}}\ \mathrm{d}x$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w6d2-content">
+				<ol>
+					<li>
+						<ol>
+							<li>
+								Calculate the value of $-2\tan(-120^{\circ})$ <span class="marks">1</span>
+							</li>
+							<li>
+								On the same set of axes sketch the graphs of $y = 2\sin(x-60^{\circ})$ and $y = -2\tan x$, in the interval $-180^{\circ} \leq x \leq 180^{\circ}$, showing the coordinates of points of intersection with the coordinate axes in exact form. <span class="marks">7</span>
+							</li>
+							<li>
+								Explain how you can use the graph to identify solutions to the equations $y = 2\sin(x-60^{\circ}) + 2\tan x = 0$ in the interval $-180^{\circ} \leq x \leq 180^{\circ}$ and write down the number of solutions of this equation <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>Given $f(x) = x^3-7x^2-24x+18$,
+						<ol>
+							<li>
+								Sketch the graph of the gradient function $y=f'(x)$ <span class="marks">4</span>
+							</li>
+							<li>
+								Determine the points where this graph cuts the coordinate axes and mark these point on the graph <span class="marks">2</span>
+							</li>
+							<li>
+								Find the coordinates of any turning points on this graph <span class="marks">3</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Sketch the graph of $y=8^x$, stating the points of any intersections with the axes <span class="marks">2</span>
+							</li>
+							<li>
+								Describe fully the transformation that transforms the graph $y=8^x$ to $y=8^{x-1}+5$ <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Find the coordinates of the point where the curve $y=\left(\dfrac{3}{\sqrt{x}}-4\right)^2$ meets the $x$ axis <span class="marks">2</span>
+							</li>
+						</ol>
+						The finite region $R$ is bounded by the curve, the line $x = 1$, and the $x$ axis.
+						<ol start="2">
+							<li>
+								Show that the area of $R$ is approximately 0.178 <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w6d3-content">
+				<ol>
+					<li>
+						The figure below shows a circular sector $ABC$ of radius $r$ cm subtending an angle $\theta$ radians at $C$. The length of the arc $AB$ is $\dfrac{2}{9}$ of the perimeter of the sector. Show that $\theta=\dfrac{4}{7}$ radians.
+
+						<div class="image"><img src="https://i.imgur.com/Z1x6t88.png" alt="area" height="185" width="254"></div>
+						<span class="marks">4</span>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Prove the identity $\dfrac{1-\cos x}{1+\cos x} \equiv \tan^2\frac{x}{2}$ <span class="marks">4</span>
+							</li>
+							<li>
+								Find the value of $\tan^2\frac{\pi}{12}$ in the form $a + b\sqrt{3}$, where $a$ and $b$ are integers <span class="marks">4</span>
+							</li>
+							<li>
+								Solve the equation $\dfrac{1-\cos x}{1+\cos x} = 1 - \sec \frac{x}{2}$ in the interval $0 \leq x \leq 2\pi$, leaving your answers in terms of $\pi$ <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+					<li>A curve $y=\dfrac{2\sqrt{x}-3}{x-2}$ has two stationary points.
+						<ol>
+							<li>
+								Show that the $x$ coordinates of the stationary points satisfy the equation $x - 3\sqrt{x} + 2 = 0$ <span class="marks">5</span>
+							</li>
+							<li>
+								Hence find the coordinates of the two stationary points <span class="marks">5</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w6d4-content">
+				<ol>
+					<li>
+						A 15 foot ladder is resting against the wall. The bottom is initially 10 feet away from the wall and is being pushed towards the wall at a rate of 14 ft per second. How fast is the top of the ladder moving up the wall 12 seconds after it has started to be pushed? <span class="marks">5</span>
+					</li>
+					<li>
+						Solve $\sec x - 4\sin x = 0$ in the range $0 \leq x \leq 360^{\circ}$ <span class="marks">6</span>
+					</li>
+					<li>The finite region $R$ is bounded by the curve $y = (2 - x)^3$ and the coordinate axes.
+						<ol>
+							<li>
+								State the coordinates of the point where the curve crosses the $x$ axis <span class="marks">1</span>
+							</li>
+							<li>
+								Use the trapezium rule with 4 intervals of equal width to estimate the area of R <span class="marks">5</span>
+							</li>
+							<li>
+								Expand $(2-x)^3$ in ascending powers of $x$ <span class="marks">2</span>
+							</li>
+							<li>
+								Using integration, find the percentage error in the estimate for the area of $R$ found in part b <span class="marks">6</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Evaluate $\displaystyle\int_1^2\dfrac{3x^3+1}{2x^2}\ \mathrm{d}x$ <span class="marks">5</span>
+					</li>
+				</ol>
+			</div>
+			<div id="w6d5-content">
+				<ol>
+					<li>Two particles $P$ and $Q$ are joined by a taut light inextensible string which is parallel to a line of greatest slope on an inclined plane on which the particles are initially held at rest. The string is 0.5 m long, and the plane is inclined at 45$^{\circ}$ to the horizontal. $P$ is below the level of $Q$ and 3m from the foot of the plane, as shown in the diagram.
+
+						<div class="image"><img src="https://i.imgur.com/6JDeScx.png" alt="slope" height="185" width="185"></div>
+
+						Each particle has mass 0.2 kg. Contact between $P$ and the plane is smooth. The coefficient of friction between $Q$ and the plane is 1. The particles are released from rest and begin to move down the plane.
+						<ol>
+							<li>
+								Show that the magnitude of the frictional force acting on $Q$ is 1.386 N, correct to 4 significant figures <span class="marks">2</span>
+							</li>
+							<li>
+								Show that the particles accelerate at 3.465 m s$^{-2}$, correct to 4 significant figures, and calculate the tension in the string <span class="marks">5</span>
+							</li>
+							<li>
+								Calculate the speed of the particles at the instant when $Q$ reaches the initial position of $P$ <span class="marks">2</span>
+							</li>
+						</ol>
+						At the instant when $Q$ reaches the initial position of $P$, $Q$ becomes detached from the string and the two particles travel independently to the foot of the plane.
+						<ol start="4">
+							<li>
+								Show that $Q$ descends at constant speed, and calculate the time interval between the arrival of $P$ and the arrival of $Q$ at the foot of the plane <span class="marks">7</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Determine the maximum value of the function $f(x) = 6 + 3\cos x + 4\sin x$ <span class="marks">5</span>
+					</li>
+					<li>
+						<ol>
+							<li>
+								Sketch on the same set of axes the graphs of $y=3\sin x$ and $y = 1+\mathrm{cosec}\ x$ for $-180^{\circ} < x < 180^{\circ}$ <span class="marks">4</span>
+							</li>
+							<li>
+								Find the $x$ coordinate of each point where the curves intersect in this interval, giving your answers to 1 decimal place. <span class="marks">6</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w7d1-content">
+				<ol>
+					<li>Boris claims that 40% of people will vote for him in the next election. In a recent opinion poll of 20 voters it was found that only 4 people will vote for Boris
+						<ol>
+							<li>
+								Test, at the 5% level of significance whether, or not, the opinion poll supports Boris’ claim <span class="marks">7</span>
+							</li>
+						</ol>
+						In a second opinion poll of $n$ randomly selected people, it was found that no one will be voting for Boris. As a result of this poll, Boris’ claim is rejected at the 1\% significance level.
+						<ol start="2">
+							<li>
+								Show that $n>\dfrac{\log\left(0.01\right)}{\log\left(0.6\right)}$ <span class="marks">7</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						An inverted conical funnel is full of salt. The salt is allowed to leave by a small hole in the vertex. It leaves at a constant rate of 6 cm$^3$ s$^{-1}$.<br />
+
+						Given that the angle of the cone between the slanting edge and the vertical is 30$^{\circ}$, show that the volume of the salt is $\dfrac{1}{9}\pi h^3$, where $h$ is the height of the salt at time $t$ seconds, and hence show that the rate of change of the height of the salt in the funnel is inversely proportional to $h^2$. <span class="marks">6</span>
+					</li>
+					<li>Prove the following trigonometric identities:
+						<ol>
+							<li>
+								$\tan x + \cot x = 2\mathrm{cosec}\ 2x$ <span class="marks">4</span>
+							</li>
+							<li>
+								$(\cos x + \sin x)(\mathrm{cosec}\ x - \sec x) \equiv 2\cot 2x$ <span class="marks">6</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w7d2-content">
+				<ol>
+					<li>A large cylindrical water tank has a height of 16m and a horizontal cross section of constant area 20 m$^2$. <br />
+
+						Water is pouring into the tank at a constant rate of 10 m$^3$ per hour and leaking out of a tap  at the  base  of  the  tank  at  a  rate $\sqrt{x}$ m$^3$ per hour, where $x$ is the height of the water in the tank, in m, at time $t$ hours.
+						<ol>
+							<li>
+								Show that $\dfrac{\mathrm{d}x}{\mathrm{d}t}=\dfrac{10-\sqrt{x}}{20}$ <span class="marks">5</span>
+							</li>
+						</ol>
+						The water in the cylinder had an initial height of 9m. 
+						<ol start="2">
+							<li>
+								Find, correct to the nearest hour, the time it takes to fill up the tank. <span class="marks">12</span>
+							</li>
+						</ol>
+					</li>
+					<li>30% of students who take Maths get A*s. A new teacher suspects that there has been a change in the proportion of students who get A*s. A random sample of 20 students was taken.
+						<ol>
+							<li>
+								Using a 10% level of significance, find the critical region for a hypothesis test that would answer the teacher's suspicion. You should state the probability of rejection in each tail. <span class="marks">7</span>
+							</li>
+							<li>
+								Find the actual significance level of this test. <span class="marks">2</span>
+							</li>
+							<li>
+								The teacher sees that 12 of the 20 students in the random sample got A*s. Comment on the teacher's suspicion. <span class="marks">1</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w7d3-content">
+				<ol>
+					<li>
+						<ol>
+							<li>
+								Given that $\displaystyle\int_a^{2a}10-6x\ \mathrm{d}x = 1$, find the two possible values of $a$ <span class="marks">6</span>
+							</li>
+							<li>
+								Labelling all axes intercepts, sketch the graph of $y=10-6x$ for $0 \leq x \leq 2$ <span class="marks">2</span>
+							</li>
+							<li>
+								With reference to the integral in part a and the sketch in part b, explain why the larger value of a found in part a produces a solution for which the actual area under the graph between a and 2a is not equal to 1. State whether the area is greater than 1 or smaller than 1. <span class="marks">2</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						Solve $e^{1.5x}=e^{3x}-2$, giving your answers in exact form <span class="marks">6</span>
+					</li>
+					<li>One end of a light inextensible string is attached to a block of mass 1.5 kg. The other end is attached to an object of mass 1.2 kg. The block is held at rest in contact with a rough plane inclined at 21$^{\circ}$ to the horizontal. The string is taut and passes over a smooth pulley at the bottom edge of the plane. The part of the string above the pulley is parallel to a line of greatest slope of the plane and the object hangs freely below the pulley, as shown in the diagram: 
+
+						<div class="image"><img src="https://i.imgur.com/TxggW3Z.png" alt="slope" height="167" width="248"></div>
+
+						The block is released and the object moves vertically downwards with acceleration $a$ m $s^{-2}$. The tension in the string is $T$ N. The coefficient of friction between the block and the plane is 0.8.
+						<ol>
+							<li>
+								Show that the frictional force acting on the block has magnitude 10.98 N to 2 decimal places <span class="marks">3</span>
+							</li>
+							<li>
+								By applying Newton's second law to the block and to the object, find a pair of simultaneous equations in $T$ and $a$ <span class="marks">5</span>
+							</li>
+							<li>
+								Hence show that $a=2.24$ to 2 decimal places <span class="marks">2</span>
+							</li>
+						</ol>
+						Given that the object is initially 2 m above a horizontal floor and that the block is 2.8m from the pulley,
+						<ol start="4">
+							<li>
+								Find the speed of the block when the object reaches the floor <span class="marks">2</span>
+							</li>
+							<li>
+								Find the speed of the block when the block reaches the pulley <span class="marks">4</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+			<div id="w7d4-content">
+				<ol>
+					<li>
+						The half life of a radioactive isotope is the time it takes for a given mass to reduce to half the size of that given mass. <br />
+
+						A radioactive substance reduces from 12g to exactly 10.24g in 30 days. Assuming that the isotope decays exponentially, determine the half life of the isotope, correct to the nearest day. <span class="marks">8</span>
+					</li>
+					<li>
+						The point $P$, with $y$ coordinate 2, lies on the curve $y=\dfrac{k+8k\sqrt{x}}{12x}$, where $k$ is a non zero constant. <br />
+
+						The tangent to the curve at $P$ is parallel to the line with equation $6x+y=17$. Find the value of $k$ <span class="marks">11</span>
+					</li>
+					<li>The height of tide, $h$ meters, in a harbour on a certain day can be modelled by $$h(t) = 10+\sqrt{3}\sin(30t)^{\circ}+\cos(30t)^{\circ},\ 0 \leq t \leq 24$$ where $t$ is the time in hours since midnight.
+						<ol>
+							<li>
+								Find the time when the high tide and the low tide occur during the morning hours of that day and state the corresponding depth of water in the harbour at these times. <span class="marks">7</span>
+							</li>
+						</ol>
+						The depth of water in this harbour needs to be at least 8.5 metres for a boat to be docked. <br />
+
+						A boat arrives outside the harbour at high tide and needs to spend five hours to unload.
+						<ol start="2">
+							<li>
+								Show that the boat has to wait until $09:23$ to dock at the harbour in order to have enough time to unload. <span class="marks">6</span>
+							</li>
+						</ol> 
+					</li>
+				</ol>
+			</div>
+			<div id="w7d5-content">
+				<ol>
+					<li>
+						The sum, $S_n$, of the first $n$ terms of an arithmetic series is given by $S_n=3n^2+7n$. Find the first term and the common difference of the series. <span class="marks">7</span>
+					</li>
+					<li>
+						Given that 
+
+						$$\int_1^k\dfrac{(k\sqrt{3}+\sqrt{3x})^2}{kx^3}\ \mathrm{d}x = a-\sqrt{k}$$
+
+						where $a$ and $k$ are integers, find the value of $a$ <span class="marks">12</span>
+					</li>
+					<li>The temperature in a bathroom is maintained at a  constant value of 20 $^{\circ}$C and the water in a hot bath is left to cool down. <br />
+
+						The rate, in $^{\circ}$C per second, at which the temperature of the water in the bath, $T$ $^{\circ}$C, is cooling  down, is proportional to the  difference in the temperature  between the bathwater and the room. <br />
+
+						Initially the bathwater had a temperature of 40 $^{\circ}$C,  and at that instant was cooling down at the rate of 0.005 $^{\circ}$C per second. <br />
+
+						Let $t$ be the time in seconds since the bathwater was left to cool down.
+						<ol>
+							<li>
+								Show that $\dfrac{\mathrm{d}T}{\mathrm{d}t} = -\dfrac{1}{4000}(T-20)$ <span class="marks">3</span>
+							</li>
+							<li>
+								Find, correct to the nearest minute, after how long the temperature of the bathwater will drop to 36 $^{\circ}$C <span class="marks">7</span>
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</main>
+	<div id="right-sidebar"></div>
+	<footer><span id="time">30:00</span><button id="timerStartButton" onclick="start()">Start 30 min timer</button></footer>
+</body>
+<!--Timer Script-->
+<script>
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer == 0) {
+            alert("Time's up");
+        }
+    }, 1000);
+}
+
+function start() {
+    startTimer(1800, document.getElementById('time'));
+    document.getElementById('timerStartButton').style.display='none'
+};
+</script>
+<!--Sidebar script-->
+<script type="text/javascript">
+// Function to navigate with sidebar items
+let clickFunction = function() {
+	// If there is already a highlighted sidebar item, unhighlight it
+	if(document.getElementsByClassName("sidebar-active").length !== 0) {
+		document.getElementsByClassName("sidebar-active")[0].classList.remove("sidebar-active");
+	};
+	// Highlight this sidebar item
+	this.classList.add("sidebar-active");
+	// Find the main area on the page
+	let mainDiv = document.getElementById("mid");
+	// Set height main div to transparent for a nice transition
+	mainDiv.classList.add("zero-opacity");
+	// Find the div of the selected topic and make a copy of it (appendChild will move the div otherwise and it will get deleted later)
+	let newDiv = document.getElementById(this.id + "-content").cloneNode(true);
+	// Delay the rest of this so there is time to see the transition
+	setTimeout(function(){
+		// Delete everything in the main body of the page
+		mainDiv.innerHTML = "";
+		// Add the topic div to the main body of the page
+		mainDiv.appendChild(newDiv);
+		// Stop the main area from being transparent
+		mainDiv.classList.remove("zero-opacity");
+	},250);
+};
+
+// Function to add click listener to sidebar items so they do stuff when clicked
+let leftSideBarList = document.getElementById("left-sidebar").querySelectorAll("li");
+for (let i=0; i < leftSideBarList.length; i++) {
+	leftSideBarList[i].onclick = clickFunction;
+}
+</script>
+</html>
