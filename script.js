@@ -6,7 +6,7 @@ window.onload = () => {
     transition_el.forEach(
       (e) => {e.classList.remove('active')}
     );
-  }, 500);
+  }, 400);
 
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];
@@ -25,7 +25,7 @@ window.onload = () => {
 
       setInterval(() => {
         window.location.href = e.target.href;
-      }, 500);
+      }, 400);
     })
   }
 }

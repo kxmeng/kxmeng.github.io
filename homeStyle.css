@@ -92,7 +92,7 @@ main {
   top: -50vh;
   height: 0;
   z-index: 10;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .transition-bottom {
@@ -102,9 +102,9 @@ main {
   bottom: -50vh;
   height: 0;
   z-index: 10;
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .active {
-  height: 120vh;
+  height: 100vh;
 }
