@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 2 MathJax scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<title>Year 13 Maths</title>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body id="al13-page">
+	<!-- For the page transition-->
+	<div class="transition transition-top active"></div>
+    
+    <header>Year 13 - Pure</header>
+
+    <div class="left-sidebar">
+        <h6>Autumn</h6>
+        <ul>
+            <li id="functions" onclick="clickFunction(this)">Functions</li>
+            <li id="differentiation" onclick="clickFunction(this)">Differentiation</li>
+            <li id="binomial" onclick="clickFunction(this)">Binomial Expansions</li>
+            <li id="vectors" onclick="clickFunction(this)">Vectors</li>
+            <li id="parametric" onclick="clickFunction(this)">Parametric</li>
+            <li id="rational" onclick="clickFunction(this)">Rational Functions</li>
+        </ul>
+        <hr>
+        <h6>Spring</h6>
+        <ul>
+            <li id="integration" onclick="clickFunction(this)">Integration</li>
+            <li id="differential" onclick="clickFunction(this)">Differential Eqns</li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="main-content">
+            <h2>Year 13 Single Pure Scheme of Work</h2>
+            <p>Select a topic on the left</p>
+        </div>
+    </main>
+
+    <div class="right-sidebar">
+        
+    </div>
+    
+    <footer>
+
+    </footer>
+
+	<!-- For the page transition-->
+	<div class="transition transition-bottom active"></div>
+    
+    <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+    <div class="all-content">
+        <div class="topics" id="functions-content">
+            <h2>Functions</h2>
+            <ul>
+                <li>Language: many-one, one-many, one-one, mapping, function, image, range, domain</li>
+                <li>Inverse functions, incl 1 to 1 condition for it to exist, and reflection in y = x</li>
+                <li>Composite functions</li>
+                <li>Logs and exponentials, including graphs, transformations (briefly review modelling exponential growth and decay and solving problems - see earlier topic on Stats side)</li>
+                <li>Inverse trig functions, including graphs and equations</li>
+                <li>Modulus functions, including graphs, equations and inequalities (spec is limited to sketching y = |ax + b|)</li>
+            </ul>
+        </div>
+        <div class="topics" id="differentiation-content">
+            <h2>Differentiation</h2>
+            <ul>
+                <li>Differentiating and integrating exponentials and logarithms, trigonometric functions</li>
+            </ul>
+        </div>
+        <div class="topics" id="binomial-content">
+            <h2>Binomial Expansions</h2>
+            <ul>
+                <li>Extend binomial expansion</li>
+            </ul>
+        </div>
+        <div class="topics" id="vectors-content">
+            <h2>Vectors</h2>
+            <ul>
+                <li>scalar and vector quantities, and importance of distinguishing carefully when writing by hand</li>
+                <li>i, j, k notation, column vector notation, bold/underlined and arrow vector notations</li>
+                <li>component form vs magnitude and direction form, where the direction of a vector is given by the angle the vector makes with a horizontal line parallel to the positive x-axis, in the interval [0, 360)</li>
+                <li>finding column form from magnitude and direction and vice versa</li>
+                <li>basic operations</li>
+                <li>position vectors</li>
+                <li>distance between points</li>
+                <li>midpoints</li>
+                <li>problems and proofs, including language of parallel, displacement, component, resultant, equal and unit vectors.</li>
+            </ul>
+        </div>
+        <div class="topics" id="parametric-content">
+            <h2>Parametric Equations</h2>
+            <ul>
+                <li>incl parametric definition of circles</li>
+                <li>derivatives (and brief review of chain rule and related rates of change), tangents, normals</li>
+                <li>implicit differentiation. tangents, normals</li>
+            </ul>
+        </div>
+        <div class="topics" id="rational-content">
+            <h2>Rational Functions</h2>
+            <ul>
+                <li>Algebraic fractions factorising and simplifying. Make use of factor and remainder theorems and polynomial division.</li>
+                <li>Partial fractions [spec is restricted to constant or linear numerator with most complicated denominators (ax + b)(cx + d)(ex + f) or  (ax + b)(cx + d)2]</li>
+                <li>Use partial fractions with Binomial expansions to find power series or to integrate.</li>
+                <li>Include some summing series problems</li>
+            </ul>
+        </div>
+        <div class="topics" id="integration-content">
+            <h2>Integration</h2>
+            <ul>
+                <li>Reversing chain rule and product rule by inspection, now including integrating back to exp, ln and trig functions</li>
+                <li>Use of partial fractions</li>
+                <li></li>By substitution (substitution may or may not be given (see spec 1.08h for examples)</li>
+                <li>Area under a parametrically defined curve using substitution</li>
+                <li>By parts</li>
+            </ul>
+        </div>
+        <div class="topics" id="differential-content">
+            <h2>Differential Equations</h2>
+            <ul>
+                <li>difference between general and particular solutions</li>
+                <li>basic differential equations </li>
+                <li>dy/dx= f(x)</li>
+                <li>separation of variables - reversing chain rule</li>
+            </ul>
+        </div>
+    </div>
+
+	<script src="./script.js"></script>
+</body>
+</html>

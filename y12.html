@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 2 MathJax scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<title>Year 12 Maths</title>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body id="y12-page">
+	<!-- For the page transition-->
+	<div class="transition transition-top active"></div>
+    
+    <header>Year 12 - Applied</header>
+
+    <div class="left-sidebar">
+        <h6>Pure</h6>
+        <ul>
+            <li id="binomial" onclick="clickFunction(this)">Binomial Theorem</li>
+            <li id="surds" onclick="clickFunction(this)">Surds, Indices</li>
+            <li id="sequences" onclick="clickFunction(this)">Sequences</li>
+            <li id="inequalities" onclick="clickFunction(this)">Inequalities</li>
+        </ul>
+        <hr>
+        <h6>Mechanics</h6>
+        <ul>
+            <li id="mechanics" onclick="clickFunction(this)">Mechanics - all</li>
+        </ul>
+        <hr>
+        <h6>Statistics</h6>
+        <ul>
+            <li id="statistics" onclick="clickFunction(this)">Statistics - all</li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="main-content">
+            <h2>Year 12 Single Applied Scheme of Work</h2>
+            <p>Select a topic on the left</p>
+        </div>
+    </main>
+
+    <div class="right-sidebar">
+        
+    </div>
+    
+    <footer>
+
+    </footer>
+
+	<!-- For the page transition-->
+	<div class="transition transition-bottom active"></div>
+    
+    <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+    <div class="all-content">
+        <div class="topics" id="binomial-content">
+            <h2>Binomial Theorem</h2>
+            <ul>
+                <li>Positive integer powers</li>
+            </ul>
+        </div>
+        <div class="topics" id="surds-content">
+            <h2>Surds and Indices</h2>
+            <ul>
+                <li>Laws of indices and solving equations</li>
+                <li>Arithmetic of surds, including rationalising denonminator</li>
+            </ul>
+        </div>
+        <div class="topics" id="sequences-content">
+            <h2>Sequences</h2>
+            <ul>
+                <li>Iterative definitions</li>
+                <li>Convergence, divergence, oscillation, periodicity, chaos</li>
+                <li>nth term definitions</li>
+                <li>Iterative solutions to equations</li>
+            </ul>
+        </div>
+        <div class="topics" id="inequalities-content">
+            <h2>Inequalities</h2>
+            <ul>
+                <li>Linear (including multiplication by negatives) and quadratic</li>
+                <li>Set notation for solutions</li>
+            </ul>
+        </div>
+        <div class="topics" id="mechanics-content">
+            <h2>Mechanics</h2>
+            <ul>
+                <li><i>Aim: everything except resolving into components by mid February</i></li>
+                <li>Forces: definition, types of force, Newton's 3 laws</li>
+                <li>Dynamics: N2L in 1 dimension, include connected particles</li>
+                <li>Kinematics: displacement/velocity/acceleration time graphs, suvat in 1 dimension</li>
+                <li>Dynamics: N2L with suvat, friction</li>
+                <li>Moments: no resolving forces, only e.g. forces which are all vertical</li>
+            </ul>
+        </div>
+        <div class="topics" id="statistics-content">
+            <h2>Statistics</h2>
+            <ul>
+                <li><i>Aim: probability and discrete random variables</i></li>
+                <li>Probability: review of GCSE, derive addition and multiplication rules</li>
+                <li>Permutations and combinations: simple examples</li>
+                <li>Discrete random variables: calculations, Binomial distribution, Geometric distribution</li>
+                <li>Hypothesis tests: using Binomial distribution</li>
+            </ul>
+        </div>
+    </div>
+
+	<script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 2 MathJax scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<title>Year 13 Maths</title>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+<body id="fm13-page">
+	<!-- For the page transition-->
+	<div class="transition transition-top active"></div>
+    
+    <header>Year 13 - Further Stats</header>
+
+    <div class="left-sidebar">
+        <h6>Autumn</h6>
+        <ul>
+            <li id="rv" onclick="clickFunction(this)">Functions of random variables</li>
+            <li id="clt" onclick="clickFunction(this)">Central limit theorem and tests</li>
+            <li id="ci" onclick="clickFunction(this)">Confidence intervals</li>
+            <li id="poisson" onclick="clickFunction(this)">Poisson and Exponential distribution</li>
+            <li id="pmcc" onclick="clickFunction(this)">PMCC + SRCC</li>
+            <li id="regression1" onclick="clickFunction(this)">Linear regression</li>
+            <li id="regression2" onclick="clickFunction(this)">Non-linear regression</li>
+            <li id="nonparametric" onclick="clickFunction(this)">Non-parametric tests</li>
+            <li id="chisquared" onclick="clickFunction(this)">Chi-squared tests</li>
+        </ul>
+        <hr>
+        <h6>Spring</h6>
+        <ul>
+            <li id="lds" onclick="clickFunction(this)">Large Data Set</li>
+            <li id="sampling" onclick="clickFunction(this)">Sampling</li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="main-content">
+            <h2>Year 13 Further Stats Scheme of Work</h2>
+            <p>Select a topic on the left</p>
+        </div>
+    </main>
+
+    <div class="right-sidebar">
+        
+    </div>
+    
+    <footer>
+
+    </footer>
+
+	<!-- For the page transition-->
+	<div class="transition transition-bottom active"></div>
+    
+    <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+    <div class="all-content">
+        <div class="topics" id="rv-content">
+            <h2>Functions of Random Variables</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="clt-content">
+            <h2>Central Limit Theorem</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="ci-content">
+            <h2>Confidence Intervals</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="poisson-content">
+            <h2>Poisson and Exponential Distributions</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="pmcc-content">
+            <h2>PMCC and SRCC</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="regression1-content">
+            <h2>Linear Regression</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="regression2-content">
+            <h2>Non Linear Regression</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="nonparametric-content">
+            <h2>Non Parametric tests</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="chisquared-content">
+            <h2>Chi Squared tests</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="lds-content">
+            <h2>Large Data Set</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="sampling-content">
+            <h2>Sampling</h2>
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+
+	<script src="./script.js"></script>
+</body>
+</html>

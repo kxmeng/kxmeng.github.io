@@ -1,0 +1,110 @@
+:root {
+  --bg-color: #f5edf0;
+  --y8-color: rgba(220, 118, 132, 1);
+  --y9-color: rgba(127, 231, 204, 1);
+  --y11-color: rgba(246, 162, 78, 1);
+  --y12-color: rgba(131, 33, 97, 1);
+  --al13-color: rgba(104, 134, 197, 1);
+  --fm13-color: rgba(114, 106, 149, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Indie Flower', cursive;
+}
+
+.y8 {
+  background-color: var(--y8-color);
+  color: white;
+}
+
+.y9 {
+  background-color: var(--y9-color);
+  color: white;
+}
+
+.y11 {
+  background-color: var(--y11-color);
+  color: white;
+}
+
+.y12 {
+  background-color: var(--y12-color);
+  color: white;
+}
+
+.al13 {
+  background-color: var(--al13-color);
+  color: white;
+}
+
+.fm13 {
+  background-color: var(--fm13-color);
+  color: white;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Helvetica", sans-serif;
+}
+
+header {
+  background-color: var(--bg-color);
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav li {
+  flex: 1;
+  transition: 0.2s;
+}
+
+nav a {
+  display: block;
+  top: 0;
+  text-align: center;
+  padding: 1rem 0;
+  color: black;
+  text-decoration: none;
+}
+
+nav li:hover {
+  flex: 1.1;
+}
+
+main {
+  display: flex;
+  width: 800px;
+  margin: auto;
+}
+
+.transition-top {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -50vh;
+  height: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.transition-bottom {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -50vh;
+  height: 0;
+  z-index: 10;
+  transition: 0.5s;
+}
+
+.active {
+  height: 120vh;
+}

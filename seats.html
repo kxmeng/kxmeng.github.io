@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Seating Plans</title>
+    <style>
+        :root {
+            --highlightColor: #fff;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        #headerBar{
+            background-color: black;
+            font-size: 1.5rem;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+        }
+        #class {
+            display: flex;
+            justify-content: center;
+            padding-top: 1rem;
+        }
+        #class div {
+            color: #494850;
+            padding: 1rem 3rem 1rem 3rem;
+        }
+        a {
+            text-decoration: none;
+        }
+        h1 {
+            width: 100vw;
+            text-align: center;
+        }
+        #seats {
+            width: 100vw;
+            display: grid;
+        }
+        #seats div {
+            text-align: center;
+            padding: 1rem 0 1rem 0;
+        }
+        #columns {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: repeat(16,1fr);
+        }
+        .highlighted {
+            background: var(--highlightColor);
+            color: #fff !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="headerBar">Seating Plans</div>
+    <h1>Front</h1>
+    <div id="seats">
+    </div>
+    <h1>Back</h1>
+    <div id="class">
+        <a href="#"><div id="g7" onclick="seats(this.id)">7G</div></a>
+        <a href="#"><div id="h7" onclick="seats(this.id)">7H</div></a>
+        <a href="#"><div id="h8" onclick="seats(this.id)">8H</div></a>
+        <a href="#"><div id="t8" onclick="seats(this.id)">8T</div></a>
+        <a href="#"><div id="y8" onclick="seats(this.id)">8 Ma</div></a>
+        <a href="#"><div id="y9" onclick="seats(this.id)">9 Ma</div></a>
+        <a href="#"><div id="y11" onclick="seats(this.id)">11 Ma</div></a>
+        <a href="#"><div id="y12" onclick="seats(this.id)">12 Ma</div></a>
+    </div>
+    <div id="columns">
+        <div style="grid-column-start: 8;">Columns:</div> <div><input type="number" value="8" style="width: 50%" id="numCols"></div>
+    </div>
+    <script>
+        // Area of page for seats
+        main = document.getElementById("seats");
+        
+        // List of students
+        students = [
+            {name: "Meyra", style: "", class: "g7"}, {name: "Orestis", style: "", class: "g7"}, {name: "Antoine", style: "", class: "g7"}, {name: "Arjun", style: "", class: "g7"}, {name: "Sinan", style: "", class: "g7"}, {name: "Aurelius", style: "", class: "g7"}, {name: "Sam", style: "", class: "g7"}, {name: "Zahra", style: "", class: "g7"}, {name: "Joelin", style: "", class: "g7"}, {name: "Sergey", style: "", class: "g7"}, {name: "Elisa", style: "", class: "g7"}, {name: "Lars", style: "", class: "g7"}, {name: "Jake", style: "", class: "g7"}, {name: "Arto", style: "", class: "g7"}, {name: "Clara", style: "", class: "g7"}, {name: "Victor", style: "", class: "g7"}, {name: "Luka", style: "", class: "g7"}, {name: "Bea", style: "", class: "g7"}, {name: "Emilie", style: "", class: "g7"}, {name: "Romy", style: "", class: "g7"}, {name: "Anton", style: "", class: "g7"}, 
+            {name: "Elyza", style: "", class: "h7", class: "h7"}, {name: "Jasmine", style: "", class: "h7"}, {name: "Aara", style: "", class: "h7"}, {name: "David", style: "", class: "h7"}, {name: "Chloe", style: "", class: "h7"}, {name: "Molly", style: "", class: "h7"}, {name: "Owen", style: "", class: "h7"}, {name: "Ansh", style: "", class: "h7"}, {name: "Rohan", style: "", class: "h7"}, {name: "Kostek", style: "", class: "h7"}, {name: "Natasha", style: "", class: "h7"}, {name: "Ashwin", style: "", class: "h7"}, {name: "Gaston", style: "", class: "h7"}, {name: "Michael", style: "", class: "h7"}, {name: "Erin", style: "", class: "h7"}, {name: "Skandar", style: "", class: "h7"}, {name: "Edward", style: "", class: "h7"}, {name: "Emre", style: "", class: "h7"}, {name: "Theo", style: "", class: "h7"}, {name: "Paul", style: "", class: "h7"}, {name: "Bea", style: "", class: "h7"}, {name: "Leila", style: "", class: "h7"}, {name: "Charlotte", style: "", class: "h7"}, {name: "Mourielle", style: "", class: "h7"}, 
+            {name: "Olivia", style: "", class: "h8"}, {name: "Oona", style: "", class: "h8"}, {name: "Calista", style: "", class: "h8"}, {name: "Ludovico", style: "", class: "h8"}, {name: "Eliane", style: "", class: "h8"}, {name: "Rinoa", style: "", class: "h8"}, {name: "Assia", style: "", class: "h8"}, {name: "George", style: "", class: "h8"}, {name: "Benny", style: "", class: "h8"}, {name: "Oliver", style: "", class: "h8"}, {name: "Elizabeth", style: "", class: "h8"}, {name: "Maya", style: "", class: "h8"}, {name: "Sinan", style: "", class: "h8"}, {name: "Carlo", style: "", class: "h8"}, {name: "Nicole", style: "", class: "h8"}, {name: "Saachi", style: "", class: "h8"}, {name: "Lucas", style: "", class: "h8"}, {name: "Arthur", style: "", class: "h8"}, {name: "Benjamin", style: "", class: "h8"}, {name: "Scarlett", style: "", class: "h8"}, {name: "Matt", style: "", class: "h8"}, {name: "Sienna", style: "", class: "h8"}, {name: "Mason", style: "", class: "h8"}, {name: "Alex", style: "", class: "h8"}, 
+            {name: "Giorgio", style: "", class: "t8"}, {name: "Lujayn", style: "", class: "t8"}, {name: "Jemima", style: "", class: "t8"}, {name: "Iris", style: "", class: "t8"}, {name: "Leonardo", style: "", class: "t8"}, {name: "Zeno", style: "", class: "t8"}, {name: "Evie", style: "", class: "t8"}, {name: "Sulaiman", style: "", class: "t8"}, {name: "Asher", style: "", class: "t8"}, {name: "Yasmine", style: "", class: "t8"}, {name: "Jasmine", style: "", class: "t8"}, {name: "Remy", style: "", class: "t8"}, {name: "Oliver", style: "", class: "t8"}, {name: "Sophia", style: "", class: "t8"}, {name: "Yannis", style: "", class: "t8"}, {name: "Elisa", style: "", class: "t8"}, {name: "Nathan", style: "", class: "t8"}, {name: "Leila", style: "", class: "t8"}, {name: "Sofia", style: "", class: "t8"}, {name: "George", style: "", class: "t8"}, {name: "Maggie", style: "", class: "t8"}, {name: "William", style: "", class: "t8"}, {name: "Raman", style: "", class: "t8"}, {name: "Michael", style: "", class: "t8"}, 
+            {name: "Bertie", style: "", class: "y8"}, {name: "Bastiano", style: "", class: "y8"}, {name: "Giorgio", style: "", class: "y8"}, {name: "Jemima", style: "", class: "y8"}, {name: "Maximilian", style: "", class: "y8"}, {name: "Mostafa", style: "", class: "y8"}, {name: "Elijah", style: "", class: "y8"}, {name: "Lara", style: "", class: "y8"}, {name: "Jessica", style: "", class: "y8"}, {name: "Oscar", style: "", class: "y8"}, {name: "Assia", style: "", class: "y8"}, {name: "Rudy", style: "", class: "y8"}, {name: "Sam", style: "", class: "y8"}, {name: "Lara", style: "", class: "y8"}, {name: "Jacob", style: "", class: "y8"}, {name: "Oriane", style: "", class: "y8"}, {name: "Shivaram", style: "", class: "y8"}, {name: "Elisa", style: "", class: "y8"}, {name: "Milo", style: "", class: "y8"}, {name: "James", style: "", class: "y8"}, {name: "William", style: "", class: "y8"}, {name: "Jess", style: "", class: "y8"}, {name: "Ben", style: "", class: "y8"}, {name: "Izzy", style: "", class: "y8"}, 
+            {name: "Bilal", style: "", class: "y9"}, {name: "Raphael", style: "", class: "y9"}, {name: "Kayla", style: "", class: "y9"}, {name: "Volkan", style: "", class: "y9"}, {name: "Jamie", style: "", class: "y9"}, {name: "Myriam", style: "", class: "y9"}, {name: "Alban", style: "", class: "y9"}, {name: "Mahad", style: "", class: "y9"}, {name: "Natasha", style: "", class: "y9"}, {name: "Benny", style: "", class: "y9"}, {name: "Arnesh", style: "", class: "y9"}, {name: "Gabriel", style: "", class: "y9"}, {name: "Dylan", style: "", class: "y9"}, {name: "Sascha", style: "", class: "y9"}, {name: "Bea", style: "", class: "y9"}, {name: "Finn", style: "", class: "y9"}, {name: "Will", style: "", class: "y9"}, {name: "Ella", style: "", class: "y9"}, {name: "Saffy", style: "", class: "y9"}, {name: "Sylvie", style: "", class: "y9"}, {name: "Poppy", style: "", class: "y9"}, {name: "Damian", style: "", class: "y9"}, 
+            {name: "Kim", style: "", class: "y11"}, {name: "Ishaan", style: "", class: "y11"}, {name: "Oscar", style: "", class: "y11"}, {name: "Ela", style: "", class: "y11"}, {name: "Chiara", style: "", class: "y11"}, {name: "Zaal", style: "", class: "y11"}, {name: "Tej", style: "", class: "y11"}, {name: "Nicholas", style: "", class: "y11"}, {name: "Jack", style: "", class: "y11"}, {name: "Piyush", style: "", class: "y11"}, {name: "Leo", style: "", class: "y11"}, {name: "Gunes", style: "", class: "y11"}, {name: "Arielle", style: "", class: "y11"}, {name: "Chase", style: "", class: "y11"}, {name: "Claire", style: "", class: "y11"}, {name: "Yuv", style: "", class: "y11"}, {name: "Amaana", style: "", class: "y11"}, {name: "Rhea", style: "", class: "y11"}, {name: "Vassilis", style: "", class: "y11"}, {name: "Adam", style: "", class: "y11"}, {name: "Emily", style: "", class: "y11"}, {name: "Rufus", style: "", class: "y11"}, {name: "Daniel", style: "", class: "y11"}, {name: "Desh", style: "", class: "y11"}, {name: "Charlotte", style: "", class: "y11"}, {name: "Alex", style: "", class: "y11"}
+        ];
+
+        // Function to generate seating plan
+        let seats = function(className) {
+            // Colour palette - key = name of class, value = color
+            colorsUsed = {
+                g7: "#748b75", 
+                h7: "#84c318", 
+                h8: "#9b7ede", 
+                t8: "#52489c",
+                y8: "rgba(220, 118, 132, 1)", 
+                y9: "rgba(127, 231, 204, 1)", 
+                y11: "rgba(246, 162, 78, 1)", 
+                y12: "rgba(131, 33, 97, 1)", 
+            };
+            // Change colour of header
+            document.getElementById("headerBar").style.backgroundColor = colorsUsed[className];
+            // Change colour of CSS highlighted variable
+            document.documentElement.style.setProperty('--highlightColor', colorsUsed[className]);
+            // Remove highlight from any classes that were clicked on before
+            document.querySelectorAll(".highlighted").forEach(e => e.classList.remove("highlighted"));
+            // Add highlight to class which was clicked
+            document.getElementById(className).classList.add("highlighted");
+            // Find number of columns
+            cols = document.getElementById("numCols").value;
+            // Set number of columns
+            main.style.gridTemplateColumns = "repeat("+cols+",1fr)"
+            // From all students...
+            shuffled = students
+                // ... select this class (the ID of the button must match the students.class values)...
+                .filter(obj => {return obj.class === className})
+                // ... randomize the order
+                .sort(() => Math.random() - 0.5);
+            // Clear page of seats
+            main.innerHTML = "";
+            // If computing, seats are arranged differently:
+            // List of computing classes
+            cpClasses = ["g7","h7","h8","t8"];
+            // Check if class is computing class
+            if (cpClasses.includes(className)) {
+                // 8 students in back, start inserting at 9th from the end and every two after
+                for (let i = shuffled.length - 9; i > 0; i-=2) {
+                    // If there is an odd number of students, back row will not be filled
+                    if (i%2 == 0) {i++};
+                    // Blank object to insert later
+                    blank = {name: "", style: "", class: ""};
+                    // Insert blank object into position 6 times in a row for the empty spaces
+                    let n = 6;
+                    while (n-- > 0) {
+                        shuffled.splice(i,0,blank);
+                    }
+                }
+            }
+            // Loop through everyone
+            for (let i = 0; i < shuffled.length; i++) {
+                // Create div
+                let div = document.createElement('div');
+                // Set name
+                div.innerHTML = shuffled[i].name;
+                // Set style
+                div.setAttribute("style",shuffled[i].style);
+                // Add to page
+                main.appendChild(div);
+            };
+            // Remove empty objects from list for random name generator
+            if (cpClasses.includes(className)) {
+                shuffled = shuffled.filter(obj => {return obj.class === className})
+            }
+            // Find location to put random name
+            rngLocation = document.getElementById("headerBar");
+            // Check if rng variable has been defined before
+            rng = typeof(rng) == 'undefined' ? 0 : rng;
+            // Stop randomly generating names from old class
+            clearInterval(rng);
+            // Randomly generate names from new class every x milliseconds
+            rng = setInterval(() => {
+                rngLocation.innerHTML = shuffled.sort(() => Math.random() - 0.5)[0].name;
+            }, 2000);
+        };
+    </script>
+</body>
