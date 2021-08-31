@@ -69,31 +69,51 @@
         <div class="topics" id="clt-content">
             <h2>Central Limit Theorem</h2>
             <ul>
-                
+                <li>Know that for any randomly and independently selected sample, \(X_i\), of size \(n\) taken from a population, then for the sample mean \(\overline{X}\):</li>
+                <li>E\((\overline{X}) = \mu\);</li>
+                <li>Var\((\overline{X}) = \dfrac{\sigma^2}{n}\);</li>
+                <li>\(\overline{X}\) is approximately normally distributed when \(n\) is large (approx. 25)</li>
             </ul>
         </div>
         <div class="topics" id="ci-content">
             <h2>Confidence Intervals</h2>
             <ul>
-                
+                <li>Be able to use a normal distribution to find a confidence interval for a population mean in each of the above cases.</li>
             </ul>
         </div>
         <div class="topics" id="poisson-content">
             <h2>Poisson and Exponential Distributions</h2>
             <ul>
-                
+                <li>Understand informally the relevance of the Poisson distribution to the distribution of random events, and be able to use the Poisson distribution as a model</li>
+                <li>Includes use of the notation \(X \sim \mathrm{Po}(\lambda)\), where \(X\) is the number of events in an interval.</li>
+                <li>Understand and be able to use the formula \(\mathrm{P}(X=x)=e^{-x}\dfrac{\lambda^x}{x\!}\)</li>
+                <li>Be able to calculate probabilities using the Poisson distribution, using appropriate calculator functions [Use of the Poisson distribution to calculate numerical approximations for a binomial distribution is excluded]</li>
+                <li>Know and be able to use the conditions under which a random variable will have a Poisson distribution. Learners will be expected to identify which of the modelling conditions [assumptions] is/are relevant to a given scenario and to explain them in context.</li>
+                <li>Be able to use the result that if \(X \sim \mathrm{Po}(\lambda)\) then the mean and variance are each equal to \(\lambda\)</li>
+                <li>Know and be able to use the result that the sum of independent Poisson variables has a Poisson distribution.</li>
             </ul>
         </div>
         <div class="topics" id="pmcc-content">
             <h2>PMCC and SRCC</h2>
             <ul>
-                
+                <li>Be able to calculate the product-moment correlation coefficient (pmcc) for a set of bivariate data; raw data or summarised data may be given.</li>
+                <li>Understand that the value of a correlation coefficient is unaffected by linear coding of the variables.</li>
+                <li>Understand Pearson’s product-moment correlation coefficient as a measure of how close data points lie to a straight line.</li>
+                <li>Use and be able to interpret Pearson’s product-moment correlation coefficient in hypothesis tests, using either a given critical value, or a p-value and a table of critical values. [When using Pearson’s coefficient in a hypothesis test, the data may be assumed to come from a bivariate normal distribution]</li>
+                <li>Be able to calculate Spearman's rank correlation coefficient for a maximum of 10 pairs of data values or ranks.</li>
+                <li>Includes being able to draw basic conclusions about the meaning of a value of the coefficient in relation to the ranks before, or without, carrying out a hypothesis test. Includes understanding the conditions under which the use of rank correlation may be appropriate.</li>
+                <li>Be able to carry out a hypothesis test for association in a population. Includes understanding that this is a non-parametric test, as it makes no assumptions about the population. Tables of critical values of Spearman’s coefficient will be provided.</li>
+                <li>Be able to choose between Pearson's product-moment correlation coefficient and Spearman's rank correlation coefficient for a given context. Includes interpreting a scatter diagram and distinguishing between linear correlation and association.</li>
             </ul>
         </div>
         <div class="topics" id="regression1-content">
             <h2>Linear Regression</h2>
             <ul>
-                
+                <li>Understand the difference between an independent (or controlled) variable and a dependent (or response) variable. Includes appreciating that, in a given situation, neither parameter may be independent.</li>
+                <li>Understand the concepts of least squares and regression lines in the context of a scatter diagram</li>
+                <li>Be able to calculate, both from raw data and from summarised data, the equation of the regression line of y on x, where the independent variable (if any) is x.</li>
+                <li>Understand the effect on a regression line of linear coding on one or both variables.</li>
+                <li>Be able to use, in the context of a problem, the regression line of y on x to estimate a value of y, and be able to interpret in context the uncertainties of such an estimate</li>
             </ul>
         </div>
         <div class="topics" id="regression2-content">
@@ -105,13 +125,27 @@
         <div class="topics" id="nonparametric-content">
             <h2>Non Parametric tests</h2>
             <ul>
-                
+                <li>Understand what is meant by a non-parametric hypothesis test, appreciate situations where such tests are useful and be able to select an appropriate test.</li>
+                <li>Understand the basis of sign tests, the Wilcoxon signed-rank test and the Wilcoxon rank-sum test (also known as the Mann-Whitney U test).</li>
+                <li>Tables of critical values of T and W will be provided. Learners should know the notation \(W_+\) and \(W_-\)</li>
+                <li>Be able to test a hypothesis concerning a population median using a single-sample sign test and a single-sample Wilcoxon signed-rank test. [Problems in which observations coincide with the hypothetical population median are excluded.]</li>
+                <li>Understand the difference between a paired-sample test and a two-sample test, and be able to select the appropriate form when solving problems</li>
+                <li>Be able to test for medians or identity of population as appropriate, using a paired-sample sign test, a Wilcoxon matched-pairs signed-rank test and (for unpaired samples) a Wilcoxon rank-sum test.</li>
+                <li>Be able to carry out tests using the Wilcoxon signed-rank test and the Wilcoxon rank-sum test for large samples using the approximations: </li>
+                <li>Wilcoxon signed-rank test \(T\sim N(\frac{1}{4}n(n+1),\frac{1}{24}n(n+1)(2n+1))\)</li>
+                <li>Wilcoxon rank-sum test (samples of sizes \(m\) and \(n\), with $m \leq n$) \(W \sim N(\frac{1}{2}m(m+n+1),\frac{1}{12}mn(m+n+1))\)</li>
+                <li>Includes the use of continuity corrections.</li>
             </ul>
         </div>
         <div class="topics" id="chisquared-content">
             <h2>Chi Squared tests</h2>
             <ul>
-                
+                <li>Be able to use a chi-squaredtest with the appropriate number of degrees of freedom to test for independence in a contingency table and interpret the results of such a test.</li>
+                <li>Rows or columns, as appropriate, should be combined so that each expected frequency is at least 5, and Yates' correction should be used in the special case of a 2 by 2 table</li>
+                <li>A table of critical values of the \(\chi^2\) distribution will be provided.</li>
+                <li>Includes calculation of expected frequencies and contributions to the test statistic.Questions may require candidates to calculate some expected frequencies and contributions to the test statistic, but will not involve lengthy calculations</li>
+                <li>Be able to use a \(\chi^2\) test with the appropriate number of degrees of freedom to carry out the corresponding goodness of fit test.</li>
+                <li>Where necessary, adjacent classes should be combined so that each expected frequency is at least 5</li>
             </ul>
         </div>
         <div class="topics" id="lds-content">
