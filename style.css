@@ -37,7 +37,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Indie Flower', cursive;
 }
 
 body {
@@ -49,6 +48,7 @@ body {
         "header header header"
         "left main right"
         "footer footer footer";
+    font-family: 'Indie Flower', cursive;
 }
 
 header {
@@ -161,4 +161,8 @@ footer {
 
   .all-content {
       display: none;
+  }
+
+  mjx-math {
+      font-family: MJXZERO, MJXTEX;
   }
