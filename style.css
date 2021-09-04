@@ -166,3 +166,14 @@ footer {
   mjx-math {
       font-family: MJXZERO, MJXTEX;
   }
+
+  header {
+    display: flex;
+  }
+
+  header div {
+    display: block;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
