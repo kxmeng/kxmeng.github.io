@@ -16,13 +16,7 @@
     --transparent-color: rgba(246, 162, 78, 0.3);
 }
 
-#al12-page {
-    --main-color: rgba(131, 33, 97, 1);
-    --highlight-color: rgba(131, 33, 97, 0.7);
-    --transparent-color: rgba(131, 33, 97, 0.3);
-}
-
-#al13-page {
+#al-page {
     --main-color: rgba(104, 134, 197, 1);
     --highlight-color: rgba(104, 134, 197, 0.7);
     --transparent-color: rgba(104, 134, 197, 0.3);
