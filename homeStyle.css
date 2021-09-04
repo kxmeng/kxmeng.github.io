@@ -3,7 +3,7 @@
   --y8-color: rgba(220, 118, 132, 1);
   --y9-color: rgba(127, 231, 204, 1);
   --y11-color: rgba(246, 162, 78, 1);
-  --y12-color: rgba(131, 33, 97, 1);
+  --al12-color: rgba(131, 33, 97, 1);
   --al13-color: rgba(104, 134, 197, 1);
   --fm13-color: rgba(114, 106, 149, 1);
 }
@@ -29,8 +29,8 @@
   color: white;
 }
 
-.y12 {
-  background-color: var(--y12-color);
+.al12 {
+  background-color: var(--al12-color);
   color: white;
 }
 
