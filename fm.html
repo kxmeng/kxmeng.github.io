@@ -385,5 +385,23 @@
     </div>
 
 	<script src="./script.js"></script>
+    <script>
+        sb =  document.getElementById("main-sidebar");
+        pure = () => {
+            sb.innerHTML = 'Coming soon'
+            document.getElementsByClassName("header-active")[0].classList.remove("header-active");
+            document.getElementById("header-pure").classList.add("header-active");
+        };
+        stats = () => {
+            sb.innerHTML = '<h6>Autumn Y12</h6><ul><li id="binomial12" onclick="clickFunction(this)">Binomial Theorem</li><li id="indices12" onclick="clickFunction(this)">Indices, Surds</li><li id="matrices121" onclick="clickFunction(this)">Matrices 1</li><li id="division12" onclick="clickFunction(this)">Polynomial Division</li><li id="sums12" onclick="clickFunction(this)">Sums of Series</li><li id="simultaneous12" onclick="clickFunction(this)">Simultaneous Equations</li><li id="matrices122" onclick="clickFunction(this)">Matrices 2</li><li id="exponentials12" onclick="clickFunction(this)">Exponentials, Logarithms</li><li id="trigonometry12" onclick="clickFunction(this)">Trigonometry</li></ul><hr /><h6>Spring</h6><ul><li id="probability12" onclick="clickFunction(this)">Probability</li><li id="permutations12" onclick="clickFunction(this)">Permutations, Combinations</li><li id="discrete12" onclick="clickFunction(this)">Discrete Random Variables</li><li id="discrete-distribution12" onclick="clickFunction(this)">Discrete Distribution</li><li id="expectation12" onclick="clickFunction(this)">Expectation, Variance</li><li id="hypothesis-testing121" onclick="clickFunction(this)">Hypothesis Testing 1</li><li id="combining12" onclick="clickFunction(this)">Combining Variables</li><li id="histograms12" onclick="clickFunction(this)">Histograms</li></ul><hr><h6>Summer</h6><ul><li id="displaying12" onclick="clickFunction(this)">Displaying Data</li><li id="continuous12" onclick="clickFunction(this)">Continuous Distributions</li><li id="normal12" onclick="clickFunction(this)">Normal Distribution</li><li id="hypothesis-testing212" onclick="clickFunction(this)">Hypothesis Testing 2</li></ul><hr><h6>Autumn Y13</h6><ul><li id="rv" onclick="clickFunction(this)">Functions of random variables</li><li id="clt" onclick="clickFunction(this)">Central limit theorem and tests</li><li id="ci" onclick="clickFunction(this)">Confidence intervals</li><li id="poisson" onclick="clickFunction(this)">Poisson and Exponential distribution</li><li id="pmcc" onclick="clickFunction(this)">PMCC + SRCC</li><li id="regression1" onclick="clickFunction(this)">Linear regression</li><li id="regression2" onclick="clickFunction(this)">Non-linear regression</li><li id="nonparametric" onclick="clickFunction(this)">Non-parametric tests</li><li id="chisquared" onclick="clickFunction(this)">Chi-squared tests</li></ul><hr><h6>Spring</h6><ul><li id="lds" onclick="clickFunction(this)">Large Data Set</li><li id="sampling" onclick="clickFunction(this)">Sampling</li></ul>'
+            document.getElementsByClassName("header-active")[0].classList.remove("header-active");
+            document.getElementById("header-stats").classList.add("header-active");
+        }
+        mechanics = () => {
+            sb.innerHTML = 'Coming soon'
+            document.getElementsByClassName("header-active")[0].classList.remove("header-active");
+            document.getElementById("header-mechanics").classList.add("header-active");
+        }
+    </script>
 </body>
 </html>
