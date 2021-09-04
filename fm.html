@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 2 MathJax scripts -->
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          svg: {
+            fontCache: 'global'
+          },
+        };
+    </script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<title>Further Maths</title>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+    <style>
+        header div:hover {
+            background-color: #958faf;
+        }
+        .header-active {
+            background-color: #b8b4ca !important;
+            
+        }
+    </style>
+</head>
+<body id="fm-page">
+	<!-- For the page transition-->
+	<div class="transition transition-top active"></div>
+    
+    <header><div id="header-pure" onclick="pure()">Pure</div><div id="header-stats" class="header-active" onclick="stats()">Stats</div><div id="header-mechanics" class="" onclick="mechanics()">Mechanics</div></header>
+
+    <div class="left-sidebar" id="main-sidebar">
+        <h6>Autumn Y12</h6>
+        <ul>
+            <li id="binomial12" onclick="clickFunction(this)">Binomial Theorem</li>
+            <li id="indices12" onclick="clickFunction(this)">Indices, Surds</li>
+            <li id="matrices121" onclick="clickFunction(this)">Matrices 1</li>
+            <li id="division12" onclick="clickFunction(this)">Polynomial Division</li>
+            <li id="sums12" onclick="clickFunction(this)">Sums of Series</li>
+            <li id="simultaneous12" onclick="clickFunction(this)">Simultaneous Equations</li>
+            <li id="matrices122" onclick="clickFunction(this)">Matrices 2</li>
+            <li id="exponentials12" onclick="clickFunction(this)">Exponentials, Logarithms</li>
+            <li id="trigonometry12" onclick="clickFunction(this)">Trigonometry</li>
+        </ul>
+        <hr />
+        <h6>Spring</h6>
+        <ul>
+            <li id="probability12" onclick="clickFunction(this)">Probability</li>
+            <li id="permutations12" onclick="clickFunction(this)">Permutations, Combinations</li>
+            <li id="discrete12" onclick="clickFunction(this)">Discrete Random Variables</li>
+            <li id="discrete-distribution12" onclick="clickFunction(this)">Discrete Distribution</li>
+            <li id="expectation12" onclick="clickFunction(this)">Expectation, Variance</li>
+            <li id="hypothesis-testing121" onclick="clickFunction(this)">Hypothesis Testing 1</li>
+            <li id="combining12" onclick="clickFunction(this)">Combining Variables</li>
+            <li id="histograms12" onclick="clickFunction(this)">Histograms</li>
+        </ul>
+        <hr>
+        <h6>Summer</h6>
+        <ul>
+            <li id="displaying12" onclick="clickFunction(this)">Displaying Data</li>
+            <li id="continuous12" onclick="clickFunction(this)">Continuous Distributions</li>
+            <li id="normal12" onclick="clickFunction(this)">Normal Distribution</li>
+            <li id="hypothesis-testing212" onclick="clickFunction(this)">Hypothesis Testing 2</li>
+        </ul>
+        <hr>
+        <h6>Autumn Y13</h6>
+        <ul>
+            <li id="rv" onclick="clickFunction(this)">Functions of random variables</li>
+            <li id="clt" onclick="clickFunction(this)">Central limit theorem and tests</li>
+            <li id="ci" onclick="clickFunction(this)">Confidence intervals</li>
+            <li id="poisson" onclick="clickFunction(this)">Poisson and Exponential distribution</li>
+            <li id="pmcc" onclick="clickFunction(this)">PMCC + SRCC</li>
+            <li id="regression1" onclick="clickFunction(this)">Linear regression</li>
+            <li id="regression2" onclick="clickFunction(this)">Non-linear regression</li>
+            <li id="nonparametric" onclick="clickFunction(this)">Non-parametric tests</li>
+            <li id="chisquared" onclick="clickFunction(this)">Chi-squared tests</li>
+        </ul>
+        <hr>
+        <h6>Spring</h6>
+        <ul>
+            <li id="lds" onclick="clickFunction(this)">Large Data Set</li>
+            <li id="sampling" onclick="clickFunction(this)">Sampling</li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="main-content">
+            <h2>Further Maths Scheme of Work</h2>
+            <p>Select a topic on the left</p>
+        </div>
+    </main>
+
+    <div class="right-sidebar">
+        
+    </div>
+    
+    <footer>
+
+    </footer>
+
+	<!-- For the page transition-->
+	<div class="transition transition-bottom active"></div>
+    
+    <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+    <div class="all-content">
+        <div class="topics" id="rv-content">
+            <h2>Functions of Random Variables</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="clt-content">
+            <h2>Central Limit Theorem</h2>
+            <ul>
+                <li>Know that for any randomly and independently selected sample, \(X_i\), of size \(n\) taken from a population, then for the sample mean \(\overline{X}\):</li>
+                <li>E\((\overline{X}) = \mu\);</li>
+                <li>Var\((\overline{X}) = \dfrac{\sigma^2}{n}\);</li>
+                <li>\(\overline{X}\) is approximately normally distributed when \(n\) is large (approx. 25)</li>
+            </ul>
+        </div>
+        <div class="topics" id="ci-content">
+            <h2>Confidence Intervals</h2>
+            <ul>
+                <li>Be able to use a normal distribution to find a confidence interval for a population mean in each of the above cases.</li>
+            </ul>
+        </div>
+        <div class="topics" id="poisson-content">
+            <h2>Poisson and Exponential Distributions</h2>
+            <ul>
+                <li>Understand informally the relevance of the Poisson distribution to the distribution of random events, and be able to use the Poisson distribution as a model</li>
+                <li>Includes use of the notation \(X \sim \mathrm{Po}(\lambda)\), where \(X\) is the number of events in an interval.</li>
+                <li>Understand and be able to use the formula \(\mathrm{P}(X=x)=e^{-x}\dfrac{\lambda^x}{x\!}\)</li>
+                <li>Be able to calculate probabilities using the Poisson distribution, using appropriate calculator functions [Use of the Poisson distribution to calculate numerical approximations for a binomial distribution is excluded]</li>
+                <li>Know and be able to use the conditions under which a random variable will have a Poisson distribution. Learners will be expected to identify which of the modelling conditions [assumptions] is/are relevant to a given scenario and to explain them in context.</li>
+                <li>Be able to use the result that if \(X \sim \mathrm{Po}(\lambda)\) then the mean and variance are each equal to \(\lambda\)</li>
+                <li>Know and be able to use the result that the sum of independent Poisson variables has a Poisson distribution.</li>
+            </ul>
+        </div>
+        <div class="topics" id="pmcc-content">
+            <h2>PMCC and SRCC</h2>
+            <ul>
+                <li>Be able to calculate the product-moment correlation coefficient (pmcc) for a set of bivariate data; raw data or summarised data may be given.</li>
+                <li>Understand that the value of a correlation coefficient is unaffected by linear coding of the variables.</li>
+                <li>Understand Pearson’s product-moment correlation coefficient as a measure of how close data points lie to a straight line.</li>
+                <li>Use and be able to interpret Pearson’s product-moment correlation coefficient in hypothesis tests, using either a given critical value, or a p-value and a table of critical values. [When using Pearson’s coefficient in a hypothesis test, the data may be assumed to come from a bivariate normal distribution]</li>
+                <li>Be able to calculate Spearman's rank correlation coefficient for a maximum of 10 pairs of data values or ranks.</li>
+                <li>Includes being able to draw basic conclusions about the meaning of a value of the coefficient in relation to the ranks before, or without, carrying out a hypothesis test. Includes understanding the conditions under which the use of rank correlation may be appropriate.</li>
+                <li>Be able to carry out a hypothesis test for association in a population. Includes understanding that this is a non-parametric test, as it makes no assumptions about the population. Tables of critical values of Spearman’s coefficient will be provided.</li>
+                <li>Be able to choose between Pearson's product-moment correlation coefficient and Spearman's rank correlation coefficient for a given context. Includes interpreting a scatter diagram and distinguishing between linear correlation and association.</li>
+            </ul>
+        </div>
+        <div class="topics" id="regression1-content">
+            <h2>Linear Regression</h2>
+            <ul>
+                <li>Understand the difference between an independent (or controlled) variable and a dependent (or response) variable. Includes appreciating that, in a given situation, neither parameter may be independent.</li>
+                <li>Understand the concepts of least squares and regression lines in the context of a scatter diagram</li>
+                <li>Be able to calculate, both from raw data and from summarised data, the equation of the regression line of y on x, where the independent variable (if any) is x.</li>
+                <li>Understand the effect on a regression line of linear coding on one or both variables.</li>
+                <li>Be able to use, in the context of a problem, the regression line of y on x to estimate a value of y, and be able to interpret in context the uncertainties of such an estimate</li>
+            </ul>
+        </div>
+        <div class="topics" id="regression2-content">
+            <h2>Non Linear Regression</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="nonparametric-content">
+            <h2>Non Parametric tests</h2>
+            <ul>
+                <li>Understand what is meant by a non-parametric hypothesis test, appreciate situations where such tests are useful and be able to select an appropriate test.</li>
+                <li>Understand the basis of sign tests, the Wilcoxon signed-rank test and the Wilcoxon rank-sum test (also known as the Mann-Whitney U test).</li>
+                <li>Tables of critical values of T and W will be provided. Learners should know the notation \(W_+\) and \(W_-\)</li>
+                <li>Be able to test a hypothesis concerning a population median using a single-sample sign test and a single-sample Wilcoxon signed-rank test. [Problems in which observations coincide with the hypothetical population median are excluded.]</li>
+                <li>Understand the difference between a paired-sample test and a two-sample test, and be able to select the appropriate form when solving problems</li>
+                <li>Be able to test for medians or identity of population as appropriate, using a paired-sample sign test, a Wilcoxon matched-pairs signed-rank test and (for unpaired samples) a Wilcoxon rank-sum test.</li>
+                <li>Be able to carry out tests using the Wilcoxon signed-rank test and the Wilcoxon rank-sum test for large samples using the approximations: </li>
+                <li>Wilcoxon signed-rank test \(T\sim N(\frac{1}{4}n(n+1),\frac{1}{24}n(n+1)(2n+1))\)</li>
+                <li>Wilcoxon rank-sum test (samples of sizes \(m\) and \(n\), with $m \leq n$) \(W \sim N(\frac{1}{2}m(m+n+1),\frac{1}{12}mn(m+n+1))\)</li>
+                <li>Includes the use of continuity corrections.</li>
+            </ul>
+        </div>
+        <div class="topics" id="chisquared-content">
+            <h2>Chi Squared tests</h2>
+            <ul>
+                <li>Be able to use a chi-squaredtest with the appropriate number of degrees of freedom to test for independence in a contingency table and interpret the results of such a test.</li>
+                <li>Rows or columns, as appropriate, should be combined so that each expected frequency is at least 5, and Yates' correction should be used in the special case of a 2 by 2 table</li>
+                <li>A table of critical values of the \(\chi^2\) distribution will be provided.</li>
+                <li>Includes calculation of expected frequencies and contributions to the test statistic.Questions may require candidates to calculate some expected frequencies and contributions to the test statistic, but will not involve lengthy calculations</li>
+                <li>Be able to use a \(\chi^2\) test with the appropriate number of degrees of freedom to carry out the corresponding goodness of fit test.</li>
+                <li>Where necessary, adjacent classes should be combined so that each expected frequency is at least 5</li>
+            </ul>
+        </div>
+        <div class="topics" id="lds-content">
+            <h2>Large Data Set</h2>
+            <ul>
+                
+            </ul>
+        </div>
+        <div class="topics" id="sampling-content">
+            <h2>Sampling</h2>
+            <ul>
+                
+            </ul>
+        </div><div class="topics" id="binomial12-content">
+            <h2>Binomial Theorem</h2>
+            <ul>
+                <li>Positive integer powers only</li>
+            </ul>
+        </div>
+        <div class="topics" id="indices12-content">
+            <h2>Indices, Surds</h2>
+            <ul>
+                <li>Laws of indices, including solving equations e.g. \(25^x = 125^{2-x}\)</li>
+                <li>Arithmetic of surds, including rationalising denominators and using the binomial theorem</li>
+                <li>Find the square root of expressions e.g. \(7 + 4\sqrt{3}\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="matrices121-content">
+            <h2>Matrices 1</h2>
+            <ul>
+                <li>Basic definitions and operations</li>
+                <li>Transformations using matrices</li>
+                <li>Determinant of a 2 by 2 matrix and its interpretation as an area scale factor. Effect of positive/negative determinant on orientation</li>
+                <li>\(\mathrm{det}(\mathrm{\textbf{AB}}) = \mathrm{det}(\mathrm{\textbf{A}})\mathrm{det}(\mathrm{\textbf{B}})\)</li>
+                <li>Invariant points and lines</li>
+                <li>Describing geometrically the transformation associated with a given matrix</li>
+                <li>Given a transformation, find its matrix</li>
+                <li>Understand the meaning of conformable, equal, square, rectangular, m by n, zero and null, transpose and identity when applied to matrices</li>
+                <li>Definitions of associative and commutative</li>
+            </ul>
+        </div>
+        <div class="topics" id="division12-content">
+            <h2>Polynomial Division</h2>
+            <ul>
+                <li>Different methods for polynomial division</li>
+                <li>Remainder Theorem</li>
+                <li>Factor Theorem for factors \((x - a)\) and \((bx - a)\), and harder ones e.g. \(a^3 + b^3\), \((a - b)^3 + (b - c)^3 + (c - a)^3\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="sums12-content">
+            <h2>Sums of Series</h2>
+            <ul>
+                <li>Arithmetic and Geometric progressions and their sums</li>
+                <li>Method of differences</li>
+                <li>Sigma notation</li>
+                <li>Using standard formulae for \(\displaystyle\sum r^n\) for \(n=1,2,3\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="simultaneous12-content">
+            <h2>Simultaneous Equations</h2>
+            <ul>
+                <li>Systems of 3 or more equations</li>
+                <li>Gaussian elimination</li>
+                <li>Consistent, inconsistent and ambiguous sets of equations</li>
+                <li>Solution or failure of solution of three simultaneous linear equations in terms of the geometrical arrangement of three planes</li>
+            </ul>
+        </div>
+        <div class="topics" id="matrices122-content">
+            <h2>Matrices 2</h2>
+            <ul>
+                <li>Inverse of a matrix (2 by 2 and 3 by 3)</li>
+                <li>\((\mathrm{\textbf{AB}})^{-1} = \mathrm{\textbf{B}}^{-1}\mathrm{\textbf{A}}^{-1}\)</li>
+                <li>Inverse transformations</li>
+                <li>Significance of zero determinant, singular and non-singular matrices</li>
+                <li>Solving simultaneous equations using inverse matrices</li>
+                <li>Transformations in 3 dimensions, and determinant as volume scale factor</li>
+            </ul>
+        </div>
+        <div class="topics" id="exponentials12-content">
+            <h2>Exponentials and Logarithms</h2>
+            <ul>
+                <li>Logarithms – definitions, relation to index laws, change of base, solving equations (no natural logarithms at this point)</li>
+                <li>Exponential functions and their graphs</li>
+                <li>Problems involving exponential growth and decay</li> 
+                <li>Modelling problems with sequences and series. e.g. problems involving compound and simple interest on bank deposits, loans, mortgages, etc. and other contexts in which growth or decay can be modelled by an arithmetic or geometric sequence</li>
+                <li>Be able to use logarithmic graphs to estimate parameters in relationships of the form \(y = ax^n\) and \(y = kb^x\), given data, both by drawing graphs and using calculator functions</li>
+            </ul>
+        </div>
+        <div class="topics" id="trigonometry12-content">
+            <h2>Trigonometry</h2>
+            <ul>
+                <li>Radian measure – equations, arc length and sector area</li>
+                <li>Sine and cosine rules, including the ambiguous case, and area of triangle</li>
+                <li>Know and be able to use exact values for \(0\), \(\frac{\pi}{6}\), \(\frac{\pi}{4}\), \(\frac{\pi}{3}\), \(\pi\) etc</li>
+            </ul>
+        </div>
+        <div class="topics" id="probability12-content">
+            <h2>Probability</h2>
+            <ul>
+                <li>Probability as counting, using sample spaces</li>
+                <li>Tree and Venn diagrams</li>
+                <li>Addition rule, mutually exclusive events</li>
+                <li>Conditional probability</li>
+                <li>Multiplication rule, independent events</li>
+            </ul>
+        </div>
+        <div class="topics" id="permutations12-content">
+            <h2>Permutations and Combinations</h2>
+            <ul>
+                <li>Arrangements of a set of objects, with repeats</li>
+                <li>Selecting a subset from a group of objects where the order is not important</li>
+                <li>Idea of counting permutations by considering the number of choices at each stage, separating complex counting problems into mutually exclusive subsets</li>
+                <li>Problems which require multiplying values for independent subsets e.g selecting a team of 1 Goalkeeper, 4 defenders, 4 midfielders and 2 strikers from a squad of 3 Goalkeepers, 11 defenders, 6 midfielders and 5 strikers</li>
+            </ul>
+        </div>
+        <div class="topics" id="discrete12-content">
+            <h2>Discrete Random Variables</h2>
+            <ul>
+                <li>Examples of random variables, "random variables"</li>
+                <li>Tabulating a random variable from a given definition (e.g. a ball is selected from a bag containing 3 white and 4 black balls and its colour noted before being placed in a different bag containing 2 white and 5 black balls. A ball is then selected from this bag – let X be the number of white balls selected)</li>
+                <li>Using properties to complete values for a given random variable</li>
+                <li>Stick graph to illustrate a random variable</li>
+            </ul>
+        </div>
+        <div class="topics" id="discrete-distribution12-content">
+            <h2>Discrete Distributions</h2>
+            <ul>
+                <li>Binomial Distribution</li>
+                <li>Geometric Distribution</li>
+                <li>PMF, CDF, finding probabilities</li>
+            </ul>
+        </div>
+        <div class="topics" id="expectation12-content">
+            <h2>Expectation and Variance</h2>
+            <ul>
+                <li>Calculations, including Binomial and Geometric</li>
+                <li>Discussion of standard deviation as a measure of spread</li>
+            </ul>
+        </div>
+        <div class="topics" id="hypothesis-testing121-content">
+            <h2>Hypothesis Testing 1</h2>
+            <ul>
+                <li>With binomial distributions only</li>
+                <li>One tailed tests: p-values and calculating probabilities of the tail, not just a single value</li>
+                <li>Critical values, critical regions</li>
+                <li>Two tailed tests.</li>
+            </ul>
+        </div>
+        <div class="topics" id="combining12-content">
+            <h2>Linear Combinations of Random Variables</h2>
+            <ul>
+                <li>\(\mathrm{E}(aX+b)\), \(\mathrm{Var}(aX+b)\), \(\mathrm{E}(X_1+X_2)\), \(\mathrm{Var}(X_1+X_2)\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="histograms12-content">
+            <h2>Histograms, Cumulative Frequency</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <div class="topics" id="displaying12-content">
+            <h2>Displaying and Interpreting Data</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <div class="topics" id="continuous12-content">
+            <h2>Continuous Distributions</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <div class="topics" id="normal12-content">
+            <h2>Normal Distribution</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <div class="topics" id="hypothesis-testing122-content">
+            <h2>Hypothesis Testing 2</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+	<script src="./script.js"></script>
+</body>
+</html>
