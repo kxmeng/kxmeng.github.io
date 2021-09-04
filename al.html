@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- 2 MathJax scripts -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+	<title>A Level Maths</title>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+    <style>
+        header div:hover {
+            background-color: #8da3d3;
+        }
+        .header-active {
+            background-color: #b3c2e2 !important;
+            
+        }
+    </style>
+</head>
+<body id="al-page">
+	<!-- For the page transition-->
+	<div class="transition transition-top active"></div>
+    
+    <header><div id="header-pure" onclick="pure()">Pure</div><div id="header-applied" class="header-active" onclick="applied()">Applied</div></header>
+
+    <div class="left-sidebar" id="main-sidebar">
+        <h6>Autumn Y12</h6>
+        <ul>
+            <li id="binomial" onclick="clickFunction(this)">Binomial Theorem</li>
+            <li id="surds" onclick="clickFunction(this)">Surds, Indices</li>
+            <li id="sequences1" onclick="clickFunction(this)">Sequences</li>
+            <li id="inequalities" onclick="clickFunction(this)">Inequalities</li>
+        </ul>
+        <hr>
+        <h6>Mechanics</h6>
+        <ul>
+            <li id="mechanics" onclick="clickFunction(this)">Mechanics - y12</li>
+        </ul>
+        <hr>
+        <h6>Statistics</h6>
+        <ul>
+            <li id="statistics" onclick="clickFunction(this)">Statistics - y12</li>
+        </ul>
+        <hr>
+        <h6>Mechanics Y13</h6>
+        <ul>
+            <li id="mechanics13" onclick="clickFunction(this)">Mechanics - y13</li>
+        </ul>
+        <hr>
+        <h6>Statistics</h6>
+        <ul>
+            <li id="statistics13" onclick="clickFunction(this)">Statistics - y13</li>
+        </ul>
+    </div>
+
+    <main>
+        <div id="main-content">
+            <h2>A Level Scheme of Work</h2>
+            <p>Select a topic on the left</p>
+        </div>
+    </main>
+
+    <div class="right-sidebar">
+        
+    </div>
+    
+    <footer>
+
+    </footer>
+
+	<!-- For the page transition-->
+	<div class="transition transition-bottom active"></div>
+    
+    <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
+    <div class="all-content">
+        <div class="topics" id="binomial-content">
+            <h2>Binomial Theorem</h2>
+            <ul>
+                <li>Positive integer powers</li>
+            </ul>
+        </div>
+        <div class="topics" id="surds-content">
+            <h2>Surds and Indices</h2>
+            <ul>
+                <li>Laws of indices and solving equations</li>
+                <li>Arithmetic of surds, including rationalising denonminator</li>
+            </ul>
+        </div>
+        <div class="topics" id="sequences1-content">
+            <h2>Sequences</h2>
+            <ul>
+                <li>Iterative definitions</li>
+                <li>Convergence, divergence, oscillation, periodicity, chaos</li>
+                <li>nth term definitions</li>
+                <li>Iterative solutions to equations</li>
+            </ul>
+        </div>
+        <div class="topics" id="inequalities-content">
+            <h2>Inequalities</h2>
+            <ul>
+                <li>Linear (including multiplication by negatives) and quadratic</li>
+                <li>Set notation for solutions</li>
+            </ul>
+        </div>
+        <div class="topics" id="mechanics-content">
+            <h2>Mechanics</h2>
+            <ul>
+                <li><i>Aim: everything except resolving into components by mid February</i></li>
+                <li>Forces: definition, types of force, Newton's 3 laws</li>
+                <li>Dynamics: N2L in 1 dimension, include connected particles</li>
+                <li>Kinematics: displacement/velocity/acceleration time graphs, suvat in 1 dimension</li>
+                <li>Dynamics: N2L with suvat, friction</li>
+                <li>Moments: no resolving forces, only e.g. forces which are all vertical</li>
+            </ul>
+        </div>
+        <div class="topics" id="statistics-content">
+            <h2>Statistics</h2>
+            <ul>
+                <li><i>Aim: probability and discrete random variables</i></li>
+                <li>Probability: review of GCSE, derive addition and multiplication rules</li>
+                <li>Permutations and combinations: simple examples</li>
+                <li>Discrete random variables: calculations, Binomial distribution, Geometric distribution</li>
+                <li>Hypothesis tests: using Binomial distribution</li>
+            </ul>
+        </div><div class="topics" id="geometry-content">
+            <h2>Coordinate Geometry</h2>
+            <ul>
+                <li>Vector connecting two points</li>
+                <li>Gradient</li>
+                <li>Distance between two points</li>
+                <li>Midpoint of two points</li>
+                <li>Equation of a line, including the forms \(y = mx + c\) and \(y - y_1 = m(x - x_1)\)</li>
+                <li>Parallel and perpendicular lines</li>
+                <li>Find the equation of the perpendicular bisector of two points</li>
+            </ul>
+        </div>
+        <div class="topics" id="quadratics-content">
+            <h2>Quadratics</h2>
+            <ul>
+                <li>Factorising, including difference of two squares</li>
+                <li>Completing the square, including minimum and maximum values from completed square form, line of symmetry, number of roots</li>
+                <li>minimum/maximum values of a quadratic expression and related expressions e.g. \((ax^2 + bx + c)^n\)</li>
+                <li>Sketching curves, including roots, y-intercept and vertex</li>
+                <li>Manipulating and and solving disguised quadratics</li>
+                <li>Equation of a circle</li>
+                <li>Solving quadratics by factorising and completing the square</li>
+                <li>Solving quadratics using the quadratic formula, including derivation</li>
+                <li>Discriminant</li>
+            </ul>
+        </div>
+        <div class="topics" id="simultaneous-content">
+            <h2>Simultaneous Equations</h2>
+            <ul>
+                <li>By substitution, including case where one equation is linear and the other is quadratic or cubic</li> 
+                <li>Investigate whether or not two circles (or a line and a circle) intersect</li>
+            </ul>
+        </div>
+        <div class="topics" id="sequences-content">
+            <h2>Sequences and Series</h2>
+            <ul>
+                <li>Arithmetic and geometric sequences and their sums (including GP sum to infinity and condition for this to exist)</li>
+                <li>Sigma notation</li>
+                <li>Zeno's paradox</li>
+                <li>Word problems, including those using a combination of APs and GPs</li>
+            </ul>
+        </div>
+        <div class="topics" id="trigonometry1-content">
+            <h2>Trigonometry 1</h2>
+            <ul>
+                <li>Circular definitions and graphs of sine, cosine and tangent</li>
+                <li>Graphs</li>
+                <li>\(\sin^2+\cos^2 \equiv 1\) and \(\tan\theta = \frac{\sin\theta}{\cos\theta}\)</li>
+                <li>Equations, including ones which use the identities</li>
+                <li>Know and be able to use exact values for \(0^{\circ}\), \(30^{\circ}\), \(45^{\circ}\), \(60^{\circ}\), \(90^{\circ}\) and related angles</li>
+            </ul>
+        </div>
+        <div class="topics" id="graphs-content">
+            <h2>Graphs</h2>
+            <ul>
+                <li>Investigate and learn shapes of graphs of \(y = ax^n\) for integer \(n \geq -2\), and for \(n = \frac{1}{2},\ \frac{1}{3}\) for non negative \(x\)</li>
+                <li>Polynomial graphs up to at least quartic, including identifying roots and repeated roots from fully factorised form\)</li>
+                <li>Understand and use different proportional relationships and relate these to graphs</li>
+            </ul>
+        </div>
+        <div class="topics" id="differentiation-content">
+            <h2>Differentiation</h2>
+            <ul>
+                <li>Investigate the idea of a "gradient formula" e.g. by accurate drawing and measuring of gradients. Extend to general polynomials and sums of powers of \(x\)</li>
+                <li>First principles for integer powers (including -1), extension: \(\frac{1}{2}\)</li>
+                <li>General rule for powers of \(x\) and sums of powers of \(x\)</li>
+                <li>Finding tangents, normals and stationary points, and using second derivative to classify turning points</li>
+                <li>Understand that curves are convex where \(f''(x) > 0\), concave where \(f''(x) < 0\), and that if \(f''(x) = 0\) and the curve changes between convex and concave, there is a point of inflection</li>
+                <li>Increasing and decreasing functions</li>
+                <li>Anti differentiation, informally. Importance of finding constant e.g. find equation of the curve given by \(\frac{\mathrm{d}y}{\mathrm{d}x} = ...\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="trigonometry2-content">
+            <h2>Trigonometry 2</h2>
+            <ul>
+                <li>Radian measure – equations, arc length and sector area</li>
+                <li>Sine and cosine rules, including the ambiguous case, and area of triangle</li>
+                <li>Know and be able to use exact values for \(0\), \(\frac{\pi}{6}\), \(\frac{\pi}{4}\), \(\frac{\pi}{3}\), \(\pi\) etc</li>
+                <li>Small angle approximations: \(\sin\theta \approx \theta\), \(\cos\theta \approx 1 - \dfrac{1}{2}\theta^2\), \(\tan\theta \approx \theta\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="polynomial-content">
+            <h2>Polynomial Division</h2>
+            <ul>
+                <li>Different methods for polynomial division</li>
+                <li>Remainder Theorem</li>
+                <li>Factor Theorem for factors \((x - a)\) and \((bx - a)\), as a special case of the remainder theorem</li>
+                <li class="a">Harder factorisations e.g. \(a^3 + b^3\)</li>
+            </ul>
+        </div>
+        <div class="topics" id="transformations-content">
+            <h2>Transformations of Graphs</h2>
+            <ul>
+                <li>Relationships between the graphs of \(y = f(x)\), \(y = af(x)\), \(y = f(x) + a\), \(y = f(x + a)\), \(y = f(ax)\), where \(a\) is a constant, expressing transformations involved in terms of translations, reflections and stretches. Including examples where \(f(x)\) is explicitly given</li>
+                <li>Algebra e.g. the graph of \(y = x^2 - 3x + 2\) is translated 3 units to the left.  Write down the equation of the new graph</li>
+            </ul>
+        </div>
+        <div class="topics" id="exponentials-content">
+            <h2>Exponentials and Logarithms</h2>
+            <ul>
+                <li>Logarithms – definitions, relation to index laws, change of base, solving equations (no natural logarithms at this point)</li>
+                <li>Exponential functions and their graphs</li>
+                <li>Problems involving exponential growth and decay</li> 
+                <li>Modelling problems with sequences and series. e.g. problems involving compound and simple interest on bank deposits, loans, mortgages, etc. and other contexts in which growth or decay can be modelled by an arithmetic or geometric sequence</li>
+                <li>Be able to use logarithmic graphs to estimate parameters in relationships of the form \(y = ax^n\) and \(y = kb^x\), given data, both by drawing graphs and using calculator functions</li>
+            </ul>
+        </div>
+        <div class="topics" id="proof-content">
+            <h2>Proof</h2>
+            <ul>
+                <li>Difference between mathematical and scientific proof</li>
+                <li>\(\Rightarrow,\ \Leftrightarrow,\ \equiv\) and associated language (congruence, if then and if and only if)</li>
+                <li>Algebraic proofs</li>
+                <li>Geometric proofs</li>
+                <li>Proof by contradiction - two common examples of \(\sqrt{2}\) and primes</li>
+                <li>Disproof by counterexample</li>
+            </ul>
+        </div>
+        <div class="topics" id="integration-content">
+            <h2>Integration</h2>
+            <ul>
+                <li>Discuss process of finding areas under curves – counting squares, rectangles, trapezia</li>
+                <li>Numerical integration: use rectangles to estimate the area under a curve and to establish upper and lower bounds for a given integral</li>
+                <li>Trapezium rule – include some analysis of the error in such calculations</li>
+                <li>Integration as the limit of a sum</li>
+                <li>Derive the Fundamental Theorem of Calculus - \(\frac{\mathrm{d}A}{\mathrm{d}x} = y\)</li>
+                <li>Definite integration, areas below the x-axis, the area between two curves</li>
+                <li>Problems bringing together techniques from coordinate geometry, factor theorem, differentiation and integration</li>
+                <li>Improper and infinite integrals</li>
+            </ul>
+        </div>
+        <div class="topics" id="trigonometry3-content">
+            <h2>Trigonometry 3</h2>
+            <ul>
+                <li>Compound and double angle formulae – including geometric proof/derivation, and application to solving equations and proving identities</li>
+                <li>Expressing \(a\cos(nx) + b\sin(nx)\) in the form \(R\cos(nx+\alpha)\) or \(R\sin(nx+\alpha)\), using this to sketch graphs, determine max and min values, and solve equations</li>
+                <li>Reciprocal functions, graphs and identities, and using these to solve equations, including hidden quadratics</li>
+            </ul>
+        </div>
+        <div class="topics" id="calculus-content">
+            <h2>Calculus</h2>
+            <ul>
+                <li>Chain, product and quotient rules</li>
+                <li>Related rates of change</li>
+                <li>Reversing the chain rule by inspection</li>
+                <li>Reversing the product rule by inspection only</li>
+            </ul>
+        </div>
+        <div class="topics" id="numerical-content">
+            <h2>Numerical Methods</h2>
+            <ul>
+                <li>Sign change method to solve equations, including when and why this might fail, and including verification of accuracy by considering upper and lower bounds</li>
+                <li>Iterative methods, including drawing cobweb and staircase diagrams</li>
+                <li>Newton-Raphson and when it succeeds and fails</li>
+            </ul>
+        </div>
+        <div class="topics" id="mechanics13-content">
+            <h2>Mechanics</h2>
+            <ul>
+                <li>Cover the rest of mechanics</li>
+            </ul>
+        </div>
+        <div class="topics" id="statistics13-content">
+            <h2>Statistics</h2>
+            <ul>
+                <li>Cover the rest of statistics</li>
+            </ul>
+        </div><div class="topics" id="functions13-content">
+            <h2>Functions</h2>
+            <ul>
+                <li>Language: many-one, one-many, one-one, mapping, function, image, range, domain</li>
+                <li>Inverse functions, incl 1 to 1 condition for it to exist, and reflection in y = x</li>
+                <li>Composite functions</li>
+                <li>Logs and exponentials, including graphs, transformations (briefly review modelling exponential growth and decay and solving problems - see earlier topic on Stats side)</li>
+                <li>Inverse trig functions, including graphs and equations</li>
+                <li>Modulus functions, including graphs, equations and inequalities (spec is limited to sketching y = |ax + b|)</li>
+            </ul>
+        </div>
+        <div class="topics" id="differentiation13-content">
+            <h2>Differentiation</h2>
+            <ul>
+                <li>Differentiating and integrating exponentials and logarithms, trigonometric functions</li>
+            </ul>
+        </div>
+        <div class="topics" id="binomial13-content">
+            <h2>Binomial Expansions</h2>
+            <ul>
+                <li>Extend binomial expansion</li>
+            </ul>
+        </div>
+        <div class="topics" id="vectors13-content">
+            <h2>Vectors</h2>
+            <ul>
+                <li>scalar and vector quantities, and importance of distinguishing carefully when writing by hand</li>
+                <li>i, j, k notation, column vector notation, bold/underlined and arrow vector notations</li>
+                <li>component form vs magnitude and direction form, where the direction of a vector is given by the angle the vector makes with a horizontal line parallel to the positive x-axis, in the interval [0, 360)</li>
+                <li>finding column form from magnitude and direction and vice versa</li>
+                <li>basic operations</li>
+                <li>position vectors</li>
+                <li>distance between points</li>
+                <li>midpoints</li>
+                <li>problems and proofs, including language of parallel, displacement, component, resultant, equal and unit vectors.</li>
+            </ul>
+        </div>
+        <div class="topics" id="parametric13-content">
+            <h2>Parametric Equations</h2>
+            <ul>
+                <li>incl parametric definition of circles</li>
+                <li>derivatives (and brief review of chain rule and related rates of change), tangents, normals</li>
+                <li>implicit differentiation. tangents, normals</li>
+            </ul>
+        </div>
+        <div class="topics" id="rational13-content">
+            <h2>Rational Functions</h2>
+            <ul>
+                <li>Algebraic fractions factorising and simplifying. Make use of factor and remainder theorems and polynomial division.</li>
+                <li>Partial fractions [spec is restricted to constant or linear numerator with most complicated denominators (ax + b)(cx + d)(ex + f) or  (ax + b)(cx + d)2]</li>
+                <li>Use partial fractions with Binomial expansions to find power series or to integrate.</li>
+                <li>Include some summing series problems</li>
+            </ul>
+        </div>
+        <div class="topics" id="integration13-content">
+            <h2>Integration</h2>
+            <ul>
+                <li>Reversing chain rule and product rule by inspection, now including integrating back to exp, ln and trig functions</li>
+                <li>Use of partial fractions</li>
+                <li></li>By substitution (substitution may or may not be given (see spec 1.08h for examples)</li>
+                <li>Area under a parametrically defined curve using substitution</li>
+                <li>By parts</li>
+            </ul>
+        </div>
+        <div class="topics" id="differential13-content">
+            <h2>Differential Equations</h2>
+            <ul>
+                <li>difference between general and particular solutions</li>
+                <li>basic differential equations </li>
+                <li>dy/dx= f(x)</li>
+                <li>separation of variables - reversing chain rule</li>
+            </ul>
+        </div>
+    </div>
+
+	<script src="./script.js"></script>
+    <script>
+        sb =  document.getElementById("main-sidebar");
+        pure = () => {
+            sb.innerHTML = '<h6>Autumn Y12</h6><ul><li id="geometry" onclick="clickFunction(this)">Coordinate Geometry</li><li id="quadratics" onclick="clickFunction(this)">Quadratics</li><li id="simultaneous" onclick="clickFunction(this)">Simultaneous Equations</li><li id="sequences" onclick="clickFunction(this)">Sequences and Series</li><li id="trigonometry1" onclick="clickFunction(this)">Trigonometry 1</li><li id="graphs" onclick="clickFunction(this)">Graphs</li><li id="differentiation" onclick="clickFunction(this)">Differentiation</li><li id="trigonometry2" onclick="clickFunction(this)">Trigonometry 2</li></ul><hr /><h6>Spring</h6><ul><li id="polynomial" onclick="clickFunction(this)">Polynomial Division</li><li id="transformations" onclick="clickFunction(this)">Transformations (graphs)</li><li id="exponentials" onclick="clickFunction(this)">Exponentials</li><li id="proof" onclick="clickFunction(this)">Proof</li><li id="integration" onclick="clickFunction(this)">Integration</li></ul><hr><h6>Summer</h6><ul><li id="trigonometry3" onclick="clickFunction(this)">Trigonometry 3</li><li id="calculus" onclick="clickFunction(this)">Calculus</li><li id="numerical" onclick="clickFunction(this)">Numerical Methods</li></ul><hr><h6>Autumn Y13</h6><ul><li id="functions13" onclick="clickFunction(this)">Functions</li><li id="differentiation13" onclick="clickFunction(this)">Differentiation</li><li id="binomial13" onclick="clickFunction(this)">Binomial Expansions</li><li id="vectors13" onclick="clickFunction(this)">Vectors</li><li id="parametric13" onclick="clickFunction(this)">Parametric</li><li id="rational13" onclick="clickFunction(this)">Rational Functions</li></ul><hr><h6>Spring</h6><ul><li id="integration13" onclick="clickFunction(this)">Integration</li><li id="differential13" onclick="clickFunction(this)">Differential Eqns</li></ul>'
+            document.getElementsByClassName("header-active")[0].classList.remove("header-active");
+            document.getElementById("header-pure").classList.add("header-active");
+        };
+        applied = () => {
+            sb.innerHTML = '<h6>Autumn Y12</h6><ul><li id="binomial" onclick="clickFunction(this)">Binomial Theorem</li><li id="surds" onclick="clickFunction(this)">Surds, Indices</li><li id="sequences1" onclick="clickFunction(this)">Sequences</li><li id="inequalities" onclick="clickFunction(this)">Inequalities</li></ul><hr><h6>Mechanics</h6><ul><li id="mechanics" onclick="clickFunction(this)">Mechanics - y12</li></ul><hr><h6>Statistics</h6><ul><li id="statistics" onclick="clickFunction(this)">Statistics - y12</li></ul><hr><h6>Mechanics Y13</h6><ul><li id="mechanics13" onclick="clickFunction(this)">Mechanics - y13</li></ul><hr><h6>Statistics</h6><ul><li id="statistics13" onclick="clickFunction(this)">Statistics - y13</li></ul>'
+            document.getElementsByClassName("header-active")[0].classList.remove("header-active");
+            document.getElementById("header-applied").classList.add("header-active");
+
+        }
+    </script>
+</body>
+</html>
