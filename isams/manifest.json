@@ -1,0 +1,20 @@
+{
+    "name": "iSAMS Seating Plan",
+    "description": "Draggable seating plan on iSAMS - the page with a list of students and their photos at the bottom will be replaced",
+    "version": "1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+      {
+        "matches": [
+            "http://*.isams.latymer-upper.org/*",
+            "https://*.isams.latymer-upper.org/*"
+            ],
+        "js": ["script.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": ["activeTab", "scripting"]
+}
