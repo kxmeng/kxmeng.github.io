@@ -1,3 +1,35 @@
+window.onload = () => {
+  const anchors = document.querySelectorAll('a');
+  const transition_el = document.querySelectorAll('.transition');
+
+  setTimeout(() => {
+    transition_el.forEach(
+      (e) => {e.classList.remove('active')}
+    );
+  }, 400);
+
+  for (let i = 0; i < anchors.length; i++) {
+    const anchor = anchors[i];
+
+    anchor.addEventListener('click', e => {
+      let transitionColor = e.target.className;
+
+      transition_el.forEach(
+        (e) => {
+          e.classList.add('active');
+          e.classList.add(transitionColor);
+        }
+      );
+
+      e.preventDefault();
+
+      setInterval(() => {
+        window.location.href = e.target.href;
+      }, 400);
+    })
+  }
+}
+
 // Function to navigate with sidebar items
 let clickFunction = function(e) {
   // Find current highlighted item
