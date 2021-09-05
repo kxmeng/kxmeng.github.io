@@ -28,18 +28,13 @@
   color: white;
 }
 
-.al12 {
-  background-color: var(--al12-color);
+.al {
+  background-color: var(--al-color);
   color: white;
 }
 
-.al13 {
-  background-color: var(--al13-color);
-  color: white;
-}
-
-.fm13 {
-  background-color: var(--fm13-color);
+.fm {
+  background-color: var(--fm-color);
   color: white;
 }
 
