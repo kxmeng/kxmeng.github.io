@@ -7,27 +7,6 @@ window.onload = () => {
       (e) => {e.classList.remove('active')}
     );
   }, 400);
-
-  for (let i = 0; i < anchors.length; i++) {
-    const anchor = anchors[i];
-
-    anchor.addEventListener('click', e => {
-      let transitionColor = e.target.className;
-
-      transition_el.forEach(
-        (e) => {
-          e.classList.add('active');
-          e.classList.add(transitionColor);
-        }
-      );
-
-      e.preventDefault();
-
-      setInterval(() => {
-        window.location.href = e.target.href;
-      }, 400);
-    })
-  }
 }
 
 // Function to navigate with sidebar items
