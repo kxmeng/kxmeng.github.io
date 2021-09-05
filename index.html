@@ -35,23 +35,27 @@
 
 	<script src="script.js"></script>
 	<script>
+		// Create trasition animation when links to different pages are clicked
 		window.onload = () => {
-			const anchors = document.querySelectorAll('a');
+			// Find links in the nav bar
+			const anchors = document.querySelectorAll('nav a');
+			// For each link
 			for (let i = 0; i < anchors.length; i++) {
 				const anchor = anchors[i];
-
+				// Change default behaviour of link
 				anchor.addEventListener('click', e => {
+					// Set colour for transition
 					let transitionColor = e.target.className;
-
+					// Add trasition and colour to the transition elements
 					transition_el.forEach(
 						(e) => {
 							e.classList.add('active');
 							e.classList.add(transitionColor);
 						}
 					);
-
+					// Prevent the link from working
 					e.preventDefault();
-
+					// After 400ms, go to the link
 					setInterval(() => {
 						window.location.href = e.target.href;
 					}, 400);
