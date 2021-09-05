@@ -1,5 +1,4 @@
 window.onload = () => {
-  const anchors = document.querySelectorAll('a');
   const transition_el = document.querySelectorAll('.transition');
 
   setTimeout(() => {
