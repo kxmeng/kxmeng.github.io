@@ -39,33 +39,30 @@
     <div class="left-sidebar" id="main-sidebar">
         <h6>Autumn</h6>
         <ul>
-            <li id="ratio11" onclick="clickFunction(this)">Ratio</li>
-            <li id="indices11" onclick="clickFunction(this)">Indices</li>
-            <li id="algebra11" onclick="clickFunction(this)">Algebra 1</li>
-            <li id="transformations11" onclick="clickFunction(this)">Transformations</li>
-            <li id="trigonometry11" onclick="clickFunction(this)">Trigonometry</li>
-            <li id="functions11" onclick="clickFunction(this)">Functions</li>
             <li id="lines11" onclick="clickFunction(this)">Straight Lines</li>
+            <li id="vectors11" onclick="clickFunction(this)">Vectors</li>
+            <li id="functions11" onclick="clickFunction(this)">Functions</li>
+            <li id="hcf11" onclick="clickFunction(this)">HCF/LCM</li>
+            <li id="differentiation11" onclick="clickFunction(this)">Differentiation</li>
+            <li id="algebra11" onclick="clickFunction(this)">Algebra</li>
+            <li id="proportion11" onclick="clickFunction(this)">Proportion</li>
         </ul>
-        <hr />
+        <hr>
         <h6>Spring</h6>
         <ul>
-            <li id="graphs11" onclick="clickFunction(this)">Graphs</li>
-            <li id="number11" onclick="clickFunction(this)">Number</li>
-            <li id="algebra112" onclick="clickFunction(this)">Algebra 2</li>
-            <li id="polygons11" onclick="clickFunction(this)">Polygons</li>
+            <li id="inequalities11" onclick="clickFunction(this)">Inequalities</li>
+            <li id="units11" onclick="clickFunction(this)">Units</li>
             <li id="travel11" onclick="clickFunction(this)">Travel</li>
-            <li id="constructions11" onclick="clickFunction(this)">Constructions</li>
-            <li id="equations11" onclick="clickFunction(this)">Equations</li>
-            <li id="bounds11" onclick="clickFunction(this)">Bounds</li>
+            <li id="transformations11" onclick="clickFunction(this)">Transformations</li>
+            <li id="sequences11" onclick="clickFunction(this)">Sequences</li>
+            <li id="geometry11" onclick="clickFunction(this)">Geometry</li>
+            <li id="statistics11" onclick="clickFunction(this)">Statistics</li>
         </ul>
         <hr>
         <h6>Summer</h6>
         <ul>
-            <li id="simultaneous11" onclick="clickFunction(this)">Simultaneous Equations</li>
-            <li id="inequalities11" onclick="clickFunction(this)">Inequalities</li>
-            <li id="sequences11" onclick="clickFunction(this)">Sequences</li>
-            <li id="statistics11" onclick="clickFunction(this)">Statistics</li>
+            <li id="constructions11" onclick="clickFunction(this)">Constructions</li>
+            <li id="bounds11" onclick="clickFunction(this)">Bounds</li>
         </ul>
     </div>
 
@@ -89,189 +86,140 @@
     
     <!-- All of the content of the page hidden until needed. Everything in divs with class of "topics". All preloaded to make it easier to use MathJax on all the content. x-content divs have content in, and x-resources divs have links to resources -->
     <div class="all-content">
-        <div class="topics" id="ratio11-content">
-            <h2>Ratio and Proportion (1.5 weeks)</h2>
+        <div class="topics" id="lines11-content">
+            <h2>Straight Lines</h2>
             <ul>
-                <li>Concept of a ratio</li>
-                <li>Simplifying ratios - including avoiding decimals and fractions or units in ratios</li>
-                <li>Sharing in a given ratio</li>
-                <li>If \(a:b\) and \(b:c\), find \(a:c\)</li>
-                <li>Direct and inverse proportion - no constants of proportionality</li>
-                <li>Simple inverse problems that can be solved using rates and manhours e.g. workers painting walls, taps filling baths</li>
-                <li>Tree diagrams for e.g "Half of books are about chess, two thirds of those are russian. What fraction of books are russian chess books?"</li>
+                <li>Review straight lines, including parallel perpendicular lines</li>
+                <li class="ab">Coordinate geometry (use A level questions)</li>
             </ul>
         </div>
-        <div class="topics" id="indices11-content">
-            <h2>Indices (1.5 weeks)</h2>
+        <div class="topics" id="vectors11-content">
+            <h2>Vectors (1.5 weeks)</h2>
             <ul>
-                <li>Basic laws - multiplication, division, \((a^b)^c\)</li>
-                <li>Fractional and negative indices with justification</li>
-                <li>Evaluation of numbers in index form including fractions to negative indices</li>
-                <li>Writing numbers in index form</li>
-                <li>Solving index equations, <span class="ab">including changing the base</span></li>
-            </ul>
-        </div>
-        <div class="topics" id="algebra11-content">
-            <h2>Equivalent Expressions (1.5 weeks)</h2>
-            <ul>
-                <li>Algebra basics - collecting like terms, multiplying one and two brackets</li>
-                <li>Identities vs Equations</li>
-                <li>Factorisation into two, or more brackets e.g. \(pq + 2q + 4p + 8\).</li>
-                <li>Difference of two squares</li>
-                <li class="ab">Non integer factorisations</li>
-            </ul>
-        </div>
-        <div class="topics" id="transformations11-content">
-            <h2>Transformations</h2>
-            <ul>
-                <li>Translations - include vector notation</li>
-                <li>Reflection in a drawn line or named line e.g. \(x=5\), \(y=x\) or \(y=-x\)</li>
-                <li>Rotations</li>
-                <li>Enlargements - including negative and fractional scale factors</li>
-            </ul>
-        </div>
-        <div class="topics" id="trigonometry11-content">
-            <h2>Trigonometry</h2>
-            <ul>
-                <li>Recap tan and then introduce sin and cos</li>
-                <li>Finding sides and angles</li>
-                <li>Problems that combine trigonometry and Pythagoras</li>
-                <li class="ab">Non right angled triangles</li>
+                <li>Magnitude and direction</li>
+                <li>Notation, including representation as column and component form</li>
+                <li>Multiplication by scalar</li>
+                <li>Addition and subtraction, graphical interpretation, commutativity</li>
+                <li>Magnitude</li>
+                <li class="ab">Geometric proofs</li>
+                <li class="a">2 by 2 matrices: addition, multiplication, identity, inverse</li>
             </ul>
         </div>
         <div class="topics" id="functions11-content">
             <h2>Functions (2 weeks)</h2>
             <ul>
-                <li>Concept of a function - \(\sin\), \(\cos\), \(\tan\) as examples</li>
-                <li>Function and mapping notation</li>
-                <li>Finding outputs given inputs and vice versa</li>
-                <li>Domain and Range concepts and questions - finite sets, discrete sets</li>
-                <li>Composition of functions</li>
-                <li>Inverse of a function - concept and basic examples</li>
-                <li class="ab">Finding the inverse by rearranging</li>
-                <li class="a">Extending functions e.g. one-to-one</li>
+                <li>Mapping</li>
+                <li>Notation</li>
+                <li>Domain (and restrictions) and range</li>
+                <li>Composite and inverse</li>
+                <li class="ab">Inverse quadratic, including domain and choosing the appropriate square root</li>
+                <li class="ab">Sketching modulus functions</li>
+                <li class="a">Solving modulus equations</li>
             </ul>
         </div>
-        <div class="topics" id="lines11-content">
-            <h2>Straight Line Graphs (2 weeks)</h2>
+        <div class="topics" id="hcf11-content">
+            <h2>HCF/LCM</h2>
             <ul>
-                <li>Recap what a graph is and basic graphing with tables</li>
-                <li>Some investigation of gradients and intercepts</li>
-                <li>\(y = mx +c\)</li>
-                <li>Finding gradients and intercepts</li>
-                <li>Line through a point with gradient \(m\)</li>
-                <li>Line through two points</li>
-                <li>Parallel and Perpendicular Lines</li>
-                <li>Modelling questions, interpretation of \(m\) and \(c\)</li> 
+                <li>Prime and algebraic factors</li>
             </ul>
         </div>
-        <div class="topics" id="graphs11-content">
-            <h2>Interpreting Graphs (0.5 weeks)</h2>
+        <div class="topics" id="differentiation11-content">
+            <h2>Differentiation (2 weeks)</h2>
             <ul>
-                <li>Plotting a graph against time</li>
+                <li>Estimating gradient of curve by sketching tangent and finding gradient</li>
+                <li>Gradient of tangent as a rate of change</li>
+                <li>Graphical justification of differentiation (either by measuring gradients at multiple points or bounding the gradient of tangent)</li>
+                <li>Differentiating integer powers of x</li>
+                <li>Calculating the gradient of the tangent at a given point</li>
+                <li>Finding the equation of a tangent/normal at a given point</li>
+                <li>Finding points at which the tangent to the graph has a given gradient</li>
+                <li>Identifying co-ordinates of turning points; distinguishing between maxima and minima</li>
+                <li class="a">Anti differentiation</li>
             </ul>
         </div>
-        <div class="topics" id="number11-content">
-            <h2>Factors and Multiples</h2>
-            <ul>
-                <li>Recap numerical HCF and LCM - including factor trees and Venn Diagrams for finding HCF and LCM</li>
-                <li>Algebraic HCF and LCM as a prelude to algebraic fractions - factors in polynomials similar to primes in integers</li>
-            </ul>
-        </div>
-        <div class="topics" id="algebra112-content">
+        <div class="topics" id="algebra11-content">
             <h2>Algebraic Fractions (1.5 weeks)</h2>
             <ul>
-                <li>Recap basic numerical fractions, introduce algebraic fractions</li>
-                <li>Simplifying algebraic fractions</li>
-                <li>Multiplying and dividing algebraic fractions</li>
-                <li>Adding and subtracting algebraic fractions</li>
-                <li>Simplifying answers</li>
+                <li>Factorising and simplifying</li>
+                <li>Multiplying and dividing</li>
+                <li>Adding and subtracting</li>
+                <li>Solving equations</li>
+                <li class="ab">Interesting denominators with LCM</li>
+                <li class="a">C4 rational functions, basic partial fractions</li>
             </ul>
         </div>
-        <div class="topics" id="polygons11-content">
-            <h2>Angles in Polygons</h2>
+        <div class="topics" id="proportion11-content">
+            <h2>Proportion (1.5 weeks)</h2>
             <ul>
-                <li>Interior angles sum formula with justification</li>
-                <li class="ab">Concave polygons</li>
-                <li>Exterior angles sum to 360</li>
-                <li>Regular and irregular polygons</li>
+                <li>Ratio and proportion with and without equations</li>
+                <li>Graphs</li>
+            </ul>
+        </div>
+        <div class="topics" id="inequalities-content">
+            <h2>Quadratic Inequalities</h2>
+            <ul>
+                <li>Review quadratics</li>
+                <li>Inequalities by sketching</li>
+            </ul>
+        </div>
+        <div class="topics" id="units11-content">
+            <h2>Units</h2>
+            <ul>
+                <li>Convert area and volume</li>
+                <li>Compound units e.g. density, pressure</li>
             </ul>
         </div>
         <div class="topics" id="travel11-content">
-            <h2>Travel Graphs</h2>
+            <h2>Travel Graphs (1.5 weeks)</h2>
             <ul>
-                <li>Distance-time and speed-time graphs</li>
-                <li>Velocity and displacement vs speed and distance</li>
-                <li>Area under speed-time graph</li>
-                <li>Average speed</li>
+                <li>Travel graphs and interpretation</li>
+                <li>Calculus as rate of change, displacemet velocity acceleration</li>
+                <li>Displacement/distance, velocity/speed</li>
             </ul>
         </div>
-        <div class="topics" id="constructions11-content">
-            <h2>Constructions and Loci</h2>
+        <div class="topics" id="transformations11-content">
+            <h2>Transformations (1.5 weeks)</h2>
             <ul>
-                <li>Perpendicular bisector, angle bisector, 60 degree angle</li>
-                <li>Equilateral triangles and regular hexagons</li>
-                <li>Parallel Lines, perpendicular line through a point</li>
-                <li>The points equidistant from a point, two points, two lines, a square</li>
-            </ul>
-        </div>
-        <div class="topics" id="equations11-content">
-            <h2>Solving Equations (2 weeks)</h2>
-            <ul>
-                <li>Equations with fractions</li>
-                <li>Forming expressions from statements or worded problems</li>
-                <li>Harder problems e.g. the sum of three consecutive odds is 459 find the middle number</li>
-            </ul>
-        </div>
-        <div class="topics" id="bounds11-content">
-            <h2>Bounds</h2>
-            <ul>
-                <li>Upper and lower bounds</li>
-                <li>Discuss \(0.999...\)</li>
-                <li>Degrees of accuracy and bounds - sf, dp and more unusual degrees of accuracy e.g. to the nearest 25cm</li>
-            </ul>
-        </div>
-        <div class="topics" id="simultaneous11-content">
-            <h2>Simultaneous Equations</h2>
-            <ul>
-                <li>Elimination and substitution</li>
-                <li>Substitution with non-linear equations (not quadratics)</li>
-                <li>Relationship between solutions and graphs</li>
-                <li class="ab">Three Variables</li>
-                <li class="a">0, 1 and infinitely many solutions problems and interpretation</li>
-            </ul>
-        </div>
-        <div class="topics" id="inequalities11-content">
-            <h2>Inequalities (2 weeks)</h2>
-            <ul>
-                <li>Meaning of an inequality</li>
-                <li>Simple inequalities</li>
-                <li>Similarities and differences between inequalities and equations</li>
-                <li>More nuanced problems e.g. \(x^2 > 4\),  \(\frac{1}{x} < \frac{1}{2}\)</li>
-                <li>Showing inequalities on a number line</li>
-                <li>Drawing lines and shading regions</li>
-                <li>Dashed vs solid lines</li>
+                <li>Transformations of graphs, including trig and quadratics</li>
+                <li class="ab">Circle, reflecting graphs</li>
+                <li>Review transformations of shapes</li>
             </ul>
         </div>
         <div class="topics" id="sequences11-content">
-            <h2>Sequences and Series</h2>
+            <h2>Arithmetic Sequences (1.5 weeks)</h2>
             <ul>
-                <li>Concept of a sequence and series</li>
-                <li>Spotting and describing rules in words</li>
-                <li>nth term formulae for simple sequences</li>
-                <li>Arithmetic Sequences nth term formula</li>
-                <li>Arithmetic Series but only informally by pairing up</li>
+                <li>Sequences and series, including proof</li>
+                <li>nth term expressions and equation</li>
+                <li>First term and common difference</li>
+                <li>Sum of first n terms</li>
+            </ul>
+        </div>
+        <div class="topics" id="geometry11-content">
+            <h2>Geometry Review</h2>
+            <ul>
+                <li>Polygons, angles, circles, properties of shapes</li>
             </ul>
         </div>
         <div class="topics" id="statistics11-content">
-            <h2>Statistics (2 weeks)</h2>
+            <h2>Statistics Review</h2>
             <ul>
-                <li>MMMR, Frequency tables, MMMR from frequency tables</li>
-                <li>Grouped data</li>
-                <li>Quartiles</li>
-                <li>Cumulative Frequency including graphs and estimation</li>
+                <li>Histograms/cf diagrams, median, quartiles</li>
+                <li>Mean from grouped data</li>
             </ul>
-        </div><div class="topics" id="algebra1-content">
+        </div>
+        <div class="topics" id="constructions11-content">
+            <h2>Constructions Review</h2>
+            <ul>
+                <li>Constructions and loci</li>
+            </ul>
+        </div>
+        <div class="topics" id="bounds11-content">
+            <h2>Bounds Review</h2>
+            <ul>
+                <li>Upper and lower bounds</li>
+            </ul>
+        </div>
+        <div class="topics" id="algebra1-content">
             <h2>Algebra</h2>
             <ul class="top-half">
                 <li>Brief review of basic concepts: Variables, unknowns, expressions, identities, equations, substituting values</li>
