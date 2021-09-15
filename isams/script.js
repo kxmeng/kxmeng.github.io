@@ -73,33 +73,194 @@ if (pageTitle == "Set List") {
         newDivs.push(newDiv);
     };
 
-    // Find the body of the page and clear it
-    body = document.getElementsByTagName("body")[0];
-    // Add title to show which way is up
-    body.innerHTML="<h2>Front</h2>";
-    // Some styling so the title is centered
-    body.style.display = "flex";
-    body.style.justifyContent = "center";
+    // If this page has photos
+    if (newDivs.length > 1) {
+        // Create button to randomise seats
+        rngButton = document.createElement("button");
+        saveButton = document.createElement("button");
+        loadButton = document.createElement("button");
+        rngButton.id = "rngBtn";
+        saveButton.id = "saveBtn";
+        loadButton.id = "loadBtn";
+        rngButton.innerText = "Randomise";
+        saveButton.innerText = "Save";
+        loadButton.innerText = "Load";
+        buttonDiv = document.createElement("div");
+        buttonDiv.style.position = "absolute";
+        buttonDiv.style.top = "1rem";
+        buttonDiv.style.left = "1rem";
+        buttonDiv.style.height = "2rem";
+        buttonDiv.style.margin = "0 1rem";
+        buttonDiv.appendChild(rngButton);
+        buttonDiv.appendChild(saveButton);
+        buttonDiv.appendChild(loadButton);
 
-    // Add the divs we created earlier to the body
-    for (let i = 0; i < newDivs.length; i++) {
-        body.appendChild(newDivs[i]);
-        dragElement(newDivs[i]);
-    };
+        // Find the body of the page and clear it
+        body = document.getElementsByTagName("body")[0];
+        // Add title to show which way is up
+        body.innerHTML="<h2>Front</h2>";
+        // Some styling so the title is centered
+        body.style.display = "flex";
+        body.style.justifyContent = "center";
+        // Add RNG button
+        body.appendChild(buttonDiv);
 
-    // Select random child to highlight
-    let listOfChildren = document.getElementsByClassName("pupils");
-    // Repeat this function every 2000ms
-    setInterval(() => {
-        let rng = Math.floor(Math.random() * listOfChildren.length);
-        let lastHighlighted = document.getElementById("selected");
-        if (lastHighlighted) {
-            lastHighlighted.style.backgroundColor = "transparent";
-            lastHighlighted.id = "";
+        // Add the divs we created earlier to the body
+        for (let i = 0; i < newDivs.length; i++) {
+            body.appendChild(newDivs[i]);
+            dragElement(newDivs[i]);
         };
-        listOfChildren[rng].id="selected";
-        listOfChildren[rng].style.backgroundColor = "#e2f0cb";
-    }, 2000);
+
+        // Select random child to highlight
+        let listOfChildren = document.getElementsByClassName("pupils");
+        // Repeat this function every 2000ms
+        setInterval(() => {
+            let rng = Math.floor(Math.random() * listOfChildren.length);
+            let lastHighlighted = document.getElementById("selected");
+            if (lastHighlighted) {
+                lastHighlighted.style.backgroundColor = "transparent";
+                lastHighlighted.id = "";
+            };
+            listOfChildren[rng].id="selected";
+            listOfChildren[rng].style.backgroundColor = "#e2f0cb";
+        }, 2000);
+
+        // Shuffle array function
+        function shuffleArray(a,b,c,d){//array,placeholder,placeholder,placeholder
+            c=a.length;while(c)b=Math.random()*c--|0,d=a[c],a[c]=a[b],a[b]=d
+        }
+
+        // Function to find the position of an element
+        var cumulativeOffset = function(element) {
+            var top = 0, left = 0;
+            do {
+                top += element.offsetTop  || 0;
+                left += element.offsetLeft || 0;
+                element = element.offsetParent;
+            } while(element);
+            // Returns an object with top and left positions
+            return {
+                top: top,
+                left: left
+            };
+        };        
+
+        // Function to randomise people, keeping locations the same
+        function randomise() {
+            // Find current positions of all pupils
+            let allLocations = document.getElementsByClassName("pupils");
+            let positions = [];
+            for (let i = 0; i < allLocations.length; i++) {
+                positions.push(cumulativeOffset(allLocations[i]));
+            }
+            // Shuffle positions
+            shuffleArray(positions);
+            // Give pupils their shuffled positions
+            for (let i = 0; i < allLocations.length; i++) {
+                curImg = allLocations[i];
+                curPos = positions[i]
+                curImg.style.top = curPos.top;
+                curImg.style.left = curPos.left;
+            }
+        };
+
+        // Function to save current positions to storage
+        function saveSeats() {
+            let allLocations = document.getElementsByClassName("pupils");
+            let positions = [];
+            for (let i = 0; i < allLocations.length; i++) {
+                positions.push(cumulativeOffset(allLocations[i]));
+            }
+            nameOfClass = prompt("Type a name to save this as")
+            // Save to storage with unique suffix to make it easier to find later
+            localStorage.setItem(nameOfClass + " seatsAppv1", JSON.stringify(positions));
+        }
+
+        // Function to load positions from storage
+        function loadSeats() {
+            let toLoad = "";
+            // Custom UI to show which classes currently have been saved
+            savedClasses = document.createElement("div");
+            savedClasses.id = "loading";
+            savedClasses.style.display = "flex";
+            savedClasses.style.flexDirection = "column";
+            savedClasses.style.backgroundColor = "white";
+            savedClasses.style.height = "100vh";
+            savedClasses.style.width = "100vw";
+            savedClasses.style.top = "0px";
+            savedClasses.style.left = "0px";
+            savedClasses.style.position = "absolute";
+            // Look through storage and find data with unique suffix
+            classesStored = [];
+            for (var a in localStorage) {
+                if (a.includes("seatsAppv1")) {
+                    classesStored.push(a.split(" ")[0]
+                    );
+                }
+            }
+            // Add to custom UI
+            for (let i = 0; i < classesStored.length; i++) {
+                thisClass = document.createElement("div");
+                thisClass.innerText = classesStored[i];
+                thisClass.style.padding = "1rem";
+                thisClass.style.borderBottom = "1px solid black";
+                thisClass.style.cursor = "pointer";
+                thisClass.style.display = "flex";
+                thisClass.style.justifyContent = "space-between";
+                thisClass.addEventListener("mouseover", function(event) {
+                    if (thisClass !== event.target) return;
+                    event.target.style.backgroundColor = "#e6e6fa";
+                }, false);
+                thisClass.addEventListener("mouseleave", function(event) {
+                    event.target.style.backgroundColor = "transparent";
+                }, false);
+                thisClass.addEventListener("click", function(event) {
+                    if (thisClass !== event.target) return;
+                    toLoad = classesStored[i];
+                    positions = JSON.parse(localStorage.getItem(toLoad + " seatsAppv1"));
+                    let allLocations = document.getElementsByClassName("pupils");
+                    if (allLocations.length = positions.length) {
+                        for (let i = 0; i < allLocations.length; i++) {
+                            curImg = allLocations[i];
+                            curPos = positions[i];
+                            curImg.style.top = curPos.top + "px";
+                            curImg.style.left = curPos.left + "px";
+                        }
+                    }
+                    else {
+                        alert("The saved class has a different number of pupils to this class");
+                    }
+                }, false);
+                delBtn = document.createElement("div");
+                delBtn.innerText = "Delete";
+                delBtn.style.width = "5rem";
+                delBtn.style.backgroundColor = "red", "important";
+                delBtn.style.color = "white";
+                delBtn.addEventListener("click", function() {
+                    if (confirm("Are you sure? Deleting this cannot be undone")) {
+                        localStorage.removeItem(classesStored[i] + " seatsAppv1");
+                    }
+                }, false);
+                thisClass.appendChild(delBtn);
+                savedClasses.appendChild(thisClass);
+            }
+
+            body.appendChild(savedClasses);
+            document.getElementById("loading").addEventListener("click", function(){document.querySelector("#loading").remove()});
+        }
+
+
+        // Set buttons to do what they need to do
+        document.getElementById("rngBtn").addEventListener("click", randomise);
+        document.getElementById("saveBtn").addEventListener("click", saveSeats);
+        document.getElementById("loadBtn").addEventListener("click", loadSeats);
+    }
+
+    // Load data from storage
+    function loadFromStorage() {
+
+    }
+    
     
     // Function to make an element draggable - copied from w3schools
     function dragElement(elmnt) {
