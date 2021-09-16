@@ -1,6 +1,6 @@
 {
-    "name": "iSAMS Seating Plan",
-    "description": "Draggable seating plan on iSAMS - the page with a list of students and their photos at the bottom will be replaced",
+    "name": "LUS Seating Plans",
+    "description": "Seating plan on iSAMS",
     "version": "1.0",
     "manifest_version": 3,
     "content_scripts": [
@@ -13,5 +13,8 @@
         "run_at": "document_idle"
       }
     ],
-    "permissions": ["activeTab", "scripting"]
+    "permissions": ["activeTab", "scripting"],
+    "icons": {
+      "16": "ico16.png"
+    }
 }
