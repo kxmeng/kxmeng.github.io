@@ -95,6 +95,34 @@ if (pageTitle == "Set List") {
         buttonDiv.appendChild(saveButton);
         buttonDiv.appendChild(loadButton);
 
+        // Specific styles for page
+        col4Button = document.createElement("button");
+        col6Button = document.createElement("button");
+        col8Button = document.createElement("button");
+        grp2Button = document.createElement("button");
+        grp4Button = document.createElement("button");
+        col4Button.id = "column4";
+        col6Button.id = "column6";
+        col8Button.id = "column8";
+        grp2Button.id = "group2";
+        grp4Button.id = "group4";
+        col4Button.innerText = "4 Cols";
+        col6Button.innerText = "6 Cols";
+        col8Button.innerText = "8 Cols";
+        grp2Button.innerText = "Pairs";
+        grp4Button.innerText = "Fours";
+        stylesDiv = document.createElement("div");
+        stylesDiv.style.position = "absolute";
+        stylesDiv.style.top = "1rem";
+        stylesDiv.style.right = "1rem";
+        stylesDiv.style.height = "2rem";
+        stylesDiv.style.margin = "0 1rem";
+        stylesDiv.appendChild(col4Button);
+        stylesDiv.appendChild(col6Button);
+        stylesDiv.appendChild(col8Button);
+        stylesDiv.appendChild(grp2Button);
+        stylesDiv.appendChild(grp4Button);
+
         // Find the body of the page and clear it
         body = document.getElementsByTagName("body")[0];
         // Add title to show which way is up
@@ -102,8 +130,9 @@ if (pageTitle == "Set List") {
         // Some styling so the title is centered
         body.style.display = "flex";
         body.style.justifyContent = "center";
-        // Add RNG button
+        // Add buttons
         body.appendChild(buttonDiv);
+        body.appendChild(stylesDiv);
 
         // Add the divs we created earlier to the body
         for (let i = 0; i < newDivs.length; i++) {
@@ -249,16 +278,79 @@ if (pageTitle == "Set List") {
             document.getElementById("loading").addEventListener("click", function(){document.querySelector("#loading").remove()});
         }
 
+        function makeColumns(c) {
+            // Find current positions of all pupils
+            let allLocations = document.getElementsByClassName("pupils");
+            // Give pupils their new positions
+            for (let i = 0; i < allLocations.length; i++) {
+                curImg = allLocations[i];
+                curImg.style.top = Math.floor(i/c)*120+60 + "px";
+                curImg.style.left = (i%c)*80+10 + "px";
+            }
+        }
+
+        function makePairs() {
+            // Find current positions of all pupils
+            let allLocations = document.getElementsByClassName("pupils");
+            // Horizontal offset
+            offset = 10;
+            // Give pupils their new positions
+            for (let i = 0; i < allLocations.length; i++) {
+                if (i%6 == 0) {
+                    offset = 10;
+                }
+                if(i%6 == 2) {
+                    offset = 70;
+                }
+                if(i%6 == 4) {
+                    offset = 130;
+                }
+                curImg = allLocations[i];
+                curImg.style.top = Math.floor(i/6)*130+60 + "px";
+                curImg.style.left = (i%6)*70+offset + "px";
+            };
+            randomise();
+        }
+
+        function makeFours() {
+            // Find current positions of all pupils
+            let allLocations = document.getElementsByClassName("pupils");
+            // Horizontal offset
+            offset = 10;
+            // Vertical offset
+            offset2 = 60;
+            // Give pupils their new positions
+            for (let i = 0; i < allLocations.length; i++) {
+                if (i%6 == 0) {
+                    offset = 10;
+                }
+                if(i%6 == 2) {
+                    offset = 70;
+                }
+                if(i%6 == 4) {
+                    offset = 130;
+                }
+                if (i==12) {
+                    offset2 += 50;
+                }
+                curImg = allLocations[i];
+                curImg.style.top = Math.floor(i/6)*85+offset2 + "px";
+                curImg.style.left = (i%6)*70+offset + "px";
+            };
+            randomise();
+        }
+
 
         // Set buttons to do what they need to do
         document.getElementById("rngBtn").addEventListener("click", randomise);
         document.getElementById("saveBtn").addEventListener("click", saveSeats);
         document.getElementById("loadBtn").addEventListener("click", loadSeats);
-    }
 
-    // Load data from storage
-    function loadFromStorage() {
-
+        document.getElementById("column4").addEventListener("click", function(){makeColumns(4)});
+        document.getElementById("column6").addEventListener("click", function(){makeColumns(6)});
+        document.getElementById("column8").addEventListener("click", function(){makeColumns(8)});
+        document.getElementById("group2").addEventListener("click", makePairs);
+        document.getElementById("group4").addEventListener("click", makeFours);
     }
     
     
