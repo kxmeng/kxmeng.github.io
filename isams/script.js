@@ -64,7 +64,7 @@ if (pageTitle == "Set List") {
         // Find the first word of the name - checking for a space does not work for some reason...
         nameElement.innerText = text.match(/(?<=^[\s"']*)(\w+)/)[0];
         // Align the text so it's centered
-        nameElement.style.textAlign = "center";
+        nameElement.style = "text-align: center;"
         // Add this to the div we created so that it now contains an image and this text
         newDiv.appendChild(nameElement);
         // Chage the cursor to pointer to indicate it can be dragged
@@ -359,8 +359,8 @@ if (pageTitle == "Set List") {
                     maxWidth = curLeft;
                 };
             }
-            maxHeight+=85;
-            maxWidth+=70;
+            maxHeight+=60;
+            maxWidth+=10;
             for (let i = 0; i < allLocations.length; i++) {
                 curImg = allLocations[i];
                 curPos = cumulativeOffset(allLocations[i]);
