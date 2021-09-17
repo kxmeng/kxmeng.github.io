@@ -79,12 +79,15 @@ if (pageTitle == "Set List") {
         rngButton = document.createElement("button");
         saveButton = document.createElement("button");
         loadButton = document.createElement("button");
+        invertButton = document.createElement("button");
         rngButton.id = "rngBtn";
         saveButton.id = "saveBtn";
         loadButton.id = "loadBtn";
+        invertButton.id = "invBtn";
         rngButton.innerText = "Randomise";
         saveButton.innerText = "Save";
         loadButton.innerText = "Load";
+        invertButton.innerText = "Invert";
         buttonDiv = document.createElement("div");
         buttonDiv.style.position = "absolute";
         buttonDiv.style.top = "1rem";
@@ -94,6 +97,7 @@ if (pageTitle == "Set List") {
         buttonDiv.appendChild(rngButton);
         buttonDiv.appendChild(saveButton);
         buttonDiv.appendChild(loadButton);
+        buttonDiv.appendChild(invertButton);
 
         // Specific styles for page
         col4Button = document.createElement("button");
@@ -340,11 +344,37 @@ if (pageTitle == "Set List") {
             randomise();
         }
 
+        function invertSeats() {
+            let allLocations = document.getElementsByClassName("pupils");
+            maxHeight = 0;
+            maxWidth = 0;
+            for (let i = 0; i < allLocations.length; i++) {
+                curPos = cumulativeOffset(allLocations[i]);
+                curTop = curPos.top;
+                curLeft = curPos.left;
+                if (curTop > maxHeight) {
+                    maxHeight = curTop;
+                };
+                if (curLeft > maxWidth) {
+                    maxWidth = curLeft;
+                };
+            }
+            maxHeight+=85;
+            maxWidth+=70;
+            for (let i = 0; i < allLocations.length; i++) {
+                curImg = allLocations[i];
+                curPos = cumulativeOffset(allLocations[i]);
+                curImg.style.top = maxHeight-curPos.top;
+                curImg.style.left = maxWidth-curPos.left;
+            }
+        }
+
 
         // Set buttons to do what they need to do
         document.getElementById("rngBtn").addEventListener("click", randomise);
         document.getElementById("saveBtn").addEventListener("click", saveSeats);
         document.getElementById("loadBtn").addEventListener("click", loadSeats);
+        document.getElementById("invBtn").addEventListener("click", invertSeats);
 
         document.getElementById("column4").addEventListener("click", function(){makeColumns(4)});
         document.getElementById("column6").addEventListener("click", function(){makeColumns(6)});
