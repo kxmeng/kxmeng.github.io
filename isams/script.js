@@ -1,10 +1,10 @@
 // Get title of page
 let pageTitle = document.getElementsByTagName("title")[0].innerHTML;
-// On last step if iSAMS wizard, change the page to just the container containing pupil photos
+// On last step if iSAMS wizard, redirect to iframe page w/ all photos
 if (pageTitle.includes("Step 4")) {
-    // Find the container/iframe on the page
+    // Find the iframe
     let ifr = document.getElementsByTagName("iframe");
-    // Go to the link directly - this helps with image detection later
+    // Go to the link - this helps with image detection
     if (ifr.length !== 0) {
         window.location.href = ifr[0].src;
     };
@@ -42,14 +42,13 @@ if (pageTitle == "Set List") {
         parent.removeChild(parent.lastChild);
         // The image is in the parent within an anchor element - it's the first child of it
         newDiv.appendChild(parent.firstChild.firstChild);
-        // Change image to be circular
+        // Change image to be circular, no scaling
         currentImage = newDiv.firstChild;
         currentImage.style.height = "60px";
         currentImage.style.width = "60px";
         currentImage.style.borderRadius = "50%";
-        // Do not resize image if it's too big
         currentImage.style.objectFit = "none";
-        // Create a div for the name of the child - this makes manipulating the name easier
+        // Create a div for pupil name - makes manipulating the name easier
         nameElement = document.createElement("div");
         // Add class name to these divs in case we want to do anything later
         nameElement.classList.add("pupilNames");
@@ -61,7 +60,7 @@ if (pageTitle == "Set List") {
             endPos = text.indexOf(")");
             text = text.slice(startPos,endPos);
         }
-        // Find the first word of the name - checking for a space does not work for some reason...
+        // Find first name - checking for a space does not work for some reason...
         nameElement.innerText = text.match(/(?<=^[\s"']*)(\w+)/)[0];
         // Align the text so it's centered
         nameElement.style = "text-align: center;"
@@ -75,7 +74,7 @@ if (pageTitle == "Set List") {
 
     // If this page has photos
     if (newDivs.length > 1) {
-        // Create button to randomise seats
+        // Create buttons to do stuff
         rngButton = document.createElement("button");
         saveButton = document.createElement("button");
         loadButton = document.createElement("button");
@@ -88,6 +87,7 @@ if (pageTitle == "Set List") {
         saveButton.innerText = "Save";
         loadButton.innerText = "Load";
         invertButton.innerText = "Invert";
+        // Put buttons into a div to make it easier to move them if needed
         buttonDiv = document.createElement("div");
         buttonDiv.style.position = "absolute";
         buttonDiv.style.top = "1rem";
@@ -99,7 +99,7 @@ if (pageTitle == "Set List") {
         buttonDiv.appendChild(loadButton);
         buttonDiv.appendChild(invertButton);
 
-        // Specific styles for page
+        // Create more buttons to easily arrange pupils
         col4Button = document.createElement("button");
         col6Button = document.createElement("button");
         col8Button = document.createElement("button");
@@ -115,6 +115,7 @@ if (pageTitle == "Set List") {
         col8Button.innerText = "8 Cols";
         grp2Button.innerText = "Pairs";
         grp4Button.innerText = "Fours";
+        // Put these buttons in a different div so they can go somewhere else
         stylesDiv = document.createElement("div");
         stylesDiv.style.position = "absolute";
         stylesDiv.style.top = "1rem";
@@ -129,16 +130,16 @@ if (pageTitle == "Set List") {
 
         // Find the body of the page and clear it
         body = document.getElementsByTagName("body")[0];
-        // Add title to show which way is up
+        // Show where the front is
         body.innerHTML="<h2>Front</h2>";
         // Some styling so the title is centered
         body.style.display = "flex";
         body.style.justifyContent = "center";
-        // Add buttons
+        // Add the buttons created earlier
         body.appendChild(buttonDiv);
         body.appendChild(stylesDiv);
 
-        // Add the divs we created earlier to the body
+        // Add pupils
         for (let i = 0; i < newDivs.length; i++) {
             body.appendChild(newDivs[i]);
             dragElement(newDivs[i]);
@@ -146,8 +147,9 @@ if (pageTitle == "Set List") {
 
         // Select random child to highlight
         let listOfChildren = document.getElementsByClassName("pupils");
-        // Repeat this function every 2000ms
+        // Repeat every 2s
         setInterval(() => {
+            // Change highlighted pupil at random and make it green (#e2f0cb)
             let rng = Math.floor(Math.random() * listOfChildren.length);
             let lastHighlighted = document.getElementById("selected");
             if (lastHighlighted) {
@@ -158,12 +160,12 @@ if (pageTitle == "Set List") {
             listOfChildren[rng].style.backgroundColor = "#e2f0cb";
         }, 2000);
 
-        // Shuffle array function
+        // Shuffle array function to shuffle arrays
         function shuffleArray(a,b,c,d){//array,placeholder,placeholder,placeholder
             c=a.length;while(c)b=Math.random()*c--|0,d=a[c],a[c]=a[b],a[b]=d
         }
 
-        // Function to find the position of an element
+        // Function to find the position of an element - outputs object with top and left properties
         var cumulativeOffset = function(element) {
             var top = 0, left = 0;
             do {
@@ -171,7 +173,6 @@ if (pageTitle == "Set List") {
                 left += element.offsetLeft || 0;
                 element = element.offsetParent;
             } while(element);
-            // Returns an object with top and left positions
             return {
                 top: top,
                 left: left
@@ -180,8 +181,9 @@ if (pageTitle == "Set List") {
 
         // Function to randomise people, keeping locations the same
         function randomise() {
-            // Find current positions of all pupils
+            // Find all pupils
             let allLocations = document.getElementsByClassName("pupils");
+            // Find current positions of all pupils
             let positions = [];
             for (let i = 0; i < allLocations.length; i++) {
                 positions.push(cumulativeOffset(allLocations[i]));
@@ -199,13 +201,15 @@ if (pageTitle == "Set List") {
 
         // Function to save current positions to storage
         function saveSeats() {
+            // Find all positions - see randomise function
             let allLocations = document.getElementsByClassName("pupils");
             let positions = [];
             for (let i = 0; i < allLocations.length; i++) {
                 positions.push(cumulativeOffset(allLocations[i]));
             }
+            // Prompt user to give the save file a name
             nameOfClass = prompt("Type a name to save this as")
-            // Save to storage with unique suffix to make it easier to find later
+            // Save to storage with unique suffix since iSAMS uses localStorage as well
             localStorage.setItem(nameOfClass + " seatsAppv1", JSON.stringify(positions));
         }
 
@@ -223,7 +227,7 @@ if (pageTitle == "Set List") {
             savedClasses.style.top = "0px";
             savedClasses.style.left = "0px";
             savedClasses.style.position = "absolute";
-            // Look through storage and find data with unique suffix
+            // Look through storage and find data with our unique suffix
             classesStored = [];
             for (var a in localStorage) {
                 if (a.includes("seatsAppv1")) {
@@ -231,7 +235,7 @@ if (pageTitle == "Set List") {
                     );
                 }
             }
-            // Add to custom UI
+            // Add save files to custom UI
             for (let i = 0; i < classesStored.length; i++) {
                 thisClass = document.createElement("div");
                 thisClass.innerText = classesStored[i];
@@ -240,6 +244,7 @@ if (pageTitle == "Set List") {
                 thisClass.style.cursor = "pointer";
                 thisClass.style.display = "flex";
                 thisClass.style.justifyContent = "space-between";
+                // Add effects on hover
                 thisClass.addEventListener("mouseover", function(event) {
                     if (thisClass !== event.target) return;
                     event.target.style.backgroundColor = "#e6e6fa";
@@ -247,11 +252,17 @@ if (pageTitle == "Set List") {
                 thisClass.addEventListener("mouseleave", function(event) {
                     event.target.style.backgroundColor = "transparent";
                 }, false);
+                // When clicked, load the seat positions
                 thisClass.addEventListener("click", function(event) {
+                    // Make sure this does not run when the delete button in the div is clicked
                     if (thisClass !== event.target) return;
+                    // Find name of class to load
                     toLoad = classesStored[i];
+                    // Find positions from localStorage
                     positions = JSON.parse(localStorage.getItem(toLoad + " seatsAppv1"));
+                    // Find all pupils on page
                     let allLocations = document.getElementsByClassName("pupils");
+                    // Give them their positions if the number of pupils is the same as saved
                     if (allLocations.length = positions.length) {
                         for (let i = 0; i < allLocations.length; i++) {
                             curImg = allLocations[i];
@@ -264,42 +275,52 @@ if (pageTitle == "Set List") {
                         alert("The saved class has a different number of pupils to this class");
                     }
                 }, false);
+                // Create a button to delete the save file
                 delBtn = document.createElement("div");
                 delBtn.innerText = "Delete";
                 delBtn.style.width = "5rem";
                 delBtn.style.backgroundColor = "red", "important";
                 delBtn.style.color = "white";
+                // Ask user to confirm when clicked
                 delBtn.addEventListener("click", function() {
                     if (confirm("Are you sure? Deleting this cannot be undone")) {
                         localStorage.removeItem(classesStored[i] + " seatsAppv1");
                     }
                 }, false);
+                // Add these to the custom UI
                 thisClass.appendChild(delBtn);
                 savedClasses.appendChild(thisClass);
             }
 
+            // Open up custom UI when load button is clicked
             body.appendChild(savedClasses);
+            // Delete the UI when user clicks anywhere in UI
             document.getElementById("loading").addEventListener("click", function(){document.querySelector("#loading").remove()});
         }
 
+        // Functions to arrange pupils into c columns
         function makeColumns(c) {
             // Find current positions of all pupils
             let allLocations = document.getElementsByClassName("pupils");
             // Give pupils their new positions
             for (let i = 0; i < allLocations.length; i++) {
                 curImg = allLocations[i];
+                // 120px height between rows, 60px at top of page
                 curImg.style.top = Math.floor(i/c)*120+60 + "px";
+                // 80px width between columns, 10px at left of page
                 curImg.style.left = (i%c)*80+10 + "px";
             }
         }
 
+        // Function to group pupils into pairs
         function makePairs() {
             // Find current positions of all pupils
             let allLocations = document.getElementsByClassName("pupils");
-            // Horizontal offset
+            // Horizontal offset is 10px at left of page
             offset = 10;
-            // Give pupils their new positions
+            // Give pupils their new positions with 6 per row
             for (let i = 0; i < allLocations.length; i++) {
+                // Increase the horizontal offset every 2 pupils to make pairs clear
                 if (i%6 == 0) {
                     offset = 10;
                 }
@@ -309,13 +330,16 @@ if (pageTitle == "Set List") {
                 if(i%6 == 4) {
                     offset = 130;
                 }
+                // Rows are taller to make pairs even clearer
                 curImg = allLocations[i];
                 curImg.style.top = Math.floor(i/6)*130+60 + "px";
                 curImg.style.left = (i%6)*70+offset + "px";
             };
+            // Randomise the seats
             randomise();
         }
 
+        // Function to make groups of 4
         function makeFours() {
             // Find current positions of all pupils
             let allLocations = document.getElementsByClassName("pupils");
@@ -323,8 +347,9 @@ if (pageTitle == "Set List") {
             offset = 10;
             // Vertical offset
             offset2 = 60;
-            // Give pupils their new positions
+            // Give pupils their new positions - 6 per row, 4s are grouped in a square
             for (let i = 0; i < allLocations.length; i++) {
+                // Change horizontal offset after 2 and 4 pupils to make groups clear
                 if (i%6 == 0) {
                     offset = 10;
                 }
@@ -334,18 +359,24 @@ if (pageTitle == "Set List") {
                 if(i%6 == 4) {
                     offset = 130;
                 }
-                if (i==12) {
+                // Change vertical offset - beyond 36 pupils the groups will be less clear
+                if (i==12 || i==24) {
                     offset2 += 50;
                 }
+                // Apply positions
                 curImg = allLocations[i];
                 curImg.style.top = Math.floor(i/6)*85+offset2 + "px";
                 curImg.style.left = (i%6)*70+offset + "px";
             };
+            // Randomise the seats
             randomise();
         }
 
+        // Function to invert the seating plan - easier for teacher to see
         function invertSeats() {
+            // Find all pupils
             let allLocations = document.getElementsByClassName("pupils");
+            // Find the maximum deviations from top and left of page
             maxHeight = 0;
             maxWidth = 0;
             for (let i = 0; i < allLocations.length; i++) {
@@ -359,8 +390,10 @@ if (pageTitle == "Set List") {
                     maxWidth = curLeft;
                 };
             }
+            // Add 60px to top and 10px to width
             maxHeight+=60;
             maxWidth+=10;
+            // Invert the images - new position is max subtract old
             for (let i = 0; i < allLocations.length; i++) {
                 curImg = allLocations[i];
                 curPos = cumulativeOffset(allLocations[i]);
