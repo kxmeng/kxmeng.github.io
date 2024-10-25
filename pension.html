@@ -4,9 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pension Calculator</title>
+  <style>
+    html {
+        background-color: #f5edf0;
+    }
+
+    body {
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        margin: 4rem auto;
+    }
+
+    .annual {
+        background-color: #fdf1c9;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+
+    .total {
+        background-color: #d8e5f7;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        html {
+            background-color: #121212;
+            color: #f5edf0;
+        }
+        .annual {
+            background-color: #563060;
+        }
+        .total {
+            background-color: #35506e;
+        }
+    }
+
+  </style>
 </head>
 
-  <body style="max-width: 800px; display: flex; flex-direction: column; row-gap: 1rem; margin: 4rem auto;">
+  <body>
     <div>
         <label for="salary">Current Salary:</label>
         <input type="number" min="0" max="100000" step="1000" id="salary" name="salary" value="57000" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br>
@@ -31,7 +70,7 @@
         <span style="font-weight: bold;">TPS</span>
         <span>1/57th of salary plus 1.6% (above CPI) per year</span>
         <div id="tpsDisplay" style="padding: 1rem 0">
-            <span>Annual income: <span id="tps" style="background-color: #fdf1c9; font-weight: bold; padding: 0.5rem;"></span></span>
+            <span>Annual income: <span id="tps" class="annual"></span></span>
         </div>
     </div>
     <br>
@@ -42,13 +81,13 @@
             Total: <span id="dc"></span>
         </div>
         <div style="padding: 1rem 0">
-            One off tax free 25%: <span id="taxfree" style="background-color: #d8e5f7; font-weight: bold; padding: 0.5rem;"></span>
+            One off tax free 25%: <span id="taxfree" class="total"></span>
         </div>
         <div>
             Remaining 75%: <span id="remainder"></span>
         </div>
         <div style="padding: 1rem 0">
-            Annuity income: <span id="annuityIncome" style="background-color: #fdf1c9; font-weight: bold; padding: 0.5rem;"></span>
+            Annuity income: <span id="annuityIncome" class="annual"></span>
         </div>
         <span style="font-style: italic;">Approx 6% of the remainder</span>
     </div>
