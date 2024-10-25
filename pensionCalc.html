@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pension Calculator</title>
+</head>
+
+  <body style="max-width: 800px; display: flex; flex-direction: column; row-gap: 1rem; margin: 4rem auto;">
+    <div>
+        <label for="salary">Current Salary:</label>
+        <input type="number" min="0" max="100000" step="1000" id="salary" name="salary" value="57000" oninput="calculatePension(this.value, ageInput.value, returnInput.value)"><br>
+        <span style="font-style: italic;">This is irrelevant for comparing which is better</span> <br><br>
+
+        <label for="age">Current Age:</label>
+        <input type="number" min="21" max="67" id="age" name="age" value="30" oninput="calculatePension(salaryInput.value, this.value, returnInput.value)"><br><br>
+
+        <label for="returns">Inflation adjusted annual % Return:</label>
+        <input type="number" min="0" max="8" step="0.1" id="returns" name="returns" value="2.9" oninput="calculatePension(salaryInput.value, ageInput.value, this.value)"><br>
+        <span style="font-style: italic;">AVIVA pension calculator: 0 for low growth, 2.9 for medium growth, 5.8 for high growth (inflation and fee adjusted)</span><br>
+        <span style="font-style: italic;">For comparison, it's around 7 for S&P500</span>
+    </div>
+    <br>
+
+    <div>
+        <span style="font-weight: bold;">TPS</span>
+        <span>1/57th of salary plus 1.6% (above CPI) per year</span>
+        <div id="tpsDisplay">
+            Annual income: <span id="tps"></span>
+        </div>
+    </div>
+    <br>
+
+    <div>
+        <span style="font-weight: bold;">DC pension</span>
+        <span>24% employer and 10% employee contribution</span>
+        <div id="dcDisplay">
+            Total: <span id="dc"></span>
+        </div>
+        <div>
+            Tax Free 25%: <span id="taxfree"></span>
+        </div>
+        <div>
+            Remaining 75%: <span id="remainder"></span>
+        </div>
+        <div id="annuity">
+            Annuity income: <span id="annuityIncome"></span>
+        </div>
+        <span style="font-style: italic;">Approx 6% of the remainder</span>
+    </div>
+  </body>
+<script>
+    // Inputs
+    const salaryInput = document.getElementById('salary');
+    const salary = salaryInput.value;
+    const ageInput = document.getElementById('age');
+    const age = ageInput.value;
+    const returnInput = document.getElementById('returns');
+    const returns = returnInput.value;
+
+    // Output divs
+    const tps = document.getElementById('tps');
+    const dc = document.getElementById('dc');
+    const taxfree = document.getElementById('taxfree');
+    const remainder = document.getElementById('remainder');
+    const annuityIncome = document.getElementById('annuityIncome');
+
+    // number display
+    function num(x) {
+        return Math.round(x).toLocaleString('en', {useGrouping: true})
+    }
+    // calculator
+
+    function calculatePension(salary, age, returns) {
+        // TPS calculations
+        const yearsToRetirement = 67 - age;
+        const inflationAdjustedTPS = (salary / 57) * (1.016 ** yearsToRetirement);
+        tps.textContent = `${num(inflationAdjustedTPS)}`;
+
+        // DC calculations
+        const multiplier = 1 + (returns / 100);
+        const contribution = 0.34 * salary;
+        const totalPotSize = contribution * (multiplier ** yearsToRetirement);
+        dc.textContent = `${num(totalPotSize)}`;
+        taxfree.textContent = `${num(totalPotSize * 0.25)}`;
+        remainder.textContent = `${num(totalPotSize * 0.75)}`;
+        annuityIncome.textContent = `${num((totalPotSize * 0.75) * 0.06)}`;
+    }
+
+    calculatePension(salary,age,returns)
+</script>
+
+</html>
