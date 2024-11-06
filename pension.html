@@ -241,7 +241,7 @@
         finalSalaryFuture.textContent = `${num(futureFinalSalary)}`;
 
         // Log to full calculations
-        fullCalculations.innerHTML = `Inflation adjusted TPS annual income (1/57th of current salary with 1.6% compound interest): ${num(inflationAdjustedTPS)} <br> Tax free amount of ${num(tpsTaxFreeAmount)} is 12 times 25% of the annual salary. <br> Employer contribution is ${num(employerContribution)} <br> Employee contribution is ${num(employeeContribution)} <br> Total Contribution is ${num(contribution)} <br> Total pot size is ${num(totalPotSize)} from compound interest <br> Annuity income is 75% of the total pot size multiplied by 5%: ${num((totalPotSize * 0.75) * 0.05)}`
+        fullCalculations.innerHTML = `Inflation adjusted TPS annual income (1/57th of current salary with 1.6% compound interest): ${num(inflationAdjustedTPS)} <br> Tax free amount of ${num(tpsTaxFreeAmount)} is 12 times 25% of the annual salary. <br> Employer contribution is ${num(employerContribution)} <br> Employee contribution is ${num(employeeContribution)} <br> Total Contribution is ${num(contribution)} <br> Total pot size is ${num(totalPotSize)} from compound interest <br> Annuity income is 75% of the total pot size multiplied by 4.3%: ${num((totalPotSize * 0.75) * 0.05)}`
     }
 
     calculatePension(salary, age, employer, finalSalaryYears)
