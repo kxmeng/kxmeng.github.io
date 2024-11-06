@@ -48,30 +48,41 @@
 
   <body>
     <div>
+        Data for DC Calculations: <br>
+
+        Assume employee contribution is identical to <a href="https://www.teacherspensions.co.uk/employers/managing-members/contributions/calculating-contributions.aspx">current TPS</a>. <br>
+
+        If you have a final salary pension, the assumed final salary is the top of the pay scale (75705). <br>
+
+        <a href="https://www.bankofengland.co.uk/monetary-policy/inflation/inflation-calculator">CPI Inflation</a> up to Sep 24 for last 10, 20, 40 years is 3, 2.8 and 2.9% respectively. <br>
+
+        <a href="https://en.wikipedia.org/wiki/MSCI_World">MSCI World Index</a> returns in USD* for last 10, 20, 40 years is <a href="https://curvo.eu/backtest/en/market-index/msci-world?currency=usd">10.1, 8.6 and 9.8%</a>. With fees (<a href="https://www.ishares.com/uk/individual/en/products/251882/ishares-msci-world-ucits-etf-acc-fund?switchLocale=y&siteEntryPassthrough=true">0.2% per year</a>) and inflation, it comes out to 6.9, 5.4 and 6.7% respectively. For simplicity, this calculator will use 5.4% as the average return in future years. <br>
+
+        *Returns in GBP in the last 10 and 20 years have been higher than returns in USD, but there is insufficient data going further back.
+    </div>
+    <hr>
+    <div>
         <label for="salary">Current Salary:</label>
-        <input type="number" min="0" max="100000" step="1000" id="salary" name="salary" value="57000" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br>
-        <span style="font-style: italic;">This is irrelevant for comparing which is better</span> <br><br>
+        <input type="number" min="0" max="100000" step="1000" id="salary" name="salary" value="57000" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br><br>
 
         <label for="age">Current Age:</label>
-        <input type="number" min="21" max="67" id="age" name="age" value="40" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br>
+        <input type="number" min="21" max="67" id="age" name="age" value="40" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br>
         <span style="font-style: italic;">Retire at 67</span> <br><br>
 
-        <label for="employeeContribution">Employee Contribution:</label>
-        <input type="number" min="3" max="15" id="employeeContribution" name="employeeContribution" value="10" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br><br>
+        <label for="finalSalary">Years in Final Salary scheme:</label>
+        <input type="number" min="0" max="67" id="finalSalary" name="finalSalary" value="0" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br><br>
 
         <label for="employerContribution">Employer Contribution:</label>
-        <input type="number" min="15" max="30" id="employerContribution" name="employerContribution" value="24" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br><br>
-
-        <label for="returns">Inflation adjusted annual % Return:</label>
-        <input type="number" min="0" max="8" step="0.1" id="returns" name="returns" value="2.9" oninput="calculatePension(salaryInput.value, ageInput.value, employeeInput.value, employerInput.value, returnInput.value)"><br>
-        <span style="font-style: italic;">AVIVA pension calculator: 0 for low growth, 2.9 for medium growth, 5.8 for high growth</span>
+        <input type="number" min="15" max="30" id="employerContribution" name="employerContribution" value="24" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br><br>
     </div>
     <br>
 
     <div>
-        <span style="font-weight: bold;">TPS</span>
-        <span>1/57th of salary plus 1.6% (above CPI) per year</span>
-        <div id="tpsDisplay" style="padding: 1rem 0">
+        <span style="font-weight: bold;">TPS</span> <br>
+        <div style="padding: 1rem 0">
+            <span>One off tax free: <span id="tpsTaxFree" class="total"></span></span>
+        </div>
+        <div style="padding: 1rem 0">
             <span>Annual income: <span id="tps" class="annual"></span></span>
         </div>
     </div>
@@ -79,40 +90,124 @@
 
     <div>
         <span style="font-weight: bold;">DC pension</span>
-        <div id="dcDisplay">
+        <div>
             Total: <span id="dc"></span>
         </div>
         <div style="padding: 1rem 0">
             One off tax free 25%: <span id="taxfree" class="total"></span>
         </div>
-        <div>
-            Remaining 75%: <span id="remainder"></span>
-        </div>
         <div style="padding: 1rem 0">
             Annuity income: <span id="annuityIncome" class="annual"></span>
         </div>
-        <span style="font-style: italic;">Approx 6% of the remainder</span>
+        <span style="font-style: italic;">Approx 4.3% of the remainder for a joint income annuity, higher if you have medical conditions</span>
+    </div>
+    <br>
+
+    <div>
+        <span style="font-weight: bold;">Final Salary</span>
+        <div>
+            Current annual income: <span id="finalSalaryCurrent" class="annual"></span>
+        </div>
+        <div style="padding: 1rem 0">
+            Income if stay in TPS: <span id="finalSalaryFuture" class="annual"></span>
+        </div>
+    </div>
+
+    <div>
+        <span style="font-weight: bold;">Full Calculations:</span>
+        <div id="fullCalculations">
+            
+        </div>
     </div>
   </body>
 <script>
+    // Data
+    const tonbridgeSalaryScale = [
+        37737,
+        39512,
+        41288,
+        43065,
+        44841,
+        44841,
+        44841,
+        44841,
+        44841,
+        47996,
+        50296,
+        52598,
+        54898,
+        57197,
+        57197,
+        57197,
+        57197,
+        57197,
+        59464,
+        61170,
+        62878,
+        64583,
+        66293,
+        66293,
+        66293,
+        66293,
+        66293,
+        69694,
+        70757,
+        71820,
+        71820,
+        71820,
+        71820,
+        71820,
+        73763,
+        75705,
+    ];
+
+    const calculateEmployeeContribution = (salary) => {
+        let contribution = 0;
+        let s = salary;
+        while (s > 0) {
+            if (s > 92698) {
+                contribution += (s-92698) * 0.0117;
+                s = 92698;
+            } else if (s > 67980) {
+                contribution += (s-67980) * 0.0113;
+                s = 67980;
+            } else if (s > 51293) {
+                contribution += (s-51293) * 0.0102;
+                s = 51293;
+            } else if (s > 43260) {
+                contribution += (s-43260) * 0.0096;
+                 s = 43260;
+            } else if (s > 32136) {
+                contribution += (s-32136) * 0.0086;
+                s = 32136;
+            } else {
+                contribution += s * 0.074;
+                s = 0;
+            }
+        }
+        return contribution;
+    }
+
     // Inputs
     const salaryInput = document.getElementById('salary');
     const salary = salaryInput.value;
     const ageInput = document.getElementById('age');
     const age = ageInput.value;
-    const employeeInput = document.getElementById('employeeContribution');
-    const employee = employeeInput.value;
+    const finalSalaryYearsInput = document.getElementById('finalSalary');
+    const finalSalaryYears = finalSalaryYearsInput.value;
     const employerInput = document.getElementById('employerContribution');
     const employer = employerInput.value;
-    const returnInput = document.getElementById('returns');
-    const returns = returnInput.value;
+    const returns = 0.054;
 
     // Output divs
     const tps = document.getElementById('tps');
+    const tpsTaxFree = document.getElementById('tpsTaxFree');
     const dc = document.getElementById('dc');
     const taxfree = document.getElementById('taxfree');
-    const remainder = document.getElementById('remainder');
     const annuityIncome = document.getElementById('annuityIncome');
+    const finalSalaryCurrent = document.getElementById('finalSalaryCurrent');
+    const finalSalaryFuture = document.getElementById('finalSalaryFuture');
+    const fullCalculations = document.getElementById('fullCalculations');
 
     // number display
     function num(x) {
@@ -120,23 +215,36 @@
     }
     // calculator
 
-    function calculatePension(salary, age, employee, employer, returns) {
-        // TPS calculations
+    function calculatePension(salary, age, employer, finalSalaryYears) {
         const yearsToRetirement = 67 - age;
+
+        // TPS calculations
         const inflationAdjustedTPS = (salary / 57) * (1.016 ** yearsToRetirement);
-        tps.textContent = `${num(inflationAdjustedTPS)}`;
+        const tpsTaxFreeAmount = inflationAdjustedTPS * 3;
+        tpsTaxFree.textContent = `${num(tpsTaxFreeAmount)}`;
+        tps.textContent = `${num(inflationAdjustedTPS*0.75)}`;
 
         // DC calculations
-        const multiplier = 1 + (returns / 100);
-        const contribution = ((Number(employee) + Number(employer))/100) * salary;
+        const multiplier = 1 + returns;
+        const employerContribution = (Number(employer)/100) * salary;
+        const employeeContribution = calculateEmployeeContribution(salary);
+        const contribution = employerContribution + employeeContribution;
         const totalPotSize = contribution * (multiplier ** yearsToRetirement);
         dc.textContent = `${num(totalPotSize)}`;
         taxfree.textContent = `${num(totalPotSize * 0.25)}`;
-        remainder.textContent = `${num(totalPotSize * 0.75)}`;
-        annuityIncome.textContent = `${num((totalPotSize * 0.75) * 0.06)}`;
+        annuityIncome.textContent = `${num((totalPotSize * 0.75) * 0.043)}`;
+
+        // Final Salary calculations
+        const currentFinalSalary = salary * finalSalaryYears/80
+        finalSalaryCurrent.textContent = `${num(currentFinalSalary)}`;
+        const futureFinalSalary = 75705 * finalSalaryYears/80
+        finalSalaryFuture.textContent = `${num(futureFinalSalary)}`;
+
+        // Log to full calculations
+        fullCalculations.innerHTML = `Inflation adjusted TPS annual income (1/57th of current salary with 1.6% compound interest): ${num(inflationAdjustedTPS)} <br> Tax free amount of ${num(tpsTaxFreeAmount)} is 12 times 25% of the annual salary. <br> Employer contribution is ${num(employerContribution)} <br> Employee contribution is ${num(employeeContribution)} <br> Total Contribution is ${num(contribution)} <br> Total pot size is ${num(totalPotSize)} from compound interest <br> Annuity income is 75% of the total pot size multiplied by 5%: ${num((totalPotSize * 0.75) * 0.05)}`
     }
 
-    calculatePension(salary, age, employee, employer, returns)
+    calculatePension(salary, age, employer, finalSalaryYears)
 </script>
 
 </html>
