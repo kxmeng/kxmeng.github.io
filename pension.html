@@ -50,9 +50,9 @@
     <div>
         Data for DC Calculations: <br>
 
-        Assume employee contribution is identical to <a href="https://www.teacherspensions.co.uk/employers/managing-members/contributions/calculating-contributions.aspx">current TPS</a>. <br>
+        Assume increase 1 point on pay scale per year until retirement for (now to retirement) calculations. <br>
 
-        If you have a final salary pension, the assumed final salary is the top of the pay scale (75705). <br>
+        Assume employee contribution is identical to <a href="https://www.teacherspensions.co.uk/employers/managing-members/contributions/calculating-contributions.aspx">current TPS</a>. <br>
 
         <a href="https://www.bankofengland.co.uk/monetary-policy/inflation/inflation-calculator">CPI Inflation</a> up to Sep 24 for last 10, 20, 40 years is 3, 2.8 and 2.9% respectively. <br>
 
@@ -63,7 +63,44 @@
     <hr>
     <div>
         <label for="salary">Current Salary:</label>
-        <input type="number" min="0" max="100000" step="1000" id="salary" name="salary" value="57000" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br><br>
+        <select name="salary" id="salary" onchange="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)">
+            <option value="0">£37,737</option>
+            <option value="1">£39,512</option>
+            <option value="2">£41,288</option>
+            <option value="3">£43,065</option>
+            <option value="4">£44,841</option>
+            <option value="5">£44,841</option>
+            <option value="6">£44,841</option>
+            <option value="7">£44,841</option>
+            <option value="8">£44,841</option>
+            <option value="9">£47,996</option>
+            <option value="10">£50,296</option>
+            <option value="11">£52,598</option>
+            <option value="12">£54,898</option>
+            <option value="13">£57,197</option>
+            <option value="14">£57,197</option>
+            <option value="15">£57,197</option>
+            <option value="16">£57,197</option>
+            <option value="17">£57,197</option>
+            <option value="18">£59,464</option>
+            <option value="19">£61,170</option>
+            <option value="20">£62,878</option>
+            <option value="21">£64,583</option>
+            <option value="22">£66,293</option>
+            <option value="23">£66,293</option>
+            <option value="24">£66,293</option>
+            <option value="25">£66,293</option>
+            <option value="26">£66,293</option>
+            <option value="27">£69,694</option>
+            <option value="28">£70,757</option>
+            <option value="29">£71,820</option>
+            <option value="30">£71,820</option>
+            <option value="31">£71,820</option>
+            <option value="32">£71,820</option>
+            <option value="33">£71,820</option>
+            <option value="34">£73,763</option>
+            <option value="35">£75,705</option>
+        </select>
 
         <label for="age">Current Age:</label>
         <input type="number" min="21" max="67" id="age" name="age" value="40" oninput="calculatePension(salaryInput.value, ageInput.value, employerInput.value, finalSalaryYearsInput.value)"><br>
@@ -80,10 +117,16 @@
     <div>
         <span style="font-weight: bold;">TPS</span> <br>
         <div style="padding: 1rem 0">
-            <span>One off tax free: <span id="tpsTaxFree" class="total"></span></span>
+            <span>One off tax free (this year): <span id="tpsTaxFree"></span></span>
         </div>
         <div style="padding: 1rem 0">
-            <span>Annual income: <span id="tps" class="annual"></span></span>
+            <span>Annual income (this year): <span id="tps"></span></span>
+        </div>
+        <div style="padding: 1rem 0">
+            <span>One off tax free (now to retirement): <span id="tpsTaxFreeAll" class="total"></span></span>
+        </div>
+        <div style="padding: 1rem 0">
+            <span>Annual income (now to retirement): <span id="tpsAll" class="annual"></span></span>
         </div>
     </div>
     <br>
@@ -91,15 +134,24 @@
     <div>
         <span style="font-weight: bold;">DC pension</span>
         <div>
-            Total: <span id="dc"></span>
+            Pot Size: <span id="dc"></span>
         </div>
         <div style="padding: 1rem 0">
-            One off tax free 25%: <span id="taxfree" class="total"></span>
+            One off tax free (this year): <span id="taxfree"></span>
         </div>
         <div style="padding: 1rem 0">
-            Annuity income: <span id="annuityIncome" class="annual"></span>
+            Annuity income (this year): <span id="annuityIncome"></span>
         </div>
-        <span style="font-style: italic;">Approx 4.3% of the remainder for a joint income annuity, higher if you have medical conditions</span>
+        <span style="font-style: italic;">Approx 4.3% of the remainder for a joint income annuity (this is the closest comparison to TPS)</span>
+        <div>
+            Total Pot Size: <span id="dcAll"></span>
+        </div>
+        <div style="padding: 1rem 0">
+            One off tax free (now to retirement): <span id="taxfreeAll" class="total"></span>
+        </div>
+        <div style="padding: 1rem 0">
+            Annuity income (now to retirement): <span id="annuityIncomeAll" class="annual"></span>
+        </div>
     </div>
     <br>
 
@@ -190,24 +242,33 @@
 
     // Inputs
     const salaryInput = document.getElementById('salary');
-    const salary = salaryInput.value;
+    const salaryPosition = salaryInput.value;
+    const salary = tonbridgeSalaryScale[salaryPosition];
     const ageInput = document.getElementById('age');
     const age = ageInput.value;
     const finalSalaryYearsInput = document.getElementById('finalSalary');
     const finalSalaryYears = finalSalaryYearsInput.value;
     const employerInput = document.getElementById('employerContribution');
     const employer = employerInput.value;
-    const returns = 0.054;
 
     // Output divs
     const tps = document.getElementById('tps');
     const tpsTaxFree = document.getElementById('tpsTaxFree');
+    const tpsAll = document.getElementById('tpsAll');
+    const tpsTaxFreeAll = document.getElementById('tpsTaxFreeAll');
     const dc = document.getElementById('dc');
     const taxfree = document.getElementById('taxfree');
     const annuityIncome = document.getElementById('annuityIncome');
+    const dcAll = document.getElementById('dcAll');
+    const taxfreeAll = document.getElementById('taxfreeAll');
+    const annuityIncomeAll = document.getElementById('annuityIncomeAll');
     const finalSalaryCurrent = document.getElementById('finalSalaryCurrent');
     const finalSalaryFuture = document.getElementById('finalSalaryFuture');
     const fullCalculations = document.getElementById('fullCalculations');
+
+    const oneYearComparision = document.getElementById('oneYearComparision');
+    const allYearsComparision = document.getElementById('allYearsComparision');
+    const totalComparison = document.getElementById('totalComparison');
 
     // number display
     function num(x) {
@@ -215,7 +276,9 @@
     }
     // calculator
 
-    function calculatePension(salary, age, employer, finalSalaryYears) {
+    function calculatePension(salaryPosition, age, employer, finalSalaryYears, lowReturnsMode) {
+        const returns = 0.054;
+        const salary = tonbridgeSalaryScale[salaryPosition];
         const yearsToRetirement = 67 - age;
 
         // TPS calculations
@@ -234,17 +297,50 @@
         taxfree.textContent = `${num(totalPotSize * 0.25)}`;
         annuityIncome.textContent = `${num((totalPotSize * 0.75) * 0.043)}`;
 
+        // Cumulative calculations
+
+        let totalDC = 0;
+        let totalTPS = 0;
+        const numberOfPayGrades = tonbridgeSalaryScale.length - 1;
+        let tempSalaryPosition = salaryPosition;
+        let currentYear = 0;
+
+        for (let i = yearsToRetirement; i > 0; i--) {
+            console.log(`Calculations for Year ${currentYear}, Age: ${Number(age) + Number(currentYear)}`)
+            currentYear++;
+            const thisYearSalary = tonbridgeSalaryScale[Math.min(tempSalaryPosition, numberOfPayGrades)];
+            tempSalaryPosition++;
+            console.log(`Salary for this year: ${thisYearSalary}`)
+            
+            const thisYearTPS = (thisYearSalary / 57) * (1.016 ** i);
+            console.log(`TPS income from this year: ${num(thisYearTPS)}`);
+            const thisYearDCPotSize = contribution * (multiplier ** i);
+            console.log(`DC pot contribution from this year: ${num(thisYearDCPotSize)}`)
+            totalTPS += thisYearTPS;
+            totalDC += thisYearDCPotSize;
+        }
+        tpsTaxFreeAll.textContent = `${num(totalTPS * 3)}`;
+        tpsAll.textContent = `${num(totalTPS*0.75)}`;
+        dcAll.textContent = `${num(totalDC)}`;
+        taxfreeAll.textContent = `${num(totalDC * 0.25)}`;
+        annuityIncomeAll.textContent = `${num((totalDC * 0.75) * 0.043)}`;
+
         // Final Salary calculations
         const currentFinalSalary = salary * finalSalaryYears/80
         finalSalaryCurrent.textContent = `${num(currentFinalSalary)}`;
-        const futureFinalSalary = 75705 * finalSalaryYears/80
+        const maxSalaryPosition = Number(salaryPosition) + Number(yearsToRetirement);
+        const maxSalary = tonbridgeSalaryScale[Math.min(maxSalaryPosition, numberOfPayGrades)];
+        const futureFinalSalary = maxSalary * finalSalaryYears/80
         finalSalaryFuture.textContent = `${num(futureFinalSalary)}`;
 
+        // Comparisons
+        const oneYear = 
+
         // Log to full calculations
-        fullCalculations.innerHTML = `Inflation adjusted TPS annual income (1/57th of current salary with 1.6% compound interest): ${num(inflationAdjustedTPS)} <br> Tax free amount of ${num(tpsTaxFreeAmount)} is 12 times 25% of the annual salary. <br> Employer contribution is ${num(employerContribution)} <br> Employee contribution is ${num(employeeContribution)} <br> Total Contribution is ${num(contribution)} <br> Total pot size is ${num(totalPotSize)} from compound interest <br> Annuity income is 75% of the total pot size multiplied by 4.3%: ${num((totalPotSize * 0.75) * 0.05)}`
+        fullCalculations.innerHTML = `Here are the calculations for one year - view the console logs for calculations for all years. <br> Inflation adjusted TPS annual income (1/57th of current salary with 1.6% compound interest): ${num(inflationAdjustedTPS)} <br> Tax free amount of ${num(tpsTaxFreeAmount)} is 12 times 25% of the annual salary. <br> Employer contribution is ${num(employerContribution)} <br> Employee contribution is ${num(employeeContribution)} <br> Total Contribution is ${num(contribution)} <br> Total pot size is ${num(totalPotSize)} from compound interest <br> Annuity income is 75% of the total pot size multiplied by 4.3%: ${num((totalPotSize * 0.75) * 0.05)}`
     }
 
-    calculatePension(salary, age, employer, finalSalaryYears)
+    calculatePension(salaryPosition, age, employer, finalSalaryYears)
 </script>
 
 </html>
